@@ -703,11 +703,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--rpas", "--rp-aaz-folder-from-swagger",
                         # required=True,
-                        default="C:\\Users\\liwang3\\workspace_abc\\aaz\\Commands\monitor\\",
+                        default="..\\aaz\\Commands\monitor\\",
                         help="the resource provider's aaz model folder generated from swagger")
     parser.add_argument("--rpat", "--rp-aaz-folder-from-tsp",
                         # required=True,
-                        default="C:\\Users\\liwang3\\workspace_abc\\aaz\\Commands\monitor\\",
+                        default="..\\aaz\\Commands\monitor\\",
                         help="the resource provider's aaz model folder generated from tsp")
     args = parser.parse_args()
     print(vars(args))
