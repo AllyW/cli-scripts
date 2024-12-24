@@ -530,9 +530,9 @@ def compare_outputs(outputs_swagger, outputs_tsp, ckey, hkey, cmd_diffs):
         filtered_output_tsp = [item for item in outputs_tsp if "-".join(sorted(item.keys())) == diff_key]
         assert len(filtered_output_tsp) == 1
         output_tsp = filtered_output_tsp[0]
-        output_tsp[CTAG] = True
         if output_tsp != output:
             cmd_diffs.append((tckey, thkey, ChangeType.CHANGE, json.dumps(output), json.dumps(output_tsp)))
+        output_tsp[CTAG] = True
 
     for output in outputs_tsp:
         if output.get(CTAG, None):
@@ -632,7 +632,7 @@ def compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs):
     assert cmd_swagger_json["plane"] == cmd_tsp_json["plane"]
     resource_ids_swg = sorted(cmd_swagger_json["resources"], key=lambda x: x['id'])
     resource_ids_tsp = sorted(cmd_tsp_json["resources"], key=lambda x: x['id'])
-    diff_search_key = ["base"]
+    diff_search_key = ["root"]
     if resource_ids_swg != resource_ids_tsp:
         cmd_diffs.append((".".join(diff_search_key + ["resources"]), 1))
     diff_commands_groups_json(cmd_swagger_json.get("commandGroups", []), cmd_tsp_json.get("commandGroups", []), [], diff_search_key, cmd_diffs)
@@ -684,7 +684,9 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules):
     for key, diffs_arr in cmd_diffs_from_json.items():
         print(key)
         for diff in diffs_arr:
-            print("diff: ", diff)
+            item_list = list(diff)
+            join_key = ["->".join(item_list[0]), "->".join(item_list[1]), str(item_list[2])] + item_list[3:]
+            print("\t".join(join_key))
 
 
 def main(swagger_path, tsp_path):
