@@ -10,6 +10,7 @@ import re
 import argparse
 import json
 from enum import Enum
+from idlelib.iomenu import encoding
 from pathlib import Path
 import logging
 logger = logging.getLogger(__name__)
@@ -645,7 +646,7 @@ def find_target_parent_path(target_path, path_input):
     while current_path:
         if current_path.name == target_path:
             target_parent_path = current_path.parent
-            print(f"sub '{target_path}' parent: {target_parent_path}")
+            # print(f"sub '{target_path}' parent: {target_parent_path}")
             break
         current_path = current_path.parent
     else:
@@ -656,20 +657,20 @@ def find_target_parent_path(target_path, path_input):
 def parse_compared_module_jsons(swagger_path, tsp_path, modules):
     aaz_root_swagger = os.path.abspath(find_target_parent_path("Commands", swagger_path))
     aaz_root_tsp = os.path.abspath(find_target_parent_path("Commands", tsp_path))
-    print("aaz_root_swagger:", aaz_root_swagger)
-    print("aaz_root_tsp:", aaz_root_tsp)
+    # print("aaz_root_swagger:", aaz_root_swagger)
+    # print("aaz_root_tsp:", aaz_root_tsp)
     readme_file = Path(aaz_root_swagger) / ("Commands/" + "/".join(modules) + "/readme.md")
-    print("readme file: ", readme_file)
+    # print("readme file: ", readme_file)
     cmd_md_files_from_swagger = {}
     parse_readme_files(readme_file, aaz_root_swagger, cmd_md_files_from_swagger)
     cmd_md_files_from_tsp = {}
     readme_file = Path(aaz_root_tsp) / ("Commands/" + "/".join(modules) + "/readme.md")
-    print("readme file: ", readme_file)
+    # print("readme file: ", readme_file)
     parse_readme_files(readme_file, aaz_root_tsp, cmd_md_files_from_tsp)
     cmd_json_files = parse_cmd_basic_infos(cmd_md_files_from_swagger, cmd_md_files_from_tsp)
     cmd_diffs_from_json = {}
     for cmd, json_relate_path in cmd_json_files.items():
-        logger.warning("cmd_name: %s, json file: %s", cmd, json_relate_path)
+        # logger.warning("cmd_name: %s, json file: %s", cmd, json_relate_path)
         cmd_diffs = []
         swagger_json_path = os.path.join(aaz_root_swagger, "." + json_relate_path)
         tsp_json_path = os.path.join(aaz_root_tsp, "." + json_relate_path)
@@ -681,12 +682,15 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules):
         compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs)
         cmd_diffs_from_json[cmd] = cmd_diffs
     # print("cmd_diffs_from_json: ", cmd_diffs_from_json)
+    out_arr = []
     for key, diffs_arr in cmd_diffs_from_json.items():
-        print(key)
         for diff in diffs_arr:
             item_list = list(diff)
             join_key = ["->".join(item_list[0]), "->".join(item_list[1]), str(item_list[2])] + item_list[3:]
-            print("\t".join(join_key))
+            print(join_key)
+            out_arr.append(join_key)
+    return out_arr
+
 
 
 def main(swagger_path, tsp_path):
@@ -698,7 +702,12 @@ def main(swagger_path, tsp_path):
     print("modules: ", modules)
     if tsp_path[tsp_path.find(PathCommandsStr) + len(PathCommandsStr) + 1:].strip("/").strip("\\").split("/") != modules:
         raise Exception("swagger aaz module need to be the same as tsp aaz module")
-    parse_compared_module_jsons(swagger_path, tsp_path, modules)
+    out_arr = parse_compared_module_jsons(swagger_path, tsp_path, modules)
+    file_name = "-".join([module.replace("\\", "-") for module in modules]) + ".csv"
+    import csv
+    with open(file_name, mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file, delimiter='\t')
+        writer.writerows(out_arr)
 
 
 if __name__ == '__main__':
