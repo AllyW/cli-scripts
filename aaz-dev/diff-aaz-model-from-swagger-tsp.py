@@ -358,7 +358,7 @@ def compare_response_props(props_swagger, props_tsp, ckey, hkey, cmd_diffs):
         name = prop["name"]
         tckey = ckey + [name]
         thkey = hkey + [name]
-        cmd_diffs.append(tckey, thkey, ChangeType.ADD, json.dumps(prop))
+        cmd_diffs.append((tckey, thkey, ChangeType.ADD, json.dumps(prop)))
         prop[CTAG] = True
 
 
