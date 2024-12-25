@@ -10,7 +10,6 @@ import re
 import argparse
 import json
 from enum import Enum
-from idlelib.iomenu import encoding
 from pathlib import Path
 import logging
 logger = logging.getLogger(__name__)
@@ -576,13 +575,15 @@ def diff_command_json(command_swagger, command_tsp, ckey, hkey, cmd_diffs):
     compare_outputs(command_swagger.get("outputs", []), command_tsp.get("outputs", []), ckey, hkey, cmd_diffs)
 
 
-def diff_commands_json(commands_swagger, commands_tsp, ckey, hkey, cmd_diffs):
+def diff_commands_json(target_cmd, commands_swagger, commands_tsp, ckey, hkey, cmd_diffs):
     commands_swagger.sort(key=lambda x: x['name'])
     commands_tsp.sort(key=lambda x: x['name'])
     for command in commands_swagger:
         cmd_name = command["name"]
         tckey = ckey + [cmd_name]
         thkey = hkey + ["command:" + cmd_name]
+        if " ".join(tckey) != target_cmd:
+            continue
         if cmd_name not in [item["name"] for item in commands_tsp]:
             cmd_diffs.append((tckey, thkey, ChangeType.REMOVE))
             continue
@@ -598,15 +599,19 @@ def diff_commands_json(commands_swagger, commands_tsp, ckey, hkey, cmd_diffs):
         cmd_name = command["name"]
         tckey = ckey + [cmd_name]
         thkey = hkey + ["command:" + cmd_name]
+        if " ".join(tckey) != target_cmd:
+            continue
         command[CTAG] = True
         cmd_diffs.append((tckey, thkey, ChangeType.ADD))
 
 
-def diff_commands_groups_json(commands_group_swagger, commands_group_tsp, ckey, hkey, cmd_diffs):
+def diff_commands_groups_json(target_cmd, commands_group_swagger, commands_group_tsp, ckey, hkey, cmd_diffs):
     commands_group_swagger.sort(key=lambda x: x['name'])
     commands_group_tsp.sort(key=lambda x: x['name'])
     for command_group in commands_group_swagger:
         command_group_name = command_group["name"]
+        if target_cmd.find(command_group_name) == -1:
+            continue
         tckey = ckey + [command_group_name]
         thkey = hkey + ["command-group:" + command_group_name]
         if command_group_name not in [item["name"] for item in commands_group_tsp]:
@@ -615,14 +620,16 @@ def diff_commands_groups_json(commands_group_swagger, commands_group_tsp, ckey, 
         filtered_command_group_tsp = [item for item in commands_group_tsp if item["name"] == command_group_name]
         assert len(filtered_command_group_tsp) == 1
         command_group_tsp = filtered_command_group_tsp[0]
-        diff_commands_json(command_group.get("commands", []), command_group_tsp.get("commands", []), tckey, thkey, cmd_diffs)
-        diff_commands_groups_json(command_group.get("commandGroups", []), command_group_tsp.get("commandGroups", []), tckey, thkey, cmd_diffs)
+        diff_commands_json(target_cmd, command_group.get("commands", []), command_group_tsp.get("commands", []), tckey, thkey, cmd_diffs)
+        diff_commands_groups_json(target_cmd, command_group.get("commandGroups", []), command_group_tsp.get("commandGroups", []), tckey, thkey, cmd_diffs)
         command_group_tsp[CTAG] = True
 
     for command_group in commands_group_tsp:
         if command_group.get(CTAG, None):
             continue
         command_group_name = command_group["name"]
+        if target_cmd.find(command_group_name) == -1:
+            continue
         tckey = ckey + [command_group_name]
         thkey = hkey + ["command-group:" + command_group_name]
         command_group[CTAG] = True
@@ -633,10 +640,10 @@ def compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs):
     assert cmd_swagger_json["plane"] == cmd_tsp_json["plane"]
     resource_ids_swg = sorted(cmd_swagger_json["resources"], key=lambda x: x['id'])
     resource_ids_tsp = sorted(cmd_tsp_json["resources"], key=lambda x: x['id'])
-    diff_search_key = ["root"]
+    diff_search_key = []
     if resource_ids_swg != resource_ids_tsp:
         cmd_diffs.append((".".join(diff_search_key + ["resources"]), 1))
-    diff_commands_groups_json(cmd_swagger_json.get("commandGroups", []), cmd_tsp_json.get("commandGroups", []), [], diff_search_key, cmd_diffs)
+    diff_commands_groups_json(cmd, cmd_swagger_json.get("commandGroups", []), cmd_tsp_json.get("commandGroups", []), [], diff_search_key, cmd_diffs)
 
 
 def find_target_parent_path(target_path, path_input):
@@ -669,6 +676,11 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules):
     parse_readme_files(readme_file, aaz_root_tsp, cmd_md_files_from_tsp)
     cmd_json_files = parse_cmd_basic_infos(cmd_md_files_from_swagger, cmd_md_files_from_tsp)
     cmd_diffs_from_json = {}
+
+    module_folder = "./aaz/" + "-".join([module.replace("\\", "-") for module in modules])
+    if not os.path.exists(module_folder):
+        os.makedirs(module_folder)
+
     for cmd, json_relate_path in cmd_json_files.items():
         # logger.warning("cmd_name: %s, json file: %s", cmd, json_relate_path)
         cmd_diffs = []
@@ -678,20 +690,52 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules):
             cmd_swagger_json = json.load(f)
         with open(tsp_json_path, "r", encoding="utf-8") as f:
             cmd_tsp_json = json.load(f)
+
+        cmd_file_name = "--".join(cmd.split())
+        # print("cmd: ", cmd)
+        # print("cmd_file_name: ", cmd_file_name)
+        with open(os.path.join(module_folder, cmd_file_name + "-swg.json"), "w", encoding="utf8") as jfile:
+            json.dump(cmd_swagger_json, jfile, ensure_ascii=False, indent=2)
+        with open(os.path.join(module_folder, cmd_file_name + "-tsp.json"), "w", encoding="utf8") as jfile:
+            json.dump(cmd_tsp_json, jfile, ensure_ascii=False, indent=2)
         # print("cmd_swagger_json: ", cmd_swagger_json)
         compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs)
         cmd_diffs_from_json[cmd] = cmd_diffs
     # print("cmd_diffs_from_json: ", cmd_diffs_from_json)
     out_arr = []
+    i = 0
+
+    location_tup = (['location', 'type'], ChangeType.CHANGE, "ResourceLocation", "string")
+    resource_tup = (["resourceGroupName", "format"], ChangeType.CHANGE)
+    error_tup = ([0, "error"], ChangeType.CHANGE, '{"isError": true, "body": {"json": {"schema": {"type": "@MgmtErrorFormat"}}}}', '{"isError": true, "body": {"json": {"schema": {"readOnly": true, "type": "@MgmtErrorFormat"}}}}')
+
+
     for key, diffs_arr in cmd_diffs_from_json.items():
         for diff in diffs_arr:
             item_list = list(diff)
+            if len(item_list) >= 5:
+                if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "type" and item_list[2] is ChangeType.CHANGE and item_list[3] == '"ResourceLocation"' and item_list[4] == '"string"':
+                    continue
+                if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "options" and item_list[2] is ChangeType.CHANGE and item_list[3] == '["l", "location"]' and item_list[4] == '["location"]':
+                    continue
+                if item_list[0][-2].find("resourceGroupName") != -1 and item_list[0][-1] =="format" and item_list[2] is ChangeType.CHANGE:
+                    continue
+                if item_list[0][-2] == "responses" and item_list[0][-1] == "error" and item_list[2] is ChangeType.CHANGE and item_list[3].find('@MgmtErrorFormat') != -1 and item_list[4].find('@MgmtErrorFormat') != -1:
+                    continue
+
+            if len(item_list) >= 4:
+                if item_list[0][-2] == "id" and item_list[0][-1] == "format" and item_list[2] is ChangeType.REMOVE and item_list[3].find("template") != -1:
+                    continue
+                if item_list[0][-2] == "responses" and item_list[0][-1] == "200.201" and item_list[2] is ChangeType.REMOVE:
+                    continue
+            i += 1
             join_key = ["->".join(item_list[0]), "->".join(item_list[1]), str(item_list[2])] + item_list[3:]
-            print(join_key)
+            print(str(i))
+            print(item_list[0])
+            print(item_list[1])
+            print("   ", join_key[2:])
             out_arr.append(join_key)
     return out_arr
-
-
 
 def main(swagger_path, tsp_path):
     if not os.path.isdir(swagger_path) or not os.path.isdir(tsp_path):
@@ -704,10 +748,10 @@ def main(swagger_path, tsp_path):
         raise Exception("swagger aaz module need to be the same as tsp aaz module")
     out_arr = parse_compared_module_jsons(swagger_path, tsp_path, modules)
     file_name = "-".join([module.replace("\\", "-") for module in modules]) + ".csv"
-    import csv
-    with open(file_name, mode='w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file, delimiter='\t')
-        writer.writerows(out_arr)
+    # import csv
+    # with open(file_name, mode='w', newline='', encoding='utf-8') as file:
+    #     writer = csv.writer(file, delimiter='\t')
+    #     writer.writerows(out_arr)
 
 
 if __name__ == '__main__':
