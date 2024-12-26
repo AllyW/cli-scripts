@@ -224,9 +224,9 @@ def compare_conditions(conditions_swagger, conditions_tsp, ckey, hkey, cmd_diffs
         filtered_consition_tsp = [item for item in conditions_tsp if item["var"] == diff_key]
         assert len(filtered_consition_tsp) == 1
         condition_tsp = filtered_consition_tsp[0]
-        condition_tsp[CTAG] = True
         if condition_tsp != condition:
             cmd_diffs.append((tckey, thkey, ChangeType.CHANGE, json.dumps(condition), json.dumps(condition_tsp)))
+        condition_tsp[CTAG] = True
 
     for condition in conditions_tsp:
         if condition.get(CTAG, None):
@@ -384,7 +384,7 @@ def compare_response_additional_props(add_props_swagger, add_props_tsp, ckey, hk
 
 
 def compare_cmd_schema(schema_swagger, schema_tsp, ckey, hkey, cmd_diffs):
-    other_keys = (set(schema_swagger.keys()) | set(schema_tsp.keys())) - {"props"} - {"additionalProps"}
+    other_keys = (set(schema_swagger.keys()) | set(schema_tsp.keys())) - {"props"} - {"additionalProps"} - {"item"}
     for other_key in other_keys:
         tckey = ckey + [other_key]
         thkey = hkey + [other_key]
@@ -403,7 +403,8 @@ def compare_cmd_schema(schema_swagger, schema_tsp, ckey, hkey, cmd_diffs):
         compare_response_props(schema_swagger.get("props", []), schema_tsp.get("props", []), ckey + ["props"], hkey + ["props"], cmd_diffs)
     if schema_swagger.get("additionalProps", {}) or schema_tsp.get("additionalProps", {}):
         compare_response_additional_props(schema_swagger.get("additionalProps", {}), schema_tsp.get("additionalProps", {}), ckey + ["additionalProps"], hkey + ["additionalProps"], cmd_diffs)
-
+    if schema_swagger.get("item", {}) or schema_tsp.get("item", {}):
+        compare_cmd_schema(schema_swagger.get("item", {}), schema_tsp.get("item", {}), ckey + ["item"], hkey + ["item"], cmd_diffs)
 
 def compare_operation_http_response_body(body_swagger, body_tsp, ckey, hkey, cmd_diffs, cls_obj):
     if "json" not in body_swagger or "json" not in body_tsp:
@@ -584,6 +585,8 @@ def diff_commands_json(target_cmd, commands_swagger, commands_tsp, ckey, hkey, c
         thkey = hkey + ["command:" + cmd_name]
         if " ".join(tckey) != target_cmd:
             continue
+        # if cmd_name != "list":
+        #     continue
         if cmd_name not in [item["name"] for item in commands_tsp]:
             cmd_diffs.append((tckey, thkey, ChangeType.REMOVE))
             continue
@@ -661,6 +664,25 @@ def find_target_parent_path(target_path, path_input):
     return target_parent_path
 
 
+def filter_known_tups(item_list):
+    if len(item_list) >= 5:
+        if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "type" and item_list[2] is ChangeType.CHANGE and item_list[3] == '"ResourceLocation"' and item_list[4] == '"string"':
+            return True
+        if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "options" and item_list[2] is ChangeType.CHANGE and item_list[3] == '["l", "location"]' and item_list[4] == '["location"]':
+            return True
+        if item_list[0][-2].find("resourceGroupName") != -1 and item_list[0][-1] == "format" and item_list[2] is ChangeType.CHANGE:
+            return True
+        if item_list[0][-2] == "responses" and item_list[0][-1] == "error" and item_list[2] is ChangeType.CHANGE and item_list[3].find('@MgmtErrorFormat') != -1 and item_list[4].find('@MgmtErrorFormat') != -1:
+            return True
+
+    if len(item_list) >= 4:
+        if item_list[0][-2] == "id" and item_list[0][-1] == "format" and item_list[2] is ChangeType.REMOVE and item_list[3].find("template") != -1:
+            return True
+        if item_list[0][-2] == "responses" and item_list[0][-1] == "200.201" and item_list[2] is ChangeType.REMOVE:
+            return True
+    return False
+
+
 def parse_compared_module_jsons(swagger_path, tsp_path, modules):
     aaz_root_swagger = os.path.abspath(find_target_parent_path("Commands", swagger_path))
     aaz_root_tsp = os.path.abspath(find_target_parent_path("Commands", tsp_path))
@@ -705,29 +727,11 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules):
     out_arr = []
     i = 0
 
-    location_tup = (['location', 'type'], ChangeType.CHANGE, "ResourceLocation", "string")
-    resource_tup = (["resourceGroupName", "format"], ChangeType.CHANGE)
-    error_tup = ([0, "error"], ChangeType.CHANGE, '{"isError": true, "body": {"json": {"schema": {"type": "@MgmtErrorFormat"}}}}', '{"isError": true, "body": {"json": {"schema": {"readOnly": true, "type": "@MgmtErrorFormat"}}}}')
-
-
     for key, diffs_arr in cmd_diffs_from_json.items():
         for diff in diffs_arr:
             item_list = list(diff)
-            if len(item_list) >= 5:
-                if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "type" and item_list[2] is ChangeType.CHANGE and item_list[3] == '"ResourceLocation"' and item_list[4] == '"string"':
-                    continue
-                if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "options" and item_list[2] is ChangeType.CHANGE and item_list[3] == '["l", "location"]' and item_list[4] == '["location"]':
-                    continue
-                if item_list[0][-2].find("resourceGroupName") != -1 and item_list[0][-1] =="format" and item_list[2] is ChangeType.CHANGE:
-                    continue
-                if item_list[0][-2] == "responses" and item_list[0][-1] == "error" and item_list[2] is ChangeType.CHANGE and item_list[3].find('@MgmtErrorFormat') != -1 and item_list[4].find('@MgmtErrorFormat') != -1:
-                    continue
-
-            if len(item_list) >= 4:
-                if item_list[0][-2] == "id" and item_list[0][-1] == "format" and item_list[2] is ChangeType.REMOVE and item_list[3].find("template") != -1:
-                    continue
-                if item_list[0][-2] == "responses" and item_list[0][-1] == "200.201" and item_list[2] is ChangeType.REMOVE:
-                    continue
+            if filter_known_tups(item_list):
+                continue
             i += 1
             join_key = ["->".join(item_list[0]), "->".join(item_list[1]), str(item_list[2])] + item_list[3:]
             print(str(i))
