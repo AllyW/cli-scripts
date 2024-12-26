@@ -145,15 +145,6 @@
                                     "props": [
                                       {
                                         "readOnly": true,
-                                        "type": "object",
-                                        "name": "info",
-                                        "additionalProps": {
-                                          "readOnly": true,
-                                          "anyType": true
-                                        }
-                                      },
-                                      {
-                                        "readOnly": true,
                                         "type": "string",
                                         "name": "type"
                                       }
@@ -167,15 +158,11 @@
                                 },
                                 {
                                   "readOnly": true,
-                                  "type": "array<@ErrorDetail_read>",
+                                  "type": "array<@Azure.ResourceManager.CommonTypes.ErrorDetail_read>",
                                   "name": "details",
                                   "item": {
-                                    "type": "@ErrorDetail_read"
-                                  },
-                                  "identifiers": [
-                                    "target",
-                                    "message"
-                                  ]
+                                    "type": "@Azure.ResourceManager.CommonTypes.ErrorDetail_read"
+                                  }
                                 },
                                 {
                                   "readOnly": true,
@@ -188,7 +175,7 @@
                                   "name": "target"
                                 }
                               ],
-                              "cls": "ErrorDetail_read"
+                              "cls": "Azure.ResourceManager.CommonTypes.ErrorDetail_read"
                             },
                             {
                               "type": "ResourceId",
@@ -199,14 +186,14 @@
                               "name": "name"
                             },
                             {
-                              "type": "array<@OperationStatusResult_read>",
+                              "type": "array<@Azure.ResourceManager.CommonTypes.OperationStatusResult_read>",
                               "name": "operations",
                               "item": {
-                                "type": "@OperationStatusResult_read"
+                                "type": "@Azure.ResourceManager.CommonTypes.OperationStatusResult_read"
                               }
                             },
                             {
-                              "type": "float",
+                              "type": "float64",
                               "name": "percentComplete",
                               "format": {
                                 "maximum": 100.0,
@@ -228,7 +215,7 @@
                               "required": true
                             }
                           ],
-                          "cls": "OperationStatusResult_read"
+                          "cls": "Azure.ResourceManager.CommonTypes.OperationStatusResult_read"
                         }
                       }
                     }
@@ -238,6 +225,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }

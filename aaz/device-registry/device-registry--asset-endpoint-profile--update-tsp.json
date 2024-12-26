@@ -92,6 +92,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -153,13 +154,10 @@
                             {
                               "readOnly": true,
                               "type": "ResourceId",
-                              "name": "id",
-                              "format": {
-                                "template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.DeviceRegistry/assetEndpointProfiles/{}"
-                              }
+                              "name": "id"
                             },
                             {
-                              "type": "ResourceLocation",
+                              "type": "string",
                               "name": "location",
                               "required": true
                             },
@@ -300,8 +298,7 @@
                                   "type": "string",
                                   "name": "uuid"
                                 }
-                              ],
-                              "clientFlatten": true
+                              ]
                             },
                             {
                               "readOnly": true,
@@ -390,6 +387,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
@@ -491,6 +489,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -543,16 +542,11 @@
                     ]
                   },
                   {
-                    "statusCode": [
-                      200,
-                      201
-                    ]
-                  },
-                  {
                     "isError": true,
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
@@ -807,10 +801,9 @@
                   ]
                 },
                 {
-                  "type": "ResourceLocation",
+                  "type": "string",
                   "var": "$resource.location",
                   "options": [
-                    "l",
                     "location"
                   ],
                   "required": true,
@@ -867,6 +860,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -924,7 +918,7 @@
                             ]
                           },
                           {
-                            "type": "ResourceLocation",
+                            "type": "string",
                             "name": "location",
                             "arg": "$resource.location",
                             "required": true
@@ -1016,8 +1010,7 @@
                                 "arg": "$resource.properties.targetAddress",
                                 "required": true
                               }
-                            ],
-                            "clientFlatten": true
+                            ]
                           },
                           {
                             "type": "object",
@@ -1067,13 +1060,10 @@
                             {
                               "readOnly": true,
                               "type": "ResourceId",
-                              "name": "id",
-                              "format": {
-                                "template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.DeviceRegistry/assetEndpointProfiles/{}"
-                              }
+                              "name": "id"
                             },
                             {
-                              "type": "ResourceLocation",
+                              "type": "string",
                               "name": "location",
                               "required": true
                             },
@@ -1214,8 +1204,7 @@
                                   "type": "string",
                                   "name": "uuid"
                                 }
-                              ],
-                              "clientFlatten": true
+                              ]
                             },
                             {
                               "readOnly": true,
@@ -1304,6 +1293,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
@@ -1560,6 +1550,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -1621,13 +1612,10 @@
                             {
                               "readOnly": true,
                               "type": "ResourceId",
-                              "name": "id",
-                              "format": {
-                                "template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.DeviceRegistry/assetEndpointProfiles/{}"
-                              }
+                              "name": "id"
                             },
                             {
-                              "type": "ResourceLocation",
+                              "type": "string",
                               "name": "location",
                               "required": true
                             },
@@ -1768,8 +1756,7 @@
                                   "type": "string",
                                   "name": "uuid"
                                 }
-                              ],
-                              "clientFlatten": true
+                              ]
                             },
                             {
                               "readOnly": true,
@@ -1848,8 +1835,7 @@
                               "type": "string",
                               "name": "type"
                             }
-                          ],
-                          "cls": "AssetEndpointProfile_read"
+                          ]
                         }
                       }
                     }
@@ -1859,6 +1845,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
@@ -1958,8 +1945,7 @@
                             "arg": "$resource.properties.targetAddress",
                             "required": true
                           }
-                        ],
-                        "clientFlatten": true
+                        ]
                       },
                       {
                         "type": "object",
@@ -2005,6 +1991,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -2050,7 +2037,252 @@
                       "json": {
                         "var": "$Instance",
                         "schema": {
-                          "type": "@AssetEndpointProfile_read"
+                          "type": "object",
+                          "props": [
+                            {
+                              "type": "object",
+                              "name": "extendedLocation",
+                              "required": true,
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "name",
+                                  "required": true
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "type",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "ResourceId",
+                              "name": "id"
+                            },
+                            {
+                              "type": "string",
+                              "name": "location",
+                              "required": true
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "name"
+                            },
+                            {
+                              "type": "object",
+                              "name": "properties",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "additionalConfiguration"
+                                },
+                                {
+                                  "type": "object",
+                                  "name": "authentication",
+                                  "props": [
+                                    {
+                                      "default": {
+                                        "value": "Certificate"
+                                      },
+                                      "type": "string",
+                                      "name": "method",
+                                      "required": true,
+                                      "enum": {
+                                        "items": [
+                                          {
+                                            "value": "Anonymous"
+                                          },
+                                          {
+                                            "value": "Certificate"
+                                          },
+                                          {
+                                            "value": "UsernamePassword"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "type": "object",
+                                      "name": "usernamePasswordCredentials",
+                                      "props": [
+                                        {
+                                          "type": "string",
+                                          "name": "passwordSecretName",
+                                          "required": true
+                                        },
+                                        {
+                                          "type": "string",
+                                          "name": "usernameSecretName",
+                                          "required": true
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "name": "x509Credentials",
+                                      "props": [
+                                        {
+                                          "type": "string",
+                                          "name": "certificateSecretName",
+                                          "required": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "discoveredAssetEndpointProfileRef"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "endpointProfileType",
+                                  "required": true
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "string",
+                                  "name": "provisioningState",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Accepted"
+                                      },
+                                      {
+                                        "value": "Canceled"
+                                      },
+                                      {
+                                        "value": "Deleting"
+                                      },
+                                      {
+                                        "value": "Failed"
+                                      },
+                                      {
+                                        "value": "Succeeded"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "object",
+                                  "name": "status",
+                                  "props": [
+                                    {
+                                      "readOnly": true,
+                                      "type": "array<object>",
+                                      "name": "errors",
+                                      "item": {
+                                        "type": "object",
+                                        "props": [
+                                          {
+                                            "readOnly": true,
+                                            "type": "integer32",
+                                            "name": "code"
+                                          },
+                                          {
+                                            "readOnly": true,
+                                            "type": "string",
+                                            "name": "message"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "targetAddress",
+                                  "required": true
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "string",
+                                  "name": "uuid"
+                                }
+                              ]
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "object",
+                              "name": "systemData",
+                              "props": [
+                                {
+                                  "type": "dateTime",
+                                  "name": "createdAt"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "createdBy"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "createdByType",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Application"
+                                      },
+                                      {
+                                        "value": "Key"
+                                      },
+                                      {
+                                        "value": "ManagedIdentity"
+                                      },
+                                      {
+                                        "value": "User"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "dateTime",
+                                  "name": "lastModifiedAt"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "lastModifiedBy"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "lastModifiedByType",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Application"
+                                      },
+                                      {
+                                        "value": "Key"
+                                      },
+                                      {
+                                        "value": "ManagedIdentity"
+                                      },
+                                      {
+                                        "value": "User"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "name": "tags",
+                              "additionalProps": {
+                                "item": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "type"
+                            }
+                          ]
                         }
                       }
                     }
@@ -2060,6 +2292,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }

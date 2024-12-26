@@ -102,10 +102,7 @@
                                   {
                                     "readOnly": true,
                                     "type": "ResourceId",
-                                    "name": "id",
-                                    "format": {
-                                      "template": "/subscriptions/{}/providers/Microsoft.DeviceRegistry/billingContainers/{}"
-                                    }
+                                    "name": "id"
                                   },
                                   {
                                     "readOnly": true,
@@ -140,8 +137,7 @@
                                           ]
                                         }
                                       }
-                                    ],
-                                    "clientFlatten": true
+                                    ]
                                   },
                                   {
                                     "readOnly": true,
@@ -212,7 +208,10 @@
                                     "name": "type"
                                   }
                                 ]
-                              }
+                              },
+                              "identifiers": [
+                                "name"
+                              ]
                             }
                           ]
                         }
@@ -224,6 +223,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }

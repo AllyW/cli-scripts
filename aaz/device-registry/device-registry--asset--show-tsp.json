@@ -92,6 +92,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -153,13 +154,10 @@
                             {
                               "readOnly": true,
                               "type": "ResourceId",
-                              "name": "id",
-                              "format": {
-                                "template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.DeviceRegistry/assets/{}"
-                              }
+                              "name": "id"
                             },
                             {
-                              "type": "ResourceLocation",
+                              "type": "string",
                               "name": "location",
                               "required": true
                             },
@@ -179,10 +177,7 @@
                                 },
                                 {
                                   "type": "object",
-                                  "name": "attributes",
-                                  "additionalProps": {
-                                    "anyType": true
-                                  }
+                                  "name": "attributes"
                                 },
                                 {
                                   "type": "array<object>",
@@ -435,17 +430,20 @@
                                               {
                                                 "readOnly": true,
                                                 "type": "string",
-                                                "name": "schemaName"
+                                                "name": "schemaName",
+                                                "required": true
                                               },
                                               {
                                                 "readOnly": true,
                                                 "type": "string",
-                                                "name": "schemaRegistryNamespace"
+                                                "name": "schemaRegistryNamespace",
+                                                "required": true
                                               },
                                               {
                                                 "readOnly": true,
                                                 "type": "string",
-                                                "name": "schemaVersion"
+                                                "name": "schemaVersion",
+                                                "required": true
                                               }
                                             ],
                                             "cls": "MessageSchemaReference_read"
@@ -453,7 +451,8 @@
                                           {
                                             "readOnly": true,
                                             "type": "string",
-                                            "name": "name"
+                                            "name": "name",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -493,7 +492,8 @@
                                           {
                                             "readOnly": true,
                                             "type": "string",
-                                            "name": "name"
+                                            "name": "name",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -515,8 +515,7 @@
                                   "type": "integer64",
                                   "name": "version"
                                 }
-                              ],
-                              "clientFlatten": true
+                              ]
                             },
                             {
                               "readOnly": true,
@@ -605,6 +604,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
@@ -706,6 +706,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -758,16 +759,11 @@
                     ]
                   },
                   {
-                    "statusCode": [
-                      200,
-                      201
-                    ]
-                  },
-                  {
                     "isError": true,
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
@@ -856,9 +852,6 @@
                   "group": "Properties",
                   "help": {
                     "short": "A set of key-value pairs that contain custom attributes set by the customer."
-                  },
-                  "additionalProps": {
-                    "anyType": true
                   }
                 },
                 {
@@ -980,7 +973,7 @@
                         }
                       },
                       {
-                        "type": "@Topic_create",
+                        "type": "@TopicCreateOrUpdate_create",
                         "var": "$resource.properties.datasets[].topic",
                         "options": [
                           "topic"
@@ -1027,7 +1020,7 @@
                   "args": [
                     {
                       "type": "string",
-                      "var": "@Topic_create.path",
+                      "var": "@TopicCreateOrUpdate_create.path",
                       "options": [
                         "path"
                       ],
@@ -1038,7 +1031,7 @@
                     },
                     {
                       "type": "string",
-                      "var": "@Topic_create.retain",
+                      "var": "@TopicCreateOrUpdate_create.retain",
                       "options": [
                         "retain"
                       ],
@@ -1062,7 +1055,7 @@
                       }
                     }
                   ],
-                  "cls": "Topic_create"
+                  "cls": "TopicCreateOrUpdate_create"
                 },
                 {
                   "type": "string",
@@ -1193,7 +1186,7 @@
                         }
                       },
                       {
-                        "type": "@Topic_create",
+                        "type": "@TopicCreateOrUpdate_create",
                         "var": "$resource.properties.events[].topic",
                         "options": [
                           "topic"
@@ -1335,10 +1328,9 @@
                   ]
                 },
                 {
-                  "type": "ResourceLocation",
+                  "type": "string",
                   "var": "$resource.location",
                   "options": [
-                    "l",
                     "location"
                   ],
                   "required": true,
@@ -1395,6 +1387,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -1452,7 +1445,7 @@
                             ]
                           },
                           {
-                            "type": "ResourceLocation",
+                            "type": "string",
                             "name": "location",
                             "arg": "$resource.location",
                             "required": true
@@ -1470,10 +1463,7 @@
                               {
                                 "type": "object",
                                 "name": "attributes",
-                                "arg": "$resource.properties.attributes",
-                                "additionalProps": {
-                                  "anyType": true
-                                }
+                                "arg": "$resource.properties.attributes"
                               },
                               {
                                 "type": "array<object>",
@@ -1548,7 +1538,7 @@
                                       "required": true
                                     },
                                     {
-                                      "type": "@Topic_create",
+                                      "type": "@TopicCreateOrUpdate_create",
                                       "name": "topic",
                                       "arg": "$resource.properties.datasets[].topic"
                                     }
@@ -1573,7 +1563,7 @@
                                   {
                                     "type": "string",
                                     "name": "path",
-                                    "arg": "@Topic_create.path",
+                                    "arg": "@TopicCreateOrUpdate_create.path",
                                     "required": true
                                   },
                                   {
@@ -1582,7 +1572,7 @@
                                     },
                                     "type": "string",
                                     "name": "retain",
-                                    "arg": "@Topic_create.retain",
+                                    "arg": "@TopicCreateOrUpdate_create.retain",
                                     "enum": {
                                       "items": [
                                         {
@@ -1595,7 +1585,7 @@
                                     }
                                   }
                                 ],
-                                "cls": "Topic_create"
+                                "cls": "TopicCreateOrUpdate_create"
                               },
                               {
                                 "type": "string",
@@ -1668,7 +1658,7 @@
                                       }
                                     },
                                     {
-                                      "type": "@Topic_create",
+                                      "type": "@TopicCreateOrUpdate_create",
                                       "name": "topic",
                                       "arg": "$resource.properties.events[].topic"
                                     }
@@ -1715,8 +1705,7 @@
                                 "name": "softwareRevision",
                                 "arg": "$resource.properties.softwareRevision"
                               }
-                            ],
-                            "clientFlatten": true
+                            ]
                           },
                           {
                             "type": "object",
@@ -1766,13 +1755,10 @@
                             {
                               "readOnly": true,
                               "type": "ResourceId",
-                              "name": "id",
-                              "format": {
-                                "template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.DeviceRegistry/assets/{}"
-                              }
+                              "name": "id"
                             },
                             {
-                              "type": "ResourceLocation",
+                              "type": "string",
                               "name": "location",
                               "required": true
                             },
@@ -1792,10 +1778,7 @@
                                 },
                                 {
                                   "type": "object",
-                                  "name": "attributes",
-                                  "additionalProps": {
-                                    "anyType": true
-                                  }
+                                  "name": "attributes"
                                 },
                                 {
                                   "type": "array<object>",
@@ -2048,17 +2031,20 @@
                                               {
                                                 "readOnly": true,
                                                 "type": "string",
-                                                "name": "schemaName"
+                                                "name": "schemaName",
+                                                "required": true
                                               },
                                               {
                                                 "readOnly": true,
                                                 "type": "string",
-                                                "name": "schemaRegistryNamespace"
+                                                "name": "schemaRegistryNamespace",
+                                                "required": true
                                               },
                                               {
                                                 "readOnly": true,
                                                 "type": "string",
-                                                "name": "schemaVersion"
+                                                "name": "schemaVersion",
+                                                "required": true
                                               }
                                             ],
                                             "cls": "MessageSchemaReference_read"
@@ -2066,7 +2052,8 @@
                                           {
                                             "readOnly": true,
                                             "type": "string",
-                                            "name": "name"
+                                            "name": "name",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -2106,7 +2093,8 @@
                                           {
                                             "readOnly": true,
                                             "type": "string",
-                                            "name": "name"
+                                            "name": "name",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -2128,8 +2116,7 @@
                                   "type": "integer64",
                                   "name": "version"
                                 }
-                              ],
-                              "clientFlatten": true
+                              ]
                             },
                             {
                               "readOnly": true,
@@ -2218,6 +2205,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
@@ -2302,9 +2290,6 @@
                   "group": "Properties",
                   "help": {
                     "short": "A set of key-value pairs that contain custom attributes set by the customer."
-                  },
-                  "additionalProps": {
-                    "anyType": true
                   }
                 },
                 {
@@ -2428,7 +2413,7 @@
                       },
                       {
                         "nullable": true,
-                        "type": "@Topic_update",
+                        "type": "@TopicCreateOrUpdate_update",
                         "var": "$resource.properties.datasets[].topic",
                         "options": [
                           "topic"
@@ -2478,7 +2463,7 @@
                   "args": [
                     {
                       "type": "string",
-                      "var": "@Topic_update.path",
+                      "var": "@TopicCreateOrUpdate_update.path",
                       "options": [
                         "path"
                       ],
@@ -2489,7 +2474,7 @@
                     {
                       "nullable": true,
                       "type": "string",
-                      "var": "@Topic_update.retain",
+                      "var": "@TopicCreateOrUpdate_update.retain",
                       "options": [
                         "retain"
                       ],
@@ -2510,7 +2495,7 @@
                       }
                     }
                   ],
-                  "cls": "Topic_update"
+                  "cls": "TopicCreateOrUpdate_update"
                 },
                 {
                   "nullable": true,
@@ -2631,7 +2616,7 @@
                       },
                       {
                         "nullable": true,
-                        "type": "@Topic_update",
+                        "type": "@TopicCreateOrUpdate_update",
                         "var": "$resource.properties.events[].topic",
                         "options": [
                           "topic"
@@ -2779,6 +2764,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -2840,13 +2826,10 @@
                             {
                               "readOnly": true,
                               "type": "ResourceId",
-                              "name": "id",
-                              "format": {
-                                "template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.DeviceRegistry/assets/{}"
-                              }
+                              "name": "id"
                             },
                             {
-                              "type": "ResourceLocation",
+                              "type": "string",
                               "name": "location",
                               "required": true
                             },
@@ -2866,10 +2849,7 @@
                                 },
                                 {
                                   "type": "object",
-                                  "name": "attributes",
-                                  "additionalProps": {
-                                    "anyType": true
-                                  }
+                                  "name": "attributes"
                                 },
                                 {
                                   "type": "array<object>",
@@ -3122,17 +3102,20 @@
                                               {
                                                 "readOnly": true,
                                                 "type": "string",
-                                                "name": "schemaName"
+                                                "name": "schemaName",
+                                                "required": true
                                               },
                                               {
                                                 "readOnly": true,
                                                 "type": "string",
-                                                "name": "schemaRegistryNamespace"
+                                                "name": "schemaRegistryNamespace",
+                                                "required": true
                                               },
                                               {
                                                 "readOnly": true,
                                                 "type": "string",
-                                                "name": "schemaVersion"
+                                                "name": "schemaVersion",
+                                                "required": true
                                               }
                                             ],
                                             "cls": "MessageSchemaReference_read"
@@ -3140,7 +3123,8 @@
                                           {
                                             "readOnly": true,
                                             "type": "string",
-                                            "name": "name"
+                                            "name": "name",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -3180,7 +3164,8 @@
                                           {
                                             "readOnly": true,
                                             "type": "string",
-                                            "name": "name"
+                                            "name": "name",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -3202,8 +3187,7 @@
                                   "type": "integer64",
                                   "name": "version"
                                 }
-                              ],
-                              "clientFlatten": true
+                              ]
                             },
                             {
                               "readOnly": true,
@@ -3282,8 +3266,7 @@
                               "type": "string",
                               "name": "type"
                             }
-                          ],
-                          "cls": "Asset_read"
+                          ]
                         }
                       }
                     }
@@ -3293,6 +3276,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
@@ -3317,10 +3301,7 @@
                           {
                             "type": "object",
                             "name": "attributes",
-                            "arg": "$resource.properties.attributes",
-                            "additionalProps": {
-                              "anyType": true
-                            }
+                            "arg": "$resource.properties.attributes"
                           },
                           {
                             "type": "array<object>",
@@ -3395,7 +3376,7 @@
                                   "required": true
                                 },
                                 {
-                                  "type": "@Topic_update",
+                                  "type": "@TopicCreateOrUpdate_update",
                                   "name": "topic",
                                   "arg": "$resource.properties.datasets[].topic"
                                 }
@@ -3420,7 +3401,7 @@
                               {
                                 "type": "string",
                                 "name": "path",
-                                "arg": "@Topic_update.path",
+                                "arg": "@TopicCreateOrUpdate_update.path",
                                 "required": true
                               },
                               {
@@ -3429,7 +3410,7 @@
                                 },
                                 "type": "string",
                                 "name": "retain",
-                                "arg": "@Topic_update.retain",
+                                "arg": "@TopicCreateOrUpdate_update.retain",
                                 "enum": {
                                   "items": [
                                     {
@@ -3442,7 +3423,7 @@
                                 }
                               }
                             ],
-                            "cls": "Topic_update"
+                            "cls": "TopicCreateOrUpdate_update"
                           },
                           {
                             "type": "string",
@@ -3507,7 +3488,7 @@
                                   }
                                 },
                                 {
-                                  "type": "@Topic_update",
+                                  "type": "@TopicCreateOrUpdate_update",
                                   "name": "topic",
                                   "arg": "$resource.properties.events[].topic"
                                 }
@@ -3549,8 +3530,7 @@
                             "name": "softwareRevision",
                             "arg": "$resource.properties.softwareRevision"
                           }
-                        ],
-                        "clientFlatten": true
+                        ]
                       },
                       {
                         "type": "object",
@@ -3596,6 +3576,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -3641,7 +3622,423 @@
                       "json": {
                         "var": "$Instance",
                         "schema": {
-                          "type": "@Asset_read"
+                          "type": "object",
+                          "props": [
+                            {
+                              "type": "object",
+                              "name": "extendedLocation",
+                              "required": true,
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "name",
+                                  "required": true
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "type",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "ResourceId",
+                              "name": "id"
+                            },
+                            {
+                              "type": "string",
+                              "name": "location",
+                              "required": true
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "name"
+                            },
+                            {
+                              "type": "object",
+                              "name": "properties",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "assetEndpointProfileRef",
+                                  "required": true
+                                },
+                                {
+                                  "type": "object",
+                                  "name": "attributes"
+                                },
+                                {
+                                  "type": "array<object>",
+                                  "name": "datasets",
+                                  "item": {
+                                    "type": "object",
+                                    "props": [
+                                      {
+                                        "type": "array<object>",
+                                        "name": "dataPoints",
+                                        "item": {
+                                          "type": "object",
+                                          "props": [
+                                            {
+                                              "type": "string",
+                                              "name": "dataPointConfiguration"
+                                            },
+                                            {
+                                              "type": "string",
+                                              "name": "dataSource",
+                                              "required": true
+                                            },
+                                            {
+                                              "type": "string",
+                                              "name": "name",
+                                              "required": true
+                                            },
+                                            {
+                                              "default": {
+                                                "value": "None"
+                                              },
+                                              "type": "string",
+                                              "name": "observabilityMode",
+                                              "enum": {
+                                                "items": [
+                                                  {
+                                                    "value": "Counter"
+                                                  },
+                                                  {
+                                                    "value": "Gauge"
+                                                  },
+                                                  {
+                                                    "value": "Histogram"
+                                                  },
+                                                  {
+                                                    "value": "Log"
+                                                  },
+                                                  {
+                                                    "value": "None"
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "type": "string",
+                                        "name": "datasetConfiguration"
+                                      },
+                                      {
+                                        "type": "string",
+                                        "name": "name",
+                                        "required": true
+                                      },
+                                      {
+                                        "type": "@Topic_read",
+                                        "name": "topic"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "defaultDatasetsConfiguration"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "defaultEventsConfiguration"
+                                },
+                                {
+                                  "type": "@Topic_read",
+                                  "name": "defaultTopic"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "description"
+                                },
+                                {
+                                  "type": "array<string>",
+                                  "name": "discoveredAssetRefs",
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "displayName"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "documentationUri"
+                                },
+                                {
+                                  "type": "boolean",
+                                  "name": "enabled"
+                                },
+                                {
+                                  "type": "array<object>",
+                                  "name": "events",
+                                  "item": {
+                                    "type": "object",
+                                    "props": [
+                                      {
+                                        "type": "string",
+                                        "name": "eventConfiguration"
+                                      },
+                                      {
+                                        "type": "string",
+                                        "name": "eventNotifier",
+                                        "required": true
+                                      },
+                                      {
+                                        "type": "string",
+                                        "name": "name",
+                                        "required": true
+                                      },
+                                      {
+                                        "default": {
+                                          "value": "None"
+                                        },
+                                        "type": "string",
+                                        "name": "observabilityMode",
+                                        "enum": {
+                                          "items": [
+                                            {
+                                              "value": "Log"
+                                            },
+                                            {
+                                              "value": "None"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "type": "@Topic_read",
+                                        "name": "topic"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "externalAssetId"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "hardwareRevision"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "manufacturer"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "manufacturerUri"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "model"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "productCode"
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "string",
+                                  "name": "provisioningState",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Accepted"
+                                      },
+                                      {
+                                        "value": "Canceled"
+                                      },
+                                      {
+                                        "value": "Deleting"
+                                      },
+                                      {
+                                        "value": "Failed"
+                                      },
+                                      {
+                                        "value": "Succeeded"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "serialNumber"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "softwareRevision"
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "object",
+                                  "name": "status",
+                                  "props": [
+                                    {
+                                      "readOnly": true,
+                                      "type": "array<object>",
+                                      "name": "datasets",
+                                      "item": {
+                                        "type": "object",
+                                        "props": [
+                                          {
+                                            "readOnly": true,
+                                            "type": "@MessageSchemaReference_read",
+                                            "name": "messageSchemaReference"
+                                          },
+                                          {
+                                            "readOnly": true,
+                                            "type": "string",
+                                            "name": "name",
+                                            "required": true
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "readOnly": true,
+                                      "type": "array<object>",
+                                      "name": "errors",
+                                      "item": {
+                                        "type": "object",
+                                        "props": [
+                                          {
+                                            "readOnly": true,
+                                            "type": "integer32",
+                                            "name": "code"
+                                          },
+                                          {
+                                            "readOnly": true,
+                                            "type": "string",
+                                            "name": "message"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "readOnly": true,
+                                      "type": "array<object>",
+                                      "name": "events",
+                                      "item": {
+                                        "type": "object",
+                                        "props": [
+                                          {
+                                            "readOnly": true,
+                                            "type": "@MessageSchemaReference_read",
+                                            "name": "messageSchemaReference"
+                                          },
+                                          {
+                                            "readOnly": true,
+                                            "type": "string",
+                                            "name": "name",
+                                            "required": true
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "readOnly": true,
+                                      "type": "integer64",
+                                      "name": "version"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "string",
+                                  "name": "uuid"
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "integer64",
+                                  "name": "version"
+                                }
+                              ]
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "object",
+                              "name": "systemData",
+                              "props": [
+                                {
+                                  "type": "dateTime",
+                                  "name": "createdAt"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "createdBy"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "createdByType",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Application"
+                                      },
+                                      {
+                                        "value": "Key"
+                                      },
+                                      {
+                                        "value": "ManagedIdentity"
+                                      },
+                                      {
+                                        "value": "User"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "dateTime",
+                                  "name": "lastModifiedAt"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "lastModifiedBy"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "lastModifiedByType",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Application"
+                                      },
+                                      {
+                                        "value": "Key"
+                                      },
+                                      {
+                                        "value": "ManagedIdentity"
+                                      },
+                                      {
+                                        "value": "User"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "name": "tags",
+                              "additionalProps": {
+                                "item": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "type"
+                            }
+                          ]
                         }
                       }
                     }
@@ -3651,6 +4048,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }

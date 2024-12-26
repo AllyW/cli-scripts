@@ -156,19 +156,25 @@ def compare_args(args_swagger, args_tsp, ckey, hkey, cmd_diffs):
         tckey = ckey + [var]
         thkey = hkey + ["arg: " + var]
         if var not in [item["var"] for item in args_tsp]:
-            cmd_diffs.append((tckey, thkey, ChangeType.REMOVE))
+            cmd_diffs.append((tckey, thkey, ChangeType.REMOVE, json.dumps(arg)))
             continue
         filtered_arg_tsp = [item for item in args_tsp if item["var"] == var]
         assert len(filtered_arg_tsp) == 1
         arg_tsp = filtered_arg_tsp[0]
-        for prop in arg.keys():
-            if prop not in arg_tsp:
-                cmd_diffs.append((tckey + [prop], thkey + ["prop: " + prop], ChangeType.REMOVE, json.dumps(arg.get(prop, "")), json.dumps(arg_tsp.get(prop, ""))))
+        checked_props =  (set(arg_tsp.keys()) | set(arg.keys()))- {"item"} - {"args"} - {"checked"}
+        for prop in checked_props:
+            if prop not in arg and prop not in arg_tsp:
                 continue
-            if arg.get(prop, "") != arg_tsp.get(prop, ""):
+            elif prop in arg and prop not in arg_tsp:
+                cmd_diffs.append((tckey + [prop], thkey + ["prop: " + prop], ChangeType.REMOVE, json.dumps(arg.get(prop, ""))))
+            elif prop not in arg and prop in arg_tsp:
+                cmd_diffs.append((tckey + [prop], thkey + ["prop: " + prop], ChangeType.ADD, json.dumps(arg_tsp.get(prop, ""))))
+            elif arg.get(prop, "") != arg_tsp.get(prop, ""):
                 cmd_diffs.append((tckey + [prop], thkey + ["prop: " + prop], ChangeType.CHANGE, json.dumps(arg.get(prop, "")), json.dumps(arg_tsp.get(prop, ""))))
-        for prop in (arg_tsp.keys() - arg.keys()):
-            cmd_diffs.append((tckey + [prop], thkey + ["prop: " + prop], ChangeType.ADD, json.dumps(arg.get(prop, "")), json.dumps(arg_tsp.get(prop, ""))))
+        if arg.get("item", {}) or arg_tsp.get("item", {}):
+            compare_cmd_base_schema(arg.get("item", {}), arg_tsp.get("item", {}), ckey + ["item"], hkey + ["item"], cmd_diffs)
+        if arg.get("args", []) or arg_tsp.get("args", []):
+            compare_args(arg.get("args", []), arg_tsp.get("args", []), ckey + ["args"], hkey + ["args"], cmd_diffs)
         arg_tsp[CTAG] = True
 
     for arg in args_tsp:
@@ -178,26 +184,92 @@ def compare_args(args_swagger, args_tsp, ckey, hkey, cmd_diffs):
         var = arg["var"]
         tckey = ckey + [var]
         thkey = hkey + ["arg: " + var]
-        cmd_diffs.append((tckey, thkey, ChangeType.ADD))
+        cmd_diffs.append((tckey, thkey, ChangeType.ADD, json.dumps(arg)))
+
+def find_cls_in_args(args, cls_obj_ref):
+    for arg in args:
+        if "cls" in arg:
+            cls_name = arg["cls"]
+            cls_obj_ref[cls_name] = {
+                "type": arg["type"],
+                "args": arg.get("args", [])
+            }
+            del arg["cls"]
+        if "args" in arg:
+            find_cls_in_args(arg["args"], cls_obj_ref)
+        if "item" in arg:
+            find_cls_in_item(arg["item"], cls_obj_ref)
 
 
-def compare_arg_groups(arg_groups_swagger, arg_groups_tsp, ckey, hkey, cmd_diffs):
+def find_cls_in_item(item, cls_obj_ref):
+    if "cls" in item:
+        cls_name = item["cls"]
+        cls_obj_ref[cls_name] = {
+            "type": item["type"],
+            "args": item["args"]  # if error occurs here, other tag needs to be
+        }
+        del item["cls"]
+    if "args" in item:
+        find_cls_in_args(item["args"], cls_obj_ref)
+
+def find_cls_in_arg_groups(arg_groups):
+    cls_obj_ref = {}
+    for arg_group in arg_groups:
+        find_cls_in_item(arg_group, cls_obj_ref)
+    return cls_obj_ref
+
+
+def map_cls_args(args, cls_obj):
+    for arg in args:
+        var = arg["var"]
+        tp = arg["type"]
+        if tp.find("@") == 0:
+            type_ref_name = tp[1:]
+            if type_ref_name not in cls_obj:
+                logger.error("check ref: %s in aaz model", type_ref_name)
+                continue
+            arg.update(cls_obj[type_ref_name])
+        if var.find("@") == 0:
+            assert var.find(".") != -1
+            arg["var"] = arg["var"].split(".", 1)[-1]
+        if "item" in arg:
+            map_cls_in_item(arg["item"], cls_obj)
+        if "args" in arg:
+            map_cls_args(arg["args"], cls_obj)
+
+
+def map_cls_in_item(item, cls_obj):
+    if "type" in item and item["type"].find("@") == 0:
+        type_ref_name = item["type"][1:]
+        if type_ref_name not in cls_obj:
+            logger.error("please check ref name in aaz arg groups: %s", type_ref_name)
+        item.update(cls_obj[type_ref_name])
+    if "args" in item:
+        map_cls_args(item["args"], cls_obj)
+    if "item" in item:
+        map_cls_in_item(item["item"], cls_obj)
+
+
+def compare_arg_groups(arg_groups_swagger, arg_groups_tsp, ckey, hkey, cmd_diffs, cls_obj_swg, cls_obj_tsp):
     # compare arg_groups in recursive level
-    # use name to identify the arg_groups object, another prop in args,
+    # use name to identify the arg_groups object, another prop in args
+
     arg_groups_swagger.sort(key=lambda x: x["name"])
     arg_groups_tsp.sort(key=lambda x: x["name"])
     for arg_group in arg_groups_swagger:
         arg_group_name = arg_group.get("name", "-") # default arg group does not have name, use -
         tckey = ckey + [arg_group_name]
         thkey = hkey + ["argGroup: " + arg_group_name]
+        map_cls_in_item(arg_group, cls_obj_swg)
         if arg_group_name not in [item.get("name", "-") for item in arg_groups_tsp]:
-            cmd_diffs.append((tckey, thkey, ChangeType.REMOVE))
+            cmd_diffs.append((tckey, thkey, ChangeType.REMOVE, json.dumps(arg_group)))
             continue
         filtered_arg_group_tsp = [item for item in arg_groups_tsp if item.get("name", "-") == arg_group_name]
         assert len(filtered_arg_group_tsp) == 1
         arg_group_tsp = filtered_arg_group_tsp[0]
-        arg_group_tsp[CTAG] = True
+        map_cls_in_item(arg_group_tsp, cls_obj_tsp)
         compare_args(arg_group.get("args", []), arg_group_tsp.get("args", []), tckey, thkey, cmd_diffs)
+        arg_group_tsp[CTAG] = True
 
     for arg_group in arg_groups_tsp:
         if arg_group.get(CTAG, None):
@@ -290,7 +362,7 @@ def compare_operation_http_request_body(request_body_swagger, request_body_tsp, 
     json_swg = request_body_swagger["json"]
     json_tsp = request_body_tsp["json"]
     if json_swg.get("schema", {}) or json_tsp.get("schema", {}):
-        compare_cmd_schema(json_swg.get("schema", {}), json_tsp.get("schema", {}), ckey + ["schema"], hkey + ["schema"], cmd_diffs)
+        compare_cmd_base_schema(json_swg.get("schema", {}), json_tsp.get("schema", {}), ckey + ["schema"], hkey + ["schema"], cmd_diffs)
         del json_swg["schema"]
         del json_tsp["schema"]
     if json_swg != json_tsp:
@@ -334,7 +406,7 @@ def find_target_response(response, responses_target):
     return None
 
 
-def compare_response_props(props_swagger, props_tsp, ckey, hkey, cmd_diffs):
+def compare_cmd_base_schema_props(props_swagger, props_tsp, ckey, hkey, cmd_diffs):
     props_swagger.sort(key=lambda x: x['name'])
     props_tsp.sort(key=lambda x: x['name'])
     for prop in props_swagger:
@@ -348,7 +420,7 @@ def compare_response_props(props_swagger, props_tsp, ckey, hkey, cmd_diffs):
         filtered_prop_tsp = [item for item in props_tsp if item["name"] == name]
         assert len(filtered_prop_tsp) == 1
         prop_tsp = filtered_prop_tsp[0]
-        compare_cmd_schema(prop, prop_tsp, tckey, thkey, cmd_diffs)
+        compare_cmd_base_schema(prop, prop_tsp, tckey, thkey, cmd_diffs)
         prop_tsp[CTAG] = True
 
     for prop in props_tsp:
@@ -361,7 +433,7 @@ def compare_response_props(props_swagger, props_tsp, ckey, hkey, cmd_diffs):
         prop[CTAG] = True
 
 
-def compare_response_additional_props(add_props_swagger, add_props_tsp, ckey, hkey, cmd_diffs):
+def compare_additional_props(add_props_swagger, add_props_tsp, ckey, hkey, cmd_diffs):
     other_keys = (set(add_props_swagger.keys()) | set(add_props_tsp.keys())) - {"item"}
     for key in other_keys:
         tckey = ckey + [key]
@@ -380,11 +452,11 @@ def compare_response_additional_props(add_props_swagger, add_props_tsp, ckey, hk
     item_swagger = add_props_swagger.get("item", {})
     item_tsp = add_props_tsp.get("item", {})
     if item_swagger or item_tsp:
-        compare_cmd_schema(item_swagger, item_tsp, ckey + ["item"], hkey + ["item"], cmd_diffs)
+        compare_cmd_base_schema(item_swagger, item_tsp, ckey + ["item"], hkey + ["item"], cmd_diffs)
 
 
-def compare_cmd_schema(schema_swagger, schema_tsp, ckey, hkey, cmd_diffs):
-    other_keys = (set(schema_swagger.keys()) | set(schema_tsp.keys())) - {"props"} - {"additionalProps"} - {"item"}
+def compare_cmd_base_schema(schema_swagger, schema_tsp, ckey, hkey, cmd_diffs):
+    other_keys = (set(schema_swagger.keys()) | set(schema_tsp.keys())) - {"props"} - {"additionalProps"} - {"item"} - {"args"}
     for other_key in other_keys:
         tckey = ckey + [other_key]
         thkey = hkey + [other_key]
@@ -400,13 +472,16 @@ def compare_cmd_schema(schema_swagger, schema_tsp, ckey, hkey, cmd_diffs):
             tup = (tckey, thkey, ChangeType.CHANGE, json.dumps(schema_swagger[other_key]), json.dumps(schema_tsp[other_key]))
             cmd_diffs.append(tup)
     if schema_swagger.get("props", []) or schema_tsp.get("props", []):
-        compare_response_props(schema_swagger.get("props", []), schema_tsp.get("props", []), ckey + ["props"], hkey + ["props"], cmd_diffs)
+        compare_cmd_base_schema_props(schema_swagger.get("props", []), schema_tsp.get("props", []), ckey + ["props"], hkey + ["props"], cmd_diffs)
     if schema_swagger.get("additionalProps", {}) or schema_tsp.get("additionalProps", {}):
-        compare_response_additional_props(schema_swagger.get("additionalProps", {}), schema_tsp.get("additionalProps", {}), ckey + ["additionalProps"], hkey + ["additionalProps"], cmd_diffs)
+        compare_additional_props(schema_swagger.get("additionalProps", {}), schema_tsp.get("additionalProps", {}), ckey + ["additionalProps"], hkey + ["additionalProps"], cmd_diffs)
     if schema_swagger.get("item", {}) or schema_tsp.get("item", {}):
-        compare_cmd_schema(schema_swagger.get("item", {}), schema_tsp.get("item", {}), ckey + ["item"], hkey + ["item"], cmd_diffs)
+        compare_cmd_base_schema(schema_swagger.get("item", {}), schema_tsp.get("item", {}), ckey + ["item"], hkey + ["item"], cmd_diffs)
+    if schema_swagger.get("args", []) or schema_tsp.get("args", []):
+        # from response, no args, use props.
+        compare_args(schema_swagger.get("args", []), schema_tsp.get("args", []), ckey + ["args"], hkey + ["args"], cmd_diffs)
 
-def compare_operation_http_response_body(body_swagger, body_tsp, ckey, hkey, cmd_diffs, cls_obj):
+def compare_operation_http_response_body(body_swagger, body_tsp, ckey, hkey, cmd_diffs, cls_obj_swg, cls_obj_tsp):
     if "json" not in body_swagger or "json" not in body_tsp:
         logger.error("lost json key in: %s", "->".join(hkey))
         return
@@ -415,26 +490,19 @@ def compare_operation_http_response_body(body_swagger, body_tsp, ckey, hkey, cmd
     assert json_swg["var"] == "$Instance"
     assert json_tsp["var"] == "$Instance"
     # asjust the actual response body json here
-    if "cls" in json_swg["schema"]:
-        cls_obj[json_swg["schema"]["cls"]] = json_swg["schema"]["props"]
-        del json_swg["schema"]["cls"]
-    if json_swg["schema"]["type"].find("@") == 0:
-        # "json": {
-        #    "var": "$Instance",
-        #    "schema": {
-        #           "type": "@OrganizationResource_read"
-        #     }
-        #}
-        cls_name = json_swg["schema"]["type"][1:]
-        if cls_name not in cls_obj:
-            logger.error("lost instance cls %s, please check %s", cls_name, "->".join(hkey))
-            return
-        json_swg["schema"]["type"] = "object"
-        json_swg["schema"]["props"] = cls_obj[cls_name]
-    compare_cmd_schema(json_swg["schema"], json_tsp["schema"], ckey + ["schema"], hkey + ["schema"], cmd_diffs)
+    map_cls_operation_schema(json_swg["schema"], cls_obj_swg)
+    map_cls_operation_schema(json_tsp["schema"], cls_obj_tsp)
+    # "json": {
+    #    "var": "$Instance",
+    #    "schema": {
+    #           "type": "@OrganizationResource_read"
+    #     }
+    #}
+
+    compare_cmd_base_schema(json_swg["schema"], json_tsp["schema"], ckey + ["schema"], hkey + ["schema"], cmd_diffs)
 
 
-def compare_operation_http_responses(responses_swagger, responses_tsp, ckey, hkey, cmd_diffs, cls_obj):
+def compare_operation_http_responses(responses_swagger, responses_tsp, ckey, hkey, cmd_diffs, cls_obj_swg, cls_obj_tsp):
     # check response by status code, error first
     # statusCodes, isError, description, header, body,
     responses_swagger.sort(key=sort_response)
@@ -457,20 +525,20 @@ def compare_operation_http_responses(responses_swagger, responses_tsp, ckey, hke
             cmd_diffs.append((tckey + ["header"], thkey + ["header"], ChangeType.CHANGE,
                               json.dumps(response.get("header", {})), json.dumps(response_tsp.get("header", {}))))
         if response.get("body", {}) or response_tsp.get("body", {}):
-            compare_operation_http_response_body(response.get("body", {}), response_tsp.get("body", {}), tckey + ["body"], thkey + ["body"], cmd_diffs, cls_obj)
+            compare_operation_http_response_body(response.get("body", {}), response_tsp.get("body", {}), tckey + ["body"], thkey + ["body"], cmd_diffs, cls_obj_swg, cls_obj_tsp)
 
 
-def compare_operation_http(http_swagger, http_tsp, ckey, hkey, cmd_diffs, cls_obj):
+def compare_operation_http(http_swagger, http_tsp, ckey, hkey, cmd_diffs, cls_obj_swg, cls_obj_tsp):
     # CMDHttpAction
     # path required, request, response, only these three props
     if http_swagger["path"] != http_tsp["path"]:
         tup = (ckey + ["path"], hkey + ["path"], ChangeType.CHANGE, http_swagger["path"], http_tsp["path"])
         cmd_diffs.append(tup)
     compare_operation_http_request(http_swagger["request"], http_tsp["request"], ckey + ["request"], hkey + ["request"], cmd_diffs)
-    compare_operation_http_responses(http_swagger["responses"], http_tsp["responses"], ckey + ["responses"], hkey + ["responses"], cmd_diffs, cls_obj)
+    compare_operation_http_responses(http_swagger["responses"], http_tsp["responses"], ckey + ["responses"], hkey + ["responses"], cmd_diffs, cls_obj_swg, cls_obj_tsp)
 
 
-def compare_operation(operation_swagger, operation_tsp, ckey, hkey, cmd_diffs, cls_obj):
+def compare_operation(operation_swagger, operation_tsp, ckey, hkey, cmd_diffs, cls_obj_swg, cls_obj_tsp):
     com_props = operation_swagger.keys() - {"http"}
     for prop in com_props:
         tckey = ckey + [prop]
@@ -486,21 +554,90 @@ def compare_operation(operation_swagger, operation_tsp, ckey, hkey, cmd_diffs, c
         thkey = hkey + ["prop: " + prop]
         cmd_diffs.append((tckey, thkey, ChangeType.ADD, json.dumps(operation_swagger.get(prop, "")),
                           json.dumps(operation_tsp.get(prop, ""))))
-    compare_operation_http(operation_swagger["http"], operation_tsp["http"], ckey, hkey, cmd_diffs, cls_obj)
+    compare_operation_http(operation_swagger["http"], operation_tsp["http"], ckey, hkey, cmd_diffs, cls_obj_swg, cls_obj_tsp)
 
 
-def compare_operations(operations_swagger, operations_tsp, ckey, hkey, cmd_diffs):
+def find_cls_in_props(props, cls_obj_ref):
+    for prop in props:
+        if "cls" in prop:
+            cls_name = prop["cls"]
+            cls_obj_ref[cls_name] = {
+                "type": prop["type"],
+                "props": prop["props"]
+            }
+            del prop["cls"]
+        if "props" in prop:
+            find_cls_in_props(prop["props"], cls_obj_ref)
+        if "item" in prop:
+            find_cls_in_operation_item(prop["item"], cls_obj_ref)
+
+
+def find_cls_in_operation_item(item, cls_obj_ref):
+    if "cls" in item:
+        cls_name = item["cls"]
+        cls_obj_ref[cls_name] = {
+            "type": item["type"],
+            "props": item["props"]  # if error occurs here, other tag needs to be
+        }
+        del item["cls"]
+    if "props" in item:
+        find_cls_in_props(item["props"], cls_obj_ref)
+
+
+def find_cls_in_operation_responses(responses, cls_obj_ref):
+    for response in responses:
+        if "body" not in response:
+            continue
+        find_cls_in_operation_item(response["body"]["json"]["schema"], cls_obj_ref)
+
+
+def find_cls_in_operations(operations):
+    cls_obj_ref = {}
+    for operation in operations:
+        if "operationId" in operation:
+            # key updated in operation cmp inner
+            find_cls_in_operation_responses(operation["http"]["responses"], cls_obj_ref)
+        else:
+            print("operation")
+            print(list(operation.values())[0])
+            find_cls_in_operation_item(list(operation.values())[0]["json"]["schema"], cls_obj_ref)
+    return cls_obj_ref
+
+
+def map_cls_operation_props(props, cls_obj_ref):
+    for prop in props:
+        tp = prop["type"]
+        if tp.find("@") == 0:
+            type_ref_name = tp[1:]
+            if type_ref_name not in cls_obj_ref:
+                logger.error("please check ref in operations: %s", type_ref_name)
+            prop.update(cls_obj_ref[type_ref_name])
+        if "arg" in prop and prop["arg"].find("@") == 0:
+            prop["arg"] = prop["arg"].split(".", 1)[-1]
+        if "props" in prop:
+            map_cls_operation_props(prop["props"], cls_obj_ref)
+
+def map_cls_operation_schema(schema_item, cls_obj_ref):
+    if "type" in schema_item and schema_item["type"].find("@") == 0:
+        type_ref_name = schema_item["type"][1:]
+        if type_ref_name not in cls_obj_ref:
+            logger.error("type need to be checked in operations: %s", type_ref_name)
+        schema_item.update(cls_obj_ref[type_ref_name])
+    if "props" in schema_item:
+        map_cls_operation_props(schema_item["props"], cls_obj_ref)
+
+
+def compare_operations(operations_swagger, operations_tsp, ckey, hkey, cmd_diffs, cls_obj_swg, cls_obj_tsp):
     # compare operations in original order, update : get ->update -> create or update
     # use operationId or dict item
     # store cls key across operations responses, get cls response used for update response
-    cls_obj = {}
     for i, operation in enumerate(operations_swagger):
         operation_tsp = operations_tsp[i]
         tckey = ckey + [str(i)]
         thkey = hkey + ["operation ind: " + str(i)]
         if "operationId" in operation:
             # key updated in operation cmp inner
-            compare_operation(operation, operation_tsp, tckey, thkey, cmd_diffs, cls_obj)
+            compare_operation(operation, operation_tsp, tckey, thkey, cmd_diffs, cls_obj_swg, cls_obj_tsp)
         else:
             if operation != operation_tsp:
                 cmd_diffs.append((tckey, thkey, ChangeType.CHANGE, json.dumps(operation), json.dumps(operation_tsp)))
@@ -560,7 +697,9 @@ def diff_command_json(command_swagger, command_tsp, ckey, hkey, cmd_diffs):
         if command_swagger.get(prop, "") != command_tsp.get(prop, ""):
             cmd_diffs.append((ckey + [prop], hkey + ["prop: " + prop], ChangeType.CHANGE, command_swagger.get(prop, ""), command_tsp.get(prop, "")))
     compare_resources(command_swagger.get("resources", []), command_tsp.get("resources", []), ckey, hkey, cmd_diffs)
-    compare_arg_groups(command_swagger.get("argGroups", []), command_tsp.get("argGroups", []), ckey, hkey, cmd_diffs)
+    cls_obj_swg = find_cls_in_arg_groups(command_swagger.get("argGroups", []))
+    cls_obj_tsp = find_cls_in_arg_groups(command_tsp.get("argGroups", []))
+    compare_arg_groups(command_swagger.get("argGroups", []), command_tsp.get("argGroups", []), ckey, hkey, cmd_diffs, cls_obj_swg, cls_obj_tsp)
 
     if command_swagger.get("subresourceSelector", {}) != command_tsp.get("subresourceSelector", {}):
         tup = (ckey + ["subresourceSelector"],
@@ -572,7 +711,10 @@ def diff_command_json(command_swagger, command_tsp, ckey, hkey, cmd_diffs):
         cmd_diffs.append(tup)
 
     compare_conditions(command_swagger.get("conditions", []), command_tsp.get("conditions", []), ckey, hkey, cmd_diffs)
-    compare_operations(command_swagger.get("operations", []), command_tsp.get("operations", []), ckey, hkey, cmd_diffs)
+
+    cls_obj_swg = find_cls_in_operations(command_swagger.get("operations", []))
+    cls_obj_tsp = find_cls_in_operations(command_tsp.get("operations", []))
+    compare_operations(command_swagger.get("operations", []), command_tsp.get("operations", []), ckey, hkey, cmd_diffs, cls_obj_swg, cls_obj_tsp)
     compare_outputs(command_swagger.get("outputs", []), command_tsp.get("outputs", []), ckey, hkey, cmd_diffs)
 
 
@@ -737,7 +879,11 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules):
             print(str(i))
             print(item_list[0])
             print(item_list[1])
-            print("   ", join_key[2:])
+            print("    ", item_list[2])
+            if len(item_list) >= 4:
+                print("    ", item_list[3])
+            if len(item_list) >= 5:
+                print("    ", item_list[4])
             out_arr.append(join_key)
     return out_arr
 

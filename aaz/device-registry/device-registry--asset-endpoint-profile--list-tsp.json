@@ -173,13 +173,10 @@
                                   {
                                     "readOnly": true,
                                     "type": "ResourceId",
-                                    "name": "id",
-                                    "format": {
-                                      "template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.DeviceRegistry/assetEndpointProfiles/{}"
-                                    }
+                                    "name": "id"
                                   },
                                   {
-                                    "type": "ResourceLocation",
+                                    "type": "string",
                                     "name": "location",
                                     "required": true
                                   },
@@ -320,8 +317,7 @@
                                         "type": "string",
                                         "name": "uuid"
                                       }
-                                    ],
-                                    "clientFlatten": true
+                                    ]
                                   },
                                   {
                                     "readOnly": true,
@@ -401,7 +397,10 @@
                                     "name": "type"
                                   }
                                 ]
-                              }
+                              },
+                              "identifiers": [
+                                "name"
+                              ]
                             }
                           ]
                         }
@@ -413,6 +412,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
@@ -438,6 +438,7 @@
                         "arg": "$Path.resourceGroupName",
                         "required": true,
                         "format": {
+                          "pattern": "^[-\\w\\._\\(\\)]+$",
                           "maxLength": 90,
                           "minLength": 1
                         }
@@ -510,13 +511,10 @@
                                   {
                                     "readOnly": true,
                                     "type": "ResourceId",
-                                    "name": "id",
-                                    "format": {
-                                      "template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.DeviceRegistry/assetEndpointProfiles/{}"
-                                    }
+                                    "name": "id"
                                   },
                                   {
-                                    "type": "ResourceLocation",
+                                    "type": "string",
                                     "name": "location",
                                     "required": true
                                   },
@@ -657,8 +655,7 @@
                                         "type": "string",
                                         "name": "uuid"
                                       }
-                                    ],
-                                    "clientFlatten": true
+                                    ]
                                   },
                                   {
                                     "readOnly": true,
@@ -738,7 +735,10 @@
                                     "name": "type"
                                   }
                                 ]
-                              }
+                              },
+                              "identifiers": [
+                                "name"
+                              ]
                             }
                           ]
                         }
@@ -750,6 +750,7 @@
                     "body": {
                       "json": {
                         "schema": {
+                          "readOnly": true,
                           "type": "@MgmtErrorFormat"
                         }
                       }
