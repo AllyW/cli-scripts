@@ -410,10 +410,6 @@ def find_target_response(response, responses_target):
 def compare_cmd_base_schema_props(props_swagger, props_tsp, ckey, hkey, cmd_diffs):
     props_swagger.sort(key=lambda x: x['name'])
     props_tsp.sort(key=lambda x: x['name'])
-    if ckey == ['device-registry asset', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props']:
-        print("parse here")
-    if ckey == ['device-registry asset', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'defaultTopic', 'props']:
-        print("parse here")
     for prop in props_swagger:
         name = prop["name"]
         tckey = ckey + [name]
@@ -422,8 +418,6 @@ def compare_cmd_base_schema_props(props_swagger, props_tsp, ckey, hkey, cmd_diff
             tup = (tckey, thkey, ChangeType.REMOVE, json.dumps(prop))
             cmd_diffs.append(tup)
             continue
-        if name == "defaultTopic":
-            print("parse")
         filtered_prop_tsp = [item for item in props_tsp if item["name"] == name]
         assert len(filtered_prop_tsp) == 1
         prop_tsp = filtered_prop_tsp[0]
@@ -756,7 +750,7 @@ def diff_command_json(command_swagger, command_tsp, ckey, hkey, cmd_diffs):
     compare_outputs(command_swagger.get("outputs", []), command_tsp.get("outputs", []), ckey, hkey, cmd_diffs)
 
 
-def diff_commands_json(target_cmd, commands_swagger, commands_tsp, ckey, hkey, cmd_diffs):
+def diff_commands_json(target_cmd, commands_swagger, commands_tsp, ckey, hkey, cmd_diffs, original_cmd):
     commands_swagger.sort(key=lambda x: x['name'])
     commands_tsp.sort(key=lambda x: x['name'])
     for command in commands_swagger:
@@ -767,12 +761,15 @@ def diff_commands_json(target_cmd, commands_swagger, commands_tsp, ckey, hkey, c
             continue
         # if cmd_name != "list":
         #     continue
+        original_cmd.append(copy.deepcopy(command))
         if cmd_name not in [item["name"] for item in commands_tsp]:
             cmd_diffs.append((tckey, thkey, ChangeType.REMOVE))
             continue
         filtered_command_tsp = [item for item in commands_tsp if item["name"] == cmd_name]
         assert len(filtered_command_tsp) == 1
         command_tsp = filtered_command_tsp[0]
+        # store original cmd
+        original_cmd.append(copy.deepcopy(command_tsp))
         diff_command_json(command, command_tsp, tckey, thkey, cmd_diffs)
         command_tsp[CTAG] = True
 
@@ -788,7 +785,7 @@ def diff_commands_json(target_cmd, commands_swagger, commands_tsp, ckey, hkey, c
         cmd_diffs.append((tckey, thkey, ChangeType.ADD))
 
 
-def diff_commands_groups_json(target_cmd, commands_group_swagger, commands_group_tsp, ckey, hkey, cmd_diffs):
+def diff_commands_groups_json(target_cmd, commands_group_swagger, commands_group_tsp, ckey, hkey, cmd_diffs, original_cmd):
     commands_group_swagger.sort(key=lambda x: x['name'])
     commands_group_tsp.sort(key=lambda x: x['name'])
     for command_group in commands_group_swagger:
@@ -803,8 +800,8 @@ def diff_commands_groups_json(target_cmd, commands_group_swagger, commands_group
         filtered_command_group_tsp = [item for item in commands_group_tsp if item["name"] == command_group_name]
         assert len(filtered_command_group_tsp) == 1
         command_group_tsp = filtered_command_group_tsp[0]
-        diff_commands_json(target_cmd, command_group.get("commands", []), command_group_tsp.get("commands", []), tckey, thkey, cmd_diffs)
-        diff_commands_groups_json(target_cmd, command_group.get("commandGroups", []), command_group_tsp.get("commandGroups", []), tckey, thkey, cmd_diffs)
+        diff_commands_json(target_cmd, command_group.get("commands", []), command_group_tsp.get("commands", []), tckey, thkey, cmd_diffs, original_cmd)
+        diff_commands_groups_json(target_cmd, command_group.get("commandGroups", []), command_group_tsp.get("commandGroups", []), tckey, thkey, cmd_diffs, original_cmd)
         command_group_tsp[CTAG] = True
 
     for command_group in commands_group_tsp:
@@ -819,14 +816,14 @@ def diff_commands_groups_json(target_cmd, commands_group_swagger, commands_group
         cmd_diffs.append((tckey, thkey, ChangeType.ADD))
 
 
-def compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs):
+def compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs, original_cmd):
     assert cmd_swagger_json["plane"] == cmd_tsp_json["plane"]
     resource_ids_swg = sorted(cmd_swagger_json["resources"], key=lambda x: x['id'])
     resource_ids_tsp = sorted(cmd_tsp_json["resources"], key=lambda x: x['id'])
     diff_search_key = []
     if resource_ids_swg != resource_ids_tsp:
         cmd_diffs.append((".".join(diff_search_key + ["resources"]), 1))
-    diff_commands_groups_json(cmd, cmd_swagger_json.get("commandGroups", []), cmd_tsp_json.get("commandGroups", []), [], diff_search_key, cmd_diffs)
+    diff_commands_groups_json(cmd, cmd_swagger_json.get("commandGroups", []), cmd_tsp_json.get("commandGroups", []), [], diff_search_key, cmd_diffs, original_cmd)
 
 
 def find_target_parent_path(target_path, path_input):
@@ -888,6 +885,7 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
         if target_cmd and cmd != target_cmd:
             continue
         cmd_diffs = []
+        original_cmd = []
         swagger_json_path = os.path.join(aaz_root_swagger, "." + json_relate_path)
         tsp_json_path = os.path.join(aaz_root_tsp, "." + json_relate_path)
         with open(swagger_json_path, "r", encoding="utf-8") as f:
@@ -903,7 +901,12 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
         with open(os.path.join(module_folder, cmd_file_name + "-tsp.json"), "w", encoding="utf8") as jfile:
             json.dump(cmd_tsp_json, jfile, ensure_ascii=False, indent=2)
         # print("cmd_swagger_json: ", cmd_swagger_json)
-        compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs)
+        compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs, original_cmd)
+        with open(os.path.join(module_folder, cmd_file_name + "-swg-raw.json"), "w", encoding="utf8") as jfile:
+            json.dump(original_cmd[0], jfile, ensure_ascii=False, indent=2)
+        with open(os.path.join(module_folder, cmd_file_name + "-tsp-raw.json"), "w", encoding="utf8") as jfile:
+            if len(original_cmd) == 2:
+                json.dump(cmd_tsp_json, jfile, ensure_ascii=False, indent=2)
         cmd_diffs_from_json[cmd] = cmd_diffs
     # print("cmd_diffs_from_json: ", cmd_diffs_from_json)
     out_arr = []
