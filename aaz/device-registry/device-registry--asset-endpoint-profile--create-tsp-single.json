@@ -1,0 +1,753 @@
+{
+  "name": "create",
+  "version": "2024-11-01",
+  "resources": [
+    {
+      "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.deviceregistry/assetendpointprofiles/{}",
+      "version": "2024-11-01",
+      "swagger": "mgmt-plane/deviceregistry/ResourceProviders/Microsoft.DeviceRegistry/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuRGV2aWNlUmVnaXN0cnkvYXNzZXRFbmRwb2ludFByb2ZpbGVzL3thc3NldEVuZHBvaW50UHJvZmlsZU5hbWV9/V/MjAyNC0xMS0wMQ=="
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.assetEndpointProfileName",
+          "options": [
+            "n",
+            "name",
+            "asset-endpoint-profile-name"
+          ],
+          "required": true,
+          "idPart": "name",
+          "help": {
+            "short": "Asset Endpoint Profile name parameter."
+          },
+          "format": {
+            "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+            "maxLength": 63,
+            "minLength": 3
+          }
+        },
+        {
+          "type": "ResourceGroupName",
+          "var": "$Path.resourceGroupName",
+          "options": [
+            "g",
+            "resource-group"
+          ],
+          "required": true,
+          "idPart": "resource_group"
+        },
+        {
+          "type": "SubscriptionId",
+          "var": "$Path.subscriptionId",
+          "options": [
+            "subscription"
+          ],
+          "required": true,
+          "idPart": "subscription"
+        }
+      ]
+    },
+    {
+      "name": "Properties",
+      "args": [
+        {
+          "type": "string",
+          "var": "$resource.properties.additionalConfiguration",
+          "options": [
+            "additional-configuration"
+          ],
+          "group": "Properties",
+          "help": {
+            "short": "Stringified JSON that contains connectivity type specific further configuration (e.g. OPC UA, Modbus, ONVIF)."
+          }
+        },
+        {
+          "type": "object",
+          "var": "$resource.properties.authentication",
+          "options": [
+            "authentication"
+          ],
+          "group": "Properties",
+          "help": {
+            "short": "Defines the client authentication mechanism to the server."
+          },
+          "args": [
+            {
+              "type": "string",
+              "var": "$resource.properties.authentication.method",
+              "options": [
+                "method"
+              ],
+              "required": true,
+              "help": {
+                "short": "Defines the method to authenticate the user of the client at the server."
+              },
+              "default": {
+                "value": "Certificate"
+              },
+              "enum": {
+                "items": [
+                  {
+                    "name": "Anonymous",
+                    "value": "Anonymous"
+                  },
+                  {
+                    "name": "Certificate",
+                    "value": "Certificate"
+                  },
+                  {
+                    "name": "UsernamePassword",
+                    "value": "UsernamePassword"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "object",
+              "var": "$resource.properties.authentication.usernamePasswordCredentials",
+              "options": [
+                "username-password-credentials"
+              ],
+              "help": {
+                "short": "Defines the username and password references when UsernamePassword user authentication mode is selected."
+              },
+              "args": [
+                {
+                  "type": "string",
+                  "var": "$resource.properties.authentication.usernamePasswordCredentials.passwordSecretName",
+                  "options": [
+                    "password-secret-name"
+                  ],
+                  "required": true,
+                  "help": {
+                    "short": "The name of the secret containing the password."
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$resource.properties.authentication.usernamePasswordCredentials.usernameSecretName",
+                  "options": [
+                    "username-secret-name"
+                  ],
+                  "required": true,
+                  "help": {
+                    "short": "The name of the secret containing the username."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "var": "$resource.properties.authentication.x509Credentials",
+              "options": [
+                "x509-credentials"
+              ],
+              "help": {
+                "short": "Defines the certificate reference when Certificate user authentication mode is selected."
+              },
+              "args": [
+                {
+                  "type": "string",
+                  "var": "$resource.properties.authentication.x509Credentials.certificateSecretName",
+                  "options": [
+                    "certificate-secret-name"
+                  ],
+                  "required": true,
+                  "help": {
+                    "short": "The name of the secret containing the certificate and private key (e.g. stored as .der/.pem or .der/.pfx)."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "var": "$resource.properties.discoveredAssetEndpointProfileRef",
+          "options": [
+            "discovered-asset-endpoint-profile-ref"
+          ],
+          "group": "Properties",
+          "help": {
+            "short": "Reference to a discovered asset endpoint profile. Populated only if the asset endpoint profile has been created from discovery flow. Discovered asset endpoint profile name must be provided."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$resource.properties.endpointProfileType",
+          "options": [
+            "endpoint-profile-type"
+          ],
+          "group": "Properties",
+          "help": {
+            "short": "Defines the configuration for the connector type that is being used with the endpoint profile."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$resource.properties.targetAddress",
+          "options": [
+            "target-address"
+          ],
+          "group": "Properties",
+          "help": {
+            "short": "The local valid URI specifying the network address/DNS name of a southbound device. The scheme part of the targetAddress URI specifies the type of the device. The additionalConfiguration field holds further connector type specific configuration."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Resource",
+      "args": [
+        {
+          "type": "object",
+          "var": "$resource.extendedLocation",
+          "options": [
+            "extended-location"
+          ],
+          "required": true,
+          "group": "Resource",
+          "help": {
+            "short": "The extended location."
+          },
+          "args": [
+            {
+              "type": "string",
+              "var": "$resource.extendedLocation.name",
+              "options": [
+                "name"
+              ],
+              "required": true,
+              "help": {
+                "short": "The extended location name."
+              }
+            },
+            {
+              "type": "string",
+              "var": "$resource.extendedLocation.type",
+              "options": [
+                "type"
+              ],
+              "required": true,
+              "help": {
+                "short": "The extended location type."
+              }
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "var": "$resource.location",
+          "options": [
+            "location"
+          ],
+          "required": true,
+          "group": "Resource",
+          "help": {
+            "short": "The geo-location where the resource lives"
+          }
+        },
+        {
+          "type": "object",
+          "var": "$resource.tags",
+          "options": [
+            "tags"
+          ],
+          "group": "Resource",
+          "help": {
+            "short": "Resource tags."
+          },
+          "additionalProps": {
+            "item": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "longRunning": {
+        "finalStateVia": "azure-async-operation"
+      },
+      "operationId": "AssetEndpointProfiles_CreateOrReplace",
+      "http": {
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DeviceRegistry/assetEndpointProfiles/{assetEndpointProfileName}",
+        "request": {
+          "method": "put",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "assetEndpointProfileName",
+                "arg": "$Path.assetEndpointProfileName",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+                  "maxLength": 63,
+                  "minLength": 3
+                }
+              },
+              {
+                "type": "string",
+                "name": "resourceGroupName",
+                "arg": "$Path.resourceGroupName",
+                "required": true,
+                "format": {
+                  "pattern": "^[-\\w\\._\\(\\)]+$",
+                  "maxLength": 90,
+                  "minLength": 1
+                }
+              },
+              {
+                "type": "uuid",
+                "name": "subscriptionId",
+                "arg": "$Path.subscriptionId",
+                "required": true
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-11-01"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "body": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "name": "resource",
+                "required": true,
+                "props": [
+                  {
+                    "type": "object",
+                    "name": "extendedLocation",
+                    "arg": "$resource.extendedLocation",
+                    "required": true,
+                    "props": [
+                      {
+                        "type": "string",
+                        "name": "name",
+                        "arg": "$resource.extendedLocation.name",
+                        "required": true
+                      },
+                      {
+                        "type": "string",
+                        "name": "type",
+                        "arg": "$resource.extendedLocation.type",
+                        "required": true
+                      }
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "name": "location",
+                    "arg": "$resource.location",
+                    "required": true
+                  },
+                  {
+                    "type": "object",
+                    "name": "properties",
+                    "props": [
+                      {
+                        "type": "string",
+                        "name": "additionalConfiguration",
+                        "arg": "$resource.properties.additionalConfiguration"
+                      },
+                      {
+                        "type": "object",
+                        "name": "authentication",
+                        "arg": "$resource.properties.authentication",
+                        "props": [
+                          {
+                            "default": {
+                              "value": "Certificate"
+                            },
+                            "type": "string",
+                            "name": "method",
+                            "arg": "$resource.properties.authentication.method",
+                            "required": true,
+                            "enum": {
+                              "items": [
+                                {
+                                  "value": "Anonymous"
+                                },
+                                {
+                                  "value": "Certificate"
+                                },
+                                {
+                                  "value": "UsernamePassword"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "object",
+                            "name": "usernamePasswordCredentials",
+                            "arg": "$resource.properties.authentication.usernamePasswordCredentials",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "passwordSecretName",
+                                "arg": "$resource.properties.authentication.usernamePasswordCredentials.passwordSecretName",
+                                "required": true
+                              },
+                              {
+                                "type": "string",
+                                "name": "usernameSecretName",
+                                "arg": "$resource.properties.authentication.usernamePasswordCredentials.usernameSecretName",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "name": "x509Credentials",
+                            "arg": "$resource.properties.authentication.x509Credentials",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "certificateSecretName",
+                                "arg": "$resource.properties.authentication.x509Credentials.certificateSecretName",
+                                "required": true
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "string",
+                        "name": "discoveredAssetEndpointProfileRef",
+                        "arg": "$resource.properties.discoveredAssetEndpointProfileRef"
+                      },
+                      {
+                        "type": "string",
+                        "name": "endpointProfileType",
+                        "arg": "$resource.properties.endpointProfileType",
+                        "required": true
+                      },
+                      {
+                        "type": "string",
+                        "name": "targetAddress",
+                        "arg": "$resource.properties.targetAddress",
+                        "required": true
+                      }
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "name": "tags",
+                    "arg": "$resource.tags",
+                    "additionalProps": {
+                      "item": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ],
+                "clientFlatten": true
+              }
+            }
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200,
+              201
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "object",
+                      "name": "extendedLocation",
+                      "required": true,
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "name",
+                          "required": true
+                        },
+                        {
+                          "type": "string",
+                          "name": "type",
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "ResourceId",
+                      "name": "id"
+                    },
+                    {
+                      "type": "string",
+                      "name": "location",
+                      "required": true
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "name"
+                    },
+                    {
+                      "type": "object",
+                      "name": "properties",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "additionalConfiguration"
+                        },
+                        {
+                          "type": "object",
+                          "name": "authentication",
+                          "props": [
+                            {
+                              "default": {
+                                "value": "Certificate"
+                              },
+                              "type": "string",
+                              "name": "method",
+                              "required": true,
+                              "enum": {
+                                "items": [
+                                  {
+                                    "value": "Anonymous"
+                                  },
+                                  {
+                                    "value": "Certificate"
+                                  },
+                                  {
+                                    "value": "UsernamePassword"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "name": "usernamePasswordCredentials",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "passwordSecretName",
+                                  "required": true
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "usernameSecretName",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "type": "object",
+                              "name": "x509Credentials",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "certificateSecretName",
+                                  "required": true
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "discoveredAssetEndpointProfileRef"
+                        },
+                        {
+                          "type": "string",
+                          "name": "endpointProfileType",
+                          "required": true
+                        },
+                        {
+                          "readOnly": true,
+                          "type": "string",
+                          "name": "provisioningState",
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "Accepted"
+                              },
+                              {
+                                "value": "Canceled"
+                              },
+                              {
+                                "value": "Deleting"
+                              },
+                              {
+                                "value": "Failed"
+                              },
+                              {
+                                "value": "Succeeded"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "readOnly": true,
+                          "type": "object",
+                          "name": "status",
+                          "props": [
+                            {
+                              "readOnly": true,
+                              "type": "array<object>",
+                              "name": "errors",
+                              "item": {
+                                "type": "object",
+                                "props": [
+                                  {
+                                    "readOnly": true,
+                                    "type": "integer32",
+                                    "name": "code"
+                                  },
+                                  {
+                                    "readOnly": true,
+                                    "type": "string",
+                                    "name": "message"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "targetAddress",
+                          "required": true
+                        },
+                        {
+                          "readOnly": true,
+                          "type": "string",
+                          "name": "uuid"
+                        }
+                      ]
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "object",
+                      "name": "systemData",
+                      "props": [
+                        {
+                          "type": "dateTime",
+                          "name": "createdAt"
+                        },
+                        {
+                          "type": "string",
+                          "name": "createdBy"
+                        },
+                        {
+                          "type": "string",
+                          "name": "createdByType",
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "Application"
+                              },
+                              {
+                                "value": "Key"
+                              },
+                              {
+                                "value": "ManagedIdentity"
+                              },
+                              {
+                                "value": "User"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "dateTime",
+                          "name": "lastModifiedAt"
+                        },
+                        {
+                          "type": "string",
+                          "name": "lastModifiedBy"
+                        },
+                        {
+                          "type": "string",
+                          "name": "lastModifiedByType",
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "Application"
+                              },
+                              {
+                                "value": "Key"
+                              },
+                              {
+                                "value": "ManagedIdentity"
+                              },
+                              {
+                                "value": "User"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "name": "tags",
+                      "additionalProps": {
+                        "item": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "type"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@MgmtErrorFormat"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

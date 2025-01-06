@@ -162,7 +162,7 @@ def compare_args(args_swagger, args_tsp, ckey, hkey, cmd_diffs):
         filtered_arg_tsp = [item for item in args_tsp if item["var"] == var]
         assert len(filtered_arg_tsp) == 1
         arg_tsp = filtered_arg_tsp[0]
-        checked_props =  (set(arg_tsp.keys()) | set(arg.keys()))- {"item"} - {"args"} - {"checked"}
+        checked_props =  (set(arg_tsp.keys()) | set(arg.keys()))- {"item"} - {"args"}
         for prop in checked_props:
             if prop not in arg and prop not in arg_tsp:
                 continue
@@ -623,7 +623,11 @@ def map_cls_operation_props(props, cls_obj_ref):
             prop["arg"] = prop["arg"].split(".", 1)[-1]
         if "props" in prop and len(prop["props"]):
             map_cls_operation_props(prop["props"], cls_obj_ref)
-        if "item" in prop and prop["item"]:
+        if "item" in prop and prop["item"] and not tp.find("array<@") != -1:
+            # ignore circular reference
+            #        "type": "array<@ErrorDetail_read>",
+            #        "name": "details",
+            #        "item": {"type": "@ErrorDetail_read"}
             map_cls_operation_schema(prop["item"], cls_obj_ref)
 
 def map_cls_operation_schema(schema_item, cls_obj_ref):
@@ -631,6 +635,10 @@ def map_cls_operation_schema(schema_item, cls_obj_ref):
         type_ref_name = schema_item["type"][1:]
         if type_ref_name not in cls_obj_ref:
             logger.error("type need to be checked in operations: %s", type_ref_name)
+        # print("type_ref_name")
+        # print(type_ref_name)
+        # print("cls_obj_ref[type_ref_name]")
+        # print(cls_obj_ref[type_ref_name])
         schema_item.update(copy.deepcopy(cls_obj_ref[type_ref_name]))
     if "props" in schema_item and len(schema_item["props"]):
         map_cls_operation_props(schema_item["props"], cls_obj_ref)
@@ -902,11 +910,11 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
             json.dump(cmd_tsp_json, jfile, ensure_ascii=False, indent=2)
         # print("cmd_swagger_json: ", cmd_swagger_json)
         compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs, original_cmd)
-        with open(os.path.join(module_folder, cmd_file_name + "-swg-raw.json"), "w", encoding="utf8") as jfile:
+        with open(os.path.join(module_folder, cmd_file_name + "-swg-single.json"), "w", encoding="utf8") as jfile:
             json.dump(original_cmd[0], jfile, ensure_ascii=False, indent=2)
-        with open(os.path.join(module_folder, cmd_file_name + "-tsp-raw.json"), "w", encoding="utf8") as jfile:
+        with open(os.path.join(module_folder, cmd_file_name + "-tsp-single.json"), "w", encoding="utf8") as jfile:
             if len(original_cmd) == 2:
-                json.dump(cmd_tsp_json, jfile, ensure_ascii=False, indent=2)
+                json.dump(original_cmd[1], jfile, ensure_ascii=False, indent=2)
         cmd_diffs_from_json[cmd] = cmd_diffs
     # print("cmd_diffs_from_json: ", cmd_diffs_from_json)
     out_arr = []
