@@ -887,6 +887,7 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
     module_folder = "./aaz/" + "-".join([module.replace("\\", "-") for module in modules])
     if not os.path.exists(module_folder):
         os.makedirs(module_folder)
+    print(module_folder)
 
     for cmd, json_relate_path in cmd_json_files.items():
         # logger.warning("cmd_name: %s, json file: %s", cmd, json_relate_path)
@@ -904,10 +905,10 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
         cmd_file_name = "--".join(cmd.split())
         # print("cmd: ", cmd)
         # print("cmd_file_name: ", cmd_file_name)
-        with open(os.path.join(module_folder, cmd_file_name + "-swg.json"), "w", encoding="utf8") as jfile:
-            json.dump(cmd_swagger_json, jfile, ensure_ascii=False, indent=2)
-        with open(os.path.join(module_folder, cmd_file_name + "-tsp.json"), "w", encoding="utf8") as jfile:
-            json.dump(cmd_tsp_json, jfile, ensure_ascii=False, indent=2)
+        # with open(os.path.join(module_folder, cmd_file_name + "-swg.json"), "w", encoding="utf8") as jfile:
+        #     json.dump(cmd_swagger_json, jfile, ensure_ascii=False, indent=2)
+        # with open(os.path.join(module_folder, cmd_file_name + "-tsp.json"), "w", encoding="utf8") as jfile:
+        #     json.dump(cmd_tsp_json, jfile, ensure_ascii=False, indent=2)
         # print("cmd_swagger_json: ", cmd_swagger_json)
         compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs, original_cmd)
         with open(os.path.join(module_folder, cmd_file_name + "-swg-single.json"), "w", encoding="utf8") as jfile:
@@ -919,23 +920,34 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
     # print("cmd_diffs_from_json: ", cmd_diffs_from_json)
     out_arr = []
     i = 0
-
+    txt_output = []
     for key, diffs_arr in cmd_diffs_from_json.items():
         for diff in diffs_arr:
             item_list = list(diff)
             if filter_known_tups(item_list):
                 continue
+            if item_list[0][-1] == "clientFlatten":
+                continue
             i += 1
             join_key = ["->".join(item_list[0]), "->".join(item_list[1]), str(item_list[2])] + item_list[3:]
+
             print(str(i))
             print(item_list[0])
             print(item_list[1])
             print("    ", item_list[2])
+            txt_output += [str(i), str(item_list[0]), str(item_list[1]), "    " + str(item_list[2])]
             if len(item_list) >= 4:
                 print("    ", item_list[3])
+                txt_output.append("    " + str(item_list[3]))
             if len(item_list) >= 5:
                 print("    ", item_list[4])
+                txt_output.append("    " + str(item_list[4]))
             out_arr.append(join_key)
+    file_name = "-".join([module.replace("\\", "-") for module in modules]) + "-diff.txt"
+    print(file_name)
+    with open(file_name, "w", encoding="utf8") as tfile:
+        for line in txt_output:
+            tfile.write(line + "\n")
     return out_arr
 
 def main(swagger_path, tsp_path, target_cmd):

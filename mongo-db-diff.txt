@@ -1,0 +1,34 @@
+1
+['mongo-db atlas organization', 'create', 'Identity', '$resource.identity.type', 'help']
+['command-group:mongo-db atlas organization', 'command:create', 'argGroup: Identity', 'arg: $resource.identity.type', 'prop: help']
+    ChangeType.CHANGE
+    {"short": "Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed)."}
+    {"short": "The type of managed identity assigned to this resource."}
+2
+['mongo-db atlas organization', 'create', 'Identity', '$resource.identity.userAssignedIdentities', 'help']
+['command-group:mongo-db atlas organization', 'command:create', 'argGroup: Identity', 'arg: $resource.identity.userAssignedIdentities', 'prop: help']
+    ChangeType.CHANGE
+    {"short": "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."}
+    {"short": "The identities assigned to this resource by the user."}
+3
+['mongo-db atlas organization', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
+['command-group:mongo-db atlas organization', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
+    ChangeType.ADD
+    ["name"]
+4
+['mongo-db atlas organization', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
+['command-group:mongo-db atlas organization', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
+    ChangeType.ADD
+    ["name"]
+5
+['mongo-db atlas organization', 'update', 'Identity', '$resource.identity.type', 'help']
+['command-group:mongo-db atlas organization', 'command:update', 'argGroup: Identity', 'arg: $resource.identity.type', 'prop: help']
+    ChangeType.CHANGE
+    {"short": "Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed)."}
+    {"short": "The type of managed identity assigned to this resource."}
+6
+['mongo-db atlas organization', 'update', 'Identity', '$resource.identity.userAssignedIdentities', 'help']
+['command-group:mongo-db atlas organization', 'command:update', 'argGroup: Identity', 'arg: $resource.identity.userAssignedIdentities', 'prop: help']
+    ChangeType.CHANGE
+    {"short": "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."}
+    {"short": "The identities assigned to this resource by the user."}

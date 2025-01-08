@@ -1,0 +1,153 @@
+{
+  "name": "delete",
+  "version": "2024-09-18-preview",
+  "resources": [
+    {
+      "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.weightsandbiases/instances/{}",
+      "version": "2024-09-18-preview",
+      "swagger": "mgmt-plane/liftrweightsandbiases/ResourceProviders/Microsoft.WeightsAndBiases/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuV2VpZ2h0c0FuZEJpYXNlcy9pbnN0YW5jZXMve2luc3RhbmNlbmFtZX0=/V/MjAyNC0wOS0xOC1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.instancename",
+          "options": [
+            "n",
+            "name",
+            "instancename"
+          ],
+          "required": true,
+          "idPart": "name",
+          "help": {
+            "short": "Name of the Instance resource"
+          },
+          "format": {
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$",
+            "maxLength": 50,
+            "minLength": 1
+          }
+        },
+        {
+          "type": "ResourceGroupName",
+          "var": "$Path.resourceGroupName",
+          "options": [
+            "g",
+            "resource-group"
+          ],
+          "required": true,
+          "idPart": "resource_group"
+        },
+        {
+          "type": "SubscriptionId",
+          "var": "$Path.subscriptionId",
+          "options": [
+            "subscription"
+          ],
+          "required": true,
+          "idPart": "subscription"
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "longRunning": {
+        "finalStateVia": "location"
+      },
+      "operationId": "Instances_Delete",
+      "http": {
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.WeightsAndBiases/instances/{instancename}",
+        "request": {
+          "method": "delete",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "instancename",
+                "arg": "$Path.instancename",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$",
+                  "maxLength": 50,
+                  "minLength": 1
+                }
+              },
+              {
+                "type": "string",
+                "name": "resourceGroupName",
+                "arg": "$Path.resourceGroupName",
+                "required": true,
+                "format": {
+                  "pattern": "^[-\\w\\._\\(\\)]+$",
+                  "maxLength": 90,
+                  "minLength": 1
+                }
+              },
+              {
+                "type": "uuid",
+                "name": "subscriptionId",
+                "arg": "$Path.subscriptionId",
+                "required": true
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-09-18-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              202
+            ],
+            "header": {
+              "items": [
+                {
+                  "name": "Location"
+                },
+                {
+                  "name": "Retry-After"
+                }
+              ]
+            }
+          },
+          {
+            "statusCode": [
+              204
+            ]
+          },
+          {
+            "isError": true,
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@MgmtErrorFormat"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "confirmation": "Are you sure you want to perform this operation?"
+}

@@ -1,0 +1,10 @@
+1
+['neon postgres organization', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
+['command-group:neon postgres organization', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
+    ChangeType.ADD
+    ["name"]
+2
+['neon postgres organization', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
+['command-group:neon postgres organization', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
+    ChangeType.ADD
+    ["name"]
