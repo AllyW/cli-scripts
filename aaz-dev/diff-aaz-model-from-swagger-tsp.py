@@ -945,7 +945,7 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
             out_arr.append(join_key)
     file_name = "-".join([module.replace("\\", "-") for module in modules]) + "-diff.txt"
     print(file_name)
-    with open(file_name, "w", encoding="utf8") as tfile:
+    with open(os.path.join("./aaz-diff/", file_name), "w", encoding="utf8") as tfile:
         for line in txt_output:
             tfile.write(line + "\n")
     return out_arr
