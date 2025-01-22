@@ -174,36 +174,12 @@
     ChangeType.ADD
     ["name"]
 36
-['commvault content-store cloud-account', 'create', 'Identity', '$resource.identity.type', 'help']
-['command-group:commvault content-store cloud-account', 'command:create', 'argGroup: Identity', 'arg: $resource.identity.type', 'prop: help']
-    ChangeType.CHANGE
-    {"short": "Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed)."}
-    {"short": "The type of managed identity assigned to this resource."}
-37
-['commvault content-store cloud-account', 'create', 'Identity', '$resource.identity.userAssignedIdentities', 'help']
-['command-group:commvault content-store cloud-account', 'command:create', 'argGroup: Identity', 'arg: $resource.identity.userAssignedIdentities', 'prop: help']
-    ChangeType.CHANGE
-    {"short": "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."}
-    {"short": "The identities assigned to this resource by the user."}
-38
 ['commvault content-store cloud-account', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
 ['command-group:commvault content-store cloud-account', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
     ChangeType.ADD
     ["name"]
-39
+37
 ['commvault content-store cloud-account', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
 ['command-group:commvault content-store cloud-account', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
     ChangeType.ADD
     ["name"]
-40
-['commvault content-store cloud-account', 'update', 'Identity', '$resource.identity.type', 'help']
-['command-group:commvault content-store cloud-account', 'command:update', 'argGroup: Identity', 'arg: $resource.identity.type', 'prop: help']
-    ChangeType.CHANGE
-    {"short": "Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed)."}
-    {"short": "The type of managed identity assigned to this resource."}
-41
-['commvault content-store cloud-account', 'update', 'Identity', '$resource.identity.userAssignedIdentities', 'help']
-['command-group:commvault content-store cloud-account', 'command:update', 'argGroup: Identity', 'arg: $resource.identity.userAssignedIdentities', 'prop: help']
-    ChangeType.CHANGE
-    {"short": "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."}
-    {"short": "The identities assigned to this resource by the user."}

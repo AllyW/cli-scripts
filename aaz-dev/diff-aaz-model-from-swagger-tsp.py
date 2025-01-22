@@ -859,6 +859,8 @@ def filter_known_tups(item_list):
             return True
         if item_list[0][-2] == "responses" and item_list[0][-1] == "error" and item_list[2] is ChangeType.CHANGE and item_list[3].find('@MgmtErrorFormat') != -1 and item_list[4].find('@MgmtErrorFormat') != -1:
             return True
+        if item_list[2] is ChangeType.CHANGE and item_list[0][-1] == "help":
+            return True
 
     if len(item_list) >= 4:
         if item_list[0][-2] == "id" and item_list[0][-1] == "format" and item_list[2] is ChangeType.REMOVE and item_list[3].find("template") != -1:
