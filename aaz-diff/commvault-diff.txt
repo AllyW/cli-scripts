@@ -34,151 +34,161 @@
     ChangeType.REMOVE
     {"readOnly": true, "type": "string", "name": "resourceName", "enum": {"items": [{"value": "string"}]}}
 8
+['commvault content-store cloud-account protection-group protected-item', 'restore', '0', 'responses', '200', 'body', 'schema', 'props', 'jobIds', 'required']
+['command-group:commvault content-store cloud-account protection-group protected-item', 'command:restore', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'jobIds', 'required']
+    ChangeType.ADD
+    true
+9
+['commvault content-store cloud-account protection-group protected-item', 'restore', '0', 'responses', '200', 'body', 'schema', 'props', 'taskId', 'required']
+['command-group:commvault content-store cloud-account protection-group protected-item', 'command:restore', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'taskId', 'required']
+    ChangeType.ADD
+    true
+10
 ['commvault content-store cloud-account protection-group protected-item', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
 ['command-group:commvault content-store cloud-account protection-group protected-item', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
     ChangeType.ADD
     true
-9
+11
 ['commvault content-store cloud-account protection-group protected-item', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'location', 'required']
 ['command-group:commvault content-store cloud-account protection-group protected-item', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'location', 'required']
     ChangeType.ADD
     true
-10
+12
 ['commvault content-store cloud-account protection-group protected-item', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'resourceGroup', 'required']
 ['command-group:commvault content-store cloud-account protection-group protected-item', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'resourceGroup', 'required']
     ChangeType.ADD
     true
-11
+13
 ['commvault content-store cloud-account protection-group protected-item', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'resourceName']
 ['command-group:commvault content-store cloud-account protection-group protected-item', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'resourceName']
     ChangeType.REMOVE
     {"readOnly": true, "type": "string", "name": "resourceName", "enum": {"items": [{"value": "string"}]}}
-12
+14
 ['commvault content-store cloud-account protection-group', 'create', 'Properties', '$resource.properties.dataSourceType']
 ['command-group:commvault content-store cloud-account protection-group', 'command:create', 'argGroup: Properties', 'arg: $resource.properties.dataSourceType']
     ChangeType.REMOVE
     {"type": "string", "var": "$resource.properties.dataSourceType", "options": ["data-source-type"], "group": "Properties", "help": {"short": "The datasource type of Commvault Protection Group"}, "enum": {"items": [{"name": "AzureVM", "value": "AzureVM"}]}}
-13
+15
 ['commvault content-store cloud-account protection-group', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
 ['command-group:commvault content-store cloud-account protection-group', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
     ChangeType.REMOVE
     {"type": "string", "name": "dataSourceType", "arg": "$resource.properties.dataSourceType", "required": true, "enum": {"items": [{"value": "AzureVM"}]}}
-14
+16
 ['commvault content-store cloud-account protection-group', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
 ['command-group:commvault content-store cloud-account protection-group', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
     ChangeType.REMOVE
     {"type": "string", "name": "dataSourceType", "required": true, "enum": {"items": [{"value": "AzureVM"}]}}
-15
+17
 ['commvault content-store cloud-account protection-group', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
     ChangeType.ADD
     true
-16
+18
 ['commvault content-store cloud-account protection-group', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
     ChangeType.ADD
     true
-17
+19
 ['commvault content-store cloud-account protection-group', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'protectionStatus', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'protectionStatus', 'required']
     ChangeType.ADD
     true
-18
+20
 ['commvault content-store cloud-account protection-group', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
 ['command-group:commvault content-store cloud-account protection-group', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
     ChangeType.ADD
     ["name"]
-19
+21
 ['commvault content-store cloud-account protection-group', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'dataSourceType']
 ['command-group:commvault content-store cloud-account protection-group', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'dataSourceType']
     ChangeType.REMOVE
     {"type": "string", "name": "dataSourceType", "required": true, "enum": {"items": [{"value": "AzureVM"}]}}
-20
+22
 ['commvault content-store cloud-account protection-group', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
     ChangeType.ADD
     true
-21
+23
 ['commvault content-store cloud-account protection-group', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
     ChangeType.ADD
     true
-22
+24
 ['commvault content-store cloud-account protection-group', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'protectionStatus', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'protectionStatus', 'required']
     ChangeType.ADD
     true
-23
+25
 ['commvault content-store cloud-account protection-group', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
 ['command-group:commvault content-store cloud-account protection-group', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
     ChangeType.REMOVE
     {"type": "string", "name": "dataSourceType", "required": true, "enum": {"items": [{"value": "AzureVM"}]}}
-24
+26
 ['commvault content-store cloud-account protection-group', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
     ChangeType.ADD
     true
-25
+27
 ['commvault content-store cloud-account protection-group', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
     ChangeType.ADD
     true
-26
+28
 ['commvault content-store cloud-account protection-group', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'protectionStatus', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'protectionStatus', 'required']
     ChangeType.ADD
     true
-27
+29
 ['commvault content-store cloud-account protection-group', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
 ['command-group:commvault content-store cloud-account protection-group', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
     ChangeType.REMOVE
     {"type": "string", "name": "dataSourceType", "required": true, "enum": {"items": [{"value": "AzureVM"}]}}
-28
+30
 ['commvault content-store cloud-account protection-group', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
     ChangeType.ADD
     true
-29
+31
 ['commvault content-store cloud-account protection-group', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
     ChangeType.ADD
     true
-30
+32
 ['commvault content-store cloud-account protection-group', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'protectionStatus', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'protectionStatus', 'required']
     ChangeType.ADD
     true
-31
+33
 ['commvault content-store cloud-account protection-group', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
 ['command-group:commvault content-store cloud-account protection-group', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'dataSourceType']
     ChangeType.REMOVE
     {"type": "string", "name": "dataSourceType", "required": true, "enum": {"items": [{"value": "AzureVM"}]}}
-32
+34
 ['commvault content-store cloud-account protection-group', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'lastBackUpTime', 'required']
     ChangeType.ADD
     true
-33
+35
 ['commvault content-store cloud-account protection-group', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'numberOfProtectedItems', 'required']
     ChangeType.ADD
     true
-34
+36
 ['commvault content-store cloud-account protection-group', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'protectionStatus', 'required']
 ['command-group:commvault content-store cloud-account protection-group', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'protectionStatus', 'required']
     ChangeType.ADD
     true
-35
+37
 ['commvault content-store cloud-account storage', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
 ['command-group:commvault content-store cloud-account storage', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
     ChangeType.ADD
     ["name"]
-36
+38
 ['commvault content-store cloud-account', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
 ['command-group:commvault content-store cloud-account', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
     ChangeType.ADD
     ["name"]
-37
+39
 ['commvault content-store cloud-account', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
 ['command-group:commvault content-store cloud-account', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
     ChangeType.ADD

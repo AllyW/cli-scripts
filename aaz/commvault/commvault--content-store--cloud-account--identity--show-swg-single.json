@@ -225,11 +225,6 @@
                               "required": true,
                               "props": [
                                 {
-                                  "readOnly": true,
-                                  "type": "dateTime",
-                                  "name": "endDate"
-                                },
-                                {
                                   "type": "string",
                                   "name": "offerId",
                                   "required": true
@@ -247,20 +242,6 @@
                                   "type": "string",
                                   "name": "publisherId",
                                   "required": true
-                                },
-                                {
-                                  "type": "string",
-                                  "name": "renewalMode",
-                                  "enum": {
-                                    "items": [
-                                      {
-                                        "value": "Auto"
-                                      },
-                                      {
-                                        "value": "Manual"
-                                      }
-                                    ]
-                                  }
                                 },
                                 {
                                   "type": "string",
@@ -319,6 +300,11 @@
                           }
                         },
                         {
+                          "readOnly": true,
+                          "type": "string",
+                          "name": "ssoUrl"
+                        },
+                        {
                           "type": "object",
                           "name": "user",
                           "required": true,
@@ -333,11 +319,13 @@
                             },
                             {
                               "type": "string",
-                              "name": "firstName"
+                              "name": "firstName",
+                              "required": true
                             },
                             {
                               "type": "string",
-                              "name": "lastName"
+                              "name": "lastName",
+                              "required": true
                             },
                             {
                               "type": "string",

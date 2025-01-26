@@ -248,73 +248,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "object",
-          "var": "$resource.properties.user",
-          "options": [
-            "user"
-          ],
-          "group": "Properties",
-          "help": {
-            "short": "Details of the user."
-          },
-          "args": [
-            {
-              "type": "string",
-              "var": "$resource.properties.user.emailAddress",
-              "options": [
-                "email-address"
-              ],
-              "required": true,
-              "help": {
-                "short": "Email address of the user"
-              },
-              "format": {
-                "pattern": "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$"
-              }
-            },
-            {
-              "type": "string",
-              "var": "$resource.properties.user.firstName",
-              "options": [
-                "first-name"
-              ],
-              "help": {
-                "short": "First name of the user"
-              }
-            },
-            {
-              "type": "string",
-              "var": "$resource.properties.user.lastName",
-              "options": [
-                "last-name"
-              ],
-              "help": {
-                "short": "Last name of the user"
-              }
-            },
-            {
-              "type": "string",
-              "var": "$resource.properties.user.phoneNumber",
-              "options": [
-                "phone-number"
-              ],
-              "help": {
-                "short": "User's phone number"
-              }
-            },
-            {
-              "type": "string",
-              "var": "$resource.properties.user.upn",
-              "options": [
-                "upn"
-              ],
-              "help": {
-                "short": "User's principal name"
-              }
-            }
-          ]
         }
       ]
     }
@@ -517,43 +450,6 @@
                             ]
                           }
                         ]
-                      },
-                      {
-                        "type": "object",
-                        "name": "user",
-                        "arg": "$resource.properties.user",
-                        "required": true,
-                        "props": [
-                          {
-                            "type": "string",
-                            "name": "emailAddress",
-                            "arg": "$resource.properties.user.emailAddress",
-                            "required": true,
-                            "format": {
-                              "pattern": "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$"
-                            }
-                          },
-                          {
-                            "type": "string",
-                            "name": "firstName",
-                            "arg": "$resource.properties.user.firstName"
-                          },
-                          {
-                            "type": "string",
-                            "name": "lastName",
-                            "arg": "$resource.properties.user.lastName"
-                          },
-                          {
-                            "type": "string",
-                            "name": "phoneNumber",
-                            "arg": "$resource.properties.user.phoneNumber"
-                          },
-                          {
-                            "type": "string",
-                            "name": "upn",
-                            "arg": "$resource.properties.user.upn"
-                          }
-                        ]
                       }
                     ]
                   }
@@ -753,37 +649,6 @@
                                   }
                                 }
                               ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "object",
-                          "name": "user",
-                          "required": true,
-                          "props": [
-                            {
-                              "type": "string",
-                              "name": "emailAddress",
-                              "required": true,
-                              "format": {
-                                "pattern": "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$"
-                              }
-                            },
-                            {
-                              "type": "string",
-                              "name": "firstName"
-                            },
-                            {
-                              "type": "string",
-                              "name": "lastName"
-                            },
-                            {
-                              "type": "string",
-                              "name": "phoneNumber"
-                            },
-                            {
-                              "type": "string",
-                              "name": "upn"
                             }
                           ]
                         }

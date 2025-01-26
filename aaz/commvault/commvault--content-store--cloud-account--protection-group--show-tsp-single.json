@@ -329,37 +329,6 @@
                               ]
                             }
                           ]
-                        },
-                        {
-                          "type": "object",
-                          "name": "user",
-                          "required": true,
-                          "props": [
-                            {
-                              "type": "string",
-                              "name": "emailAddress",
-                              "required": true,
-                              "format": {
-                                "pattern": "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$"
-                              }
-                            },
-                            {
-                              "type": "string",
-                              "name": "firstName"
-                            },
-                            {
-                              "type": "string",
-                              "name": "lastName"
-                            },
-                            {
-                              "type": "string",
-                              "name": "phoneNumber"
-                            },
-                            {
-                              "type": "string",
-                              "name": "upn"
-                            }
-                          ]
                         }
                       ]
                     },

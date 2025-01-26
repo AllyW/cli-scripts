@@ -179,29 +179,6 @@
                 {
                   "nullable": true,
                   "type": "string",
-                  "var": "$resource.properties.marketplace.offerDetails.renewalMode",
-                  "options": [
-                    "renewal-mode"
-                  ],
-                  "help": {
-                    "short": "Subscription renewal mode"
-                  },
-                  "enum": {
-                    "items": [
-                      {
-                        "name": "Auto",
-                        "value": "Auto"
-                      },
-                      {
-                        "name": "Manual",
-                        "value": "Manual"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "nullable": true,
-                  "type": "string",
                   "var": "$resource.properties.marketplace.offerDetails.termId",
                   "options": [
                     "term-id"
@@ -260,7 +237,6 @@
               }
             },
             {
-              "nullable": true,
               "type": "string",
               "var": "$resource.properties.user.firstName",
               "options": [
@@ -271,7 +247,6 @@
               }
             },
             {
-              "nullable": true,
               "type": "string",
               "var": "$resource.properties.user.lastName",
               "options": [
@@ -490,11 +465,6 @@
                               "required": true,
                               "props": [
                                 {
-                                  "readOnly": true,
-                                  "type": "dateTime",
-                                  "name": "endDate"
-                                },
-                                {
                                   "type": "string",
                                   "name": "offerId",
                                   "required": true
@@ -512,20 +482,6 @@
                                   "type": "string",
                                   "name": "publisherId",
                                   "required": true
-                                },
-                                {
-                                  "type": "string",
-                                  "name": "renewalMode",
-                                  "enum": {
-                                    "items": [
-                                      {
-                                        "value": "Auto"
-                                      },
-                                      {
-                                        "value": "Manual"
-                                      }
-                                    ]
-                                  }
                                 },
                                 {
                                   "type": "string",
@@ -584,6 +540,11 @@
                           }
                         },
                         {
+                          "readOnly": true,
+                          "type": "string",
+                          "name": "ssoUrl"
+                        },
+                        {
                           "type": "object",
                           "name": "user",
                           "required": true,
@@ -598,11 +559,13 @@
                             },
                             {
                               "type": "string",
-                              "name": "firstName"
+                              "name": "firstName",
+                              "required": true
                             },
                             {
                               "type": "string",
-                              "name": "lastName"
+                              "name": "lastName",
+                              "required": true
                             },
                             {
                               "type": "string",
@@ -801,21 +764,6 @@
                           },
                           {
                             "type": "string",
-                            "name": "renewalMode",
-                            "arg": "$resource.properties.marketplace.offerDetails.renewalMode",
-                            "enum": {
-                              "items": [
-                                {
-                                  "value": "Auto"
-                                },
-                                {
-                                  "value": "Manual"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "type": "string",
                             "name": "termId",
                             "arg": "$resource.properties.marketplace.offerDetails.termId"
                           },
@@ -852,12 +800,14 @@
                       {
                         "type": "string",
                         "name": "firstName",
-                        "arg": "$resource.properties.user.firstName"
+                        "arg": "$resource.properties.user.firstName",
+                        "required": true
                       },
                       {
                         "type": "string",
                         "name": "lastName",
-                        "arg": "$resource.properties.user.lastName"
+                        "arg": "$resource.properties.user.lastName",
+                        "required": true
                       },
                       {
                         "type": "string",
