@@ -175,7 +175,6 @@
                       "readOnly": true,
                       "type": "array<integer64>",
                       "name": "restoreTimes",
-                      "required": true,
                       "item": {
                         "type": "integer64"
                       }

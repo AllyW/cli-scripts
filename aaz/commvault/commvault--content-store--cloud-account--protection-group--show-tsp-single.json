@@ -166,14 +166,12 @@
                         {
                           "readOnly": true,
                           "type": "integer64",
-                          "name": "lastBackUpTime",
-                          "required": true
+                          "name": "lastBackUpTime"
                         },
                         {
                           "readOnly": true,
                           "type": "integer32",
-                          "name": "numberOfProtectedItems",
-                          "required": true
+                          "name": "numberOfProtectedItems"
                         },
                         {
                           "type": "string",
@@ -184,7 +182,6 @@
                           "readOnly": true,
                           "type": "string",
                           "name": "protectionStatus",
-                          "required": true,
                           "enum": {
                             "items": [
                               {

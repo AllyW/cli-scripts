@@ -517,7 +517,6 @@
                       "readOnly": true,
                       "type": "array<string>",
                       "name": "jobIds",
-                      "required": true,
                       "item": {
                         "type": "string"
                       }
@@ -525,8 +524,7 @@
                     {
                       "readOnly": true,
                       "type": "integer32",
-                      "name": "taskId",
-                      "required": true
+                      "name": "taskId"
                     }
                   ]
                 }

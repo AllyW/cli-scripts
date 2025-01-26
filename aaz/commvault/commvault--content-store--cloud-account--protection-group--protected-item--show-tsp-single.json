@@ -190,20 +190,17 @@
                         {
                           "readOnly": true,
                           "type": "integer64",
-                          "name": "lastBackUpTime",
-                          "required": true
+                          "name": "lastBackUpTime"
                         },
                         {
                           "readOnly": true,
                           "type": "string",
-                          "name": "location",
-                          "required": true
+                          "name": "location"
                         },
                         {
                           "readOnly": true,
                           "type": "string",
-                          "name": "resourceGroup",
-                          "required": true
+                          "name": "resourceGroup"
                         }
                       ]
                     },
