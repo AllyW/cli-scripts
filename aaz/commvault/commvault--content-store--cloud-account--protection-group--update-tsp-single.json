@@ -345,6 +345,18 @@
                       "name": "properties",
                       "props": [
                         {
+                          "type": "string",
+                          "name": "dataSourceType",
+                          "required": true,
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "AzureVM"
+                              }
+                            ]
+                          }
+                        },
+                        {
                           "readOnly": true,
                           "type": "integer64",
                           "name": "lastBackUpTime"
@@ -837,6 +849,18 @@
                       "type": "object",
                       "name": "properties",
                       "props": [
+                        {
+                          "type": "string",
+                          "name": "dataSourceType",
+                          "required": true,
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "AzureVM"
+                              }
+                            ]
+                          }
+                        },
                         {
                           "readOnly": true,
                           "type": "integer64",

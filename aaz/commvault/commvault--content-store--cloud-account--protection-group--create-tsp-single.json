@@ -74,6 +74,25 @@
       "args": [
         {
           "type": "string",
+          "var": "$resource.properties.dataSourceType",
+          "options": [
+            "data-source-type"
+          ],
+          "group": "Properties",
+          "help": {
+            "short": "The datasource type of Commvault Protection Group"
+          },
+          "enum": {
+            "items": [
+              {
+                "name": "AzureVM",
+                "value": "AzureVM"
+              }
+            ]
+          }
+        },
+        {
+          "type": "string",
           "var": "$resource.properties.plan",
           "options": [
             "plan"
@@ -335,6 +354,19 @@
                     "props": [
                       {
                         "type": "string",
+                        "name": "dataSourceType",
+                        "arg": "$resource.properties.dataSourceType",
+                        "required": true,
+                        "enum": {
+                          "items": [
+                            {
+                              "value": "AzureVM"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "string",
                         "name": "plan",
                         "arg": "$resource.properties.plan",
                         "required": true
@@ -485,6 +517,18 @@
                       "type": "object",
                       "name": "properties",
                       "props": [
+                        {
+                          "type": "string",
+                          "name": "dataSourceType",
+                          "required": true,
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "AzureVM"
+                              }
+                            ]
+                          }
+                        },
                         {
                           "readOnly": true,
                           "type": "integer64",

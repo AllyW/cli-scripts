@@ -861,12 +861,17 @@ def filter_known_tups(item_list):
             return True
         if item_list[2] is ChangeType.CHANGE and item_list[0][-1] == "help":
             return True
+        if item_list[0][-2] == "subscriptionId" and item_list[0][-1] == "type" and item_list[2] is ChangeType.CHANGE:
+            return True
 
     if len(item_list) >= 4:
         if item_list[0][-2] == "id" and item_list[0][-1] == "format" and item_list[2] is ChangeType.REMOVE and item_list[3].find("template") != -1:
             return True
         if item_list[0][-2] == "responses" and item_list[0][-1] == "200.201" and item_list[2] is ChangeType.REMOVE:
             return True
+        if item_list[0][-2] == "subscriptionId" and item_list[0][-1] == "format" and item_list[2] is ChangeType.REMOVE:
+            return True
+
     return False
 
 
@@ -899,6 +904,7 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
         original_cmd = []
         swagger_json_path = os.path.join(aaz_root_swagger, "." + json_relate_path)
         tsp_json_path = os.path.join(aaz_root_tsp, "." + json_relate_path)
+        print("json path: ", tsp_json_path)
         with open(swagger_json_path, "r", encoding="utf-8") as f:
             cmd_swagger_json = json.load(f)
         with open(tsp_json_path, "r", encoding="utf-8") as f:

@@ -186,6 +186,18 @@
                                 "readOnly": true,
                                 "type": "string",
                                 "name": "resourceGroup"
+                              },
+                              {
+                                "readOnly": true,
+                                "type": "string",
+                                "name": "resourceName",
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "value": "string"
+                                    }
+                                  ]
+                                }
                               }
                             ]
                           },
@@ -258,10 +270,7 @@
                             "name": "type"
                           }
                         ]
-                      },
-                      "identifiers": [
-                        "name"
-                      ]
+                      }
                     }
                   ]
                 }

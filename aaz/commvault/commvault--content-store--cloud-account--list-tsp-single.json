@@ -416,10 +416,7 @@
                             "name": "type"
                           }
                         ]
-                      },
-                      "identifiers": [
-                        "name"
-                      ]
+                      }
                     }
                   ]
                 }
@@ -791,10 +788,7 @@
                             "name": "type"
                           }
                         ]
-                      },
-                      "identifiers": [
-                        "name"
-                      ]
+                      }
                     }
                   ]
                 }

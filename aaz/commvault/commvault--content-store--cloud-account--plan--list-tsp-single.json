@@ -460,10 +460,7 @@
                             "name": "type"
                           }
                         ]
-                      },
-                      "identifiers": [
-                        "name"
-                      ]
+                      }
                     }
                   ]
                 }
