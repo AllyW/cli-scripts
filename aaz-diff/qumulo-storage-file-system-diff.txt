@@ -1,0 +1,192 @@
+1
+['qumulo storage file-system', 'identity', 'assign', '0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:assign', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+2
+['qumulo storage file-system', 'identity', 'assign', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:assign', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+3
+['qumulo storage file-system', 'identity', 'assign', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:assign', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+4
+['qumulo storage file-system', 'identity', 'assign', '2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:assign', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+5
+['qumulo storage file-system', 'identity', 'assign', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:assign', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+6
+['qumulo storage file-system', 'identity', 'assign', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:assign', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+7
+['qumulo storage file-system', 'identity', 'remove', '0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:remove', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+8
+['qumulo storage file-system', 'identity', 'remove', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:remove', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+9
+['qumulo storage file-system', 'identity', 'remove', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:remove', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+10
+['qumulo storage file-system', 'identity', 'remove', '2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:remove', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+11
+['qumulo storage file-system', 'identity', 'remove', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:remove', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+12
+['qumulo storage file-system', 'identity', 'remove', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:remove', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+13
+['qumulo storage file-system', 'identity', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+14
+['qumulo storage file-system', 'identity', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+15
+['qumulo storage file-system', 'identity', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command-group:identity', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+16
+['qumulo storage file-system', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+17
+['qumulo storage file-system', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+18
+['qumulo storage file-system', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+19
+['qumulo storage file-system', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+20
+['qumulo storage file-system', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+21
+['qumulo storage file-system', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+22
+['qumulo storage file-system', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+23
+['qumulo storage file-system', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+24
+['qumulo storage file-system', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+25
+['qumulo storage file-system', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+26
+['qumulo storage file-system', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+27
+['qumulo storage file-system', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+28
+['qumulo storage file-system', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+29
+['qumulo storage file-system', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+30
+['qumulo storage file-system', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+31
+['qumulo storage file-system', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+32
+['qumulo storage file-system', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true
+33
+['qumulo storage file-system', 'update', '1']
+['command-group:qumulo storage file-system', 'command:update', 'operation ind: 1']
+    ChangeType.CHANGE
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "IdentityObject", "name": "identity", "props": [{"type": "string", "name": "type", "arg": "$resource.identity.type", "required": true, "enum": {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}}, {"type": "object", "name": "userAssignedIdentities", "arg": "$resource.identity.userAssignedIdentities", "additionalProps": {"item": {"type": "object"}}}]}, {"type": "object", "name": "properties", "props": [{"type": "string", "name": "adminPassword", "arg": "$resource.properties.adminPassword", "required": true, "secret": true}, {"type": "string", "name": "availabilityZone", "arg": "$resource.properties.availabilityZone"}, {"type": "string", "name": "clusterLoginUrl", "arg": "$resource.properties.clusterLoginUrl"}, {"type": "string", "name": "delegatedSubnetId", "arg": "$resource.properties.delegatedSubnetId", "required": true}, {"type": "object", "name": "marketplaceDetails", "arg": "$resource.properties.marketplaceDetails", "required": true, "props": [{"type": "string", "name": "marketplaceSubscriptionId", "arg": "$resource.properties.marketplaceDetails.marketplaceSubscriptionId"}, {"type": "string", "name": "offerId", "arg": "$resource.properties.marketplaceDetails.offerId", "required": true}, {"type": "string", "name": "planId", "arg": "$resource.properties.marketplaceDetails.planId", "required": true}, {"type": "string", "name": "publisherId", "arg": "$resource.properties.marketplaceDetails.publisherId"}, {"type": "string", "name": "termUnit", "arg": "$resource.properties.marketplaceDetails.termUnit"}]}, {"type": "array<string>", "name": "privateIPs", "arg": "$resource.properties.privateIPs", "item": {"type": "string"}}, {"type": "string", "name": "storageSku", "arg": "$resource.properties.storageSku", "required": true}, {"type": "object", "name": "userDetails", "arg": "$resource.properties.userDetails", "required": true, "props": [{"type": "string", "name": "email", "arg": "$resource.properties.userDetails.email", "required": true, "secret": true}]}], "clientFlatten": true}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "IdentityObject", "name": "identity", "props": [{"type": "string", "name": "type", "arg": "$resource.identity.type", "required": true, "enum": {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}}, {"type": "object", "name": "userAssignedIdentities", "arg": "$resource.identity.userAssignedIdentities", "additionalProps": {"item": {"type": "object"}}}]}, {"type": "object", "name": "properties", "props": [{"type": "string", "name": "adminPassword", "arg": "$resource.properties.adminPassword", "required": true}, {"type": "string", "name": "availabilityZone", "arg": "$resource.properties.availabilityZone"}, {"type": "string", "name": "clusterLoginUrl", "arg": "$resource.properties.clusterLoginUrl"}, {"type": "string", "name": "delegatedSubnetId", "arg": "$resource.properties.delegatedSubnetId", "required": true}, {"type": "object", "name": "marketplaceDetails", "arg": "$resource.properties.marketplaceDetails", "required": true, "props": [{"type": "string", "name": "marketplaceSubscriptionId", "arg": "$resource.properties.marketplaceDetails.marketplaceSubscriptionId"}, {"type": "string", "name": "offerId", "arg": "$resource.properties.marketplaceDetails.offerId", "required": true}, {"type": "string", "name": "planId", "arg": "$resource.properties.marketplaceDetails.planId", "required": true}, {"type": "string", "name": "publisherId", "arg": "$resource.properties.marketplaceDetails.publisherId"}, {"type": "string", "name": "termUnit", "arg": "$resource.properties.marketplaceDetails.termUnit"}]}, {"type": "array<string>", "name": "privateIPs", "arg": "$resource.properties.privateIPs", "item": {"type": "string"}}, {"type": "string", "name": "storageSku", "arg": "$resource.properties.storageSku", "required": true}, {"type": "object", "name": "userDetails", "arg": "$resource.properties.userDetails", "required": true, "props": [{"type": "string", "name": "email", "arg": "$resource.properties.userDetails.email", "required": true}]}]}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+34
+['qumulo storage file-system', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'type']
+['command-group:qumulo storage file-system', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+35
+['qumulo storage file-system', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+['command-group:qumulo storage file-system', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'adminPassword', 'secret']
+    ChangeType.REMOVE
+    true
+36
+['qumulo storage file-system', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+['command-group:qumulo storage file-system', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'userDetails', 'props', 'email', 'secret']
+    ChangeType.REMOVE
+    true

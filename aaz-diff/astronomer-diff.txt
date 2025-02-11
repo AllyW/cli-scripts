@@ -1,227 +1,99 @@
 1
-['astronomer organization', 'identity', 'assign', '0', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command-group:identity', 'command:assign', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
+['astronomer organization', 'create', 'Properties', '$resource.properties.partnerOrganizationProperties', 'options']
+['command-group:astronomer organization', 'command:create', 'argGroup: Properties', 'arg: $resource.properties.partnerOrganizationProperties', 'prop: options']
     ChangeType.CHANGE
-    "string"
-    "uuid"
+    ["partner-organization"]
+    ["partner-organization-properties"]
 2
-['astronomer organization', 'identity', 'assign', '0', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command-group:identity', 'command:assign', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
+['astronomer organization', 'create', 'Resource', '$resource.identity']
+['command-group:astronomer organization', 'command:create', 'argGroup: Resource', 'arg: $resource.identity']
     ChangeType.REMOVE
-    {"minLength": 1}
-    ""
+    {"type": "object", "var": "$resource.identity", "options": ["identity"], "group": "Resource", "help": {"short": "The managed service identities assigned to this resource."}, "args": [{"blank": {"value": "True"}, "type": "string", "var": "$resource.identity.systemAssigned", "options": ["system-assigned", "mi-system-assigned"], "help": {"short": "Set the system managed identity."}}, {"type": "string", "var": "$resource.identity.type", "options": ["type"], "required": true, "help": {"short": "Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed)."}, "enum": {"items": [{"name": "None", "value": "None"}, {"name": "SystemAssigned", "value": "SystemAssigned"}, {"name": "SystemAssigned, UserAssigned", "value": "SystemAssigned, UserAssigned"}, {"name": "UserAssigned", "value": "UserAssigned"}]}}, {"blank": {"value": []}, "type": "array<string>", "var": "$resource.identity.userAssigned", "options": ["user-assigned", "mi-user-assigned"], "help": {"short": "Set the user managed identities."}, "item": {"type": "string"}}, {"type": "object", "var": "$resource.identity.userAssignedIdentities", "options": ["user-assigned-identities"], "help": {"short": "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."}, "additionalProps": {"item": {"blank": {"value": {}}, "type": "object"}}}]}
 3
-['astronomer organization', 'identity', 'assign', '2', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command-group:identity', 'command:assign', 'operation ind: 2', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
+['astronomer organization', 'create', 'Identity']
+['command-group:astronomer organization', 'command:create', 'argGroup: Identity']
+    ChangeType.ADD
 4
-['astronomer organization', 'identity', 'assign', '2', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command-group:identity', 'command:assign', 'operation ind: 2', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
-5
-['astronomer organization', 'identity', 'remove', '0', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command-group:identity', 'command:remove', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
-6
-['astronomer organization', 'identity', 'remove', '0', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command-group:identity', 'command:remove', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
-7
-['astronomer organization', 'identity', 'remove', '2', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command-group:identity', 'command:remove', 'operation ind: 2', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
-8
-['astronomer organization', 'identity', 'remove', '2', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command-group:identity', 'command:remove', 'operation ind: 2', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
-9
-['astronomer organization', 'identity', 'show', '0', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command-group:identity', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
-10
-['astronomer organization', 'identity', 'show', '0', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command-group:identity', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
-11
-['astronomer organization', 'create', '0', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command:create', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
-12
-['astronomer organization', 'create', '0', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command:create', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
-13
 ['astronomer organization', 'create', '0', 'request', 'body', 'schema', 'props', 'identity', 'arg']
 ['command-group:astronomer organization', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'identity', 'arg']
     ChangeType.REMOVE
     "$resource.identity"
+5
+['astronomer organization', 'update', 'Properties', '$properties.identity']
+['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'arg: $properties.identity']
+    ChangeType.REMOVE
+    {"type": "object", "var": "$properties.identity", "options": ["identity"], "group": "Properties", "help": {"short": "The managed service identities assigned to this resource."}, "args": [{"blank": {"value": "True"}, "type": "string", "var": "$properties.identity.systemAssigned", "options": ["system-assigned", "mi-system-assigned"], "help": {"short": "Set the system managed identity."}}, {"type": "string", "var": "$properties.identity.type", "options": ["type"], "required": true, "help": {"short": "Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed)."}, "enum": {"items": [{"name": "None", "value": "None"}, {"name": "SystemAssigned", "value": "SystemAssigned"}, {"name": "SystemAssigned, UserAssigned", "value": "SystemAssigned, UserAssigned"}, {"name": "UserAssigned", "value": "UserAssigned"}]}}, {"blank": {"value": []}, "type": "array<string>", "var": "$properties.identity.userAssigned", "options": ["user-assigned", "mi-user-assigned"], "help": {"short": "Set the user managed identities."}, "item": {"type": "string"}}, {"type": "object", "var": "$properties.identity.userAssignedIdentities", "options": ["user-assigned-identities"], "help": {"short": "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."}, "additionalProps": {"item": {"blank": {"value": {}}, "type": "object"}}}]}
+6
+['astronomer organization', 'update', 'Properties', '$properties.properties.marketplace']
+['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'arg: $properties.properties.marketplace']
+    ChangeType.REMOVE
+    {"type": "object", "var": "$properties.properties.marketplace", "options": ["marketplace"], "group": "Properties", "help": {"short": "Marketplace details of the resource."}, "args": [{"type": "object", "var": "$properties.properties.marketplace.offerDetails", "options": ["offer-details"], "help": {"short": "Offer details for the marketplace that is selected by the user"}, "args": [{"type": "string", "var": "$properties.properties.marketplace.offerDetails.offerId", "options": ["offer-id"], "help": {"short": "Offer Id for the marketplace offer"}}, {"type": "string", "var": "$properties.properties.marketplace.offerDetails.planId", "options": ["plan-id"], "help": {"short": "Plan Id for the marketplace offer"}}, {"type": "string", "var": "$properties.properties.marketplace.offerDetails.planName", "options": ["plan-name"], "help": {"short": "Plan Name for the marketplace offer"}}, {"type": "string", "var": "$properties.properties.marketplace.offerDetails.publisherId", "options": ["publisher-id"], "help": {"short": "Publisher Id for the marketplace offer"}}, {"type": "string", "var": "$properties.properties.marketplace.offerDetails.renewalMode", "options": ["renewal-mode"], "help": {"short": "Subscription renewal mode"}, "enum": {"items": [{"name": "Auto", "value": "Auto"}, {"name": "Manual", "value": "Manual"}]}}, {"type": "string", "var": "$properties.properties.marketplace.offerDetails.termId", "options": ["term-id"], "help": {"short": "Plan Display Name for the marketplace offer"}}, {"type": "string", "var": "$properties.properties.marketplace.offerDetails.termUnit", "options": ["term-unit"], "help": {"short": "Plan Display Name for the marketplace offer"}}]}, {"type": "string", "var": "$properties.properties.marketplace.subscriptionId", "options": ["subscription-id"], "help": {"short": "Azure subscription id for the the marketplace offer is purchased from"}}, {"type": "string", "var": "$properties.properties.marketplace.subscriptionStatus", "options": ["subscription-status"], "help": {"short": "Marketplace subscription status"}, "enum": {"items": [{"name": "PendingFulfillmentStart", "value": "PendingFulfillmentStart"}, {"name": "Subscribed", "value": "Subscribed"}, {"name": "Suspended", "value": "Suspended"}, {"name": "Unsubscribed", "value": "Unsubscribed"}]}}]}
+7
+['astronomer organization', 'update', 'Properties', '$properties.properties.partnerOrganizationProperties']
+['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'arg: $properties.properties.partnerOrganizationProperties']
+    ChangeType.REMOVE
+    {"type": "object", "var": "$properties.properties.partnerOrganizationProperties", "options": ["partner-organization"], "group": "Properties", "help": {"short": "Organization properties"}, "args": [{"type": "string", "var": "$properties.properties.partnerOrganizationProperties.organizationId", "options": ["organization-id"], "help": {"short": "Organization Id in partner's system"}}, {"type": "string", "var": "$properties.properties.partnerOrganizationProperties.organizationName", "options": ["organization-name"], "help": {"short": "Organization name in partner's system"}, "format": {"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$", "maxLength": 50, "minLength": 1}}, {"type": "object", "var": "$properties.properties.partnerOrganizationProperties.singleSignOnProperties", "options": ["single-sign-on-properties"], "help": {"short": "Single Sign On properties for the organization"}, "args": [{"type": "array<string>", "var": "$properties.properties.partnerOrganizationProperties.singleSignOnProperties.aadDomains", "options": ["aad-domains"], "help": {"short": "List of AAD domains fetched from Microsoft Graph for user."}, "item": {"type": "string"}}, {"type": "string", "var": "$properties.properties.partnerOrganizationProperties.singleSignOnProperties.enterpriseAppId", "options": ["enterprise-app-id"], "help": {"short": "AAD enterprise application Id used to setup SSO"}}, {"type": "string", "var": "$properties.properties.partnerOrganizationProperties.singleSignOnProperties.singleSignOnState", "options": ["single-sign-on-state"], "help": {"short": "State of the Single Sign On for the organization"}, "enum": {"items": [{"name": "Disable", "value": "Disable"}, {"name": "Enable", "value": "Enable"}, {"name": "Initial", "value": "Initial"}]}}, {"type": "string", "var": "$properties.properties.partnerOrganizationProperties.singleSignOnProperties.singleSignOnUrl", "options": ["single-sign-on-url"], "help": {"short": "URL for SSO to be used by the partner to redirect the user to their system"}}]}, {"type": "string", "var": "$properties.properties.partnerOrganizationProperties.workspaceId", "options": ["workspace-id"], "help": {"short": "Workspace Id in partner's system"}}, {"type": "string", "var": "$properties.properties.partnerOrganizationProperties.workspaceName", "options": ["workspace-name"], "help": {"short": "Workspace name in partner's system"}, "format": {"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$", "maxLength": 50, "minLength": 1}}]}
+8
+['astronomer organization', 'update', 'Properties', '$properties.properties.user']
+['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'arg: $properties.properties.user']
+    ChangeType.REMOVE
+    {"type": "object", "var": "$properties.properties.user", "options": ["user"], "group": "Properties", "help": {"short": "Details of the user."}, "args": [{"type": "string", "var": "$properties.properties.user.emailAddress", "options": ["email-address"], "help": {"short": "Email address of the user"}, "format": {"pattern": "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$"}}, {"type": "string", "var": "$properties.properties.user.firstName", "options": ["first-name"], "help": {"short": "First name of the user"}}, {"type": "string", "var": "$properties.properties.user.lastName", "options": ["last-name"], "help": {"short": "Last name of the user"}}, {"type": "string", "var": "$properties.properties.user.phoneNumber", "options": ["phone-number"], "help": {"short": "User's phone number"}}, {"type": "string", "var": "$properties.properties.user.upn", "options": ["upn"], "help": {"short": "User's principal name"}}]}
+9
+['astronomer organization', 'update', 'Properties', '$properties.tags']
+['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'arg: $properties.tags']
+    ChangeType.REMOVE
+    {"type": "object", "var": "$properties.tags", "options": ["tags"], "group": "Properties", "help": {"short": "Resource tags."}, "additionalProps": {"item": {"type": "string"}}}
+10
+['astronomer organization', 'update', 'Properties', '$resource.properties.marketplace']
+['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'arg: $resource.properties.marketplace']
+    ChangeType.ADD
+    {"type": "object", "var": "$resource.properties.marketplace", "options": ["marketplace"], "group": "Properties", "help": {"short": "Marketplace details of the resource."}, "args": [{"type": "object", "var": "$resource.properties.marketplace.offerDetails", "options": ["offer-details"], "help": {"short": "Offer details for the marketplace that is selected by the user"}, "args": [{"type": "string", "var": "$resource.properties.marketplace.offerDetails.offerId", "options": ["offer-id"], "help": {"short": "Offer Id for the marketplace offer"}}, {"type": "string", "var": "$resource.properties.marketplace.offerDetails.planId", "options": ["plan-id"], "help": {"short": "Plan Id for the marketplace offer"}}, {"nullable": true, "type": "string", "var": "$resource.properties.marketplace.offerDetails.planName", "options": ["plan-name"], "help": {"short": "Plan Name for the marketplace offer"}}, {"type": "string", "var": "$resource.properties.marketplace.offerDetails.publisherId", "options": ["publisher-id"], "help": {"short": "Publisher Id for the marketplace offer"}}, {"nullable": true, "type": "string", "var": "$resource.properties.marketplace.offerDetails.renewalMode", "options": ["renewal-mode"], "help": {"short": "Subscription renewal mode"}, "enum": {"items": [{"name": "Auto", "value": "Auto"}, {"name": "Manual", "value": "Manual"}]}}, {"nullable": true, "type": "string", "var": "$resource.properties.marketplace.offerDetails.termId", "options": ["term-id"], "help": {"short": "Plan Display Name for the marketplace offer"}}, {"nullable": true, "type": "string", "var": "$resource.properties.marketplace.offerDetails.termUnit", "options": ["term-unit"], "help": {"short": "Plan Display Name for the marketplace offer"}}]}, {"nullable": true, "type": "string", "var": "$resource.properties.marketplace.subscriptionId", "options": ["subscription-id"], "help": {"short": "Azure subscription id for the the marketplace offer is purchased from"}}, {"nullable": true, "type": "string", "var": "$resource.properties.marketplace.subscriptionStatus", "options": ["subscription-status"], "help": {"short": "Marketplace subscription status"}, "enum": {"items": [{"name": "PendingFulfillmentStart", "value": "PendingFulfillmentStart"}, {"name": "Subscribed", "value": "Subscribed"}, {"name": "Suspended", "value": "Suspended"}, {"name": "Unsubscribed", "value": "Unsubscribed"}]}}], "checked": true}
+11
+['astronomer organization', 'update', 'Properties', '$resource.properties.partnerOrganizationProperties']
+['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'arg: $resource.properties.partnerOrganizationProperties']
+    ChangeType.ADD
+    {"nullable": true, "type": "object", "var": "$resource.properties.partnerOrganizationProperties", "options": ["partner-organization-properties"], "group": "Properties", "help": {"short": "Organization properties"}, "args": [{"nullable": true, "type": "string", "var": "$resource.properties.partnerOrganizationProperties.organizationId", "options": ["organization-id"], "help": {"short": "Organization Id in partner's system"}}, {"type": "string", "var": "$resource.properties.partnerOrganizationProperties.organizationName", "options": ["organization-name"], "help": {"short": "Organization name in partner's system"}, "format": {"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$", "maxLength": 50, "minLength": 1}}, {"nullable": true, "type": "object", "var": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties", "options": ["single-sign-on-properties"], "help": {"short": "Single Sign On properties for the organization"}, "args": [{"nullable": true, "type": "array<string>", "var": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.aadDomains", "options": ["aad-domains"], "help": {"short": "List of AAD domains fetched from Microsoft Graph for user."}, "item": {"nullable": true, "type": "string"}}, {"nullable": true, "type": "string", "var": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.enterpriseAppId", "options": ["enterprise-app-id"], "help": {"short": "AAD enterprise application Id used to setup SSO"}}, {"nullable": true, "type": "string", "var": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.singleSignOnState", "options": ["single-sign-on-state"], "help": {"short": "State of the Single Sign On for the organization"}, "enum": {"items": [{"name": "Disable", "value": "Disable"}, {"name": "Enable", "value": "Enable"}, {"name": "Initial", "value": "Initial"}]}}, {"nullable": true, "type": "string", "var": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.singleSignOnUrl", "options": ["single-sign-on-url"], "help": {"short": "URL for SSO to be used by the partner to redirect the user to their system"}}]}, {"nullable": true, "type": "string", "var": "$resource.properties.partnerOrganizationProperties.workspaceId", "options": ["workspace-id"], "help": {"short": "Workspace Id in partner's system"}}, {"nullable": true, "type": "string", "var": "$resource.properties.partnerOrganizationProperties.workspaceName", "options": ["workspace-name"], "help": {"short": "Workspace name in partner's system"}, "format": {"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$", "maxLength": 50, "minLength": 1}}], "checked": true}
+12
+['astronomer organization', 'update', 'Properties', '$resource.properties.user']
+['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'arg: $resource.properties.user']
+    ChangeType.ADD
+    {"type": "object", "var": "$resource.properties.user", "options": ["user"], "group": "Properties", "help": {"short": "Details of the user."}, "args": [{"type": "string", "var": "$resource.properties.user.emailAddress", "options": ["email-address"], "help": {"short": "Email address of the user"}, "format": {"pattern": "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$"}}, {"type": "string", "var": "$resource.properties.user.firstName", "options": ["first-name"], "help": {"short": "First name of the user"}}, {"type": "string", "var": "$resource.properties.user.lastName", "options": ["last-name"], "help": {"short": "Last name of the user"}}, {"nullable": true, "type": "string", "var": "$resource.properties.user.phoneNumber", "options": ["phone-number"], "help": {"short": "User's phone number"}}, {"nullable": true, "type": "string", "var": "$resource.properties.user.upn", "options": ["upn"], "help": {"short": "User's principal name"}}], "checked": true}
+13
+['astronomer organization', 'update', 'Identity']
+['command-group:astronomer organization', 'command:update', 'argGroup: Identity']
+    ChangeType.ADD
 14
-['astronomer organization', 'delete', '0', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command:delete', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
+['astronomer organization', 'update', 'Resource']
+['command-group:astronomer organization', 'command:update', 'argGroup: Resource']
+    ChangeType.ADD
 15
-['astronomer organization', 'delete', '0', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command:delete', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
+['astronomer organization', 'update', '0', 'operationId']
+['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'prop: operationId']
+    ChangeType.CHANGE
+    "Organizations_Update"
+    "Organizations_Get"
 16
-['astronomer organization', 'list', '0', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
+['astronomer organization', 'update', '0', 'longRunning']
+['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.REMOVE
+    {"finalStateVia": "location"}
+    ""
 17
-['astronomer organization', 'list', '0', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
+['astronomer organization', 'update', '0', 'request', 'method']
+['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'method']
+    ChangeType.CHANGE
+    patch
+    get
 18
-['astronomer organization', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-['command-group:astronomer organization', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-    ChangeType.ADD
-    ["name"]
+['astronomer organization', 'update', '0', 'responses', '202']
+['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'responses', '202']
+    ChangeType.REMOVE
+    {"statusCode": [202], "header": {"items": [{"name": "Location"}, {"name": "Retry-After"}]}}
 19
-['astronomer organization', 'list', '1', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command:list', 'operation ind: 1', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
+['astronomer organization', 'update', '1']
+['command-group:astronomer organization', 'command:update', 'operation ind: 1']
+    ChangeType.ADD
 20
-['astronomer organization', 'list', '1', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command:list', 'operation ind: 1', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
-21
-['astronomer organization', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-['command-group:astronomer organization', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
+['astronomer organization', 'update', '2']
+['command-group:astronomer organization', 'command:update', 'operation ind: 2']
     ChangeType.ADD
-    ["name"]
-22
-['astronomer organization', 'show', '0', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
-23
-['astronomer organization', 'show', '0', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
-24
-['astronomer organization', 'update', 'Properties', 'args', '$properties.properties.marketplace.offerDetails', 'required']
-['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'args', 'arg: $properties.properties.marketplace.offerDetails', 'prop: required']
-    ChangeType.ADD
-    true
-25
-['astronomer organization', 'update', 'Properties', 'args', 'args', '$properties.properties.marketplace.offerDetails.offerId', 'required']
-['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'args', 'args', 'arg: $properties.properties.marketplace.offerDetails.offerId', 'prop: required']
-    ChangeType.ADD
-    true
-26
-['astronomer organization', 'update', 'Properties', 'args', 'args', '$properties.properties.marketplace.offerDetails.planId', 'required']
-['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'args', 'args', 'arg: $properties.properties.marketplace.offerDetails.planId', 'prop: required']
-    ChangeType.ADD
-    true
-27
-['astronomer organization', 'update', 'Properties', 'args', 'args', '$properties.properties.marketplace.offerDetails.publisherId', 'required']
-['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'args', 'args', 'arg: $properties.properties.marketplace.offerDetails.publisherId', 'prop: required']
-    ChangeType.ADD
-    true
-28
-['astronomer organization', 'update', 'Properties', 'args', '$properties.properties.partnerOrganizationProperties.organizationName', 'required']
-['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'args', 'arg: $properties.properties.partnerOrganizationProperties.organizationName', 'prop: required']
-    ChangeType.ADD
-    true
-29
-['astronomer organization', 'update', 'Properties', 'args', '$properties.properties.user.emailAddress', 'required']
-['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'args', 'arg: $properties.properties.user.emailAddress', 'prop: required']
-    ChangeType.ADD
-    true
-30
-['astronomer organization', 'update', 'Properties', 'args', '$properties.properties.user.firstName', 'required']
-['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'args', 'arg: $properties.properties.user.firstName', 'prop: required']
-    ChangeType.ADD
-    true
-31
-['astronomer organization', 'update', 'Properties', 'args', '$properties.properties.user.lastName', 'required']
-['command-group:astronomer organization', 'command:update', 'argGroup: Properties', 'args', 'arg: $properties.properties.user.lastName', 'prop: required']
-    ChangeType.ADD
-    true
-32
-['astronomer organization', 'update', '0', 'request', 'path', 'params', 'subscriptionId', 'type']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: type']
-    ChangeType.CHANGE
-    "string"
-    "uuid"
-33
-['astronomer organization', 'update', '0', 'request', 'path', 'params', 'subscriptionId', 'format']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: subscriptionId', 'prop: format']
-    ChangeType.REMOVE
-    {"minLength": 1}
-    ""
-34
-['astronomer organization', 'update', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'marketplace', 'props', 'offerDetails', 'required']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'marketplace', 'props', 'offerDetails', 'required']
-    ChangeType.ADD
-    true
-35
-['astronomer organization', 'update', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'marketplace', 'props', 'offerDetails', 'props', 'offerId', 'required']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'marketplace', 'props', 'offerDetails', 'props', 'offerId', 'required']
-    ChangeType.ADD
-    true
-36
-['astronomer organization', 'update', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'marketplace', 'props', 'offerDetails', 'props', 'planId', 'required']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'marketplace', 'props', 'offerDetails', 'props', 'planId', 'required']
-    ChangeType.ADD
-    true
-37
-['astronomer organization', 'update', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'marketplace', 'props', 'offerDetails', 'props', 'publisherId', 'required']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'marketplace', 'props', 'offerDetails', 'props', 'publisherId', 'required']
-    ChangeType.ADD
-    true
-38
-['astronomer organization', 'update', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'partnerOrganizationProperties', 'props', 'organizationName', 'required']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'partnerOrganizationProperties', 'props', 'organizationName', 'required']
-    ChangeType.ADD
-    true
-39
-['astronomer organization', 'update', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'user', 'props', 'emailAddress', 'required']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'user', 'props', 'emailAddress', 'required']
-    ChangeType.ADD
-    true
-40
-['astronomer organization', 'update', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'user', 'props', 'firstName', 'required']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'user', 'props', 'firstName', 'required']
-    ChangeType.ADD
-    true
-41
-['astronomer organization', 'update', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'user', 'props', 'lastName', 'required']
-['command-group:astronomer organization', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'user', 'props', 'lastName', 'required']
-    ChangeType.ADD
-    true

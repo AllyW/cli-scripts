@@ -53,6 +53,96 @@
       ]
     },
     {
+      "name": "Identity",
+      "args": [
+        {
+          "blank": {
+            "value": "True"
+          },
+          "type": "string",
+          "var": "$resource.identity.systemAssigned",
+          "options": [
+            "system-assigned",
+            "mi-system-assigned"
+          ],
+          "group": "Identity",
+          "help": {
+            "short": "Set the system managed identity."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$resource.identity.type",
+          "options": [
+            "type"
+          ],
+          "hide": true,
+          "group": "Identity",
+          "help": {
+            "short": "The type of managed identity assigned to this resource."
+          },
+          "enum": {
+            "items": [
+              {
+                "name": "None",
+                "value": "None"
+              },
+              {
+                "name": "SystemAssigned",
+                "value": "SystemAssigned"
+              },
+              {
+                "name": "SystemAssigned, UserAssigned",
+                "value": "SystemAssigned, UserAssigned"
+              },
+              {
+                "name": "UserAssigned",
+                "value": "UserAssigned"
+              }
+            ]
+          }
+        },
+        {
+          "blank": {
+            "value": []
+          },
+          "type": "array<string>",
+          "var": "$resource.identity.userAssigned",
+          "options": [
+            "user-assigned",
+            "mi-user-assigned"
+          ],
+          "group": "Identity",
+          "help": {
+            "short": "Set the user managed identities."
+          },
+          "item": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "object",
+          "var": "$resource.identity.userAssignedIdentities",
+          "options": [
+            "user-assigned-identities"
+          ],
+          "hide": true,
+          "group": "Identity",
+          "help": {
+            "short": "The identities assigned to this resource by the user."
+          },
+          "additionalProps": {
+            "item": {
+              "blank": {
+                "value": {}
+              },
+              "type": "object"
+            }
+          }
+        }
+      ]
+    },
+    {
       "name": "Properties",
       "args": [
         {
@@ -210,7 +300,7 @@
           "type": "object",
           "var": "$resource.properties.partnerOrganizationProperties",
           "options": [
-            "partner-organization"
+            "partner-organization-properties"
           ],
           "group": "Properties",
           "help": {
@@ -416,103 +506,9 @@
       "name": "Resource",
       "args": [
         {
-          "type": "object",
-          "var": "$resource.identity",
-          "options": [
-            "identity"
-          ],
-          "group": "Resource",
-          "help": {
-            "short": "The managed service identities assigned to this resource."
-          },
-          "args": [
-            {
-              "blank": {
-                "value": "True"
-              },
-              "type": "string",
-              "var": "$resource.identity.systemAssigned",
-              "options": [
-                "system-assigned",
-                "mi-system-assigned"
-              ],
-              "help": {
-                "short": "Set the system managed identity."
-              }
-            },
-            {
-              "type": "string",
-              "var": "$resource.identity.type",
-              "options": [
-                "type"
-              ],
-              "required": true,
-              "help": {
-                "short": "Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed)."
-              },
-              "enum": {
-                "items": [
-                  {
-                    "name": "None",
-                    "value": "None"
-                  },
-                  {
-                    "name": "SystemAssigned",
-                    "value": "SystemAssigned"
-                  },
-                  {
-                    "name": "SystemAssigned, UserAssigned",
-                    "value": "SystemAssigned, UserAssigned"
-                  },
-                  {
-                    "name": "UserAssigned",
-                    "value": "UserAssigned"
-                  }
-                ]
-              }
-            },
-            {
-              "blank": {
-                "value": []
-              },
-              "type": "array<string>",
-              "var": "$resource.identity.userAssigned",
-              "options": [
-                "user-assigned",
-                "mi-user-assigned"
-              ],
-              "help": {
-                "short": "Set the user managed identities."
-              },
-              "item": {
-                "type": "string"
-              }
-            },
-            {
-              "type": "object",
-              "var": "$resource.identity.userAssignedIdentities",
-              "options": [
-                "user-assigned-identities"
-              ],
-              "help": {
-                "short": "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."
-              },
-              "additionalProps": {
-                "item": {
-                  "blank": {
-                    "value": {}
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          ]
-        },
-        {
           "type": "string",
           "var": "$resource.location",
           "options": [
-            "l",
             "location"
           ],
           "required": true,

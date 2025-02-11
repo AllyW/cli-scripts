@@ -851,10 +851,10 @@ def find_target_parent_path(target_path, path_input):
 
 def filter_known_tups(item_list):
     if len(item_list) >= 5:
-        if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "type" and item_list[2] is ChangeType.CHANGE and item_list[3] == '"ResourceLocation"' and item_list[4] == '"string"':
-            return True
-        if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "options" and item_list[2] is ChangeType.CHANGE and item_list[3] == '["l", "location"]' and item_list[4] == '["location"]':
-            return True
+        # if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "type" and item_list[2] is ChangeType.CHANGE and item_list[3] == '"ResourceLocation"' and item_list[4] == '"string"':
+        #     return True
+        # if item_list[0][-2].find("location") != -1 and item_list[0][-1] == "options" and item_list[2] is ChangeType.CHANGE and item_list[3] == '["l", "location"]' and item_list[4] == '["location"]':
+        #     return True
         if item_list[0][-2].find("resourceGroupName") != -1 and item_list[0][-1] == "format" and item_list[2] is ChangeType.CHANGE:
             return True
         if item_list[0][-2] == "responses" and item_list[0][-1] == "error" and item_list[2] is ChangeType.CHANGE and item_list[3].find('@MgmtErrorFormat') != -1 and item_list[4].find('@MgmtErrorFormat') != -1:
