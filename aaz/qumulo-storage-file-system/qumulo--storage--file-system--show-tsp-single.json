@@ -197,7 +197,8 @@
                         {
                           "type": "string",
                           "name": "adminPassword",
-                          "required": true
+                          "required": true,
+                          "secret": true
                         },
                         {
                           "type": "string",
@@ -318,7 +319,8 @@
                             {
                               "type": "string",
                               "name": "email",
-                              "required": true
+                              "required": true,
+                              "secret": true
                             }
                           ]
                         }

@@ -470,7 +470,8 @@
                         "type": "string",
                         "name": "adminPassword",
                         "arg": "$resource.properties.adminPassword",
-                        "required": true
+                        "required": true,
+                        "secret": true
                       },
                       {
                         "type": "string",
@@ -547,7 +548,8 @@
                             "type": "string",
                             "name": "email",
                             "arg": "$resource.properties.userDetails.email",
-                            "required": true
+                            "required": true,
+                            "secret": true
                           }
                         ]
                       }
@@ -661,7 +663,8 @@
                         {
                           "type": "string",
                           "name": "adminPassword",
-                          "required": true
+                          "required": true,
+                          "secret": true
                         },
                         {
                           "type": "string",
@@ -782,7 +785,8 @@
                             {
                               "type": "string",
                               "name": "email",
-                              "required": true
+                              "required": true,
+                              "secret": true
                             }
                           ]
                         }
