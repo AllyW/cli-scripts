@@ -867,8 +867,8 @@ def filter_known_tups(item_list):
     if len(item_list) >= 4:
         if item_list[0][-2] == "id" and item_list[0][-1] == "format" and item_list[2] is ChangeType.REMOVE and item_list[3].find("template") != -1:
             return True
-        if item_list[0][-2] == "responses" and item_list[0][-1] == "200.201" and item_list[2] is ChangeType.REMOVE:
-            return True
+        # if item_list[0][-2] == "responses" and item_list[0][-1] == "200.201" and item_list[2] is ChangeType.REMOVE:
+        #     return True
         if item_list[0][-2] == "subscriptionId" and item_list[0][-1] == "format" and item_list[2] is ChangeType.REMOVE:
             return True
 

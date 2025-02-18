@@ -1,0 +1,10 @@
+1
+['commvault content-store cloud-account protection-group protected-item', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'vmGuid']
+['command-group:commvault content-store cloud-account protection-group protected-item', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'vmGuid']
+    ChangeType.ADD
+    {"readOnly": true, "type": "string", "name": "vmGuid", "format": {"pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[4][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"}}
+2
+['commvault content-store cloud-account protection-group protected-item', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'vmGuid']
+['command-group:commvault content-store cloud-account protection-group protected-item', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'vmGuid']
+    ChangeType.ADD
+    {"readOnly": true, "type": "string", "name": "vmGuid", "format": {"pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[4][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"}}
