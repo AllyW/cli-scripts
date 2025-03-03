@@ -1491,12 +1491,48 @@
                                   "args": [
                                     {
                                       "type": "string",
+                                      "var": "@BaseVirtualMachineProfileCreateOrUpdate_create.osProfile.windowsConfiguration.additionalUnattendContent[].componentName",
+                                      "options": [
+                                        "component-name"
+                                      ],
+                                      "help": {
+                                        "short": "The component name. Currently, the only allowable value is Microsoft-Windows-Shell-Setup."
+                                      },
+                                      "enum": {
+                                        "items": [
+                                          {
+                                            "name": "Microsoft-Windows-Shell-Setup",
+                                            "value": "Microsoft-Windows-Shell-Setup"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "type": "string",
                                       "var": "@BaseVirtualMachineProfileCreateOrUpdate_create.osProfile.windowsConfiguration.additionalUnattendContent[].content",
                                       "options": [
                                         "content"
                                       ],
                                       "help": {
                                         "short": "Specifies the XML formatted content that is added to the unattend.xml file for the specified path and component. The XML must be less than 4KB and must include the root element for the setting or feature that is being inserted."
+                                      }
+                                    },
+                                    {
+                                      "type": "string",
+                                      "var": "@BaseVirtualMachineProfileCreateOrUpdate_create.osProfile.windowsConfiguration.additionalUnattendContent[].passName",
+                                      "options": [
+                                        "pass-name"
+                                      ],
+                                      "help": {
+                                        "short": "The pass name. Currently, the only allowable value is OobeSystem."
+                                      },
+                                      "enum": {
+                                        "items": [
+                                          {
+                                            "name": "OobeSystem",
+                                            "value": "OobeSystem"
+                                          }
+                                        ]
                                       }
                                     },
                                     {
@@ -3564,7 +3600,7 @@
           ]
         },
         {
-          "type": "string",
+          "type": "ResourceLocation",
           "var": "$resource.location",
           "options": [
             "l",
@@ -3799,7 +3835,7 @@
                     }
                   },
                   {
-                    "type": "string",
+                    "type": "ResourceLocation",
                     "name": "location",
                     "arg": "$resource.location",
                     "required": true
@@ -3911,7 +3947,10 @@
                                                 "arg": "@BaseVirtualMachineProfileCreateOrUpdate_create.applicationProfile.galleryApplications[].treatFailureAsDeploymentFailure"
                                               }
                                             ]
-                                          }
+                                          },
+                                          "identifiers": [
+                                            "packageReferenceId"
+                                          ]
                                         }
                                       ]
                                     },
@@ -4047,10 +4086,7 @@
                                                 ]
                                               }
                                             ]
-                                          },
-                                          "identifiers": [
-                                            "name"
-                                          ]
+                                          }
                                         },
                                         {
                                           "type": "string",
@@ -4455,7 +4491,10 @@
                                                           ]
                                                         }
                                                       ]
-                                                    }
+                                                    },
+                                                    "identifiers": [
+                                                      "name"
+                                                    ]
                                                   },
                                                   {
                                                     "type": "@SubResourceCreateOrUpdate_create",
@@ -4617,7 +4656,10 @@
                                                         "arg": "@BaseVirtualMachineProfileCreateOrUpdate_create.osProfile.linuxConfiguration.ssh.publicKeys[].path"
                                                       }
                                                     ]
-                                                  }
+                                                  },
+                                                  "identifiers": [
+                                                    "path"
+                                                  ]
                                                 }
                                               ]
                                             }
@@ -4666,7 +4708,10 @@
                                                       "arg": "@BaseVirtualMachineProfileCreateOrUpdate_create.osProfile.secrets[].vaultCertificates[].certificateUrl"
                                                     }
                                                   ]
-                                                }
+                                                },
+                                                "identifiers": [
+                                                  "certificateUrl"
+                                                ]
                                               }
                                             ]
                                           }
@@ -4685,8 +4730,32 @@
                                                 "props": [
                                                   {
                                                     "type": "string",
+                                                    "name": "componentName",
+                                                    "arg": "@BaseVirtualMachineProfileCreateOrUpdate_create.osProfile.windowsConfiguration.additionalUnattendContent[].componentName",
+                                                    "enum": {
+                                                      "items": [
+                                                        {
+                                                          "value": "Microsoft-Windows-Shell-Setup"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  {
+                                                    "type": "string",
                                                     "name": "content",
                                                     "arg": "@BaseVirtualMachineProfileCreateOrUpdate_create.osProfile.windowsConfiguration.additionalUnattendContent[].content"
+                                                  },
+                                                  {
+                                                    "type": "string",
+                                                    "name": "passName",
+                                                    "arg": "@BaseVirtualMachineProfileCreateOrUpdate_create.osProfile.windowsConfiguration.additionalUnattendContent[].passName",
+                                                    "enum": {
+                                                      "items": [
+                                                        {
+                                                          "value": "OobeSystem"
+                                                        }
+                                                      ]
+                                                    }
                                                   },
                                                   {
                                                     "type": "string",
@@ -5118,7 +5187,11 @@
                                                 "arg": "@BaseVirtualMachineProfileCreateOrUpdate_create.storageProfile.dataDisks[].writeAcceleratorEnabled"
                                               }
                                             ]
-                                          }
+                                          },
+                                          "identifiers": [
+                                            "lun",
+                                            "name"
+                                          ]
                                         },
                                         {
                                           "type": "string",
@@ -6003,7 +6076,7 @@
                       ]
                     },
                     {
-                      "type": "string",
+                      "type": "ResourceLocation",
                       "name": "location",
                       "required": true
                     },
@@ -6101,7 +6174,10 @@
                                                   "name": "treatFailureAsDeploymentFailure"
                                                 }
                                               ]
-                                            }
+                                            },
+                                            "identifiers": [
+                                              "packageReferenceId"
+                                            ]
                                           }
                                         ]
                                       },
@@ -6226,10 +6302,7 @@
                                                   "name": "type"
                                                 }
                                               ]
-                                            },
-                                            "identifiers": [
-                                              "name"
-                                            ]
+                                            }
                                           },
                                           {
                                             "type": "string",
@@ -6589,7 +6662,10 @@
                                                             ]
                                                           }
                                                         ]
-                                                      }
+                                                      },
+                                                      "identifiers": [
+                                                        "name"
+                                                      ]
                                                     },
                                                     {
                                                       "type": "@SubResource_read",
@@ -6721,7 +6797,10 @@
                                                           "name": "path"
                                                         }
                                                       ]
-                                                    }
+                                                    },
+                                                    "identifiers": [
+                                                      "path"
+                                                    ]
                                                   }
                                                 ]
                                               }
@@ -6763,7 +6842,10 @@
                                                         "name": "certificateUrl"
                                                       }
                                                     ]
-                                                  }
+                                                  },
+                                                  "identifiers": [
+                                                    "certificateUrl"
+                                                  ]
                                                 }
                                               ]
                                             }
@@ -6778,6 +6860,28 @@
                                                 "item": {
                                                   "type": "object",
                                                   "props": [
+                                                    {
+                                                      "type": "string",
+                                                      "name": "componentName",
+                                                      "enum": {
+                                                        "items": [
+                                                          {
+                                                            "value": "Microsoft-Windows-Shell-Setup"
+                                                          }
+                                                        ]
+                                                      }
+                                                    },
+                                                    {
+                                                      "type": "string",
+                                                      "name": "passName",
+                                                      "enum": {
+                                                        "items": [
+                                                          {
+                                                            "value": "OobeSystem"
+                                                          }
+                                                        ]
+                                                      }
+                                                    },
                                                     {
                                                       "type": "string",
                                                       "name": "settingName",
@@ -7155,7 +7259,11 @@
                                                   "name": "writeAcceleratorEnabled"
                                                 }
                                               ]
-                                            }
+                                            },
+                                            "identifiers": [
+                                              "lun",
+                                              "name"
+                                            ]
                                           },
                                           {
                                             "type": "string",

@@ -302,7 +302,7 @@
                       "name": "id"
                     },
                     {
-                      "type": "string",
+                      "type": "ResourceLocation",
                       "name": "location",
                       "required": true
                     },
@@ -749,7 +749,7 @@
                       "name": "id"
                     },
                     {
-                      "type": "string",
+                      "type": "ResourceLocation",
                       "name": "location",
                       "required": true
                     },

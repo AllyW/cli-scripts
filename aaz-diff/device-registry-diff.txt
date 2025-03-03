@@ -14,347 +14,82 @@
     ChangeType.REMOVE
     true
 4
-['device-registry asset', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-5
-['device-registry asset', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-6
-['device-registry asset', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-7
-['device-registry asset', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-8
-['device-registry asset', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-9
-['device-registry asset', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-10
-['device-registry asset', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-11
-['device-registry asset', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-12
-['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-    ChangeType.ADD
-    ["name"]
-13
 ['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
 ['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
     ChangeType.REMOVE
     true
-14
-['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-15
-['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-16
-['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-17
-['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-18
-['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-19
-['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-20
-['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-21
-['device-registry asset', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-22
-['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-    ChangeType.ADD
-    ["name"]
-23
+5
 ['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
 ['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
     ChangeType.REMOVE
     true
-24
-['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-25
-['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-26
-['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-27
-['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-28
-['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-29
-['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-30
-['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-31
-['device-registry asset', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-32
+6
 ['device-registry asset', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
 ['command-group:device-registry asset', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
     ChangeType.REMOVE
     true
-33
-['device-registry asset', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-34
-['device-registry asset', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-35
-['device-registry asset', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-36
-['device-registry asset', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-37
-['device-registry asset', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-38
-['device-registry asset', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-39
-['device-registry asset', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-40
-['device-registry asset', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-41
+7
 ['device-registry asset', 'update', 'Properties', '$resource.properties.attributes', 'additionalProps']
 ['command-group:device-registry asset', 'command:update', 'argGroup: Properties', 'arg: $resource.properties.attributes', 'prop: additionalProps']
     ChangeType.REMOVE
     {"anyType": true}
-42
+8
 ['device-registry asset', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
 ['command-group:device-registry asset', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
     ChangeType.REMOVE
     true
-43
-['device-registry asset', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-44
-['device-registry asset', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-45
-['device-registry asset', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-46
-['device-registry asset', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-47
-['device-registry asset', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-48
-['device-registry asset', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-49
-['device-registry asset', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-50
-['device-registry asset', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-51
+9
 ['device-registry asset', 'update', '1']
 ['command-group:device-registry asset', 'command:update', 'operation ind: 1']
     ChangeType.CHANGE
     {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "object", "name": "attributes", "arg": "$resource.properties.attributes", "additionalProps": {"anyType": true}}, {"type": "array<object>", "name": "datasets", "arg": "$resource.properties.datasets", "item": {"type": "object", "props": [{"type": "array<object>", "name": "dataPoints", "arg": "$resource.properties.datasets[].dataPoints", "item": {"type": "object", "props": [{"type": "string", "name": "dataPointConfiguration", "arg": "$resource.properties.datasets[].dataPoints[].dataPointConfiguration"}, {"type": "string", "name": "dataSource", "arg": "$resource.properties.datasets[].dataPoints[].dataSource", "required": true}, {"type": "string", "name": "name", "arg": "$resource.properties.datasets[].dataPoints[].name", "required": true}, {"default": {"value": "None"}, "type": "string", "name": "observabilityMode", "arg": "$resource.properties.datasets[].dataPoints[].observabilityMode", "enum": {"items": [{"value": "Counter"}, {"value": "Gauge"}, {"value": "Histogram"}, {"value": "Log"}, {"value": "None"}]}}]}}, {"type": "string", "name": "datasetConfiguration", "arg": "$resource.properties.datasets[].datasetConfiguration"}, {"type": "string", "name": "name", "arg": "$resource.properties.datasets[].name", "required": true}, {"type": "object", "name": "topic", "arg": "$resource.properties.datasets[].topic", "props": [{"type": "string", "name": "path", "arg": "path", "required": true}, {"default": {"value": "Never"}, "type": "string", "name": "retain", "arg": "retain", "enum": {"items": [{"value": "Keep"}, {"value": "Never"}]}}]}]}}, {"type": "string", "name": "defaultDatasetsConfiguration", "arg": "$resource.properties.defaultDatasetsConfiguration"}, {"type": "string", "name": "defaultEventsConfiguration", "arg": "$resource.properties.defaultEventsConfiguration"}, {"type": "object", "name": "defaultTopic", "arg": "$resource.properties.defaultTopic", "props": [{"type": "string", "name": "path", "arg": "path", "required": true}, {"default": {"value": "Never"}, "type": "string", "name": "retain", "arg": "retain", "enum": {"items": [{"value": "Keep"}, {"value": "Never"}]}}]}, {"type": "string", "name": "description", "arg": "$resource.properties.description"}, {"type": "string", "name": "displayName", "arg": "$resource.properties.displayName"}, {"type": "string", "name": "documentationUri", "arg": "$resource.properties.documentationUri"}, {"type": "boolean", "name": "enabled", "arg": "$resource.properties.enabled"}, {"type": "array<object>", "name": "events", "arg": "$resource.properties.events", "item": {"type": "object", "props": [{"type": "string", "name": "eventConfiguration", "arg": "$resource.properties.events[].eventConfiguration"}, {"type": "string", "name": "eventNotifier", "arg": "$resource.properties.events[].eventNotifier", "required": true}, {"type": "string", "name": "name", "arg": "$resource.properties.events[].name", "required": true}, {"default": {"value": "None"}, "type": "string", "name": "observabilityMode", "arg": "$resource.properties.events[].observabilityMode", "enum": {"items": [{"value": "Log"}, {"value": "None"}]}}, {"type": "object", "name": "topic", "arg": "$resource.properties.events[].topic", "props": [{"type": "string", "name": "path", "arg": "path", "required": true}, {"default": {"value": "Never"}, "type": "string", "name": "retain", "arg": "retain", "enum": {"items": [{"value": "Keep"}, {"value": "Never"}]}}]}]}}, {"type": "string", "name": "hardwareRevision", "arg": "$resource.properties.hardwareRevision"}, {"type": "string", "name": "manufacturer", "arg": "$resource.properties.manufacturer"}, {"type": "string", "name": "manufacturerUri", "arg": "$resource.properties.manufacturerUri"}, {"type": "string", "name": "model", "arg": "$resource.properties.model"}, {"type": "string", "name": "productCode", "arg": "$resource.properties.productCode"}, {"type": "string", "name": "serialNumber", "arg": "$resource.properties.serialNumber"}, {"type": "string", "name": "softwareRevision", "arg": "$resource.properties.softwareRevision"}], "clientFlatten": true}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
     {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "object", "name": "attributes", "arg": "$resource.properties.attributes"}, {"type": "array<object>", "name": "datasets", "arg": "$resource.properties.datasets", "item": {"type": "object", "props": [{"type": "array<object>", "name": "dataPoints", "arg": "$resource.properties.datasets[].dataPoints", "item": {"type": "object", "props": [{"type": "string", "name": "dataPointConfiguration", "arg": "$resource.properties.datasets[].dataPoints[].dataPointConfiguration"}, {"type": "string", "name": "dataSource", "arg": "$resource.properties.datasets[].dataPoints[].dataSource", "required": true}, {"type": "string", "name": "name", "arg": "$resource.properties.datasets[].dataPoints[].name", "required": true}, {"default": {"value": "None"}, "type": "string", "name": "observabilityMode", "arg": "$resource.properties.datasets[].dataPoints[].observabilityMode", "enum": {"items": [{"value": "Counter"}, {"value": "Gauge"}, {"value": "Histogram"}, {"value": "Log"}, {"value": "None"}]}}]}}, {"type": "string", "name": "datasetConfiguration", "arg": "$resource.properties.datasets[].datasetConfiguration"}, {"type": "string", "name": "name", "arg": "$resource.properties.datasets[].name", "required": true}, {"type": "object", "name": "topic", "arg": "$resource.properties.datasets[].topic", "props": [{"type": "string", "name": "path", "arg": "path", "required": true}, {"default": {"value": "Never"}, "type": "string", "name": "retain", "arg": "retain", "enum": {"items": [{"value": "Keep"}, {"value": "Never"}]}}]}]}}, {"type": "string", "name": "defaultDatasetsConfiguration", "arg": "$resource.properties.defaultDatasetsConfiguration"}, {"type": "string", "name": "defaultEventsConfiguration", "arg": "$resource.properties.defaultEventsConfiguration"}, {"type": "object", "name": "defaultTopic", "arg": "$resource.properties.defaultTopic", "props": [{"type": "string", "name": "path", "arg": "path", "required": true}, {"default": {"value": "Never"}, "type": "string", "name": "retain", "arg": "retain", "enum": {"items": [{"value": "Keep"}, {"value": "Never"}]}}]}, {"type": "string", "name": "description", "arg": "$resource.properties.description"}, {"type": "string", "name": "displayName", "arg": "$resource.properties.displayName"}, {"type": "string", "name": "documentationUri", "arg": "$resource.properties.documentationUri"}, {"type": "boolean", "name": "enabled", "arg": "$resource.properties.enabled"}, {"type": "array<object>", "name": "events", "arg": "$resource.properties.events", "item": {"type": "object", "props": [{"type": "string", "name": "eventConfiguration", "arg": "$resource.properties.events[].eventConfiguration"}, {"type": "string", "name": "eventNotifier", "arg": "$resource.properties.events[].eventNotifier", "required": true}, {"type": "string", "name": "name", "arg": "$resource.properties.events[].name", "required": true}, {"default": {"value": "None"}, "type": "string", "name": "observabilityMode", "arg": "$resource.properties.events[].observabilityMode", "enum": {"items": [{"value": "Log"}, {"value": "None"}]}}, {"type": "object", "name": "topic", "arg": "$resource.properties.events[].topic", "props": [{"type": "string", "name": "path", "arg": "path", "required": true}, {"default": {"value": "Never"}, "type": "string", "name": "retain", "arg": "retain", "enum": {"items": [{"value": "Keep"}, {"value": "Never"}]}}]}]}}, {"type": "string", "name": "hardwareRevision", "arg": "$resource.properties.hardwareRevision"}, {"type": "string", "name": "manufacturer", "arg": "$resource.properties.manufacturer"}, {"type": "string", "name": "manufacturerUri", "arg": "$resource.properties.manufacturerUri"}, {"type": "string", "name": "model", "arg": "$resource.properties.model"}, {"type": "string", "name": "productCode", "arg": "$resource.properties.productCode"}, {"type": "string", "name": "serialNumber", "arg": "$resource.properties.serialNumber"}, {"type": "string", "name": "softwareRevision", "arg": "$resource.properties.softwareRevision"}]}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
-52
+10
 ['device-registry asset', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
 ['command-group:device-registry asset', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'attributes', 'additionalProps', 'anyType']
     ChangeType.REMOVE
     true
-53
-['device-registry asset', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-54
-['device-registry asset', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-55
-['device-registry asset', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-56
-['device-registry asset', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'datasets', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-57
-['device-registry asset', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaName', 'required']
-    ChangeType.ADD
-    true
-58
-['device-registry asset', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaRegistryNamespace', 'required']
-    ChangeType.ADD
-    true
-59
-['device-registry asset', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'messageSchemaReference', 'props', 'schemaVersion', 'required']
-    ChangeType.ADD
-    true
-60
-['device-registry asset', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-['command-group:device-registry asset', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'status', 'props', 'events', 'item', 'props', 'name', 'required']
-    ChangeType.ADD
-    true
-61
-['device-registry asset-endpoint-profile', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-['command-group:device-registry asset-endpoint-profile', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-    ChangeType.ADD
-    ["name"]
-62
-['device-registry asset-endpoint-profile', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-['command-group:device-registry asset-endpoint-profile', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-    ChangeType.ADD
-    ["name"]
-63
+11
 ['device-registry asset-endpoint-profile', 'update', '1']
 ['command-group:device-registry asset-endpoint-profile', 'command:update', 'operation ind: 1']
     ChangeType.CHANGE
     {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "string", "name": "additionalConfiguration", "arg": "$resource.properties.additionalConfiguration"}, {"type": "object", "name": "authentication", "arg": "$resource.properties.authentication", "props": [{"default": {"value": "Certificate"}, "type": "string", "name": "method", "arg": "$resource.properties.authentication.method", "required": true, "enum": {"items": [{"value": "Anonymous"}, {"value": "Certificate"}, {"value": "UsernamePassword"}]}}, {"type": "object", "name": "usernamePasswordCredentials", "arg": "$resource.properties.authentication.usernamePasswordCredentials", "props": [{"type": "string", "name": "passwordSecretName", "arg": "$resource.properties.authentication.usernamePasswordCredentials.passwordSecretName", "required": true}, {"type": "string", "name": "usernameSecretName", "arg": "$resource.properties.authentication.usernamePasswordCredentials.usernameSecretName", "required": true}]}, {"type": "object", "name": "x509Credentials", "arg": "$resource.properties.authentication.x509Credentials", "props": [{"type": "string", "name": "certificateSecretName", "arg": "$resource.properties.authentication.x509Credentials.certificateSecretName", "required": true}]}]}, {"type": "string", "name": "endpointProfileType", "arg": "$resource.properties.endpointProfileType", "required": true}, {"type": "string", "name": "targetAddress", "arg": "$resource.properties.targetAddress", "required": true}], "clientFlatten": true}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
     {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "string", "name": "additionalConfiguration", "arg": "$resource.properties.additionalConfiguration"}, {"type": "object", "name": "authentication", "arg": "$resource.properties.authentication", "props": [{"default": {"value": "Certificate"}, "type": "string", "name": "method", "arg": "$resource.properties.authentication.method", "required": true, "enum": {"items": [{"value": "Anonymous"}, {"value": "Certificate"}, {"value": "UsernamePassword"}]}}, {"type": "object", "name": "usernamePasswordCredentials", "arg": "$resource.properties.authentication.usernamePasswordCredentials", "props": [{"type": "string", "name": "passwordSecretName", "arg": "$resource.properties.authentication.usernamePasswordCredentials.passwordSecretName", "required": true}, {"type": "string", "name": "usernameSecretName", "arg": "$resource.properties.authentication.usernamePasswordCredentials.usernameSecretName", "required": true}]}, {"type": "object", "name": "x509Credentials", "arg": "$resource.properties.authentication.x509Credentials", "props": [{"type": "string", "name": "certificateSecretName", "arg": "$resource.properties.authentication.x509Credentials.certificateSecretName", "required": true}]}]}, {"type": "string", "name": "endpointProfileType", "arg": "$resource.properties.endpointProfileType", "required": true}, {"type": "string", "name": "targetAddress", "arg": "$resource.properties.targetAddress", "required": true}]}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
-64
-['device-registry billing-container', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-['command-group:device-registry billing-container', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'identifiers']
-    ChangeType.ADD
-    ["name"]
-65
+12
 ['device-registry operation-status', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'additionalInfo', 'item', 'props', 'info']
 ['command-group:device-registry operation-status', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'additionalInfo', 'item', 'props', 'info']
     ChangeType.REMOVE
     {"readOnly": true, "type": "object", "name": "info", "additionalProps": {"readOnly": true, "anyType": true}}
-66
+13
 ['device-registry operation-status', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'details', 'type']
 ['command-group:device-registry operation-status', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'details', 'type']
     ChangeType.CHANGE
     "array<@ErrorDetail_read>"
     "array<@Azure.ResourceManager.CommonTypes.ErrorDetail_read>"
-67
+14
 ['device-registry operation-status', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'details', 'identifiers']
 ['command-group:device-registry operation-status', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'details', 'identifiers']
     ChangeType.REMOVE
     ["target", "message"]
-68
+15
 ['device-registry operation-status', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'details', 'item', 'type']
 ['command-group:device-registry operation-status', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'details', 'item', 'type']
     ChangeType.CHANGE
     "@ErrorDetail_read"
     "@Azure.ResourceManager.CommonTypes.ErrorDetail_read"
-69
+16
 ['device-registry operation-status', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'operations', 'type']
 ['command-group:device-registry operation-status', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'operations', 'type']
     ChangeType.CHANGE
     "array<@OperationStatusResult_read>"
     "array<@Azure.ResourceManager.CommonTypes.OperationStatusResult_read>"
-70
+17
 ['device-registry operation-status', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'operations', 'item', 'type']
 ['command-group:device-registry operation-status', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'operations', 'item', 'type']
     ChangeType.CHANGE
     "@OperationStatusResult_read"
     "@Azure.ResourceManager.CommonTypes.OperationStatusResult_read"
-71
+18
 ['device-registry operation-status', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'percentComplete', 'type']
 ['command-group:device-registry operation-status', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'percentComplete', 'type']
     ChangeType.CHANGE

@@ -154,7 +154,11 @@
                                       "name": "target"
                                     }
                                   ]
-                                }
+                                },
+                                "identifiers": [
+                                  "target",
+                                  "message"
+                                ]
                               },
                               {
                                 "type": "object",
@@ -183,20 +187,17 @@
                           {
                             "readOnly": true,
                             "type": "ResourceId",
-                            "name": "id",
-                            "required": true
+                            "name": "id"
                           },
                           {
                             "readOnly": true,
                             "type": "string",
-                            "name": "name",
-                            "required": true
+                            "name": "name"
                           },
                           {
                             "readOnly": true,
                             "type": "string",
                             "name": "operationStatus",
-                            "required": true,
                             "enum": {
                               "items": [
                                 {
@@ -229,10 +230,7 @@
                             "name": "type"
                           }
                         ]
-                      },
-                      "identifiers": [
-                        "name"
-                      ]
+                      }
                     }
                   ]
                 }

@@ -1,0 +1,174 @@
+{
+  "name": "delete",
+  "version": "2024-06-01-preview",
+  "resources": [
+    {
+      "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.apicenter/services/{}/workspaces/{}",
+      "version": "2024-06-01-preview",
+      "swagger": "mgmt-plane/apicenter/ResourceProviders/Microsoft.ApiCenter/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQXBpQ2VudGVyL3NlcnZpY2VzL3tzZXJ2aWNlTmFtZX0vd29ya3NwYWNlcy97d29ya3NwYWNlTmFtZX0=/V/MjAyNC0wNi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "ResourceGroupName",
+          "var": "$Path.resourceGroupName",
+          "options": [
+            "g",
+            "resource-group"
+          ],
+          "required": true,
+          "idPart": "resource_group"
+        },
+        {
+          "type": "string",
+          "var": "$Path.serviceName",
+          "options": [
+            "s",
+            "service",
+            "service-name"
+          ],
+          "required": true,
+          "group": "",
+          "idPart": "name",
+          "help": {
+            "short": "The name of the API Center service."
+          },
+          "format": {
+            "pattern": "^[a-zA-Z0-9-]{3,90}$",
+            "maxLength": 90,
+            "minLength": 1
+          }
+        },
+        {
+          "type": "SubscriptionId",
+          "var": "$Path.subscriptionId",
+          "options": [
+            "subscription"
+          ],
+          "required": true,
+          "idPart": "subscription"
+        },
+        {
+          "type": "string",
+          "var": "$Path.workspaceName",
+          "options": [
+            "w",
+            "name",
+            "workspace",
+            "workspace-name"
+          ],
+          "required": true,
+          "group": "",
+          "idPart": "child_name_1",
+          "help": {
+            "short": "The name of the workspace."
+          },
+          "default": {
+            "value": "default"
+          },
+          "format": {
+            "pattern": "^[a-zA-Z0-9-]{3,90}$",
+            "maxLength": 90,
+            "minLength": 1
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "Workspaces_Delete",
+      "http": {
+        "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiCenter/services/{serviceName}/workspaces/{workspaceName}",
+        "request": {
+          "method": "delete",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "resourceGroupName",
+                "arg": "$Path.resourceGroupName",
+                "required": true,
+                "format": {
+                  "maxLength": 90,
+                  "minLength": 1
+                }
+              },
+              {
+                "type": "string",
+                "name": "serviceName",
+                "arg": "$Path.serviceName",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-zA-Z0-9-]{3,90}$",
+                  "maxLength": 90,
+                  "minLength": 1
+                }
+              },
+              {
+                "type": "uuid",
+                "name": "subscriptionId",
+                "arg": "$Path.subscriptionId",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "workspaceName",
+                "arg": "$Path.workspaceName",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-zA-Z0-9-]{3,90}$",
+                  "maxLength": 90,
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-06-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ]
+          },
+          {
+            "statusCode": [
+              204
+            ]
+          },
+          {
+            "isError": true,
+            "body": {
+              "json": {
+                "schema": {
+                  "type": "@MgmtErrorFormat"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "confirmation": "Are you sure you want to perform this operation?"
+}

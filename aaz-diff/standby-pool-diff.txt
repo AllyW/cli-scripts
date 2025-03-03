@@ -1,0 +1,147 @@
+1
+['standby-pool standby-container-group-pool', 'create', 'Properties', 'args', 'args', '$resource.properties.containerGroupProperties.containerGroupProfile.id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:create', 'argGroup: Properties', 'args', 'args', 'arg: $resource.properties.containerGroupProperties.containerGroupProfile.id', 'prop: format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}
+2
+['standby-pool standby-container-group-pool', 'create', 'Properties', 'args', 'item', 'args', '$resource.properties.containerGroupProperties.subnetIds[].id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:create', 'argGroup: Properties', 'args', 'item', 'args', 'arg: $resource.properties.containerGroupProperties.subnetIds[].id', 'prop: format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}
+3
+['standby-pool standby-container-group-pool', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}
+4
+['standby-pool standby-container-group-pool', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}
+5
+['standby-pool standby-container-group-pool', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}
+6
+['standby-pool standby-container-group-pool', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}
+7
+['standby-pool standby-container-group-pool', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}
+8
+['standby-pool standby-container-group-pool', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}
+9
+['standby-pool standby-container-group-pool', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}
+10
+['standby-pool standby-container-group-pool', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}
+11
+['standby-pool standby-container-group-pool', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}
+12
+['standby-pool standby-container-group-pool', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}
+13
+['standby-pool standby-container-group-pool', 'update', 'Properties', 'args', 'args', '$resource.properties.containerGroupProperties.containerGroupProfile.id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:update', 'argGroup: Properties', 'args', 'args', 'arg: $resource.properties.containerGroupProperties.containerGroupProfile.id', 'prop: format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}
+14
+['standby-pool standby-container-group-pool', 'update', 'Properties', 'args', 'item', 'args', '$resource.properties.containerGroupProperties.subnetIds[].id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:update', 'argGroup: Properties', 'args', 'item', 'args', 'arg: $resource.properties.containerGroupProperties.subnetIds[].id', 'prop: format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}
+15
+['standby-pool standby-container-group-pool', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}
+16
+['standby-pool standby-container-group-pool', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}
+17
+['standby-pool standby-container-group-pool', 'update', '1']
+['command-group:standby-pool standby-container-group-pool', 'command:update', 'operation ind: 1']
+    ChangeType.CHANGE
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "object", "name": "containerGroupProperties", "arg": "$resource.properties.containerGroupProperties", "required": true, "props": [{"type": "object", "name": "containerGroupProfile", "arg": "$resource.properties.containerGroupProperties.containerGroupProfile", "required": true, "props": [{"type": "ResourceId", "name": "id", "arg": "$resource.properties.containerGroupProperties.containerGroupProfile.id", "required": true}, {"type": "integer64", "name": "revision", "arg": "$resource.properties.containerGroupProperties.containerGroupProfile.revision"}]}, {"type": "array<object>", "name": "subnetIds", "arg": "$resource.properties.containerGroupProperties.subnetIds", "item": {"type": "object", "props": [{"type": "ResourceId", "name": "id", "arg": "$resource.properties.containerGroupProperties.subnetIds[].id", "required": true}]}}]}, {"type": "object", "name": "elasticityProfile", "arg": "$resource.properties.elasticityProfile", "required": true, "props": [{"type": "integer64", "name": "maxReadyCapacity", "arg": "$resource.properties.elasticityProfile.maxReadyCapacity", "required": true, "format": {"maximum": 2000, "minimum": 0}}, {"type": "string", "name": "refillPolicy", "arg": "$resource.properties.elasticityProfile.refillPolicy", "enum": {"items": [{"value": "always"}]}}]}], "clientFlatten": true}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "object", "name": "containerGroupProperties", "arg": "$resource.properties.containerGroupProperties", "required": true, "props": [{"type": "object", "name": "containerGroupProfile", "arg": "$resource.properties.containerGroupProperties.containerGroupProfile", "required": true, "props": [{"type": "ResourceId", "name": "id", "arg": "$resource.properties.containerGroupProperties.containerGroupProfile.id", "required": true, "format": {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}}, {"type": "integer64", "name": "revision", "arg": "$resource.properties.containerGroupProperties.containerGroupProfile.revision"}]}, {"type": "array<object>", "name": "subnetIds", "arg": "$resource.properties.containerGroupProperties.subnetIds", "item": {"type": "object", "props": [{"type": "ResourceId", "name": "id", "arg": "$resource.properties.containerGroupProperties.subnetIds[].id", "required": true, "format": {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}}]}}]}, {"type": "object", "name": "elasticityProfile", "arg": "$resource.properties.elasticityProfile", "required": true, "props": [{"type": "integer64", "name": "maxReadyCapacity", "arg": "$resource.properties.elasticityProfile.maxReadyCapacity", "required": true, "format": {"maximum": 2000, "minimum": 0}}, {"type": "string", "name": "refillPolicy", "arg": "$resource.properties.elasticityProfile.refillPolicy", "enum": {"items": [{"value": "always"}]}}]}]}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+18
+['standby-pool standby-container-group-pool', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'containerGroupProfile', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{}"}
+19
+['standby-pool standby-container-group-pool', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+['command-group:standby-pool standby-container-group-pool', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'containerGroupProperties', 'props', 'subnetIds', 'item', 'props', 'id', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/subnets/{}"}
+20
+['standby-pool standby-virtual-machine-pool', 'create', 'Properties', '$resource.properties.attachedVirtualMachineScaleSetId', 'format']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:create', 'argGroup: Properties', 'arg: $resource.properties.attachedVirtualMachineScaleSetId', 'prop: format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}
+21
+['standby-pool standby-virtual-machine-pool', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}
+22
+['standby-pool standby-virtual-machine-pool', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}
+23
+['standby-pool standby-virtual-machine-pool', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}
+24
+['standby-pool standby-virtual-machine-pool', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}
+25
+['standby-pool standby-virtual-machine-pool', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}
+26
+['standby-pool standby-virtual-machine-pool', 'update', 'Properties', '$resource.properties.attachedVirtualMachineScaleSetId', 'format']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:update', 'argGroup: Properties', 'arg: $resource.properties.attachedVirtualMachineScaleSetId', 'prop: format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}
+27
+['standby-pool standby-virtual-machine-pool', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}
+28
+['standby-pool standby-virtual-machine-pool', 'update', '1']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:update', 'operation ind: 1']
+    ChangeType.CHANGE
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "ResourceId", "name": "attachedVirtualMachineScaleSetId", "arg": "$resource.properties.attachedVirtualMachineScaleSetId"}, {"type": "object", "name": "elasticityProfile", "arg": "$resource.properties.elasticityProfile", "props": [{"type": "integer64", "name": "maxReadyCapacity", "arg": "$resource.properties.elasticityProfile.maxReadyCapacity", "required": true, "format": {"maximum": 2000, "minimum": 0}}, {"type": "integer64", "name": "minReadyCapacity", "arg": "$resource.properties.elasticityProfile.minReadyCapacity", "format": {"maximum": 2000, "minimum": 0}}]}, {"type": "string", "name": "virtualMachineState", "arg": "$resource.properties.virtualMachineState", "required": true, "enum": {"items": [{"value": "Deallocated"}, {"value": "Running"}]}}], "clientFlatten": true}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "ResourceId", "name": "attachedVirtualMachineScaleSetId", "arg": "$resource.properties.attachedVirtualMachineScaleSetId", "format": {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}}, {"type": "object", "name": "elasticityProfile", "arg": "$resource.properties.elasticityProfile", "props": [{"type": "integer64", "name": "maxReadyCapacity", "arg": "$resource.properties.elasticityProfile.maxReadyCapacity", "required": true, "format": {"maximum": 2000, "minimum": 0}}, {"type": "integer64", "name": "minReadyCapacity", "arg": "$resource.properties.elasticityProfile.minReadyCapacity", "format": {"maximum": 2000, "minimum": 0}}]}, {"type": "string", "name": "virtualMachineState", "arg": "$resource.properties.virtualMachineState", "required": true, "enum": {"items": [{"value": "Deallocated"}, {"value": "Running"}]}}]}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+29
+['standby-pool standby-virtual-machine-pool', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+['command-group:standby-pool standby-virtual-machine-pool', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'attachedVirtualMachineScaleSetId', 'format']
+    ChangeType.ADD
+    {"template": "/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Compute/virtualMachineScaleSet/{}"}

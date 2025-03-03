@@ -149,6 +149,12 @@
             ]
           },
           {
+            "statusCode": [
+              200,
+              201
+            ]
+          },
+          {
             "isError": true,
             "body": {
               "json": {

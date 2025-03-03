@@ -1,0 +1,237 @@
+1
+['document-db mongo-cluster private-endpoint-connection', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+2
+['document-db mongo-cluster private-endpoint-connection', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+3
+['document-db mongo-cluster private-endpoint-connection', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+4
+['document-db mongo-cluster private-endpoint-connection', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+5
+['document-db mongo-cluster private-endpoint-connection', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+6
+['document-db mongo-cluster private-endpoint-connection', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+7
+['document-db mongo-cluster private-endpoint-connection', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+8
+['document-db mongo-cluster private-endpoint-connection', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+9
+['document-db mongo-cluster private-endpoint-connection', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+10
+['document-db mongo-cluster private-endpoint-connection', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster private-endpoint-connection', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+11
+['document-db mongo-cluster replica', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster replica', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+12
+['document-db mongo-cluster replica', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster replica', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+13
+['document-db mongo-cluster replica', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+['command-group:document-db mongo-cluster replica', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+14
+['document-db mongo-cluster', 'create', 'Properties', 'args', '$resource.properties.administrator.password', 'prompt']
+['command-group:document-db mongo-cluster', 'command:create', 'argGroup: Properties', 'args', 'arg: $resource.properties.administrator.password', 'prop: prompt']
+    ChangeType.REMOVE
+    {"msg": "Password:"}
+15
+['document-db mongo-cluster', 'create', 'Properties', 'args', '$resource.properties.administrator.password', 'type']
+['command-group:document-db mongo-cluster', 'command:create', 'argGroup: Properties', 'args', 'arg: $resource.properties.administrator.password', 'prop: type']
+    ChangeType.CHANGE
+    "password"
+    "string"
+16
+['document-db mongo-cluster', 'create', 'Properties', 'args', '$resource.properties.replicaParameters.sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:create', 'argGroup: Properties', 'args', 'arg: $resource.properties.replicaParameters.sourceResourceId', 'prop: type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+17
+['document-db mongo-cluster', 'create', 'Properties', 'args', '$resource.properties.restoreParameters.sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:create', 'argGroup: Properties', 'args', 'arg: $resource.properties.restoreParameters.sourceResourceId', 'prop: type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+18
+['document-db mongo-cluster', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'administrator', 'props', 'password', 'type']
+['command-group:document-db mongo-cluster', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'administrator', 'props', 'password', 'type']
+    ChangeType.CHANGE
+    "password"
+    "string"
+19
+['document-db mongo-cluster', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'administrator', 'props', 'password', 'secret']
+['command-group:document-db mongo-cluster', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'administrator', 'props', 'password', 'secret']
+    ChangeType.REMOVE
+    true
+20
+['document-db mongo-cluster', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'replicaParameters', 'props', 'sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'replicaParameters', 'props', 'sourceResourceId', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+21
+['document-db mongo-cluster', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'restoreParameters', 'props', 'sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'restoreParameters', 'props', 'sourceResourceId', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+22
+['document-db mongo-cluster', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+23
+['document-db mongo-cluster', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+24
+['document-db mongo-cluster', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+25
+['document-db mongo-cluster', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+26
+['document-db mongo-cluster', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+27
+['document-db mongo-cluster', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+28
+['document-db mongo-cluster', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+29
+['document-db mongo-cluster', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+30
+['document-db mongo-cluster', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+31
+['document-db mongo-cluster', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+32
+['document-db mongo-cluster', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+33
+['document-db mongo-cluster', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+34
+['document-db mongo-cluster', 'update', 'Properties', 'args', '$resource.properties.administrator.password', 'prompt']
+['command-group:document-db mongo-cluster', 'command:update', 'argGroup: Properties', 'args', 'arg: $resource.properties.administrator.password', 'prop: prompt']
+    ChangeType.REMOVE
+    {"msg": "Password:"}
+35
+['document-db mongo-cluster', 'update', 'Properties', 'args', '$resource.properties.administrator.password', 'type']
+['command-group:document-db mongo-cluster', 'command:update', 'argGroup: Properties', 'args', 'arg: $resource.properties.administrator.password', 'prop: type']
+    ChangeType.CHANGE
+    "password"
+    "string"
+36
+['document-db mongo-cluster', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+37
+['document-db mongo-cluster', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+38
+['document-db mongo-cluster', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"
+39
+['document-db mongo-cluster', 'update', '1']
+['command-group:document-db mongo-cluster', 'command:update', 'operation ind: 1']
+    ChangeType.CHANGE
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "object", "name": "administrator", "arg": "$resource.properties.administrator", "props": [{"type": "password", "name": "password", "arg": "$resource.properties.administrator.password", "secret": true}, {"type": "string", "name": "userName", "arg": "$resource.properties.administrator.userName"}]}, {"type": "object", "name": "compute", "arg": "$resource.properties.compute", "props": [{"type": "string", "name": "tier", "arg": "$resource.properties.compute.tier"}]}, {"type": "object", "name": "dataApi", "arg": "$resource.properties.dataApi", "props": [{"type": "string", "name": "mode", "arg": "$resource.properties.dataApi.mode", "enum": {"items": [{"value": "Disabled"}, {"value": "Enabled"}]}}]}, {"type": "object", "name": "highAvailability", "arg": "$resource.properties.highAvailability", "props": [{"type": "string", "name": "targetMode", "arg": "$resource.properties.highAvailability.targetMode", "enum": {"items": [{"value": "Disabled"}, {"value": "SameZone"}, {"value": "ZoneRedundantPreferred"}]}}]}, {"type": "array<string>", "name": "previewFeatures", "arg": "$resource.properties.previewFeatures", "item": {"type": "string", "enum": {"items": [{"value": "GeoReplicas"}]}}}, {"type": "string", "name": "publicNetworkAccess", "arg": "$resource.properties.publicNetworkAccess", "enum": {"items": [{"value": "Disabled"}, {"value": "Enabled"}]}}, {"type": "string", "name": "serverVersion", "arg": "$resource.properties.serverVersion"}, {"type": "object", "name": "sharding", "arg": "$resource.properties.sharding", "props": [{"type": "integer32", "name": "shardCount", "arg": "$resource.properties.sharding.shardCount"}]}, {"type": "object", "name": "storage", "arg": "$resource.properties.storage", "props": [{"type": "integer64", "name": "sizeGb", "arg": "$resource.properties.storage.sizeGb"}]}]}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "object", "name": "properties", "props": [{"type": "object", "name": "administrator", "arg": "$resource.properties.administrator", "props": [{"type": "string", "name": "password", "arg": "$resource.properties.administrator.password"}, {"type": "string", "name": "userName", "arg": "$resource.properties.administrator.userName"}]}, {"type": "object", "name": "compute", "arg": "$resource.properties.compute", "props": [{"type": "string", "name": "tier", "arg": "$resource.properties.compute.tier"}]}, {"type": "object", "name": "dataApi", "arg": "$resource.properties.dataApi", "props": [{"type": "string", "name": "mode", "arg": "$resource.properties.dataApi.mode", "enum": {"items": [{"value": "Disabled"}, {"value": "Enabled"}]}}]}, {"type": "object", "name": "highAvailability", "arg": "$resource.properties.highAvailability", "props": [{"type": "string", "name": "targetMode", "arg": "$resource.properties.highAvailability.targetMode", "enum": {"items": [{"value": "Disabled"}, {"value": "SameZone"}, {"value": "ZoneRedundantPreferred"}]}}]}, {"type": "array<string>", "name": "previewFeatures", "arg": "$resource.properties.previewFeatures", "item": {"type": "string", "enum": {"items": [{"value": "GeoReplicas"}]}}}, {"type": "string", "name": "publicNetworkAccess", "arg": "$resource.properties.publicNetworkAccess", "enum": {"items": [{"value": "Disabled"}, {"value": "Enabled"}]}}, {"type": "string", "name": "serverVersion", "arg": "$resource.properties.serverVersion"}, {"type": "object", "name": "sharding", "arg": "$resource.properties.sharding", "props": [{"type": "integer32", "name": "shardCount", "arg": "$resource.properties.sharding.shardCount"}]}, {"type": "object", "name": "storage", "arg": "$resource.properties.storage", "props": [{"type": "integer64", "name": "sizeGb", "arg": "$resource.properties.storage.sizeGb"}]}]}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+40
+['document-db mongo-cluster', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+['command-group:document-db mongo-cluster', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'groupIds']
+    ChangeType.REMOVE
+    {"readOnly": true, "type": "array<string>", "name": "groupIds", "item": {"type": "string"}}
+41
+['document-db mongo-cluster', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['command-group:document-db mongo-cluster', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+    ChangeType.CHANGE
+    "string"
+    "ResourceId"
+42
+['document-db mongo-cluster', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+['command-group:document-db mongo-cluster', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'replica', 'props', 'sourceResourceId', 'type']
+    ChangeType.CHANGE
+    "ResourceId"
+    "string"

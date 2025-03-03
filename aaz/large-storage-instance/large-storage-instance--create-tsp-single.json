@@ -162,7 +162,7 @@
           ]
         },
         {
-          "type": "string",
+          "type": "ResourceLocation",
           "var": "$resource.location",
           "options": [
             "l",
@@ -454,7 +454,7 @@
                     }
                   },
                   {
-                    "type": "string",
+                    "type": "ResourceLocation",
                     "name": "location",
                     "arg": "$resource.location",
                     "required": true
@@ -653,7 +653,7 @@
                       ]
                     },
                     {
-                      "type": "string",
+                      "type": "ResourceLocation",
                       "name": "location",
                       "required": true
                     },

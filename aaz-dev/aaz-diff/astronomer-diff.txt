@@ -1,0 +1,90 @@
+1
+['astronomer astro organization', 'identity', 'assign', '0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command-group:identity', 'command:assign', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+2
+['astronomer astro organization', 'identity', 'assign', '2', 'responses', '200.201', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command-group:identity', 'command:assign', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+3
+['astronomer astro organization', 'identity', 'remove', '0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command-group:identity', 'command:remove', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+4
+['astronomer astro organization', 'identity', 'remove', '2', 'responses', '200.201', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command-group:identity', 'command:remove', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+5
+['astronomer astro organization', 'identity', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command-group:identity', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+6
+['astronomer astro organization', 'create', 'Resource', '$resource.location', 'type']
+['command-group:astronomer astro organization', 'command:create', 'argGroup: Resource', 'arg: $resource.location', 'prop: type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+7
+['astronomer astro organization', 'create', 'Resource', '$resource.location', 'options']
+['command-group:astronomer astro organization', 'command:create', 'argGroup: Resource', 'arg: $resource.location', 'prop: options']
+    ChangeType.CHANGE
+    ["l", "location"]
+    ["location"]
+8
+['astronomer astro organization', 'create', '0', 'request', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+9
+['astronomer astro organization', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+10
+['astronomer astro organization', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+11
+['astronomer astro organization', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+12
+['astronomer astro organization', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+13
+['astronomer astro organization', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"
+14
+['astronomer astro organization', 'update', '1']
+['command-group:astronomer astro organization', 'command:update', 'operation ind: 1']
+    ChangeType.CHANGE
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "IdentityObject", "name": "identity", "props": [{"type": "string", "name": "type", "arg": "$resource.identity.type", "required": true, "enum": {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned, UserAssigned"}, {"value": "UserAssigned"}]}}, {"type": "object", "name": "userAssignedIdentities", "arg": "$resource.identity.userAssignedIdentities", "additionalProps": {"item": {"type": "object"}}}]}, {"type": "object", "name": "properties", "props": [{"type": "object", "name": "marketplace", "arg": "$resource.properties.marketplace", "required": true, "props": [{"type": "object", "name": "offerDetails", "arg": "$resource.properties.marketplace.offerDetails", "required": true, "props": [{"type": "string", "name": "offerId", "arg": "$resource.properties.marketplace.offerDetails.offerId", "required": true}, {"type": "string", "name": "planId", "arg": "$resource.properties.marketplace.offerDetails.planId", "required": true}, {"type": "string", "name": "planName", "arg": "$resource.properties.marketplace.offerDetails.planName"}, {"type": "string", "name": "publisherId", "arg": "$resource.properties.marketplace.offerDetails.publisherId", "required": true}, {"type": "string", "name": "renewalMode", "arg": "$resource.properties.marketplace.offerDetails.renewalMode", "enum": {"items": [{"value": "Auto"}, {"value": "Manual"}]}}, {"type": "string", "name": "termId", "arg": "$resource.properties.marketplace.offerDetails.termId"}, {"type": "string", "name": "termUnit", "arg": "$resource.properties.marketplace.offerDetails.termUnit"}]}, {"type": "string", "name": "subscriptionId", "arg": "$resource.properties.marketplace.subscriptionId"}, {"type": "string", "name": "subscriptionStatus", "arg": "$resource.properties.marketplace.subscriptionStatus", "enum": {"items": [{"value": "PendingFulfillmentStart"}, {"value": "Subscribed"}, {"value": "Suspended"}, {"value": "Unsubscribed"}]}}]}, {"type": "object", "name": "partnerOrganizationProperties", "arg": "$resource.properties.partnerOrganizationProperties", "props": [{"type": "string", "name": "organizationId", "arg": "$resource.properties.partnerOrganizationProperties.organizationId"}, {"type": "string", "name": "organizationName", "arg": "$resource.properties.partnerOrganizationProperties.organizationName", "required": true, "format": {"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$", "maxLength": 50, "minLength": 1}}, {"type": "object", "name": "singleSignOnProperties", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties", "props": [{"type": "array<string>", "name": "aadDomains", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.aadDomains", "item": {"type": "string"}}, {"type": "string", "name": "enterpriseAppId", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.enterpriseAppId"}, {"type": "string", "name": "singleSignOnState", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.singleSignOnState", "enum": {"items": [{"value": "Disable"}, {"value": "Enable"}, {"value": "Initial"}]}}, {"type": "string", "name": "singleSignOnUrl", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.singleSignOnUrl"}]}, {"type": "string", "name": "workspaceId", "arg": "$resource.properties.partnerOrganizationProperties.workspaceId"}, {"type": "string", "name": "workspaceName", "arg": "$resource.properties.partnerOrganizationProperties.workspaceName", "format": {"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$", "maxLength": 50, "minLength": 1}}]}, {"type": "object", "name": "user", "arg": "$resource.properties.user", "required": true, "props": [{"type": "string", "name": "emailAddress", "arg": "$resource.properties.user.emailAddress", "required": true, "format": {"pattern": "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$"}}, {"type": "string", "name": "firstName", "arg": "$resource.properties.user.firstName", "required": true}, {"type": "string", "name": "lastName", "arg": "$resource.properties.user.lastName", "required": true}, {"type": "string", "name": "phoneNumber", "arg": "$resource.properties.user.phoneNumber"}, {"type": "string", "name": "upn", "arg": "$resource.properties.user.upn"}]}], "clientFlatten": true}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "IdentityObject", "name": "identity", "props": [{"type": "string", "name": "type", "arg": "$resource.identity.type", "required": true, "enum": {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned, UserAssigned"}, {"value": "UserAssigned"}]}}, {"type": "object", "name": "userAssignedIdentities", "arg": "$resource.identity.userAssignedIdentities", "additionalProps": {"item": {"type": "object"}}}]}, {"type": "object", "name": "properties", "props": [{"type": "object", "name": "marketplace", "arg": "$resource.properties.marketplace", "required": true, "props": [{"type": "object", "name": "offerDetails", "arg": "$resource.properties.marketplace.offerDetails", "required": true, "props": [{"type": "string", "name": "offerId", "arg": "$resource.properties.marketplace.offerDetails.offerId", "required": true}, {"type": "string", "name": "planId", "arg": "$resource.properties.marketplace.offerDetails.planId", "required": true}, {"type": "string", "name": "planName", "arg": "$resource.properties.marketplace.offerDetails.planName"}, {"type": "string", "name": "publisherId", "arg": "$resource.properties.marketplace.offerDetails.publisherId", "required": true}, {"type": "string", "name": "renewalMode", "arg": "$resource.properties.marketplace.offerDetails.renewalMode", "enum": {"items": [{"value": "Auto"}, {"value": "Manual"}]}}, {"type": "string", "name": "termId", "arg": "$resource.properties.marketplace.offerDetails.termId"}, {"type": "string", "name": "termUnit", "arg": "$resource.properties.marketplace.offerDetails.termUnit"}]}, {"type": "string", "name": "subscriptionId", "arg": "$resource.properties.marketplace.subscriptionId"}, {"type": "string", "name": "subscriptionStatus", "arg": "$resource.properties.marketplace.subscriptionStatus", "enum": {"items": [{"value": "PendingFulfillmentStart"}, {"value": "Subscribed"}, {"value": "Suspended"}, {"value": "Unsubscribed"}]}}]}, {"type": "object", "name": "partnerOrganizationProperties", "arg": "$resource.properties.partnerOrganizationProperties", "props": [{"type": "string", "name": "organizationId", "arg": "$resource.properties.partnerOrganizationProperties.organizationId"}, {"type": "string", "name": "organizationName", "arg": "$resource.properties.partnerOrganizationProperties.organizationName", "required": true, "format": {"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$", "maxLength": 50, "minLength": 1}}, {"type": "object", "name": "singleSignOnProperties", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties", "props": [{"type": "array<string>", "name": "aadDomains", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.aadDomains", "item": {"type": "string"}}, {"type": "string", "name": "enterpriseAppId", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.enterpriseAppId"}, {"type": "string", "name": "singleSignOnState", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.singleSignOnState", "enum": {"items": [{"value": "Disable"}, {"value": "Enable"}, {"value": "Initial"}]}}, {"type": "string", "name": "singleSignOnUrl", "arg": "$resource.properties.partnerOrganizationProperties.singleSignOnProperties.singleSignOnUrl"}]}, {"type": "string", "name": "workspaceId", "arg": "$resource.properties.partnerOrganizationProperties.workspaceId"}, {"type": "string", "name": "workspaceName", "arg": "$resource.properties.partnerOrganizationProperties.workspaceName", "format": {"pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\-.: ]*$", "maxLength": 50, "minLength": 1}}]}, {"type": "object", "name": "user", "arg": "$resource.properties.user", "required": true, "props": [{"type": "string", "name": "emailAddress", "arg": "$resource.properties.user.emailAddress", "required": true, "format": {"pattern": "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$"}}, {"type": "string", "name": "firstName", "arg": "$resource.properties.user.firstName", "required": true}, {"type": "string", "name": "lastName", "arg": "$resource.properties.user.lastName", "required": true}, {"type": "string", "name": "phoneNumber", "arg": "$resource.properties.user.phoneNumber"}, {"type": "string", "name": "upn", "arg": "$resource.properties.user.upn"}]}]}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+15
+['astronomer astro organization', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'location', 'type']
+['command-group:astronomer astro organization', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'location', 'type']
+    ChangeType.CHANGE
+    "ResourceLocation"
+    "string"

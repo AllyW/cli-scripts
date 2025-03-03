@@ -319,7 +319,10 @@
                             "name": "resourceId"
                           }
                         ]
-                      }
+                      },
+                      "identifiers": [
+                        "resourceId"
+                      ]
                     }
                   ]
                 }

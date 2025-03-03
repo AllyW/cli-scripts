@@ -197,7 +197,7 @@
                             ]
                           },
                           {
-                            "type": "string",
+                            "type": "ResourceLocation",
                             "name": "location",
                             "required": true
                           },
@@ -379,10 +379,7 @@
                             "name": "type"
                           }
                         ]
-                      },
-                      "identifiers": [
-                        "name"
-                      ]
+                      }
                     }
                   ]
                 }
@@ -535,7 +532,7 @@
                             ]
                           },
                           {
-                            "type": "string",
+                            "type": "ResourceLocation",
                             "name": "location",
                             "required": true
                           },
@@ -717,10 +714,7 @@
                             "name": "type"
                           }
                         ]
-                      },
-                      "identifiers": [
-                        "name"
-                      ]
+                      }
                     }
                   ]
                 }

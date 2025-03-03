@@ -202,7 +202,10 @@
                             "name": "requestErrorDetails"
                           }
                         ]
-                      }
+                      },
+                      "identifiers": [
+                        "operationId"
+                      ]
                     }
                   ]
                 }

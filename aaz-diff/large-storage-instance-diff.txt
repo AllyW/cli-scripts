@@ -1,0 +1,160 @@
+1
+['large-storage-instance', 'identity', 'assign', '0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command-group:identity', 'command:assign', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+2
+['large-storage-instance', 'identity', 'assign', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command-group:identity', 'command:assign', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+3
+['large-storage-instance', 'identity', 'assign', '2', 'responses', '200.201', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command-group:identity', 'command:assign', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+4
+['large-storage-instance', 'identity', 'assign', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command-group:identity', 'command:assign', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+5
+['large-storage-instance', 'identity', 'remove', '0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command-group:identity', 'command:remove', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+6
+['large-storage-instance', 'identity', 'remove', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command-group:identity', 'command:remove', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+7
+['large-storage-instance', 'identity', 'remove', '2', 'responses', '200.201', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command-group:identity', 'command:remove', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+8
+['large-storage-instance', 'identity', 'remove', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command-group:identity', 'command:remove', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+9
+['large-storage-instance', 'identity', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command-group:identity', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+10
+['large-storage-instance', 'identity', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command-group:identity', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+11
+['large-storage-instance', 'create', 'Resource', 'args', '$resource.identity.type', 'enum']
+['command-group:large-storage-instance', 'command:create', 'argGroup: Resource', 'args', 'arg: $resource.identity.type', 'prop: enum']
+    ChangeType.CHANGE
+    {"items": [{"name": "None", "value": "None"}, {"name": "SystemAssigned", "value": "SystemAssigned"}, {"name": "SystemAssigned,UserAssigned", "value": "SystemAssigned,UserAssigned"}, {"name": "UserAssigned", "value": "UserAssigned"}]}
+    {"items": [{"name": "None", "value": "None"}, {"name": "SystemAssigned", "value": "SystemAssigned"}, {"name": "UserAssigned", "value": "UserAssigned"}]}
+12
+['large-storage-instance', 'create', 'StorageProperties', '$resource.properties.storageProperties.provisioningState']
+['command-group:large-storage-instance', 'command:create', 'argGroup: StorageProperties', 'arg: $resource.properties.storageProperties.provisioningState']
+    ChangeType.ADD
+    {"type": "string", "var": "$resource.properties.storageProperties.provisioningState", "options": ["provisioning-state"], "group": "StorageProperties", "help": {"short": "State of provisioning of the AzureLargeStorageInstance"}, "enum": {"items": [{"name": "Accepted", "value": "Accepted"}, {"name": "Canceled", "value": "Canceled"}, {"name": "Creating", "value": "Creating"}, {"name": "Deleting", "value": "Deleting"}, {"name": "Failed", "value": "Failed"}, {"name": "Migrating", "value": "Migrating"}, {"name": "Succeeded", "value": "Succeeded"}, {"name": "Updating", "value": "Updating"}]}, "checked": true}
+13
+['large-storage-instance', 'create', '0', 'request', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+14
+['large-storage-instance', 'create', '0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState']
+['command-group:large-storage-instance', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState']
+    ChangeType.ADD
+    {"type": "string", "name": "provisioningState", "arg": "$resource.properties.storageProperties.provisioningState", "enum": {"items": [{"value": "Accepted"}, {"value": "Canceled"}, {"value": "Creating"}, {"value": "Deleting"}, {"value": "Failed"}, {"value": "Migrating"}, {"value": "Succeeded"}, {"value": "Updating"}]}}
+15
+['large-storage-instance', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+16
+['large-storage-instance', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+17
+['large-storage-instance', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+18
+['large-storage-instance', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+19
+['large-storage-instance', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+20
+['large-storage-instance', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+21
+['large-storage-instance', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+22
+['large-storage-instance', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+23
+['large-storage-instance', 'update', 'Properties', 'args', '$resource.properties.storageProperties.provisioningState']
+['command-group:large-storage-instance', 'command:update', 'argGroup: Properties', 'args', 'arg: $resource.properties.storageProperties.provisioningState']
+    ChangeType.ADD
+    {"nullable": true, "type": "string", "var": "$resource.properties.storageProperties.provisioningState", "options": ["provisioning-state"], "help": {"short": "State of provisioning of the AzureLargeStorageInstance"}, "enum": {"items": [{"name": "Accepted", "value": "Accepted"}, {"name": "Canceled", "value": "Canceled"}, {"name": "Creating", "value": "Creating"}, {"name": "Deleting", "value": "Deleting"}, {"name": "Failed", "value": "Failed"}, {"name": "Migrating", "value": "Migrating"}, {"name": "Succeeded", "value": "Succeeded"}, {"name": "Updating", "value": "Updating"}]}, "checked": true}
+24
+['large-storage-instance', 'update', 'Resource', 'args', '$resource.identity.type', 'enum']
+['command-group:large-storage-instance', 'command:update', 'argGroup: Resource', 'args', 'arg: $resource.identity.type', 'prop: enum']
+    ChangeType.CHANGE
+    {"items": [{"name": "None", "value": "None"}, {"name": "SystemAssigned", "value": "SystemAssigned"}, {"name": "SystemAssigned,UserAssigned", "value": "SystemAssigned,UserAssigned"}, {"name": "UserAssigned", "value": "UserAssigned"}]}
+    {"items": [{"name": "None", "value": "None"}, {"name": "SystemAssigned", "value": "SystemAssigned"}, {"name": "UserAssigned", "value": "UserAssigned"}]}
+25
+['large-storage-instance', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+26
+['large-storage-instance', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true
+27
+['large-storage-instance', 'update', '1']
+['command-group:large-storage-instance', 'command:update', 'operation ind: 1']
+    ChangeType.CHANGE
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "IdentityObject", "name": "identity", "arg": "$resource.identity", "props": [{"type": "string", "name": "type", "arg": "$resource.identity.type", "required": true, "enum": {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}}, {"type": "object", "name": "userAssignedIdentities", "arg": "$resource.identity.userAssignedIdentities", "additionalProps": {"item": {"nullable": true, "type": "object"}}}]}, {"type": "object", "name": "properties", "props": [{"type": "string", "name": "azureLargeStorageInstanceUniqueIdentifier", "arg": "$resource.properties.azureLargeStorageInstanceUniqueIdentifier"}, {"type": "object", "name": "storageProperties", "arg": "$resource.properties.storageProperties", "props": [{"type": "string", "name": "generation", "arg": "$resource.properties.storageProperties.generation"}, {"type": "string", "name": "hardwareType", "arg": "$resource.properties.storageProperties.hardwareType", "enum": {"items": [{"value": "Cisco_UCS"}, {"value": "HPE"}, {"value": "SDFLEX"}]}}, {"type": "string", "name": "offeringType", "arg": "$resource.properties.storageProperties.offeringType"}, {"type": "object", "name": "storageBillingProperties", "arg": "$resource.properties.storageProperties.storageBillingProperties", "props": [{"type": "string", "name": "billingMode", "arg": "$resource.properties.storageProperties.storageBillingProperties.billingMode"}, {"type": "string", "name": "sku", "arg": "$resource.properties.storageProperties.storageBillingProperties.sku"}]}, {"type": "string", "name": "storageType", "arg": "$resource.properties.storageProperties.storageType"}, {"type": "string", "name": "workloadType", "arg": "$resource.properties.storageProperties.workloadType"}]}], "clientFlatten": true}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+    {"instanceUpdate": {"ref": "$Instance", "json": {"schema": {"type": "object", "name": "resource", "required": true, "props": [{"type": "IdentityObject", "name": "identity", "arg": "$resource.identity", "props": [{"type": "string", "name": "type", "arg": "$resource.identity.type", "required": true, "enum": {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}}, {"type": "object", "name": "userAssignedIdentities", "arg": "$resource.identity.userAssignedIdentities", "additionalProps": {"item": {"nullable": true, "type": "object"}}}]}, {"type": "object", "name": "properties", "props": [{"type": "string", "name": "azureLargeStorageInstanceUniqueIdentifier", "arg": "$resource.properties.azureLargeStorageInstanceUniqueIdentifier"}, {"type": "object", "name": "storageProperties", "arg": "$resource.properties.storageProperties", "props": [{"type": "string", "name": "generation", "arg": "$resource.properties.storageProperties.generation"}, {"type": "string", "name": "hardwareType", "arg": "$resource.properties.storageProperties.hardwareType", "enum": {"items": [{"value": "Cisco_UCS"}, {"value": "HPE"}, {"value": "SDFLEX"}]}}, {"type": "string", "name": "offeringType", "arg": "$resource.properties.storageProperties.offeringType"}, {"type": "string", "name": "provisioningState", "arg": "$resource.properties.storageProperties.provisioningState", "enum": {"items": [{"value": "Accepted"}, {"value": "Canceled"}, {"value": "Creating"}, {"value": "Deleting"}, {"value": "Failed"}, {"value": "Migrating"}, {"value": "Succeeded"}, {"value": "Updating"}]}}, {"type": "object", "name": "storageBillingProperties", "arg": "$resource.properties.storageProperties.storageBillingProperties", "props": [{"type": "string", "name": "billingMode", "arg": "$resource.properties.storageProperties.storageBillingProperties.billingMode"}, {"type": "string", "name": "sku", "arg": "$resource.properties.storageProperties.storageBillingProperties.sku"}]}, {"type": "string", "name": "storageType", "arg": "$resource.properties.storageProperties.storageType"}, {"type": "string", "name": "workloadType", "arg": "$resource.properties.storageProperties.workloadType"}]}]}, {"type": "object", "name": "tags", "arg": "$resource.tags", "additionalProps": {"item": {"type": "string"}}}], "clientFlatten": true}}}}
+28
+['large-storage-instance', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+['command-group:large-storage-instance', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'identity', 'props', 'type', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "SystemAssigned,UserAssigned"}, {"value": "UserAssigned"}]}
+    {"items": [{"value": "None"}, {"value": "SystemAssigned"}, {"value": "UserAssigned"}]}
+29
+['large-storage-instance', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+['command-group:large-storage-instance', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'storageProperties', 'props', 'provisioningState', 'readOnly']
+    ChangeType.REMOVE
+    true

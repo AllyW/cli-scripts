@@ -195,7 +195,7 @@
                       ]
                     },
                     {
-                      "type": "string",
+                      "type": "ResourceLocation",
                       "name": "location",
                       "required": true
                     },
@@ -293,7 +293,10 @@
                                                   "name": "treatFailureAsDeploymentFailure"
                                                 }
                                               ]
-                                            }
+                                            },
+                                            "identifiers": [
+                                              "packageReferenceId"
+                                            ]
                                           }
                                         ]
                                       },
@@ -418,10 +421,7 @@
                                                   "name": "type"
                                                 }
                                               ]
-                                            },
-                                            "identifiers": [
-                                              "name"
-                                            ]
+                                            }
                                           },
                                           {
                                             "type": "string",
@@ -781,7 +781,10 @@
                                                             ]
                                                           }
                                                         ]
-                                                      }
+                                                      },
+                                                      "identifiers": [
+                                                        "name"
+                                                      ]
                                                     },
                                                     {
                                                       "type": "@SubResource_read",
@@ -913,7 +916,10 @@
                                                           "name": "path"
                                                         }
                                                       ]
-                                                    }
+                                                    },
+                                                    "identifiers": [
+                                                      "path"
+                                                    ]
                                                   }
                                                 ]
                                               }
@@ -955,7 +961,10 @@
                                                         "name": "certificateUrl"
                                                       }
                                                     ]
-                                                  }
+                                                  },
+                                                  "identifiers": [
+                                                    "certificateUrl"
+                                                  ]
                                                 }
                                               ]
                                             }
@@ -970,6 +979,28 @@
                                                 "item": {
                                                   "type": "object",
                                                   "props": [
+                                                    {
+                                                      "type": "string",
+                                                      "name": "componentName",
+                                                      "enum": {
+                                                        "items": [
+                                                          {
+                                                            "value": "Microsoft-Windows-Shell-Setup"
+                                                          }
+                                                        ]
+                                                      }
+                                                    },
+                                                    {
+                                                      "type": "string",
+                                                      "name": "passName",
+                                                      "enum": {
+                                                        "items": [
+                                                          {
+                                                            "value": "OobeSystem"
+                                                          }
+                                                        ]
+                                                      }
+                                                    },
                                                     {
                                                       "type": "string",
                                                       "name": "settingName",
@@ -1347,7 +1378,11 @@
                                                   "name": "writeAcceleratorEnabled"
                                                 }
                                               ]
-                                            }
+                                            },
+                                            "identifiers": [
+                                              "lun",
+                                              "name"
+                                            ]
                                           },
                                           {
                                             "type": "string",

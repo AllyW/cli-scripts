@@ -1,11 +1,11 @@
 {
   "name": "check-name-availability",
-  "version": "2024-10-19",
+  "version": "2025-01-21",
   "resources": [
     {
       "id": "/subscriptions/{}/providers/microsoft.devopsinfrastructure/checknameavailability",
-      "version": "2024-10-19",
-      "swagger": "mgmt-plane/devopsinfrastructure/ResourceProviders/Microsoft.DevOpsInfrastructure/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9wcm92aWRlcnMvTWljcm9zb2Z0LkRldk9wc0luZnJhc3RydWN0dXJlL2NoZWNrTmFtZUF2YWlsYWJpbGl0eQ==/V/MjAyNC0xMC0xOQ=="
+      "version": "2025-01-21",
+      "swagger": "mgmt-plane/devopsinfrastructure/ResourceProviders/Microsoft.DevOpsInfrastructure/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9wcm92aWRlcnMvTWljcm9zb2Z0LkRldk9wc0luZnJhc3RydWN0dXJlL2NoZWNrTmFtZUF2YWlsYWJpbGl0eQ==/V/MjAyNS0wMS0yMQ=="
     }
   ],
   "argGroups": [
@@ -84,7 +84,7 @@
                 "readOnly": true,
                 "const": true,
                 "default": {
-                  "value": "2024-10-19"
+                  "value": "2025-01-21"
                 },
                 "type": "string",
                 "name": "api-version",

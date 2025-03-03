@@ -551,9 +551,10 @@
           ]
         },
         {
-          "type": "string",
+          "type": "ResourceLocation",
           "var": "$resource.location",
           "options": [
+            "l",
             "location"
           ],
           "required": true,
@@ -668,7 +669,7 @@
                     ]
                   },
                   {
-                    "type": "string",
+                    "type": "ResourceLocation",
                     "name": "location",
                     "arg": "$resource.location",
                     "required": true
@@ -981,7 +982,7 @@
                       "name": "id"
                     },
                     {
-                      "type": "string",
+                      "type": "ResourceLocation",
                       "name": "location",
                       "required": true
                     },
@@ -1254,20 +1255,17 @@
                                       {
                                         "readOnly": true,
                                         "type": "string",
-                                        "name": "schemaName",
-                                        "required": true
+                                        "name": "schemaName"
                                       },
                                       {
                                         "readOnly": true,
                                         "type": "string",
-                                        "name": "schemaRegistryNamespace",
-                                        "required": true
+                                        "name": "schemaRegistryNamespace"
                                       },
                                       {
                                         "readOnly": true,
                                         "type": "string",
-                                        "name": "schemaVersion",
-                                        "required": true
+                                        "name": "schemaVersion"
                                       }
                                     ],
                                     "cls": "MessageSchemaReference_read"
@@ -1275,8 +1273,7 @@
                                   {
                                     "readOnly": true,
                                     "type": "string",
-                                    "name": "name",
-                                    "required": true
+                                    "name": "name"
                                   }
                                 ]
                               }
@@ -1316,8 +1313,7 @@
                                   {
                                     "readOnly": true,
                                     "type": "string",
-                                    "name": "name",
-                                    "required": true
+                                    "name": "name"
                                   }
                                 ]
                               }

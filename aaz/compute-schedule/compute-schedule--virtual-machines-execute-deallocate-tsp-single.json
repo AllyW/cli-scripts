@@ -464,7 +464,10 @@
                             "name": "resourceId"
                           }
                         ]
-                      }
+                      },
+                      "identifiers": [
+                        "resourceId"
+                      ]
                     },
                     {
                       "type": "string",
