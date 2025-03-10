@@ -1,0 +1,457 @@
+1
+['devcenter dev customization-task', 'validate', '0', 'longRunning']
+['command-group:devcenter dev customization-task', 'command:validate', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+2
+['devcenter dev customization-task', 'validate', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter dev customization-task', 'command:validate', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+3
+['devcenter dev customization-task', 'validate', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter dev customization-task', 'command:validate', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+4
+['devcenter dev customization-task', 'validate', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter dev customization-task', 'command:validate', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+5
+['devcenter dev customization-task', 'validate', '0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev customization-task', 'command:validate', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+6
+['devcenter dev dev-box', 'capture-snapshot', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:capture-snapshot', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+7
+['devcenter dev dev-box', 'capture-snapshot', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter dev dev-box', 'command:capture-snapshot', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+8
+['devcenter dev dev-box', 'capture-snapshot', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter dev dev-box', 'command:capture-snapshot', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+9
+['devcenter dev dev-box', 'capture-snapshot', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter dev dev-box', 'command:capture-snapshot', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+10
+['devcenter dev dev-box', 'capture-snapshot', '0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev dev-box', 'command:capture-snapshot', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+11
+['devcenter', 'dev dev-box', 'create', '0', 'longRunning']
+['command-group:devcenter', 'command-group:dev dev-box', 'command:create', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "original-uri"}
+12
+['devcenter', 'dev dev-box', 'delete', '0', 'longRunning']
+['command-group:devcenter', 'command-group:dev dev-box', 'command:delete', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+13
+['devcenter', 'dev dev-box', 'delete', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter', 'command-group:dev dev-box', 'command:delete', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+14
+['devcenter', 'dev dev-box', 'delete', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter', 'command-group:dev dev-box', 'command:delete', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+15
+['devcenter', 'dev dev-box', 'delete', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter', 'command-group:dev dev-box', 'command:delete', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+16
+['devcenter', 'dev dev-box', 'delete', '0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter', 'command-group:dev dev-box', 'command:delete', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+17
+['devcenter dev dev-box', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'discriminators']
+['command-group:devcenter dev dev-box', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'discriminators']
+    ChangeType.CHANGE
+    [{"property": "kind", "value": "CaptureSnapshot"}, {"property": "kind", "value": "Repair", "props": [{"type": "object", "name": "result", "props": [{"type": "string", "name": "code"}, {"type": "string", "name": "message"}, {"type": "string", "name": "repairOutcome", "enum": {"items": [{"value": "FixApplied"}, {"value": "IssuesDetected"}, {"value": "NoIssuesDetected"}]}}]}]}, {"property": "kind", "value": "Restart"}, {"property": "kind", "value": "RestoreSnapshot", "props": [{"type": "string", "name": "snapshotId", "required": true}]}, {"property": "kind", "value": "Start"}, {"property": "kind", "value": "Stop"}]
+    [{"property": "kind", "value": "CaptureSnapshot", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "CaptureSnapshot"}]}}]}, {"property": "kind", "value": "Repair", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Repair"}]}}, {"type": "object", "name": "result", "props": [{"type": "string", "name": "code"}, {"type": "string", "name": "message"}, {"type": "string", "name": "repairOutcome", "enum": {"items": [{"value": "FixApplied"}, {"value": "IssuesDetected"}, {"value": "NoIssuesDetected"}]}}]}]}, {"property": "kind", "value": "Restart", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Restart"}]}}]}, {"property": "kind", "value": "RestoreSnapshot", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "RestoreSnapshot"}]}}, {"type": "string", "name": "snapshotId", "required": true}]}, {"property": "kind", "value": "Start", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Start"}]}}]}, {"property": "kind", "value": "Stop", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Stop"}]}}]}]
+18
+['devcenter dev dev-box', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'kind', 'enum']
+['command-group:devcenter dev dev-box', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'kind', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "CaptureSnapshot"}, {"value": "Repair"}, {"value": "Restart"}, {"value": "RestoreSnapshot"}, {"value": "Start"}, {"value": "Stop"}]}
+    {"items": [{"value": "CaptureSnapshot"}, {"value": "CaptureSnapshot"}, {"value": "Repair"}, {"value": "Repair"}, {"value": "Restart"}, {"value": "Restart"}, {"value": "RestoreSnapshot"}, {"value": "RestoreSnapshot"}, {"value": "Start"}, {"value": "Start"}, {"value": "Stop"}, {"value": "Stop"}]}
+19
+['devcenter dev dev-box', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'readOnly']
+['command-group:devcenter dev dev-box', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'readOnly']
+    ChangeType.ADD
+    true
+20
+['devcenter dev dev-box', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'required']
+['command-group:devcenter dev dev-box', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'required']
+    ChangeType.REMOVE
+    true
+21
+['devcenter dev dev-box', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'format']
+['command-group:devcenter dev dev-box', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+22
+['devcenter dev dev-box', 'repair', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:repair', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+23
+['devcenter dev dev-box', 'repair', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter dev dev-box', 'command:repair', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+24
+['devcenter dev dev-box', 'repair', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter dev dev-box', 'command:repair', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+25
+['devcenter dev dev-box', 'repair', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter dev dev-box', 'command:repair', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+26
+['devcenter dev dev-box', 'repair', '0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev dev-box', 'command:repair', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+27
+['devcenter dev dev-box', 'restart', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:restart', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+28
+['devcenter dev dev-box', 'restart', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter dev dev-box', 'command:restart', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+29
+['devcenter dev dev-box', 'restart', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter dev dev-box', 'command:restart', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+30
+['devcenter dev dev-box', 'restart', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter dev dev-box', 'command:restart', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+31
+['devcenter dev dev-box', 'restart', '0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev dev-box', 'command:restart', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+32
+['devcenter dev dev-box', 'restore-snapshot', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:restore-snapshot', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+33
+['devcenter dev dev-box', 'restore-snapshot', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter dev dev-box', 'command:restore-snapshot', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+34
+['devcenter dev dev-box', 'restore-snapshot', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter dev dev-box', 'command:restore-snapshot', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+35
+['devcenter dev dev-box', 'restore-snapshot', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter dev dev-box', 'command:restore-snapshot', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+36
+['devcenter dev dev-box', 'restore-snapshot', '0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev dev-box', 'command:restore-snapshot', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+37
+['devcenter dev dev-box', 'show-operation', '', '$Path.operationId', 'format']
+['command-group:devcenter dev dev-box', 'command:show-operation', 'argGroup: ', 'arg: $Path.operationId', 'prop: format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+38
+['devcenter dev dev-box', 'show-operation', '0', 'request', 'path', 'params', 'operationId', 'format']
+['command-group:devcenter dev dev-box', 'command:show-operation', 'operation ind: 0', 'request', 'path', 'params', 'arg: operationId', 'prop: format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+    ""
+39
+['devcenter dev dev-box', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'discriminators']
+['command-group:devcenter dev dev-box', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'discriminators']
+    ChangeType.CHANGE
+    [{"property": "kind", "value": "CaptureSnapshot"}, {"property": "kind", "value": "Repair", "props": [{"type": "object", "name": "result", "props": [{"type": "string", "name": "code"}, {"type": "string", "name": "message"}, {"type": "string", "name": "repairOutcome", "enum": {"items": [{"value": "FixApplied"}, {"value": "IssuesDetected"}, {"value": "NoIssuesDetected"}]}}]}]}, {"property": "kind", "value": "Restart"}, {"property": "kind", "value": "RestoreSnapshot", "props": [{"type": "string", "name": "snapshotId", "required": true}]}, {"property": "kind", "value": "Start"}, {"property": "kind", "value": "Stop"}]
+    [{"property": "kind", "value": "CaptureSnapshot", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "CaptureSnapshot"}]}}]}, {"property": "kind", "value": "Repair", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Repair"}]}}, {"type": "object", "name": "result", "props": [{"type": "string", "name": "code"}, {"type": "string", "name": "message"}, {"type": "string", "name": "repairOutcome", "enum": {"items": [{"value": "FixApplied"}, {"value": "IssuesDetected"}, {"value": "NoIssuesDetected"}]}}]}]}, {"property": "kind", "value": "Restart", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Restart"}]}}]}, {"property": "kind", "value": "RestoreSnapshot", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "RestoreSnapshot"}]}}, {"type": "string", "name": "snapshotId", "required": true}]}, {"property": "kind", "value": "Start", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Start"}]}}]}, {"property": "kind", "value": "Stop", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Stop"}]}}]}]
+40
+['devcenter dev dev-box', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'kind', 'enum']
+['command-group:devcenter dev dev-box', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'kind', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "CaptureSnapshot"}, {"value": "Repair"}, {"value": "Restart"}, {"value": "RestoreSnapshot"}, {"value": "Start"}, {"value": "Stop"}]}
+    {"items": [{"value": "CaptureSnapshot"}, {"value": "CaptureSnapshot"}, {"value": "Repair"}, {"value": "Repair"}, {"value": "Restart"}, {"value": "Restart"}, {"value": "RestoreSnapshot"}, {"value": "RestoreSnapshot"}, {"value": "Start"}, {"value": "Start"}, {"value": "Stop"}, {"value": "Stop"}]}
+41
+['devcenter dev dev-box', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'readOnly']
+['command-group:devcenter dev dev-box', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'readOnly']
+    ChangeType.ADD
+    true
+42
+['devcenter dev dev-box', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'required']
+['command-group:devcenter dev dev-box', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'required']
+    ChangeType.REMOVE
+    true
+43
+['devcenter dev dev-box', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'format']
+['command-group:devcenter dev dev-box', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+44
+['devcenter dev dev-box', 'start', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:start', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+45
+['devcenter dev dev-box', 'start', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter dev dev-box', 'command:start', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+46
+['devcenter dev dev-box', 'start', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter dev dev-box', 'command:start', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+47
+['devcenter dev dev-box', 'start', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter dev dev-box', 'command:start', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+48
+['devcenter dev dev-box', 'start', '0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev dev-box', 'command:start', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+49
+['devcenter dev dev-box', 'stop', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:stop', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+50
+['devcenter dev dev-box', 'stop', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter dev dev-box', 'command:stop', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+51
+['devcenter dev dev-box', 'stop', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter dev dev-box', 'command:stop', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+52
+['devcenter dev dev-box', 'stop', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter dev dev-box', 'command:stop', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+53
+['devcenter dev dev-box', 'stop', '0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev dev-box', 'command:stop', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+54
+['devcenter dev environment', 'create', 'Body', '$body.parameters', 'additionalProps']
+['command-group:devcenter dev environment', 'command:create', 'argGroup: Body', 'arg: $body.parameters', 'prop: additionalProps']
+    ChangeType.REMOVE
+    {"item": {"type": "any"}}
+55
+['devcenter dev environment', 'create', '0', 'longRunning']
+['command-group:devcenter dev environment', 'command:create', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "original-uri"}
+56
+['devcenter dev environment', 'create', '0', 'request', 'body', 'schema', 'props', 'parameters', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev environment', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'parameters', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+57
+['devcenter dev environment', 'create', '0', 'responses', '201', 'body', 'schema', 'props', 'parameters', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev environment', 'command:create', 'operation ind: 0', 'responses', '201', 'body', 'schema', 'props', 'parameters', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+58
+['devcenter dev environment', 'delete', '0', 'longRunning']
+['command-group:devcenter dev environment', 'command:delete', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+59
+['devcenter dev environment', 'delete', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter dev environment', 'command:delete', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+60
+['devcenter dev environment', 'delete', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter dev environment', 'command:delete', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+61
+['devcenter dev environment', 'delete', '0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter dev environment', 'command:delete', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+62
+['devcenter dev environment', 'delete', '0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev environment', 'command:delete', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+63
+['devcenter dev environment', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'parameters', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev environment', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'parameters', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+64
+['devcenter dev environment', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'parameters', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev environment', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'parameters', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+65
+['devcenter dev environment', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'discriminators']
+['command-group:devcenter dev environment', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'discriminators']
+    ChangeType.CHANGE
+    [{"property": "kind", "value": "Delete"}, {"property": "kind", "value": "Deploy"}]
+    [{"property": "kind", "value": "Delete", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Delete"}]}}]}, {"property": "kind", "value": "Deploy", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Deploy"}]}}]}]
+66
+['devcenter dev environment', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'environmentParameters', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev environment', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'environmentParameters', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+67
+['devcenter dev environment', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'kind', 'enum']
+['command-group:devcenter dev environment', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'kind', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "Delete"}, {"value": "Deploy"}]}
+    {"items": [{"value": "Delete"}, {"value": "Delete"}, {"value": "Deploy"}, {"value": "Deploy"}]}
+68
+['devcenter dev environment', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'readOnly']
+['command-group:devcenter dev environment', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'readOnly']
+    ChangeType.ADD
+    true
+69
+['devcenter dev environment', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'required']
+['command-group:devcenter dev environment', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'required']
+    ChangeType.REMOVE
+    true
+70
+['devcenter dev environment', 'list-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'format']
+['command-group:devcenter dev environment', 'command:list-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'operationId', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+71
+['devcenter dev environment', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'parameters', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev environment', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'parameters', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+72
+['devcenter dev environment', 'show-operation', '', '$Path.operationId', 'format']
+['command-group:devcenter dev environment', 'command:show-operation', 'argGroup: ', 'arg: $Path.operationId', 'prop: format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+73
+['devcenter dev environment', 'show-operation', '0', 'request', 'path', 'params', 'operationId', 'format']
+['command-group:devcenter dev environment', 'command:show-operation', 'operation ind: 0', 'request', 'path', 'params', 'arg: operationId', 'prop: format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+    ""
+74
+['devcenter dev environment', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'discriminators']
+['command-group:devcenter dev environment', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'discriminators']
+    ChangeType.CHANGE
+    [{"property": "kind", "value": "Delete"}, {"property": "kind", "value": "Deploy"}]
+    [{"property": "kind", "value": "Delete", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Delete"}]}}]}, {"property": "kind", "value": "Deploy", "props": [{"type": "string", "name": "kind", "required": true, "enum": {"items": [{"value": "Deploy"}]}}]}]
+75
+['devcenter dev environment', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'environmentParameters', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev environment', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'environmentParameters', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+76
+['devcenter dev environment', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'kind', 'enum']
+['command-group:devcenter dev environment', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'kind', 'enum']
+    ChangeType.CHANGE
+    {"items": [{"value": "Delete"}, {"value": "Deploy"}]}
+    {"items": [{"value": "Delete"}, {"value": "Delete"}, {"value": "Deploy"}, {"value": "Deploy"}]}
+77
+['devcenter dev environment', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'readOnly']
+['command-group:devcenter dev environment', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'readOnly']
+    ChangeType.ADD
+    true
+78
+['devcenter dev environment', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'required']
+['command-group:devcenter dev environment', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'required']
+    ChangeType.REMOVE
+    true
+79
+['devcenter dev environment', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'format']
+['command-group:devcenter dev environment', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'operationId', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+80
+['devcenter dev environment', 'show-outputs', '0', 'responses', '200', 'body', 'schema', 'props', 'outputs', 'additionalProps', 'item', 'props', 'value']
+['command-group:devcenter dev environment', 'command:show-outputs', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'outputs', 'additionalProps', 'item', 'props', 'value']
+    ChangeType.REMOVE
+    {"type": "any", "name": "value"}
+81
+['devcenter dev environment', 'update-expiration-date', '0', 'responses', '200', 'body', 'schema', 'props', 'parameters', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev environment', 'command:update-expiration-date', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'parameters', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"
+82
+['devcenter dev project', 'show-operation', '', '$Path.operationId', 'format']
+['command-group:devcenter dev project', 'command:show-operation', 'argGroup: ', 'arg: $Path.operationId', 'prop: format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+83
+['devcenter dev project', 'show-operation', '0', 'request', 'path', 'params', 'operationId', 'format']
+['command-group:devcenter dev project', 'command:show-operation', 'operation ind: 0', 'request', 'path', 'params', 'arg: operationId', 'prop: format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+    ""
+84
+['devcenter dev project', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'name', 'readOnly']
+['command-group:devcenter dev project', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'name', 'readOnly']
+    ChangeType.ADD
+    true
+85
+['devcenter dev project', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'name', 'required']
+['command-group:devcenter dev project', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'name', 'required']
+    ChangeType.REMOVE
+    true
+86
+['devcenter dev project', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'name', 'format']
+['command-group:devcenter dev project', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'name', 'format']
+    ChangeType.REMOVE
+    {"pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$", "maxLength": 36, "minLength": 36}
+87
+['devcenter dev project', 'show-operation', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+['command-group:devcenter dev project', 'command:show-operation', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'additionalProps', 'item', 'type']
+    ChangeType.REMOVE
+    "any"

@@ -1,0 +1,358 @@
+{
+  "name": "update-expiration-date",
+  "version": "2025-02-01",
+  "resources": [
+    {
+      "id": "/projects/{}/users/{}/environments/{}",
+      "version": "2025-02-01",
+      "swagger": "data-plane:microsoft.devcenter/devcenter/ResourceProviders/Microsoft.DevCenter/Paths/L3Byb2plY3RzL3twcm9qZWN0TmFtZX0vdXNlcnMve3VzZXJJZH0vZW52aXJvbm1lbnRzL3tlbnZpcm9ubWVudE5hbWV9/V/MjAyNS0wMi0wMQ=="
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.environmentName",
+          "options": [
+            "environment-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "The name of the environment."
+          },
+          "format": {
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+            "maxLength": 63,
+            "minLength": 3
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.userId",
+          "options": [
+            "user-id"
+          ],
+          "required": true,
+          "group": "",
+          "help": {
+            "short": "The AAD object id of the user. If value is 'me', the identity is taken from the authentication context."
+          },
+          "default": {
+            "value": "me"
+          },
+          "format": {
+            "pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$|^me$",
+            "maxLength": 36,
+            "minLength": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "args": [
+        {
+          "type": "dateTime",
+          "var": "$body.expirationDate",
+          "options": [
+            "expiration-date"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "The time the expiration date will be triggered (UTC), after which the environment and associated resources will be deleted."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Default",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.projectName",
+          "options": [
+            "project",
+            "project-name"
+          ],
+          "required": true,
+          "group": "Default",
+          "help": {
+            "short": "The name of the project. Use az configure -d project=<project_name> to configure a default."
+          },
+          "format": {
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+            "maxLength": 63,
+            "minLength": 3
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "Environments_PatchEnvironment",
+      "http": {
+        "path": "/projects/{projectName}/users/{userId}/environments/{environmentName}",
+        "request": {
+          "method": "patch",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "environmentName",
+                "arg": "$Path.environmentName",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+                  "maxLength": 63,
+                  "minLength": 3
+                }
+              },
+              {
+                "type": "string",
+                "name": "projectName",
+                "arg": "$Path.projectName",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+                  "maxLength": 63,
+                  "minLength": 3
+                }
+              },
+              {
+                "type": "string",
+                "name": "userId",
+                "arg": "$Path.userId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$|^me$",
+                  "maxLength": 36,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2025-02-01"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "body": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "name": "body",
+                "required": true,
+                "props": [
+                  {
+                    "type": "dateTime",
+                    "name": "expirationDate",
+                    "arg": "$body.expirationDate"
+                  }
+                ],
+                "clientFlatten": true
+              }
+            }
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "string",
+                      "name": "catalogName",
+                      "required": true
+                    },
+                    {
+                      "type": "string",
+                      "name": "environmentDefinitionName",
+                      "required": true
+                    },
+                    {
+                      "type": "string",
+                      "name": "environmentType",
+                      "required": true
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "object",
+                      "name": "error",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "code",
+                          "required": true
+                        },
+                        {
+                          "type": "array<@Azure.Core.Foundations.Error_read>",
+                          "name": "details",
+                          "item": {
+                            "type": "@Azure.Core.Foundations.Error_read"
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "name": "innererror",
+                          "props": [
+                            {
+                              "type": "string",
+                              "name": "code"
+                            },
+                            {
+                              "type": "@Azure.Core.Foundations.InnerError_read",
+                              "name": "innererror"
+                            }
+                          ],
+                          "cls": "Azure.Core.Foundations.InnerError_read"
+                        },
+                        {
+                          "type": "string",
+                          "name": "message",
+                          "required": true
+                        },
+                        {
+                          "type": "string",
+                          "name": "target"
+                        }
+                      ],
+                      "cls": "Azure.Core.Foundations.Error_read"
+                    },
+                    {
+                      "type": "dateTime",
+                      "name": "expirationDate"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "name",
+                      "format": {
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+                        "maxLength": 63,
+                        "minLength": 3
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "name": "parameters"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "provisioningState",
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "Accepted"
+                          },
+                          {
+                            "value": "Canceled"
+                          },
+                          {
+                            "value": "Creating"
+                          },
+                          {
+                            "value": "Deleting"
+                          },
+                          {
+                            "value": "Failed"
+                          },
+                          {
+                            "value": "MovingResources"
+                          },
+                          {
+                            "value": "Preparing"
+                          },
+                          {
+                            "value": "Running"
+                          },
+                          {
+                            "value": "StorageProvisioningFailed"
+                          },
+                          {
+                            "value": "Succeeded"
+                          },
+                          {
+                            "value": "Syncing"
+                          },
+                          {
+                            "value": "TransientFailure"
+                          },
+                          {
+                            "value": "Updating"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "resourceGroupId"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "uri"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "uuid",
+                      "name": "user"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ],
+  "confirmation": ""
+}

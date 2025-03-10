@@ -402,7 +402,7 @@ def find_target_response(response, responses_target):
     for resp in responses_target:
         if isError and resp.get("isError", False):
             return resp
-        if not isError and statusCode == resp.get("statusCode", []):
+        if not isError and sorted(statusCode) == sorted(resp.get("statusCode", [])):
             return resp
     return None
 
@@ -509,7 +509,7 @@ def compare_operation_http_responses(responses_swagger, responses_tsp, ckey, hke
     responses_swagger.sort(key=sort_response)
     responses_tsp.sort(key=sort_response)
     for response in responses_swagger:
-        key = "error" if response.get("isError", None) else ".".join([str(x) for x in response.get("statusCode", [])])
+        key = "error" if response.get("isError", None) else ".".join([str(x) for x in sorted(response.get("statusCode", []))])
         tckey = ckey + [key]
         thkey = hkey + [key]
         response_tsp = find_target_response(response, responses_tsp)
@@ -614,11 +614,15 @@ def find_cls_in_operations(operations):
 def map_cls_operation_props(props, cls_obj_ref):
     for prop in props:
         tp = prop["type"]
+        if tp.find("@AzureCoreFoundations") != -1:
+            continue
         if tp.find("@") == 0:
+            # ignore curcular reference
             type_ref_name = tp[1:]
             if type_ref_name not in cls_obj_ref:
                 logger.error("please check ref in operations: %s", type_ref_name)
-            prop.update(copy.deepcopy(cls_obj_ref[type_ref_name]))
+            if type_ref_name.find("Azure.Core.Foundations.") == -1:
+                prop.update(copy.deepcopy(cls_obj_ref[type_ref_name]))
         if "arg" in prop and prop["arg"].find("@") == 0:
             prop["arg"] = prop["arg"].split(".", 1)[-1]
         if "props" in prop and len(prop["props"]):
@@ -631,7 +635,9 @@ def map_cls_operation_props(props, cls_obj_ref):
             map_cls_operation_schema(prop["item"], cls_obj_ref)
 
 def map_cls_operation_schema(schema_item, cls_obj_ref):
-    if "type" in schema_item and schema_item["type"].find("@") == 0 and schema_item["type"].find("MgmtErrorFormat") == -1:
+    if "type" in schema_item and schema_item["type"].find("@") == 0 \
+            and schema_item["type"].find("MgmtErrorFormat") == -1 \
+            and schema_item["type"].find("ODataV4Format") == -1:
         type_ref_name = schema_item["type"][1:]
         if type_ref_name not in cls_obj_ref:
             logger.error("type need to be checked in operations: %s", type_ref_name)
@@ -859,7 +865,13 @@ def filter_known_tups(item_list):
             return True
         if item_list[0][-2] == "responses" and item_list[0][-1] == "error" and item_list[2] is ChangeType.CHANGE and item_list[3].find('@MgmtErrorFormat') != -1 and item_list[4].find('@MgmtErrorFormat') != -1:
             return True
+        if item_list[0][-2] == "responses" and item_list[0][-1] == "error" and item_list[2] is ChangeType.CHANGE and item_list[3].find('@ODataV4Format') != -1 and item_list[4].find('@ODataV4Format') != -1:
+            return True
         if item_list[2] is ChangeType.CHANGE and item_list[0][-1] == "help":
+            return True
+        if item_list[2] is ChangeType.CHANGE and item_list[3].find("AzureCoreFoundationsInnerError_read") != -1 and item_list[4].find("Azure.Core.Foundations.InnerError_read") != -1:
+            return True
+        if item_list[2] is ChangeType.CHANGE and item_list[3].find("AzureCoreFoundationsError_read") != -1 and item_list[4].find("Azure.Core.Foundations.Error_read") != -1:
             return True
         if item_list[0][-2] == "subscriptionId" and item_list[0][-1] == "type" and item_list[2] is ChangeType.CHANGE:
             return True
@@ -918,6 +930,8 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
         # with open(os.path.join(module_folder, cmd_file_name + "-tsp.json"), "w", encoding="utf8") as jfile:
         #     json.dump(cmd_tsp_json, jfile, ensure_ascii=False, indent=2)
         # print("cmd_swagger_json: ", cmd_swagger_json)
+        # if cmd_file_name.find("validate") == -1:
+        #     continue
         compare_cmd_jsons(cmd, cmd_swagger_json, cmd_tsp_json, cmd_diffs, original_cmd)
         with open(os.path.join(module_folder, cmd_file_name + "-swg-single.json"), "w", encoding="utf8") as jfile:
             json.dump(original_cmd[0], jfile, ensure_ascii=False, indent=2)

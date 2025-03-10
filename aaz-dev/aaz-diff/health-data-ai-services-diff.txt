@@ -1,0 +1,31 @@
+1
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'type']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'type']
+    ChangeType.CHANGE
+    "object"
+    "@Azure.Core.Foundations.Error_read"
+2
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'code']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'code']
+    ChangeType.REMOVE
+    {"type": "string", "name": "code", "required": true}
+3
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'details']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'details']
+    ChangeType.REMOVE
+    {"type": "array<@AzureCoreFoundationsError_read>", "name": "details", "item": {"type": "@AzureCoreFoundationsError_read"}}
+4
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'innererror']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'innererror']
+    ChangeType.REMOVE
+    {"type": "object", "name": "innererror", "props": [{"type": "string", "name": "code"}, {"type": "@AzureCoreFoundationsInnerError_read", "name": "innererror"}]}
+5
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'message']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'message']
+    ChangeType.REMOVE
+    {"type": "string", "name": "message", "required": true}
+6
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'target']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'target']
+    ChangeType.REMOVE
+    {"type": "string", "name": "target"}
