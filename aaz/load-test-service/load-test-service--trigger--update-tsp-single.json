@@ -1,0 +1,1399 @@
+{
+  "name": "update",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/triggers/{}",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3RyaWdnZXJzL3t0cmlnZ2VySWR9/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.triggerId",
+          "options": [
+            "trigger-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "The unique identifier of the trigger."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "args": [
+        {
+          "type": "object",
+          "var": "$body.ScheduleTestsTrigger",
+          "options": [
+            "schedule-tests-trigger"
+          ],
+          "group": "Body",
+          "args": [
+            {
+              "type": "string",
+              "var": "$body.ScheduleTestsTrigger.kind",
+              "options": [
+                "kind"
+              ],
+              "help": {
+                "short": "The type of the trigger is ScheduleTestsTrigger."
+              },
+              "enum": {
+                "items": [
+                  {
+                    "name": "ScheduleTestsTrigger",
+                    "value": "ScheduleTestsTrigger"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "object",
+              "var": "$body.ScheduleTestsTrigger.recurrence",
+              "options": [
+                "recurrence"
+              ],
+              "help": {
+                "short": "Recurrence details of the trigger. Null if schedule is not recurring."
+              },
+              "args": [
+                {
+                  "type": "object",
+                  "var": "$body.ScheduleTestsTrigger.recurrence.Cron",
+                  "options": [
+                    "cron"
+                  ],
+                  "args": [
+                    {
+                      "type": "string",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.Cron.cronExpression",
+                      "options": [
+                        "cron-expression"
+                      ],
+                      "help": {
+                        "short": "Cron expression for the recurrence."
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.Cron.frequency",
+                      "options": [
+                        "frequency"
+                      ],
+                      "help": {
+                        "short": "Specify frequency using a cron expression."
+                      },
+                      "enum": {
+                        "items": [
+                          {
+                            "name": "Cron",
+                            "value": "Cron"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "object",
+                  "var": "$body.ScheduleTestsTrigger.recurrence.Daily",
+                  "options": [
+                    "daily"
+                  ],
+                  "args": [
+                    {
+                      "type": "string",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.Daily.frequency",
+                      "options": [
+                        "frequency"
+                      ],
+                      "help": {
+                        "short": "Frequency of the day recurrence."
+                      },
+                      "enum": {
+                        "items": [
+                          {
+                            "name": "Daily",
+                            "value": "Daily"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "integer32",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.Daily.interval",
+                      "options": [
+                        "interval"
+                      ],
+                      "help": {
+                        "short": "The interval at which the recurrence should repeat. It signifies the number of days between each recurrence."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "object",
+                  "var": "$body.ScheduleTestsTrigger.recurrence.Hourly",
+                  "options": [
+                    "hourly"
+                  ],
+                  "args": [
+                    {
+                      "type": "string",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.Hourly.frequency",
+                      "options": [
+                        "frequency"
+                      ],
+                      "help": {
+                        "short": "Frequency of the hour recurrence."
+                      },
+                      "enum": {
+                        "items": [
+                          {
+                            "name": "Hourly",
+                            "value": "Hourly"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "integer32",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.Hourly.interval",
+                      "options": [
+                        "interval"
+                      ],
+                      "help": {
+                        "short": "The interval at which the recurrence should repeat. It signifies the number of hours between each recurrence."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "object",
+                  "var": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDates",
+                  "options": [
+                    "monthly-by-dates"
+                  ],
+                  "args": [
+                    {
+                      "type": "array<integer32>",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDates.datesInMonth",
+                      "options": [
+                        "dates-in-month"
+                      ],
+                      "help": {
+                        "short": "Recurrence set to repeat on the specified dates of the month. Value of dates can be 1 to 31 and -1. -1 represents the last day of the month."
+                      },
+                      "item": {
+                        "type": "integer32"
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDates.frequency",
+                      "options": [
+                        "frequency"
+                      ],
+                      "help": {
+                        "short": "Frequency of the month recurrence."
+                      },
+                      "enum": {
+                        "items": [
+                          {
+                            "name": "MonthlyByDates",
+                            "value": "MonthlyByDates"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "integer32",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDates.interval",
+                      "options": [
+                        "interval"
+                      ],
+                      "help": {
+                        "short": "The interval at which the recurrence should repeat. It signifies the number of months between each recurrence."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "object",
+                  "var": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays",
+                  "options": [
+                    "monthly-by-days"
+                  ],
+                  "args": [
+                    {
+                      "type": "string",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays.frequency",
+                      "options": [
+                        "frequency"
+                      ],
+                      "help": {
+                        "short": "Frequency of the month recurrence."
+                      },
+                      "enum": {
+                        "items": [
+                          {
+                            "name": "MonthlyByDays",
+                            "value": "MonthlyByDays"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "integer32",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays.index",
+                      "options": [
+                        "index"
+                      ],
+                      "help": {
+                        "short": "Index of the week in a month at which the recurrence should repeat. For example, if the index is '2', weekDay is 'Monday', interval is 3 and frequency is 'Month', the recurrence will run every second Monday of the month and repeat every 3 months. Value of index can be 1 to 5."
+                      },
+                      "format": {
+                        "maximum": 5,
+                        "minimum": 1
+                      }
+                    },
+                    {
+                      "type": "integer32",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays.interval",
+                      "options": [
+                        "interval"
+                      ],
+                      "help": {
+                        "short": "The interval at which the recurrence should repeat. It signifies the number of months between each recurrence."
+                      }
+                    },
+                    {
+                      "type": "array<string>",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays.weekDaysInMonth",
+                      "options": [
+                        "week-days-in-month"
+                      ],
+                      "help": {
+                        "short": "Specific days of the week when the recurrence should repeat."
+                      },
+                      "item": {
+                        "type": "string",
+                        "enum": {
+                          "items": [
+                            {
+                              "name": "Friday",
+                              "value": "Friday"
+                            },
+                            {
+                              "name": "Monday",
+                              "value": "Monday"
+                            },
+                            {
+                              "name": "Saturday",
+                              "value": "Saturday"
+                            },
+                            {
+                              "name": "Sunday",
+                              "value": "Sunday"
+                            },
+                            {
+                              "name": "Thursday",
+                              "value": "Thursday"
+                            },
+                            {
+                              "name": "Tuesday",
+                              "value": "Tuesday"
+                            },
+                            {
+                              "name": "Wednesday",
+                              "value": "Wednesday"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "object",
+                  "var": "$body.ScheduleTestsTrigger.recurrence.Weekly",
+                  "options": [
+                    "weekly"
+                  ],
+                  "args": [
+                    {
+                      "type": "array<string>",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.Weekly.daysOfWeek",
+                      "options": [
+                        "days-of-week"
+                      ],
+                      "help": {
+                        "short": "Recurrence set to repeat on the specified days of the week."
+                      },
+                      "item": {
+                        "type": "string",
+                        "enum": {
+                          "items": [
+                            {
+                              "name": "Friday",
+                              "value": "Friday"
+                            },
+                            {
+                              "name": "Monday",
+                              "value": "Monday"
+                            },
+                            {
+                              "name": "Saturday",
+                              "value": "Saturday"
+                            },
+                            {
+                              "name": "Sunday",
+                              "value": "Sunday"
+                            },
+                            {
+                              "name": "Thursday",
+                              "value": "Thursday"
+                            },
+                            {
+                              "name": "Tuesday",
+                              "value": "Tuesday"
+                            },
+                            {
+                              "name": "Wednesday",
+                              "value": "Wednesday"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.Weekly.frequency",
+                      "options": [
+                        "frequency"
+                      ],
+                      "help": {
+                        "short": "Frequency of the week recurrence."
+                      },
+                      "enum": {
+                        "items": [
+                          {
+                            "name": "Weekly",
+                            "value": "Weekly"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "integer32",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.Weekly.interval",
+                      "options": [
+                        "interval"
+                      ],
+                      "help": {
+                        "short": "The interval at which the recurrence should repeat. It signifies the number of weeks between each recurrence."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "object",
+                  "var": "$body.ScheduleTestsTrigger.recurrence.recurrenceEnd",
+                  "options": [
+                    "recurrence-end"
+                  ],
+                  "help": {
+                    "short": "Recurrence end model. You can specify the end either by providing a numberOfOccurrences (which will end the recurrence after the specified number of occurrences) or by providing an endDateTime (which will end the recurrence after the specified date). If neither value is provided, the recurrence will continue until it is manually ended. However, if both values are provided, an error will be thrown."
+                  },
+                  "args": [
+                    {
+                      "type": "dateTime",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.recurrenceEnd.endDateTime",
+                      "options": [
+                        "end-date-time"
+                      ],
+                      "help": {
+                        "short": "The date after which the recurrence will end. (RFC 3339 literal format)"
+                      }
+                    },
+                    {
+                      "type": "integer32",
+                      "var": "$body.ScheduleTestsTrigger.recurrence.recurrenceEnd.numberOfOccurrences",
+                      "options": [
+                        "number-of-occurrences"
+                      ],
+                      "help": {
+                        "short": "Number of occurrences after which the recurrence will end."
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "dateTime",
+              "var": "$body.ScheduleTestsTrigger.startDateTime",
+              "options": [
+                "start-date-time"
+              ],
+              "help": {
+                "short": "Start date time of the trigger in UTC timezone. (RFC 3339 literal format)"
+              }
+            },
+            {
+              "type": "array<string>",
+              "var": "$body.ScheduleTestsTrigger.testIds",
+              "options": [
+                "test-ids"
+              ],
+              "help": {
+                "short": "The test id of test to be triggered by this schedule trigger. Currently only one test is supported for a trigger."
+              },
+              "item": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "var": "$body.description",
+          "options": [
+            "description"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "The description of the trigger."
+          },
+          "format": {
+            "maxLength": 100
+          }
+        },
+        {
+          "type": "string",
+          "var": "$body.displayName",
+          "options": [
+            "display-name"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "The name of the trigger."
+          },
+          "format": {
+            "maxLength": 50,
+            "minLength": 2
+          }
+        },
+        {
+          "type": "string",
+          "var": "$body.state",
+          "options": [
+            "state"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "The current state of the trigger."
+          },
+          "enum": {
+            "items": [
+              {
+                "name": "Active",
+                "value": "Active"
+              },
+              {
+                "name": "Completed",
+                "value": "Completed"
+              },
+              {
+                "name": "Disabled",
+                "value": "Disabled"
+              },
+              {
+                "name": "Paused",
+                "value": "Paused"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "TriggerAdministration_CreateOrUpdateTrigger",
+      "http": {
+        "path": "/triggers/{triggerId}",
+        "request": {
+          "method": "patch",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "triggerId",
+                "arg": "$Path.triggerId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "body": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "name": "body",
+                "required": true,
+                "props": [
+                  {
+                    "type": "string",
+                    "name": "description",
+                    "arg": "$body.description",
+                    "format": {
+                      "maxLength": 100
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "name": "displayName",
+                    "arg": "$body.displayName",
+                    "format": {
+                      "maxLength": 50,
+                      "minLength": 2
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "name": "kind",
+                    "required": true,
+                    "enum": {
+                      "items": [
+                        {
+                          "arg": "$body.ScheduleTestsTrigger",
+                          "value": "ScheduleTestsTrigger"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "name": "state",
+                    "arg": "$body.state",
+                    "enum": {
+                      "items": [
+                        {
+                          "value": "Active"
+                        },
+                        {
+                          "value": "Completed"
+                        },
+                        {
+                          "value": "Disabled"
+                        },
+                        {
+                          "value": "Paused"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "discriminators": [
+                  {
+                    "property": "kind",
+                    "value": "ScheduleTestsTrigger",
+                    "props": [
+                      {
+                        "type": "string",
+                        "name": "kind",
+                        "arg": "$body.ScheduleTestsTrigger.kind",
+                        "enum": {
+                          "items": [
+                            {
+                              "value": "ScheduleTestsTrigger"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "name": "recurrence",
+                        "arg": "$body.ScheduleTestsTrigger.recurrence",
+                        "props": [
+                          {
+                            "type": "string",
+                            "name": "frequency",
+                            "required": true,
+                            "enum": {
+                              "items": [
+                                {
+                                  "arg": "$body.ScheduleTestsTrigger.recurrence.Cron",
+                                  "value": "Cron"
+                                },
+                                {
+                                  "arg": "$body.ScheduleTestsTrigger.recurrence.Daily",
+                                  "value": "Daily"
+                                },
+                                {
+                                  "arg": "$body.ScheduleTestsTrigger.recurrence.Hourly",
+                                  "value": "Hourly"
+                                },
+                                {
+                                  "arg": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDates",
+                                  "value": "MonthlyByDates"
+                                },
+                                {
+                                  "arg": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays",
+                                  "value": "MonthlyByDays"
+                                },
+                                {
+                                  "arg": "$body.ScheduleTestsTrigger.recurrence.Weekly",
+                                  "value": "Weekly"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "object",
+                            "name": "recurrenceEnd",
+                            "arg": "$body.ScheduleTestsTrigger.recurrence.recurrenceEnd",
+                            "props": [
+                              {
+                                "type": "dateTime",
+                                "name": "endDateTime",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.recurrenceEnd.endDateTime"
+                              },
+                              {
+                                "type": "integer32",
+                                "name": "numberOfOccurrences",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.recurrenceEnd.numberOfOccurrences"
+                              }
+                            ]
+                          }
+                        ],
+                        "discriminators": [
+                          {
+                            "property": "frequency",
+                            "value": "Cron",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "cronExpression",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.Cron.cronExpression"
+                              },
+                              {
+                                "type": "string",
+                                "name": "frequency",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.Cron.frequency",
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "value": "Cron"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "property": "frequency",
+                            "value": "Daily",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "frequency",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.Daily.frequency",
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "value": "Daily"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "integer32",
+                                "name": "interval",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.Daily.interval"
+                              }
+                            ]
+                          },
+                          {
+                            "property": "frequency",
+                            "value": "Hourly",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "frequency",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.Hourly.frequency",
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "value": "Hourly"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "integer32",
+                                "name": "interval",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.Hourly.interval"
+                              }
+                            ]
+                          },
+                          {
+                            "property": "frequency",
+                            "value": "MonthlyByDates",
+                            "props": [
+                              {
+                                "type": "array<integer32>",
+                                "name": "datesInMonth",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDates.datesInMonth",
+                                "item": {
+                                  "type": "integer32"
+                                }
+                              },
+                              {
+                                "type": "string",
+                                "name": "frequency",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDates.frequency",
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "value": "MonthlyByDates"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "integer32",
+                                "name": "interval",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDates.interval"
+                              }
+                            ]
+                          },
+                          {
+                            "property": "frequency",
+                            "value": "MonthlyByDays",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "frequency",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays.frequency",
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "value": "MonthlyByDays"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "integer32",
+                                "name": "index",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays.index",
+                                "format": {
+                                  "maximum": 5,
+                                  "minimum": 1
+                                }
+                              },
+                              {
+                                "type": "integer32",
+                                "name": "interval",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays.interval"
+                              },
+                              {
+                                "type": "array<string>",
+                                "name": "weekDaysInMonth",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.MonthlyByDays.weekDaysInMonth",
+                                "item": {
+                                  "type": "string",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Friday"
+                                      },
+                                      {
+                                        "value": "Monday"
+                                      },
+                                      {
+                                        "value": "Saturday"
+                                      },
+                                      {
+                                        "value": "Sunday"
+                                      },
+                                      {
+                                        "value": "Thursday"
+                                      },
+                                      {
+                                        "value": "Tuesday"
+                                      },
+                                      {
+                                        "value": "Wednesday"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "property": "frequency",
+                            "value": "Weekly",
+                            "props": [
+                              {
+                                "type": "array<string>",
+                                "name": "daysOfWeek",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.Weekly.daysOfWeek",
+                                "item": {
+                                  "type": "string",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Friday"
+                                      },
+                                      {
+                                        "value": "Monday"
+                                      },
+                                      {
+                                        "value": "Saturday"
+                                      },
+                                      {
+                                        "value": "Sunday"
+                                      },
+                                      {
+                                        "value": "Thursday"
+                                      },
+                                      {
+                                        "value": "Tuesday"
+                                      },
+                                      {
+                                        "value": "Wednesday"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              {
+                                "type": "string",
+                                "name": "frequency",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.Weekly.frequency",
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "value": "Weekly"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "integer32",
+                                "name": "interval",
+                                "arg": "$body.ScheduleTestsTrigger.recurrence.Weekly.interval"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "dateTime",
+                        "name": "startDateTime",
+                        "arg": "$body.ScheduleTestsTrigger.startDateTime"
+                      },
+                      {
+                        "type": "array<string>",
+                        "name": "testIds",
+                        "arg": "$body.ScheduleTestsTrigger.testIds",
+                        "item": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "clientFlatten": true
+              }
+            }
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              201,
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "createdBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "createdDateTime"
+                    },
+                    {
+                      "type": "string",
+                      "name": "description",
+                      "format": {
+                        "maxLength": 100
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "name": "displayName",
+                      "required": true,
+                      "format": {
+                        "maxLength": 50,
+                        "minLength": 2
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "name": "kind",
+                      "required": true,
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "ScheduleTestsTrigger"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "lastModifiedBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "lastModifiedDateTime"
+                    },
+                    {
+                      "type": "string",
+                      "name": "state",
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "Active"
+                          },
+                          {
+                            "value": "Completed"
+                          },
+                          {
+                            "value": "Disabled"
+                          },
+                          {
+                            "value": "Paused"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "object",
+                      "name": "stateDetails",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "message"
+                        }
+                      ]
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "triggerId",
+                      "format": {
+                        "pattern": "^[a-z0-9_-]*$",
+                        "maxLength": 50,
+                        "minLength": 2
+                      }
+                    }
+                  ],
+                  "discriminators": [
+                    {
+                      "property": "kind",
+                      "value": "ScheduleTestsTrigger",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "kind",
+                          "required": true,
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "ScheduleTestsTrigger"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "name": "recurrence",
+                          "props": [
+                            {
+                              "type": "string",
+                              "name": "frequency",
+                              "required": true,
+                              "enum": {
+                                "items": [
+                                  {
+                                    "value": "Cron"
+                                  },
+                                  {
+                                    "value": "Daily"
+                                  },
+                                  {
+                                    "value": "Hourly"
+                                  },
+                                  {
+                                    "value": "MonthlyByDates"
+                                  },
+                                  {
+                                    "value": "MonthlyByDays"
+                                  },
+                                  {
+                                    "value": "Weekly"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "name": "recurrenceEnd",
+                              "props": [
+                                {
+                                  "type": "dateTime",
+                                  "name": "endDateTime"
+                                },
+                                {
+                                  "type": "integer32",
+                                  "name": "numberOfOccurrences"
+                                }
+                              ]
+                            }
+                          ],
+                          "discriminators": [
+                            {
+                              "property": "frequency",
+                              "value": "Cron",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "cronExpression",
+                                  "required": true
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "frequency",
+                                  "required": true,
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Cron"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "property": "frequency",
+                              "value": "Daily",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "frequency",
+                                  "required": true,
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Daily"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "integer32",
+                                  "name": "interval",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "property": "frequency",
+                              "value": "Hourly",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "frequency",
+                                  "required": true,
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Hourly"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "integer32",
+                                  "name": "interval",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "property": "frequency",
+                              "value": "MonthlyByDates",
+                              "props": [
+                                {
+                                  "type": "array<integer32>",
+                                  "name": "datesInMonth",
+                                  "item": {
+                                    "type": "integer32"
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "frequency",
+                                  "required": true,
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "MonthlyByDates"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "integer32",
+                                  "name": "interval"
+                                }
+                              ]
+                            },
+                            {
+                              "property": "frequency",
+                              "value": "MonthlyByDays",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "frequency",
+                                  "required": true,
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "MonthlyByDays"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "integer32",
+                                  "name": "index",
+                                  "required": true,
+                                  "format": {
+                                    "maximum": 5,
+                                    "minimum": 1
+                                  }
+                                },
+                                {
+                                  "type": "integer32",
+                                  "name": "interval",
+                                  "required": true
+                                },
+                                {
+                                  "type": "array<string>",
+                                  "name": "weekDaysInMonth",
+                                  "item": {
+                                    "type": "string",
+                                    "enum": {
+                                      "items": [
+                                        {
+                                          "value": "Friday"
+                                        },
+                                        {
+                                          "value": "Monday"
+                                        },
+                                        {
+                                          "value": "Saturday"
+                                        },
+                                        {
+                                          "value": "Sunday"
+                                        },
+                                        {
+                                          "value": "Thursday"
+                                        },
+                                        {
+                                          "value": "Tuesday"
+                                        },
+                                        {
+                                          "value": "Wednesday"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "property": "frequency",
+                              "value": "Weekly",
+                              "props": [
+                                {
+                                  "type": "array<string>",
+                                  "name": "daysOfWeek",
+                                  "item": {
+                                    "type": "string",
+                                    "enum": {
+                                      "items": [
+                                        {
+                                          "value": "Friday"
+                                        },
+                                        {
+                                          "value": "Monday"
+                                        },
+                                        {
+                                          "value": "Saturday"
+                                        },
+                                        {
+                                          "value": "Sunday"
+                                        },
+                                        {
+                                          "value": "Thursday"
+                                        },
+                                        {
+                                          "value": "Tuesday"
+                                        },
+                                        {
+                                          "value": "Wednesday"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "frequency",
+                                  "required": true,
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "Weekly"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "integer32",
+                                  "name": "interval"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "readOnly": true,
+                          "type": "object",
+                          "name": "recurrenceStatus",
+                          "props": [
+                            {
+                              "type": "array<dateTime>",
+                              "name": "nextScheduledDateTimes",
+                              "item": {
+                                "type": "dateTime"
+                              }
+                            },
+                            {
+                              "type": "integer32",
+                              "name": "remainingOccurrences"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "dateTime",
+                          "name": "startDateTime"
+                        },
+                        {
+                          "type": "array<string>",
+                          "name": "testIds",
+                          "required": true,
+                          "item": {
+                            "type": "string"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

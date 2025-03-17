@@ -1,0 +1,60 @@
+1
+['playwright-testing auth-manager account access-token', 'create', 'Resource', '$resource.id']
+['command-group:playwright-testing auth-manager account access-token', 'command:create', 'argGroup: Resource', 'arg: $resource.id']
+    ChangeType.REMOVE
+    {"type": "uuid", "var": "$resource.id", "options": ["id"], "required": true, "group": "Resource", "help": {"short": "The access-token id."}, "format": {"pattern": "[A-Za-z0-9]+(-[A-Za-z0-9]+)+", "maxLength": 64}}
+2
+['playwright-testing auth-manager account access-token', 'create', '0', 'request', 'body', 'schema', 'props', 'id']
+['command-group:playwright-testing auth-manager account access-token', 'command:create', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'id']
+    ChangeType.REMOVE
+    {"type": "uuid", "name": "id", "arg": "$resource.id", "required": true, "format": {"pattern": "[A-Za-z0-9]+(-[A-Za-z0-9]+)+", "maxLength": 64}}
+3
+['playwright-testing auth-manager account access-token', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'required']
+['command-group:playwright-testing auth-manager account access-token', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'required']
+    ChangeType.REMOVE
+    true
+4
+['playwright-testing auth-manager account access-token', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'readOnly']
+['command-group:playwright-testing auth-manager account access-token', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'readOnly']
+    ChangeType.ADD
+    true
+5
+['playwright-testing auth-manager account access-token', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'id', 'required']
+['command-group:playwright-testing auth-manager account access-token', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'id', 'required']
+    ChangeType.REMOVE
+    true
+6
+['playwright-testing auth-manager account access-token', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'id', 'readOnly']
+['command-group:playwright-testing auth-manager account access-token', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'id', 'readOnly']
+    ChangeType.ADD
+    true
+7
+['playwright-testing auth-manager account access-token', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'id', 'required']
+['command-group:playwright-testing auth-manager account access-token', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'id', 'required']
+    ChangeType.REMOVE
+    true
+8
+['playwright-testing auth-manager account access-token', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'id', 'readOnly']
+['command-group:playwright-testing auth-manager account access-token', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'id', 'readOnly']
+    ChangeType.ADD
+    true
+9
+['playwright-testing auth-manager account access-token', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'id', 'required']
+['command-group:playwright-testing auth-manager account access-token', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'id', 'required']
+    ChangeType.REMOVE
+    true
+10
+['playwright-testing auth-manager account access-token', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'id', 'readOnly']
+['command-group:playwright-testing auth-manager account access-token', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'id', 'readOnly']
+    ChangeType.ADD
+    true
+11
+['playwright-testing auth-manager account access-token', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'required']
+['command-group:playwright-testing auth-manager account access-token', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'required']
+    ChangeType.REMOVE
+    true
+12
+['playwright-testing auth-manager account access-token', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'readOnly']
+['command-group:playwright-testing auth-manager account access-token', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'id', 'readOnly']
+    ChangeType.ADD
+    true

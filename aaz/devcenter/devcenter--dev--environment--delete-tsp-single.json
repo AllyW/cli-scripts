@@ -1,0 +1,325 @@
+{
+  "name": "delete",
+  "version": "2025-03-01-preview",
+  "resources": [
+    {
+      "id": "/projects/{}/users/{}/environments/{}",
+      "version": "2025-03-01-preview",
+      "swagger": "data-plane:microsoft.devcenter/devcenter/ResourceProviders/Microsoft.DevCenter/Paths/L3Byb2plY3RzL3twcm9qZWN0TmFtZX0vdXNlcnMve3VzZXJJZH0vZW52aXJvbm1lbnRzL3tlbnZpcm9ubWVudE5hbWV9/V/MjAyNS0wMy0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.environmentName",
+          "options": [
+            "environment-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "The name of the environment."
+          },
+          "format": {
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+            "maxLength": 63,
+            "minLength": 3
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.userId",
+          "options": [
+            "user-id"
+          ],
+          "required": true,
+          "group": "",
+          "help": {
+            "short": "The AAD object id of the user. If value is 'me', the identity is taken from the authentication context."
+          },
+          "default": {
+            "value": "me"
+          },
+          "format": {
+            "pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$|^me$",
+            "maxLength": 36,
+            "minLength": 2
+          }
+        },
+        {
+          "type": "boolean",
+          "var": "$Query.force",
+          "options": [
+            "force"
+          ],
+          "help": {
+            "short": "The query option to force environment deletion even if the environment definition does not exist. This is a best-effort delete, and anything custom that forces resource creation beyond the associated resource group may not be deleted."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Default",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.projectName",
+          "options": [
+            "project",
+            "project-name"
+          ],
+          "required": true,
+          "group": "Default",
+          "help": {
+            "short": "The name of the project. Use az configure -d project=<project_name> to configure a default."
+          },
+          "format": {
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+            "maxLength": 63,
+            "minLength": 3
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "longRunning": {
+        "finalStateVia": "operation-location"
+      },
+      "operationId": "Environments_DeleteEnvironment",
+      "http": {
+        "path": "/projects/{projectName}/users/{userId}/environments/{environmentName}",
+        "request": {
+          "method": "delete",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "environmentName",
+                "arg": "$Path.environmentName",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+                  "maxLength": 63,
+                  "minLength": 3
+                }
+              },
+              {
+                "type": "string",
+                "name": "projectName",
+                "arg": "$Path.projectName",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_.]{2,62}$",
+                  "maxLength": 63,
+                  "minLength": 3
+                }
+              },
+              {
+                "type": "string",
+                "name": "userId",
+                "arg": "$Path.userId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$|^me$",
+                  "maxLength": 36,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "params": [
+              {
+                "type": "boolean",
+                "name": "force",
+                "arg": "$Query.force"
+              }
+            ],
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2025-03-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              202
+            ],
+            "header": {
+              "items": [
+                {
+                  "name": "Location"
+                },
+                {
+                  "name": "Operation-Location"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "dateTime",
+                      "name": "endTime"
+                    },
+                    {
+                      "type": "object",
+                      "name": "error",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "code",
+                          "required": true
+                        },
+                        {
+                          "type": "array<@Azure.Core.Foundations.Error_read>",
+                          "name": "details",
+                          "item": {
+                            "type": "@Azure.Core.Foundations.Error_read"
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "name": "innererror",
+                          "props": [
+                            {
+                              "type": "string",
+                              "name": "code"
+                            },
+                            {
+                              "type": "@Azure.Core.Foundations.InnerError_read",
+                              "name": "innererror"
+                            }
+                          ],
+                          "cls": "Azure.Core.Foundations.InnerError_read"
+                        },
+                        {
+                          "type": "string",
+                          "name": "message",
+                          "required": true
+                        },
+                        {
+                          "type": "string",
+                          "name": "target"
+                        }
+                      ],
+                      "cls": "Azure.Core.Foundations.Error_read"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "id"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "uuid",
+                      "name": "name",
+                      "format": {
+                        "pattern": "^[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}$",
+                        "maxLength": 36,
+                        "minLength": 36
+                      }
+                    },
+                    {
+                      "type": "float64",
+                      "name": "percentComplete",
+                      "format": {
+                        "maximum": 100.0,
+                        "minimum": 0.0
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "name": "properties"
+                    },
+                    {
+                      "type": "string",
+                      "name": "resourceId"
+                    },
+                    {
+                      "type": "dateTime",
+                      "name": "startTime"
+                    },
+                    {
+                      "type": "string",
+                      "name": "status",
+                      "required": true,
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "Canceled"
+                          },
+                          {
+                            "value": "Failed"
+                          },
+                          {
+                            "value": "NotStarted"
+                          },
+                          {
+                            "value": "Running"
+                          },
+                          {
+                            "value": "Succeeded"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "statusCode": [
+              204
+            ]
+          },
+          {
+            "statusCode": [
+              200,
+              201
+            ]
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "confirmation": "Are you sure you want to perform this operation?"
+}

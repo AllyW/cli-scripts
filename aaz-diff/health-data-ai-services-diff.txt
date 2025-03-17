@@ -1,96 +1,31 @@
 1
-['health-data-ai-services deid-service', 'identity', 'assign', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command-group:identity', 'command:assign', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'type']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'type']
     ChangeType.CHANGE
-    "string"
-    "ResourceId"
+    "object"
+    "@Azure.Core.Foundations.Error_read"
 2
-['health-data-ai-services deid-service', 'identity', 'assign', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command-group:identity', 'command:assign', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'code']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'code']
+    ChangeType.REMOVE
+    {"type": "string", "name": "code", "required": true}
 3
-['health-data-ai-services deid-service', 'identity', 'remove', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command-group:identity', 'command:remove', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'details']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'details']
+    ChangeType.REMOVE
+    {"type": "array<@AzureCoreFoundationsError_read>", "name": "details", "item": {"type": "@AzureCoreFoundationsError_read"}}
 4
-['health-data-ai-services deid-service', 'identity', 'remove', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command-group:identity', 'command:remove', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'innererror']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'innererror']
+    ChangeType.REMOVE
+    {"type": "object", "name": "innererror", "props": [{"type": "string", "name": "code"}, {"type": "@AzureCoreFoundationsInnerError_read", "name": "innererror"}]}
 5
-['health-data-ai-services deid-service', 'identity', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command-group:identity', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'message']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'message']
+    ChangeType.REMOVE
+    {"type": "string", "name": "message", "required": true}
 6
-['health-data-ai-services deid-service private-endpoint-connection', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service private-endpoint-connection', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-7
-['health-data-ai-services deid-service private-endpoint-connection', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service private-endpoint-connection', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-8
-['health-data-ai-services deid-service private-endpoint-connection', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service private-endpoint-connection', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-9
-['health-data-ai-services deid-service private-endpoint-connection', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service private-endpoint-connection', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-10
-['health-data-ai-services deid-service private-endpoint-connection', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service private-endpoint-connection', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-11
-['health-data-ai-services deid-service', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-12
-['health-data-ai-services deid-service', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-13
-['health-data-ai-services deid-service', 'list', '1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command:list', 'operation ind: 1', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-14
-['health-data-ai-services deid-service', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-15
-['health-data-ai-services deid-service', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
-16
-['health-data-ai-services deid-service', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-['command-group:health-data-ai-services deid-service', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'properties', 'props', 'privateEndpointConnections', 'item', 'props', 'properties', 'props', 'privateEndpoint', 'props', 'id', 'type']
-    ChangeType.CHANGE
-    "string"
-    "ResourceId"
+['health-data-ai-services deid-services job', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'target']
+['command-group:health-data-ai-services deid-services job', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'target']
+    ChangeType.REMOVE
+    {"type": "string", "name": "target"}

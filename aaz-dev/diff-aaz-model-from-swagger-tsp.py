@@ -562,15 +562,19 @@ def find_cls_in_props(props, cls_obj_ref):
     for prop in props:
         if "cls" in prop:
             cls_name = prop["cls"]
+            print("cls_name: ", cls_name)
             cls_obj_ref[cls_name] = {
                 "type": prop["type"],
-                "props": prop["props"]
+                "props": prop.get("props", []),
+                "additionalProps": prop.get("additionalProps", [])
             }
             del prop["cls"]
         if "props" in prop:
             find_cls_in_props(prop["props"], cls_obj_ref)
         if "item" in prop:
             find_cls_in_operation_item(prop["item"], cls_obj_ref)
+        if "additionalProps" in prop and "item" in prop["additionalProps"]:
+            find_cls_in_operation_item(prop["additionalProps"]["item"], cls_obj_ref)
 
 
 def find_cls_in_operation_item(item, cls_obj_ref):
@@ -622,6 +626,8 @@ def map_cls_operation_props(props, cls_obj_ref):
             if type_ref_name not in cls_obj_ref:
                 logger.error("please check ref in operations: %s", type_ref_name)
             if type_ref_name.find("Azure.Core.Foundations.") == -1:
+                if type_ref_name == "Record<TestRunStatistics>_read":
+                    print("here")
                 prop.update(copy.deepcopy(cls_obj_ref[type_ref_name]))
         if "arg" in prop and prop["arg"].find("@") == 0:
             prop["arg"] = prop["arg"].split(".", 1)[-1]
@@ -633,6 +639,8 @@ def map_cls_operation_props(props, cls_obj_ref):
             #        "name": "details",
             #        "item": {"type": "@ErrorDetail_read"}
             map_cls_operation_schema(prop["item"], cls_obj_ref)
+        if "additionalProps" in prop and "item" in prop["additionalProps"]:
+            map_cls_operation_schema(prop["additionalProps"]["item"], cls_obj_ref)
 
 def map_cls_operation_schema(schema_item, cls_obj_ref):
     if "type" in schema_item and schema_item["type"].find("@") == 0 \
@@ -924,6 +932,8 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
 
         cmd_file_name = "--".join(cmd.split())
         # print("cmd: ", cmd)
+        if cmd.find("load-test-service test-run") == -1:
+            continue
         # print("cmd_file_name: ", cmd_file_name)
         # with open(os.path.join(module_folder, cmd_file_name + "-swg.json"), "w", encoding="utf8") as jfile:
         #     json.dump(cmd_swagger_json, jfile, ensure_ascii=False, indent=2)

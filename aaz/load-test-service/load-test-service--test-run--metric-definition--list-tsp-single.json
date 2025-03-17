@@ -1,0 +1,295 @@
+{
+  "name": "list",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/test-runs/{}/metric-definitions",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3Rlc3QtcnVucy97dGVzdFJ1bklkfS9tZXRyaWMtZGVmaW5pdGlvbnM=/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.testRunId",
+          "options": [
+            "test-run-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "Unique name for the load test run, must contain only lower-case alphabetic, numeric, underscore or hyphen characters."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.metricNamespace",
+          "options": [
+            "metric-namespace"
+          ],
+          "required": true,
+          "help": {
+            "short": "Metric namespace to query metric definitions for."
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "LoadTestRun_ListMetricDefinitions",
+      "http": {
+        "path": "/test-runs/{testRunId}/metric-definitions",
+        "request": {
+          "method": "get",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "testRunId",
+                "arg": "$Path.testRunId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "params": [
+              {
+                "type": "string",
+                "name": "metricNamespace",
+                "arg": "$Query.metricNamespace",
+                "required": true
+              }
+            ],
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "array<object>",
+                      "name": "value",
+                      "required": true,
+                      "item": {
+                        "type": "object",
+                        "props": [
+                          {
+                            "type": "string",
+                            "name": "description"
+                          },
+                          {
+                            "type": "array<object>",
+                            "name": "dimensions",
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "description"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "name"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "array<object>",
+                            "name": "metricAvailabilities",
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "timeGrain",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "PT10S"
+                                      },
+                                      {
+                                        "value": "PT1H"
+                                      },
+                                      {
+                                        "value": "PT1M"
+                                      },
+                                      {
+                                        "value": "PT5M"
+                                      },
+                                      {
+                                        "value": "PT5S"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "string",
+                            "name": "name"
+                          },
+                          {
+                            "type": "string",
+                            "name": "namespace"
+                          },
+                          {
+                            "type": "string",
+                            "name": "primaryAggregationType",
+                            "enum": {
+                              "items": [
+                                {
+                                  "value": "Average"
+                                },
+                                {
+                                  "value": "Count"
+                                },
+                                {
+                                  "value": "None"
+                                },
+                                {
+                                  "value": "Percentile75"
+                                },
+                                {
+                                  "value": "Percentile90"
+                                },
+                                {
+                                  "value": "Percentile95"
+                                },
+                                {
+                                  "value": "Percentile96"
+                                },
+                                {
+                                  "value": "Percentile97"
+                                },
+                                {
+                                  "value": "Percentile98"
+                                },
+                                {
+                                  "value": "Percentile99"
+                                },
+                                {
+                                  "value": "Percentile999"
+                                },
+                                {
+                                  "value": "Percentile9999"
+                                },
+                                {
+                                  "value": "Total"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "array<string>",
+                            "name": "supportedAggregationTypes",
+                            "item": {
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "type": "string",
+                            "name": "unit",
+                            "enum": {
+                              "items": [
+                                {
+                                  "value": "Bytes"
+                                },
+                                {
+                                  "value": "BytesPerSecond"
+                                },
+                                {
+                                  "value": "Count"
+                                },
+                                {
+                                  "value": "CountPerSecond"
+                                },
+                                {
+                                  "value": "Milliseconds"
+                                },
+                                {
+                                  "value": "NotSpecified"
+                                },
+                                {
+                                  "value": "Percent"
+                                },
+                                {
+                                  "value": "Seconds"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "name": "delete",
+  "version": "2024-12-01",
+  "resources": [
+    {
+      "id": "/accounts/{}/access-tokens/{}",
+      "version": "2024-12-01",
+      "swagger": "data-plane:microsoft.playwrighttesting.authmanager/playwrighttesting/ResourceProviders/Microsoft.PlaywrightTesting.AuthManager/Paths/L2FjY291bnRzL3thY2NvdW50SWR9L2FjY2Vzcy10b2tlbnMve2FjY2Vzc1Rva2VuSWR9/V/MjAyNC0xMi0wMQ=="
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "uuid",
+          "var": "$Path.accessTokenId",
+          "options": [
+            "access-token-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "The access-token id."
+          },
+          "format": {
+            "pattern": "[A-Za-z0-9]+(-[A-Za-z0-9]+)+",
+            "maxLength": 64
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.accountId",
+          "options": [
+            "account-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "The account id."
+          },
+          "format": {
+            "pattern": "[A-Za-z0-9]+(_[A-Za-z0-9]+)*(-[A-Za-z0-9]+)+",
+            "maxLength": 64
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "AccessTokens_Delete",
+      "http": {
+        "path": "/accounts/{accountId}/access-tokens/{accessTokenId}",
+        "request": {
+          "method": "delete",
+          "path": {
+            "params": [
+              {
+                "type": "uuid",
+                "name": "accessTokenId",
+                "arg": "$Path.accessTokenId",
+                "required": true,
+                "format": {
+                  "pattern": "[A-Za-z0-9]+(-[A-Za-z0-9]+)+",
+                  "maxLength": 64
+                }
+              },
+              {
+                "type": "string",
+                "name": "accountId",
+                "arg": "$Path.accountId",
+                "required": true,
+                "format": {
+                  "pattern": "[A-Za-z0-9]+(_[A-Za-z0-9]+)*(-[A-Za-z0-9]+)+",
+                  "maxLength": 64
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "header": {
+            "clientRequestId": "x-ms-client-request-id"
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              204
+            ],
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-client-request-id"
+                }
+              ]
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "confirmation": "Are you sure you want to perform this operation?"
+}

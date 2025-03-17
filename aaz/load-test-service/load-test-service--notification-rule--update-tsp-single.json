@@ -1,0 +1,989 @@
+{
+  "name": "update",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/notification-rules/{}",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L25vdGlmaWNhdGlvbi1ydWxlcy97bm90aWZpY2F0aW9uUnVsZUlkfQ==/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.notificationRuleId",
+          "options": [
+            "notification-rule-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "The unique identifier of the notification rule."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "args": [
+        {
+          "type": "object",
+          "var": "$body.Tests",
+          "options": [
+            "tests"
+          ],
+          "group": "Body",
+          "args": [
+            {
+              "type": "object",
+              "var": "$body.Tests.eventFilters",
+              "options": [
+                "event-filters"
+              ],
+              "help": {
+                "short": "The event to receive notifications for along with filtering conditions. Key is a user-assigned identifier for the event filter."
+              },
+              "additionalProps": {
+                "item": {
+                  "type": "object",
+                  "args": [
+                    {
+                      "type": "object",
+                      "var": "$body.Tests.eventFilters{}.TestRunEnded",
+                      "options": [
+                        "test-run-ended"
+                      ],
+                      "args": [
+                        {
+                          "type": "object",
+                          "var": "$body.Tests.eventFilters{}.TestRunEnded.condition",
+                          "options": [
+                            "condition"
+                          ],
+                          "help": {
+                            "short": "Event filtering condition."
+                          },
+                          "args": [
+                            {
+                              "type": "array<string>",
+                              "var": "$body.Tests.eventFilters{}.TestRunEnded.condition.testRunResults",
+                              "options": [
+                                "test-run-results"
+                              ],
+                              "help": {
+                                "short": "The test run results to send notification for."
+                              },
+                              "item": {
+                                "type": "string",
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "name": "FAILED",
+                                      "value": "FAILED"
+                                    },
+                                    {
+                                      "name": "NOT_APPLICABLE",
+                                      "value": "NOT_APPLICABLE"
+                                    },
+                                    {
+                                      "name": "PASSED",
+                                      "value": "PASSED"
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "type": "array<string>",
+                              "var": "$body.Tests.eventFilters{}.TestRunEnded.condition.testRunStatuses",
+                              "options": [
+                                "test-run-statuses"
+                              ],
+                              "help": {
+                                "short": "The test run statuses to send notification for."
+                              },
+                              "item": {
+                                "type": "string",
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "name": "ACCEPTED",
+                                      "value": "ACCEPTED"
+                                    },
+                                    {
+                                      "name": "CANCELLED",
+                                      "value": "CANCELLED"
+                                    },
+                                    {
+                                      "name": "CANCELLING",
+                                      "value": "CANCELLING"
+                                    },
+                                    {
+                                      "name": "CONFIGURED",
+                                      "value": "CONFIGURED"
+                                    },
+                                    {
+                                      "name": "CONFIGURING",
+                                      "value": "CONFIGURING"
+                                    },
+                                    {
+                                      "name": "DEPROVISIONED",
+                                      "value": "DEPROVISIONED"
+                                    },
+                                    {
+                                      "name": "DEPROVISIONING",
+                                      "value": "DEPROVISIONING"
+                                    },
+                                    {
+                                      "name": "DONE",
+                                      "value": "DONE"
+                                    },
+                                    {
+                                      "name": "EXECUTED",
+                                      "value": "EXECUTED"
+                                    },
+                                    {
+                                      "name": "EXECUTING",
+                                      "value": "EXECUTING"
+                                    },
+                                    {
+                                      "name": "FAILED",
+                                      "value": "FAILED"
+                                    },
+                                    {
+                                      "name": "NOTSTARTED",
+                                      "value": "NOTSTARTED"
+                                    },
+                                    {
+                                      "name": "PROVISIONED",
+                                      "value": "PROVISIONED"
+                                    },
+                                    {
+                                      "name": "PROVISIONING",
+                                      "value": "PROVISIONING"
+                                    },
+                                    {
+                                      "name": "VALIDATION_FAILURE",
+                                      "value": "VALIDATION_FAILURE"
+                                    },
+                                    {
+                                      "name": "VALIDATION_SUCCESS",
+                                      "value": "VALIDATION_SUCCESS"
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "var": "$body.Tests.eventFilters{}.TestRunEnded.kind",
+                          "options": [
+                            "kind"
+                          ],
+                          "help": {
+                            "short": "Event type for test run ended event."
+                          },
+                          "enum": {
+                            "items": [
+                              {
+                                "name": "TestRunEnded",
+                                "value": "TestRunEnded"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "var": "$body.Tests.eventFilters{}.TestRunStarted",
+                      "options": [
+                        "test-run-started"
+                      ],
+                      "args": [
+                        {
+                          "type": "string",
+                          "var": "$body.Tests.eventFilters{}.TestRunStarted.kind",
+                          "options": [
+                            "kind"
+                          ],
+                          "help": {
+                            "short": "Event type for test run started event."
+                          },
+                          "enum": {
+                            "items": [
+                              {
+                                "name": "TestRunStarted",
+                                "value": "TestRunStarted"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "var": "$body.Tests.eventFilters{}.TriggerCompleted",
+                      "options": [
+                        "trigger-completed"
+                      ],
+                      "args": [
+                        {
+                          "type": "string",
+                          "var": "$body.Tests.eventFilters{}.TriggerCompleted.kind",
+                          "options": [
+                            "kind"
+                          ],
+                          "help": {
+                            "short": "Event type for trigger ended event."
+                          },
+                          "enum": {
+                            "items": [
+                              {
+                                "name": "TriggerCompleted",
+                                "value": "TriggerCompleted"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "var": "$body.Tests.eventFilters{}.TriggerDisabled",
+                      "options": [
+                        "trigger-disabled"
+                      ],
+                      "args": [
+                        {
+                          "type": "string",
+                          "var": "$body.Tests.eventFilters{}.TriggerDisabled.kind",
+                          "options": [
+                            "kind"
+                          ],
+                          "help": {
+                            "short": "Event type for trigger disabled event."
+                          },
+                          "enum": {
+                            "items": [
+                              {
+                                "name": "TriggerDisabled",
+                                "value": "TriggerDisabled"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "string",
+              "var": "$body.Tests.scope",
+              "options": [
+                "scope"
+              ],
+              "help": {
+                "short": "Scope of type Tests."
+              },
+              "enum": {
+                "items": [
+                  {
+                    "name": "Tests",
+                    "value": "Tests"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "array<string>",
+              "var": "$body.Tests.testIds",
+              "options": [
+                "test-ids"
+              ],
+              "help": {
+                "short": "The test ids to include. If not provided, notification will be sent for all testIds."
+              },
+              "item": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
+          "type": "array<string>",
+          "var": "$body.actionGroupIds",
+          "options": [
+            "action-group-ids"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "The action groups to notify."
+          },
+          "item": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "string",
+          "var": "$body.displayName",
+          "options": [
+            "display-name"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "The name of the notification rule."
+          },
+          "format": {
+            "maxLength": 50,
+            "minLength": 2
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "NotificationRuleAdministration_CreateOrUpdateNotificationRule",
+      "http": {
+        "path": "/notification-rules/{notificationRuleId}",
+        "request": {
+          "method": "patch",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "notificationRuleId",
+                "arg": "$Path.notificationRuleId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "body": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "name": "body",
+                "required": true,
+                "props": [
+                  {
+                    "type": "array<string>",
+                    "name": "actionGroupIds",
+                    "arg": "$body.actionGroupIds",
+                    "item": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "name": "displayName",
+                    "arg": "$body.displayName",
+                    "format": {
+                      "maxLength": 50,
+                      "minLength": 2
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "name": "scope",
+                    "required": true,
+                    "enum": {
+                      "items": [
+                        {
+                          "arg": "$body.Tests",
+                          "value": "Tests"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "discriminators": [
+                  {
+                    "property": "scope",
+                    "value": "Tests",
+                    "props": [
+                      {
+                        "type": "object",
+                        "name": "eventFilters",
+                        "arg": "$body.Tests.eventFilters",
+                        "additionalProps": {
+                          "item": {
+                            "type": "object",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "kind",
+                                "required": true,
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "arg": "$body.Tests.eventFilters{}.TestRunEnded",
+                                      "value": "TestRunEnded"
+                                    },
+                                    {
+                                      "arg": "$body.Tests.eventFilters{}.TestRunStarted",
+                                      "value": "TestRunStarted"
+                                    },
+                                    {
+                                      "arg": "$body.Tests.eventFilters{}.TriggerCompleted",
+                                      "value": "TriggerCompleted"
+                                    },
+                                    {
+                                      "arg": "$body.Tests.eventFilters{}.TriggerDisabled",
+                                      "value": "TriggerDisabled"
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "discriminators": [
+                              {
+                                "property": "kind",
+                                "value": "TestRunEnded",
+                                "props": [
+                                  {
+                                    "type": "object",
+                                    "name": "condition",
+                                    "arg": "$body.Tests.eventFilters{}.TestRunEnded.condition",
+                                    "props": [
+                                      {
+                                        "type": "array<string>",
+                                        "name": "testRunResults",
+                                        "arg": "$body.Tests.eventFilters{}.TestRunEnded.condition.testRunResults",
+                                        "item": {
+                                          "type": "string",
+                                          "enum": {
+                                            "items": [
+                                              {
+                                                "value": "FAILED"
+                                              },
+                                              {
+                                                "value": "NOT_APPLICABLE"
+                                              },
+                                              {
+                                                "value": "PASSED"
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "array<string>",
+                                        "name": "testRunStatuses",
+                                        "arg": "$body.Tests.eventFilters{}.TestRunEnded.condition.testRunStatuses",
+                                        "item": {
+                                          "type": "string",
+                                          "enum": {
+                                            "items": [
+                                              {
+                                                "value": "ACCEPTED"
+                                              },
+                                              {
+                                                "value": "CANCELLED"
+                                              },
+                                              {
+                                                "value": "CANCELLING"
+                                              },
+                                              {
+                                                "value": "CONFIGURED"
+                                              },
+                                              {
+                                                "value": "CONFIGURING"
+                                              },
+                                              {
+                                                "value": "DEPROVISIONED"
+                                              },
+                                              {
+                                                "value": "DEPROVISIONING"
+                                              },
+                                              {
+                                                "value": "DONE"
+                                              },
+                                              {
+                                                "value": "EXECUTED"
+                                              },
+                                              {
+                                                "value": "EXECUTING"
+                                              },
+                                              {
+                                                "value": "FAILED"
+                                              },
+                                              {
+                                                "value": "NOTSTARTED"
+                                              },
+                                              {
+                                                "value": "PROVISIONED"
+                                              },
+                                              {
+                                                "value": "PROVISIONING"
+                                              },
+                                              {
+                                                "value": "VALIDATION_FAILURE"
+                                              },
+                                              {
+                                                "value": "VALIDATION_SUCCESS"
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "string",
+                                    "name": "kind",
+                                    "arg": "$body.Tests.eventFilters{}.TestRunEnded.kind",
+                                    "enum": {
+                                      "items": [
+                                        {
+                                          "value": "TestRunEnded"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "property": "kind",
+                                "value": "TestRunStarted",
+                                "props": [
+                                  {
+                                    "type": "string",
+                                    "name": "kind",
+                                    "arg": "$body.Tests.eventFilters{}.TestRunStarted.kind",
+                                    "enum": {
+                                      "items": [
+                                        {
+                                          "value": "TestRunStarted"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "property": "kind",
+                                "value": "TriggerCompleted",
+                                "props": [
+                                  {
+                                    "type": "string",
+                                    "name": "kind",
+                                    "arg": "$body.Tests.eventFilters{}.TriggerCompleted.kind",
+                                    "enum": {
+                                      "items": [
+                                        {
+                                          "value": "TriggerCompleted"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "property": "kind",
+                                "value": "TriggerDisabled",
+                                "props": [
+                                  {
+                                    "type": "string",
+                                    "name": "kind",
+                                    "arg": "$body.Tests.eventFilters{}.TriggerDisabled.kind",
+                                    "enum": {
+                                      "items": [
+                                        {
+                                          "value": "TriggerDisabled"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "type": "string",
+                        "name": "scope",
+                        "arg": "$body.Tests.scope",
+                        "enum": {
+                          "items": [
+                            {
+                              "value": "Tests"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "array<string>",
+                        "name": "testIds",
+                        "arg": "$body.Tests.testIds",
+                        "item": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "clientFlatten": true
+              }
+            }
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              201,
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "array<string>",
+                      "name": "actionGroupIds",
+                      "required": true,
+                      "item": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "createdBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "createdDateTime"
+                    },
+                    {
+                      "type": "string",
+                      "name": "displayName",
+                      "required": true,
+                      "format": {
+                        "maxLength": 50,
+                        "minLength": 2
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "lastModifiedBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "lastModifiedDateTime"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "notificationRuleId",
+                      "format": {
+                        "pattern": "^[a-z0-9_-]*$",
+                        "maxLength": 50,
+                        "minLength": 2
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "name": "scope",
+                      "required": true,
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "Tests"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "discriminators": [
+                    {
+                      "property": "scope",
+                      "value": "Tests",
+                      "props": [
+                        {
+                          "type": "object",
+                          "name": "eventFilters",
+                          "required": true,
+                          "additionalProps": {
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "kind",
+                                  "required": true,
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "TestRunEnded"
+                                      },
+                                      {
+                                        "value": "TestRunStarted"
+                                      },
+                                      {
+                                        "value": "TriggerCompleted"
+                                      },
+                                      {
+                                        "value": "TriggerDisabled"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "discriminators": [
+                                {
+                                  "property": "kind",
+                                  "value": "TestRunEnded",
+                                  "props": [
+                                    {
+                                      "type": "object",
+                                      "name": "condition",
+                                      "props": [
+                                        {
+                                          "type": "array<string>",
+                                          "name": "testRunResults",
+                                          "item": {
+                                            "type": "string",
+                                            "enum": {
+                                              "items": [
+                                                {
+                                                  "value": "FAILED"
+                                                },
+                                                {
+                                                  "value": "NOT_APPLICABLE"
+                                                },
+                                                {
+                                                  "value": "PASSED"
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "type": "array<string>",
+                                          "name": "testRunStatuses",
+                                          "item": {
+                                            "type": "string",
+                                            "enum": {
+                                              "items": [
+                                                {
+                                                  "value": "ACCEPTED"
+                                                },
+                                                {
+                                                  "value": "CANCELLED"
+                                                },
+                                                {
+                                                  "value": "CANCELLING"
+                                                },
+                                                {
+                                                  "value": "CONFIGURED"
+                                                },
+                                                {
+                                                  "value": "CONFIGURING"
+                                                },
+                                                {
+                                                  "value": "DEPROVISIONED"
+                                                },
+                                                {
+                                                  "value": "DEPROVISIONING"
+                                                },
+                                                {
+                                                  "value": "DONE"
+                                                },
+                                                {
+                                                  "value": "EXECUTED"
+                                                },
+                                                {
+                                                  "value": "EXECUTING"
+                                                },
+                                                {
+                                                  "value": "FAILED"
+                                                },
+                                                {
+                                                  "value": "NOTSTARTED"
+                                                },
+                                                {
+                                                  "value": "PROVISIONED"
+                                                },
+                                                {
+                                                  "value": "PROVISIONING"
+                                                },
+                                                {
+                                                  "value": "VALIDATION_FAILURE"
+                                                },
+                                                {
+                                                  "value": "VALIDATION_SUCCESS"
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "string",
+                                      "name": "kind",
+                                      "required": true,
+                                      "enum": {
+                                        "items": [
+                                          {
+                                            "value": "TestRunEnded"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "property": "kind",
+                                  "value": "TestRunStarted",
+                                  "props": [
+                                    {
+                                      "type": "string",
+                                      "name": "kind",
+                                      "required": true,
+                                      "enum": {
+                                        "items": [
+                                          {
+                                            "value": "TestRunStarted"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "property": "kind",
+                                  "value": "TriggerCompleted",
+                                  "props": [
+                                    {
+                                      "type": "string",
+                                      "name": "kind",
+                                      "required": true,
+                                      "enum": {
+                                        "items": [
+                                          {
+                                            "value": "TriggerCompleted"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "property": "kind",
+                                  "value": "TriggerDisabled",
+                                  "props": [
+                                    {
+                                      "type": "string",
+                                      "name": "kind",
+                                      "required": true,
+                                      "enum": {
+                                        "items": [
+                                          {
+                                            "value": "TriggerDisabled"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        {
+                          "type": "string",
+                          "name": "scope",
+                          "required": true,
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "Tests"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "array<string>",
+                          "name": "testIds",
+                          "item": {
+                            "type": "string"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

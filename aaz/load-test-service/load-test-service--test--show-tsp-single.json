@@ -1,0 +1,741 @@
+{
+  "name": "show",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/tests/{}",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3Rlc3RzL3t0ZXN0SWR9/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.testId",
+          "options": [
+            "test-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "Unique test identifier for the load test, must contain only lower-case alphabetic, numeric, underscore or hyphen characters."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "LoadTestAdministration_GetTest",
+      "http": {
+        "path": "/tests/{testId}",
+        "request": {
+          "method": "get",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "testId",
+                "arg": "$Path.testId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "object",
+                      "name": "autoStopCriteria",
+                      "props": [
+                        {
+                          "default": {
+                            "value": false
+                          },
+                          "type": "boolean",
+                          "name": "autoStopDisabled"
+                        },
+                        {
+                          "default": {
+                            "value": 90
+                          },
+                          "type": "float32",
+                          "name": "errorRate"
+                        },
+                        {
+                          "default": {
+                            "value": 60
+                          },
+                          "type": "integer32",
+                          "name": "errorRateTimeWindowInSeconds"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "name": "baselineTestRunId"
+                    },
+                    {
+                      "type": "object",
+                      "name": "certificate",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "name"
+                        },
+                        {
+                          "type": "string",
+                          "name": "type",
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "AKV_CERT_URI"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "string",
+                          "name": "value"
+                        }
+                      ]
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "createdBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "createdDateTime"
+                    },
+                    {
+                      "type": "string",
+                      "name": "description",
+                      "format": {
+                        "maxLength": 100
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "name": "displayName",
+                      "format": {
+                        "maxLength": 50,
+                        "minLength": 2
+                      }
+                    },
+                    {
+                      "type": "array<string>",
+                      "name": "engineBuiltInIdentityIds",
+                      "item": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "name": "engineBuiltInIdentityType",
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "SystemAssigned"
+                          },
+                          {
+                            "value": "UserAssigned"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "name": "environmentVariables",
+                      "additionalProps": {
+                        "item": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "object",
+                      "name": "inputArtifacts",
+                      "props": [
+                        {
+                          "readOnly": true,
+                          "type": "array<@TestFileInfo_read>",
+                          "name": "additionalFileInfo",
+                          "item": {
+                            "type": "@TestFileInfo_read"
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "name": "configFileInfo",
+                          "props": [
+                            {
+                              "readOnly": true,
+                              "type": "dateTime",
+                              "name": "expireDateTime"
+                            },
+                            {
+                              "type": "string",
+                              "name": "fileName",
+                              "required": true
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "fileType",
+                              "enum": {
+                                "items": [
+                                  {
+                                    "value": "ADDITIONAL_ARTIFACTS"
+                                  },
+                                  {
+                                    "value": "JMX_FILE"
+                                  },
+                                  {
+                                    "value": "TEST_SCRIPT"
+                                  },
+                                  {
+                                    "value": "URL_TEST_CONFIG"
+                                  },
+                                  {
+                                    "value": "USER_PROPERTIES"
+                                  },
+                                  {
+                                    "value": "ZIPPED_ARTIFACTS"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "url"
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "validationFailureDetails"
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "validationStatus",
+                              "enum": {
+                                "items": [
+                                  {
+                                    "value": "NOT_VALIDATED"
+                                  },
+                                  {
+                                    "value": "VALIDATION_FAILURE"
+                                  },
+                                  {
+                                    "value": "VALIDATION_INITIATED"
+                                  },
+                                  {
+                                    "value": "VALIDATION_NOT_REQUIRED"
+                                  },
+                                  {
+                                    "value": "VALIDATION_SUCCESS"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "cls": "TestFileInfo_read"
+                        },
+                        {
+                          "type": "@TestFileInfo_read",
+                          "name": "inputArtifactsZipFileInfo"
+                        },
+                        {
+                          "type": "@TestFileInfo_read",
+                          "name": "testScriptFileInfo"
+                        },
+                        {
+                          "type": "@TestFileInfo_read",
+                          "name": "urlTestConfigFileInfo"
+                        },
+                        {
+                          "type": "@TestFileInfo_read",
+                          "name": "userPropFileInfo"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "name": "keyvaultReferenceIdentityId"
+                    },
+                    {
+                      "type": "string",
+                      "name": "keyvaultReferenceIdentityType"
+                    },
+                    {
+                      "type": "string",
+                      "name": "kind",
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "JMX"
+                          },
+                          {
+                            "value": "Locust"
+                          },
+                          {
+                            "value": "URL"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "lastModifiedBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "lastModifiedDateTime"
+                    },
+                    {
+                      "type": "object",
+                      "name": "loadTestConfiguration",
+                      "props": [
+                        {
+                          "type": "integer32",
+                          "name": "engineInstances"
+                        },
+                        {
+                          "type": "object",
+                          "name": "optionalLoadTestConfig",
+                          "props": [
+                            {
+                              "type": "integer32",
+                              "name": "duration"
+                            },
+                            {
+                              "type": "string",
+                              "name": "endpointUrl"
+                            },
+                            {
+                              "type": "integer32",
+                              "name": "maxResponseTimeInMs"
+                            },
+                            {
+                              "type": "integer32",
+                              "name": "rampUpTime"
+                            },
+                            {
+                              "type": "integer32",
+                              "name": "requestsPerSecond"
+                            },
+                            {
+                              "type": "integer32",
+                              "name": "virtualUsers"
+                            }
+                          ]
+                        },
+                        {
+                          "default": {
+                            "value": false
+                          },
+                          "type": "boolean",
+                          "name": "quickStartTest"
+                        },
+                        {
+                          "type": "array<object>",
+                          "name": "regionalLoadTestConfig",
+                          "item": {
+                            "type": "object",
+                            "props": [
+                              {
+                                "type": "integer32",
+                                "name": "engineInstances",
+                                "required": true
+                              },
+                              {
+                                "type": "string",
+                                "name": "region",
+                                "required": true
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "default": {
+                            "value": false
+                          },
+                          "type": "boolean",
+                          "name": "splitAllCSVs"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "name": "metricsReferenceIdentityId"
+                    },
+                    {
+                      "default": {
+                        "value": "SystemAssigned"
+                      },
+                      "type": "string",
+                      "name": "metricsReferenceIdentityType",
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "SystemAssigned"
+                          },
+                          {
+                            "value": "UserAssigned"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "name": "passFailCriteria",
+                      "props": [
+                        {
+                          "type": "object",
+                          "name": "passFailMetrics",
+                          "additionalProps": {
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "default": {
+                                    "value": "continue"
+                                  },
+                                  "type": "string",
+                                  "name": "action",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "continue"
+                                      },
+                                      {
+                                        "value": "stop"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "float64",
+                                  "name": "actualValue"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "aggregate",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "avg"
+                                      },
+                                      {
+                                        "value": "count"
+                                      },
+                                      {
+                                        "value": "max"
+                                      },
+                                      {
+                                        "value": "min"
+                                      },
+                                      {
+                                        "value": "p50"
+                                      },
+                                      {
+                                        "value": "p75"
+                                      },
+                                      {
+                                        "value": "p90"
+                                      },
+                                      {
+                                        "value": "p95"
+                                      },
+                                      {
+                                        "value": "p96"
+                                      },
+                                      {
+                                        "value": "p97"
+                                      },
+                                      {
+                                        "value": "p98"
+                                      },
+                                      {
+                                        "value": "p99"
+                                      },
+                                      {
+                                        "value": "p99.9"
+                                      },
+                                      {
+                                        "value": "p99.99"
+                                      },
+                                      {
+                                        "value": "percentage"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "clientMetric",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "error"
+                                      },
+                                      {
+                                        "value": "latency"
+                                      },
+                                      {
+                                        "value": "requests"
+                                      },
+                                      {
+                                        "value": "requests_per_sec"
+                                      },
+                                      {
+                                        "value": "response_time_ms"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "condition"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "requestName"
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "string",
+                                  "name": "result",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "failed"
+                                      },
+                                      {
+                                        "value": "passed"
+                                      },
+                                      {
+                                        "value": "undetermined"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "float64",
+                                  "name": "value"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "name": "passFailServerMetrics",
+                          "additionalProps": {
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "default": {
+                                    "value": "continue"
+                                  },
+                                  "type": "string",
+                                  "name": "action",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "continue"
+                                      },
+                                      {
+                                        "value": "stop"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "float64",
+                                  "name": "actualValue"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "aggregation",
+                                  "required": true
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "condition",
+                                  "required": true
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "metricName",
+                                  "required": true
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "metricNamespace",
+                                  "required": true
+                                },
+                                {
+                                  "type": "ResourceId",
+                                  "name": "resourceId",
+                                  "required": true
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "string",
+                                  "name": "result",
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "failed"
+                                      },
+                                      {
+                                        "value": "passed"
+                                      },
+                                      {
+                                        "value": "undetermined"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "float64",
+                                  "name": "value",
+                                  "required": true
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "publicIPDisabled"
+                    },
+                    {
+                      "type": "object",
+                      "name": "secrets",
+                      "additionalProps": {
+                        "item": {
+                          "type": "object",
+                          "props": [
+                            {
+                              "type": "string",
+                              "name": "type",
+                              "enum": {
+                                "items": [
+                                  {
+                                    "value": "AKV_SECRET_URI"
+                                  },
+                                  {
+                                    "value": "SECRET_VALUE"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "string",
+                              "name": "value"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "name": "subnetId"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "testId",
+                      "format": {
+                        "pattern": "^[a-z0-9_-]*$",
+                        "maxLength": 50,
+                        "minLength": 2
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

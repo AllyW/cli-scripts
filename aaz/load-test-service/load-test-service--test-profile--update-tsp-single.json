@@ -1,0 +1,465 @@
+{
+  "name": "update",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/test-profiles/{}",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3Rlc3QtcHJvZmlsZXMve3Rlc3RQcm9maWxlSWR9/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.testProfileId",
+          "options": [
+            "test-profile-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "Unique identifier for the test profile, must contain only lower-case alphabetic, numeric, underscore or hyphen characters."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "args": [
+        {
+          "type": "string",
+          "var": "$body.description",
+          "options": [
+            "description"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "Description for the test profile."
+          },
+          "format": {
+            "maxLength": 100
+          }
+        },
+        {
+          "type": "string",
+          "var": "$body.displayName",
+          "options": [
+            "display-name"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "Display name of the test profile."
+          },
+          "format": {
+            "maxLength": 50,
+            "minLength": 2
+          }
+        },
+        {
+          "type": "object",
+          "var": "$body.targetResourceConfigurations",
+          "options": [
+            "target-resource-configurations"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "Configurations of the target resource on which testing would be done."
+          },
+          "args": [
+            {
+              "type": "object",
+              "var": "$body.targetResourceConfigurations.FunctionsFlexConsumption",
+              "options": [
+                "functions-flex-consumption"
+              ],
+              "args": [
+                {
+                  "type": "object",
+                  "var": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations",
+                  "options": [
+                    "configurations"
+                  ],
+                  "help": {
+                    "short": "A map of configurations for a Function app using Flex Consumption Plan."
+                  },
+                  "additionalProps": {
+                    "item": {
+                      "type": "object",
+                      "args": [
+                        {
+                          "type": "integer64",
+                          "var": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations{}.httpConcurrency",
+                          "options": [
+                            "http-concurrency"
+                          ],
+                          "help": {
+                            "short": "HTTP Concurrency for the function app."
+                          }
+                        },
+                        {
+                          "type": "integer64",
+                          "var": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations{}.instanceMemoryMB",
+                          "options": [
+                            "instance-memory-mb"
+                          ],
+                          "help": {
+                            "short": "Memory size of the instance. Supported values are 2048, 4096."
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$body.targetResourceConfigurations.FunctionsFlexConsumption.kind",
+                  "options": [
+                    "kind"
+                  ],
+                  "help": {
+                    "short": "The kind value to use when providing configuration. This should typically be not changed from its value."
+                  },
+                  "enum": {
+                    "items": [
+                      {
+                        "name": "FunctionsFlexConsumption",
+                        "value": "FunctionsFlexConsumption"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ResourceId",
+          "var": "$body.targetResourceId",
+          "options": [
+            "target-resource-id"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "Target resource ID on which the test profile is created. This property is required for creating a Test Profile and it's not allowed to be updated."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$body.testId",
+          "options": [
+            "test-id"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "Associated test ID for the test profile. This property is required for creating a Test Profile and it's not allowed to be updated."
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "TestProfileAdministration_CreateOrUpdateTestProfile",
+      "http": {
+        "path": "/test-profiles/{testProfileId}",
+        "request": {
+          "method": "patch",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "testProfileId",
+                "arg": "$Path.testProfileId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "body": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "name": "body",
+                "required": true,
+                "props": [
+                  {
+                    "type": "string",
+                    "name": "description",
+                    "arg": "$body.description",
+                    "format": {
+                      "maxLength": 100
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "name": "displayName",
+                    "arg": "$body.displayName",
+                    "format": {
+                      "maxLength": 50,
+                      "minLength": 2
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "name": "targetResourceConfigurations",
+                    "arg": "$body.targetResourceConfigurations",
+                    "props": [
+                      {
+                        "type": "string",
+                        "name": "kind",
+                        "required": true,
+                        "enum": {
+                          "items": [
+                            {
+                              "arg": "$body.targetResourceConfigurations.FunctionsFlexConsumption",
+                              "value": "FunctionsFlexConsumption"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "discriminators": [
+                      {
+                        "property": "kind",
+                        "value": "FunctionsFlexConsumption",
+                        "props": [
+                          {
+                            "type": "object",
+                            "name": "configurations",
+                            "arg": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations",
+                            "additionalProps": {
+                              "item": {
+                                "type": "object",
+                                "props": [
+                                  {
+                                    "type": "integer64",
+                                    "name": "httpConcurrency",
+                                    "arg": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations{}.httpConcurrency"
+                                  },
+                                  {
+                                    "type": "integer64",
+                                    "name": "instanceMemoryMB",
+                                    "arg": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations{}.instanceMemoryMB"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "type": "string",
+                            "name": "kind",
+                            "arg": "$body.targetResourceConfigurations.FunctionsFlexConsumption.kind",
+                            "enum": {
+                              "items": [
+                                {
+                                  "value": "FunctionsFlexConsumption"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ResourceId",
+                    "name": "targetResourceId",
+                    "arg": "$body.targetResourceId"
+                  },
+                  {
+                    "type": "string",
+                    "name": "testId",
+                    "arg": "$body.testId"
+                  }
+                ],
+                "clientFlatten": true
+              }
+            }
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              201,
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "createdBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "createdDateTime"
+                    },
+                    {
+                      "type": "string",
+                      "name": "description",
+                      "format": {
+                        "maxLength": 100
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "name": "displayName",
+                      "format": {
+                        "maxLength": 50,
+                        "minLength": 2
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "lastModifiedBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "lastModifiedDateTime"
+                    },
+                    {
+                      "type": "object",
+                      "name": "targetResourceConfigurations",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "kind",
+                          "required": true,
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "FunctionsFlexConsumption"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "discriminators": [
+                        {
+                          "property": "kind",
+                          "value": "FunctionsFlexConsumption",
+                          "props": [
+                            {
+                              "type": "object",
+                              "name": "configurations",
+                              "additionalProps": {
+                                "item": {
+                                  "type": "object",
+                                  "props": [
+                                    {
+                                      "type": "integer64",
+                                      "name": "httpConcurrency"
+                                    },
+                                    {
+                                      "type": "integer64",
+                                      "name": "instanceMemoryMB",
+                                      "required": true
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "type": "string",
+                              "name": "kind",
+                              "required": true,
+                              "enum": {
+                                "items": [
+                                  {
+                                    "value": "FunctionsFlexConsumption"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ResourceId",
+                      "name": "targetResourceId"
+                    },
+                    {
+                      "type": "string",
+                      "name": "testId"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "testProfileId",
+                      "format": {
+                        "pattern": "^[a-z0-9_-]*$",
+                        "maxLength": 50,
+                        "minLength": 2
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

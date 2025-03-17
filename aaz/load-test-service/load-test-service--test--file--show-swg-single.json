@@ -1,0 +1,220 @@
+{
+  "name": "show",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/tests/{}/files/{}",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3Rlc3RzL3t0ZXN0SWR9L2ZpbGVzL3tmaWxlTmFtZX0=/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.endpoint",
+          "options": [
+            "endpoint"
+          ],
+          "required": true
+        },
+        {
+          "type": "string",
+          "var": "$Path.fileName",
+          "options": [
+            "file-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "Name of the file."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.testId",
+          "options": [
+            "test-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "Unique test identifier for the load test, must contain only lower-case alphabetic, numeric, underscore or hyphen characters."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "LoadTestAdministration_GetTestFile",
+      "http": {
+        "path": "//{endpoint}/tests/{testId}/files/{fileName}",
+        "request": {
+          "method": "get",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "endpoint",
+                "arg": "$Path.endpoint",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "fileName",
+                "arg": "$Path.fileName",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "testId",
+                "arg": "$Path.testId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "expireDateTime"
+                    },
+                    {
+                      "type": "string",
+                      "name": "fileName",
+                      "required": true
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "fileType",
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "ADDITIONAL_ARTIFACTS"
+                          },
+                          {
+                            "value": "JMX_FILE"
+                          },
+                          {
+                            "value": "TEST_SCRIPT"
+                          },
+                          {
+                            "value": "URL_TEST_CONFIG"
+                          },
+                          {
+                            "value": "USER_PROPERTIES"
+                          },
+                          {
+                            "value": "ZIPPED_ARTIFACTS"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "url"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "validationFailureDetails"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "validationStatus",
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "NOT_VALIDATED"
+                          },
+                          {
+                            "value": "VALIDATION_FAILURE"
+                          },
+                          {
+                            "value": "VALIDATION_INITIATED"
+                          },
+                          {
+                            "value": "VALIDATION_NOT_REQUIRED"
+                          },
+                          {
+                            "value": "VALIDATION_SUCCESS"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}
