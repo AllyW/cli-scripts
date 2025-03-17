@@ -932,8 +932,8 @@ def parse_compared_module_jsons(swagger_path, tsp_path, modules, target_cmd):
 
         cmd_file_name = "--".join(cmd.split())
         # print("cmd: ", cmd)
-        if cmd.find("load-test-service test-run") == -1:
-            continue
+        # if cmd.find("load-test-service test-run") == -1:
+        #     continue
         # print("cmd_file_name: ", cmd_file_name)
         # with open(os.path.join(module_folder, cmd_file_name + "-swg.json"), "w", encoding="utf8") as jfile:
         #     json.dump(cmd_swagger_json, jfile, ensure_ascii=False, indent=2)
