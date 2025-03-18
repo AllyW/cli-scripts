@@ -1,0 +1,347 @@
+{
+  "name": "update",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/tests/{}/server-metrics-config",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3Rlc3RzL3t0ZXN0SWR9L3NlcnZlci1tZXRyaWNzLWNvbmZpZw==/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.testId",
+          "options": [
+            "test-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "Unique name for the load test, must contain only lower-case alphabetic, numeric, underscore or hyphen characters."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "args": [
+        {
+          "type": "object",
+          "var": "$body.metrics",
+          "options": [
+            "metrics"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "Azure resource metrics collection {metric id : metrics object} (Refer : https://learn.microsoft.com/en-us/rest/api/monitor/metric-definitions/list#metricdefinition for metric id)."
+          },
+          "additionalProps": {
+            "item": {
+              "type": "object",
+              "args": [
+                {
+                  "type": "string",
+                  "var": "$body.metrics{}.aggregation",
+                  "options": [
+                    "aggregation"
+                  ],
+                  "help": {
+                    "short": "Metric aggregation."
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$body.metrics{}.displayDescription",
+                  "options": [
+                    "display-description"
+                  ],
+                  "help": {
+                    "short": "Metric description."
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$body.metrics{}.metricNamespace",
+                  "options": [
+                    "metric-namespace"
+                  ],
+                  "help": {
+                    "short": "Metric name space."
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$body.metrics{}.name",
+                  "options": [
+                    "name"
+                  ],
+                  "help": {
+                    "short": "The invariant value of metric name"
+                  }
+                },
+                {
+                  "type": "ResourceId",
+                  "var": "$body.metrics{}.resourceId",
+                  "options": [
+                    "resource-id"
+                  ],
+                  "help": {
+                    "short": "Azure resource id."
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$body.metrics{}.resourceType",
+                  "options": [
+                    "resource-type"
+                  ],
+                  "help": {
+                    "short": "Azure resource type."
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$body.metrics{}.unit",
+                  "options": [
+                    "unit"
+                  ],
+                  "help": {
+                    "short": "Metric unit."
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "LoadTestAdministration_CreateOrUpdateServerMetricsConfig",
+      "http": {
+        "path": "/tests/{testId}/server-metrics-config",
+        "request": {
+          "method": "patch",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "testId",
+                "arg": "$Path.testId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "body": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "name": "body",
+                "required": true,
+                "props": [
+                  {
+                    "type": "object",
+                    "name": "metrics",
+                    "arg": "$body.metrics",
+                    "additionalProps": {
+                      "item": {
+                        "type": "object",
+                        "props": [
+                          {
+                            "type": "string",
+                            "name": "aggregation",
+                            "arg": "$body.metrics{}.aggregation"
+                          },
+                          {
+                            "type": "string",
+                            "name": "displayDescription",
+                            "arg": "$body.metrics{}.displayDescription"
+                          },
+                          {
+                            "type": "string",
+                            "name": "metricNamespace",
+                            "arg": "$body.metrics{}.metricNamespace"
+                          },
+                          {
+                            "type": "string",
+                            "name": "name",
+                            "arg": "$body.metrics{}.name"
+                          },
+                          {
+                            "type": "ResourceId",
+                            "name": "resourceId",
+                            "arg": "$body.metrics{}.resourceId"
+                          },
+                          {
+                            "type": "string",
+                            "name": "resourceType",
+                            "arg": "$body.metrics{}.resourceType"
+                          },
+                          {
+                            "type": "string",
+                            "name": "unit",
+                            "arg": "$body.metrics{}.unit"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "clientFlatten": true
+              }
+            }
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              201,
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "createdBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "createdDateTime"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "lastModifiedBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "lastModifiedDateTime"
+                    },
+                    {
+                      "type": "object",
+                      "name": "metrics",
+                      "required": true,
+                      "additionalProps": {
+                        "item": {
+                          "type": "object",
+                          "props": [
+                            {
+                              "type": "string",
+                              "name": "aggregation",
+                              "required": true
+                            },
+                            {
+                              "type": "string",
+                              "name": "displayDescription"
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "id"
+                            },
+                            {
+                              "type": "string",
+                              "name": "metricNamespace",
+                              "required": true
+                            },
+                            {
+                              "type": "string",
+                              "name": "name",
+                              "required": true
+                            },
+                            {
+                              "type": "ResourceId",
+                              "name": "resourceId",
+                              "required": true
+                            },
+                            {
+                              "type": "string",
+                              "name": "resourceType",
+                              "required": true
+                            },
+                            {
+                              "type": "string",
+                              "name": "unit"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "testId"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

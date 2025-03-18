@@ -1,0 +1,391 @@
+{
+  "name": "metric",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/test-runs/{}/metrics",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3Rlc3QtcnVucy97dGVzdFJ1bklkfS9tZXRyaWNz/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.endpoint",
+          "options": [
+            "endpoint"
+          ],
+          "required": true
+        },
+        {
+          "type": "string",
+          "var": "$Path.testRunId",
+          "options": [
+            "test-run-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "Unique name for the load test run, must contain only lower-case alphabetic, numeric, underscore or hyphen characters."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.aggregation",
+          "options": [
+            "aggregation"
+          ],
+          "help": {
+            "short": "The aggregation"
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.interval",
+          "options": [
+            "interval"
+          ],
+          "help": {
+            "short": "The interval (i.e. timegrain) of the query."
+          },
+          "default": {
+            "value": "PT1M"
+          },
+          "enum": {
+            "items": [
+              {
+                "name": "PT10S",
+                "value": "PT10S"
+              },
+              {
+                "name": "PT1H",
+                "value": "PT1H"
+              },
+              {
+                "name": "PT1M",
+                "value": "PT1M"
+              },
+              {
+                "name": "PT5M",
+                "value": "PT5M"
+              },
+              {
+                "name": "PT5S",
+                "value": "PT5S"
+              }
+            ]
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.metricNamespace",
+          "options": [
+            "metric-namespace"
+          ],
+          "required": true,
+          "help": {
+            "short": "Metric namespace to query metric definitions for."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.metricname",
+          "options": [
+            "metricname"
+          ],
+          "required": true,
+          "help": {
+            "short": "Metric name"
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.timespan",
+          "options": [
+            "timespan"
+          ],
+          "required": true,
+          "help": {
+            "short": "The timespan of the query. It is a string with the following format 'startDateTime_ISO/endDateTime_ISO'."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "args": [
+        {
+          "type": "array<object>",
+          "var": "$body.filters",
+          "options": [
+            "filters"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "Get metrics for specific dimension values. Example: Metric contains dimension like SamplerName, Error. To retrieve all the time series data where SamplerName is equals to HTTPRequest1 or HTTPRequest2, the DimensionFilter value will be {\"SamplerName\", [\"HTTPRequest1\", \"HTTPRequest2\"}"
+          },
+          "item": {
+            "type": "object",
+            "args": [
+              {
+                "type": "string",
+                "var": "$body.filters[].name",
+                "options": [
+                  "name"
+                ],
+                "help": {
+                  "short": "The dimension name"
+                }
+              },
+              {
+                "type": "array<string>",
+                "var": "$body.filters[].values",
+                "options": [
+                  "values"
+                ],
+                "help": {
+                  "short": "The dimension values. Maximum values can be 20."
+                },
+                "item": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "LoadTestRun_ListMetrics",
+      "http": {
+        "path": "//{endpoint}/test-runs/{testRunId}/metrics",
+        "request": {
+          "method": "post",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "endpoint",
+                "arg": "$Path.endpoint",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "testRunId",
+                "arg": "$Path.testRunId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "params": [
+              {
+                "type": "string",
+                "name": "aggregation",
+                "arg": "$Query.aggregation"
+              },
+              {
+                "default": {
+                  "value": "PT1M"
+                },
+                "type": "string",
+                "name": "interval",
+                "arg": "$Query.interval",
+                "enum": {
+                  "items": [
+                    {
+                      "value": "PT10S"
+                    },
+                    {
+                      "value": "PT1H"
+                    },
+                    {
+                      "value": "PT1M"
+                    },
+                    {
+                      "value": "PT5M"
+                    },
+                    {
+                      "value": "PT5S"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "string",
+                "name": "metricNamespace",
+                "arg": "$Query.metricNamespace",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "metricname",
+                "arg": "$Query.metricname",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "timespan",
+                "arg": "$Query.timespan",
+                "required": true
+              }
+            ],
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "body": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "name": "body",
+                "props": [
+                  {
+                    "type": "array<object>",
+                    "name": "filters",
+                    "arg": "$body.filters",
+                    "item": {
+                      "type": "object",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "name",
+                          "arg": "$body.filters[].name"
+                        },
+                        {
+                          "type": "array<string>",
+                          "name": "values",
+                          "arg": "$body.filters[].values",
+                          "item": {
+                            "type": "string"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "clientFlatten": true
+              }
+            }
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "string",
+                      "name": "nextLink"
+                    },
+                    {
+                      "type": "array<object>",
+                      "name": "value",
+                      "required": true,
+                      "item": {
+                        "type": "object",
+                        "props": [
+                          {
+                            "type": "array<object>",
+                            "name": "data",
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "type": "dateTime",
+                                  "name": "timestamp"
+                                },
+                                {
+                                  "type": "float64",
+                                  "name": "value"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "array<object>",
+                            "name": "dimensionValues",
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "name"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "value"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "array",
+      "ref": "$Instance.value",
+      "clientFlatten": true,
+      "nextLink": "$Instance.nextLink"
+    }
+  ]
+}

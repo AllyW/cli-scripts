@@ -1,0 +1,109 @@
+1
+['devcenter dev customization-task', 'validate', '0', 'longRunning']
+['command-group:devcenter dev customization-task', 'command:validate', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+2
+['devcenter dev dev-box', 'capture-snapshot', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:capture-snapshot', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+3
+['devcenter', 'dev dev-box', 'create', '0', 'longRunning']
+['command-group:devcenter', 'command-group:dev dev-box', 'command:create', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "original-uri"}
+4
+['devcenter', 'dev dev-box', 'delete', '0', 'longRunning']
+['command-group:devcenter', 'command-group:dev dev-box', 'command:delete', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+5
+['devcenter dev dev-box', 'repair', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:repair', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+6
+['devcenter dev dev-box', 'restart', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:restart', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+7
+['devcenter dev dev-box', 'restore-snapshot', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:restore-snapshot', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+8
+['devcenter dev dev-box', 'start', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:start', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+9
+['devcenter dev dev-box', 'stop', '0', 'longRunning']
+['command-group:devcenter dev dev-box', 'command:stop', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+10
+['devcenter dev environment', 'create', '0', 'longRunning']
+['command-group:devcenter dev environment', 'command:create', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "original-uri"}
+11
+['devcenter dev environment', 'delete', '0', 'longRunning']
+['command-group:devcenter dev environment', 'command:delete', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+12
+['devcenter project user devbox', 'align', '0', 'longRunning']
+['command-group:devcenter project user devbox', 'command:align', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+13
+['devcenter', 'project user devbox', 'update', '2', 'longRunning']
+['command-group:devcenter', 'command-group:project user devbox', 'command:update', 'operation ind: 2', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "original-uri"}
+14
+['devcenter', 'project user devbox', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'type']
+['command-group:devcenter', 'command-group:project user devbox', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'type']
+    ChangeType.CHANGE
+    "object"
+    "@Azure.Core.Foundations.Error_read"
+15
+['devcenter', 'project user devbox', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'code']
+['command-group:devcenter', 'command-group:project user devbox', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'code']
+    ChangeType.REMOVE
+    {"type": "string", "name": "code", "required": true}
+16
+['devcenter', 'project user devbox', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'details']
+['command-group:devcenter', 'command-group:project user devbox', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'details']
+    ChangeType.REMOVE
+    {"type": "array<@AzureCoreFoundationsError_read>", "name": "details", "item": {"type": "@AzureCoreFoundationsError_read"}}
+17
+['devcenter', 'project user devbox', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'innererror']
+['command-group:devcenter', 'command-group:project user devbox', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'innererror']
+    ChangeType.REMOVE
+    {"type": "object", "name": "innererror", "props": [{"type": "string", "name": "code"}, {"type": "@AzureCoreFoundationsInnerError_read", "name": "innererror"}]}
+18
+['devcenter', 'project user devbox', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'message']
+['command-group:devcenter', 'command-group:project user devbox', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'message']
+    ChangeType.REMOVE
+    {"type": "string", "name": "message", "required": true}
+19
+['devcenter', 'project user devbox', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'target']
+['command-group:devcenter', 'command-group:project user devbox', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'error', 'props', 'target']
+    ChangeType.REMOVE
+    {"type": "string", "name": "target"}

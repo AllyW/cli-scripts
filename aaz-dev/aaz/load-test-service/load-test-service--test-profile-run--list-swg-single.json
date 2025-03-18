@@ -1,0 +1,568 @@
+{
+  "name": "list",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/test-profile-runs",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3Rlc3QtcHJvZmlsZS1ydW5z/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.endpoint",
+          "options": [
+            "endpoint"
+          ],
+          "required": true
+        },
+        {
+          "type": "dateTime",
+          "var": "$Query.createdDateEndTime",
+          "options": [
+            "created-date-end-time"
+          ],
+          "help": {
+            "short": "End DateTime(RFC 3339 literal format) of the created time range to filter test profile runs."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Query.createdDateStartTime",
+          "options": [
+            "created-date-start-time"
+          ],
+          "help": {
+            "short": "Start DateTime(RFC 3339 literal format) of the created time range to filter test profile runs."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Query.maxEndDateTime",
+          "options": [
+            "max-end-date-time"
+          ],
+          "help": {
+            "short": "Maximum End DateTime(RFC 3339 literal format) of the test profile runs to filter on."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Query.maxStartDateTime",
+          "options": [
+            "max-start-date-time"
+          ],
+          "help": {
+            "short": "Maximum Start DateTime(RFC 3339 literal format) of the test profile runs to filter on."
+          }
+        },
+        {
+          "type": "integer32",
+          "var": "$Query.maxpagesize",
+          "options": [
+            "maxpagesize"
+          ],
+          "help": {
+            "short": "Maximum number of results to include in a single response."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Query.minEndDateTime",
+          "options": [
+            "min-end-date-time"
+          ],
+          "help": {
+            "short": "Minimum End DateTime(RFC 3339 literal format) of the test profile runs to filter on."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Query.minStartDateTime",
+          "options": [
+            "min-start-date-time"
+          ],
+          "help": {
+            "short": "Minimum Start DateTime(RFC 3339 literal format) of the test profile runs to filter on."
+          }
+        },
+        {
+          "type": "array<string>",
+          "var": "$Query.statuses",
+          "options": [
+            "statuses"
+          ],
+          "help": {
+            "short": "Comma separated list of Statuses of the test profile runs to filter."
+          },
+          "item": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "array<string>",
+          "var": "$Query.testProfileIds",
+          "options": [
+            "test-profile-ids"
+          ],
+          "help": {
+            "short": "Comma separated IDs of the test profiles which should be associated with the test profile runs to fetch."
+          },
+          "item": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "array<string>",
+          "var": "$Query.testProfileRunIds",
+          "options": [
+            "test-profile-run-ids"
+          ],
+          "help": {
+            "short": "Comma separated list of IDs of the test profile runs to filter."
+          },
+          "item": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "TestProfileRunAdministration_ListTestProfileRuns",
+      "http": {
+        "path": "//{endpoint}/test-profile-runs",
+        "request": {
+          "method": "get",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "endpoint",
+                "arg": "$Path.endpoint",
+                "required": true
+              }
+            ]
+          },
+          "query": {
+            "params": [
+              {
+                "type": "dateTime",
+                "name": "createdDateEndTime",
+                "arg": "$Query.createdDateEndTime"
+              },
+              {
+                "type": "dateTime",
+                "name": "createdDateStartTime",
+                "arg": "$Query.createdDateStartTime"
+              },
+              {
+                "type": "dateTime",
+                "name": "maxEndDateTime",
+                "arg": "$Query.maxEndDateTime"
+              },
+              {
+                "type": "dateTime",
+                "name": "maxStartDateTime",
+                "arg": "$Query.maxStartDateTime"
+              },
+              {
+                "type": "integer32",
+                "name": "maxpagesize",
+                "arg": "$Query.maxpagesize"
+              },
+              {
+                "type": "dateTime",
+                "name": "minEndDateTime",
+                "arg": "$Query.minEndDateTime"
+              },
+              {
+                "type": "dateTime",
+                "name": "minStartDateTime",
+                "arg": "$Query.minStartDateTime"
+              },
+              {
+                "type": "array<string>",
+                "name": "statuses",
+                "arg": "$Query.statuses",
+                "item": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "array<string>",
+                "name": "testProfileIds",
+                "arg": "$Query.testProfileIds",
+                "item": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "array<string>",
+                "name": "testProfileRunIds",
+                "arg": "$Query.testProfileRunIds",
+                "item": {
+                  "type": "string"
+                }
+              }
+            ],
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "string",
+                      "name": "nextLink"
+                    },
+                    {
+                      "type": "array<object>",
+                      "name": "value",
+                      "required": true,
+                      "item": {
+                        "type": "object",
+                        "props": [
+                          {
+                            "readOnly": true,
+                            "type": "string",
+                            "name": "createdBy"
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "dateTime",
+                            "name": "createdDateTime"
+                          },
+                          {
+                            "type": "string",
+                            "name": "description",
+                            "format": {
+                              "maxLength": 100
+                            }
+                          },
+                          {
+                            "type": "string",
+                            "name": "displayName",
+                            "format": {
+                              "maxLength": 50,
+                              "minLength": 2
+                            }
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "integer64",
+                            "name": "durationInSeconds"
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "dateTime",
+                            "name": "endDateTime"
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "array<object>",
+                            "name": "errorDetails",
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "readOnly": true,
+                                  "type": "string",
+                                  "name": "message"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "string",
+                            "name": "lastModifiedBy"
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "dateTime",
+                            "name": "lastModifiedDateTime"
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "array<object>",
+                            "name": "recommendations",
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "category",
+                                  "required": true,
+                                  "enum": {
+                                    "items": [
+                                      {
+                                        "value": "CostOptimized"
+                                      },
+                                      {
+                                        "value": "ThroughputOptimized"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "array<string>",
+                                  "name": "configurations",
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "dateTime",
+                            "name": "startDateTime"
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "string",
+                            "name": "status",
+                            "enum": {
+                              "items": [
+                                {
+                                  "value": "ACCEPTED"
+                                },
+                                {
+                                  "value": "CANCELLED"
+                                },
+                                {
+                                  "value": "CANCELLING"
+                                },
+                                {
+                                  "value": "DONE"
+                                },
+                                {
+                                  "value": "EXECUTING"
+                                },
+                                {
+                                  "value": "FAILED"
+                                },
+                                {
+                                  "value": "NOTSTARTED"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "object",
+                            "name": "targetResourceConfigurations",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "kind",
+                                "required": true,
+                                "enum": {
+                                  "items": [
+                                    {
+                                      "value": "FunctionsFlexConsumption"
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "discriminators": [
+                              {
+                                "property": "kind",
+                                "value": "FunctionsFlexConsumption",
+                                "props": [
+                                  {
+                                    "type": "object",
+                                    "name": "configurations",
+                                    "additionalProps": {
+                                      "item": {
+                                        "type": "object",
+                                        "props": [
+                                          {
+                                            "type": "integer64",
+                                            "name": "httpConcurrency"
+                                          },
+                                          {
+                                            "type": "integer64",
+                                            "name": "instanceMemoryMB",
+                                            "required": true
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "ResourceId",
+                            "name": "targetResourceId"
+                          },
+                          {
+                            "type": "string",
+                            "name": "testProfileId"
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "string",
+                            "name": "testProfileRunId",
+                            "format": {
+                              "pattern": "^[a-z0-9_-]*$",
+                              "maxLength": 50,
+                              "minLength": 2
+                            }
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "object",
+                            "name": "testRunDetails",
+                            "additionalProps": {
+                              "readOnly": true,
+                              "item": {
+                                "type": "object",
+                                "props": [
+                                  {
+                                    "type": "string",
+                                    "name": "configurationId",
+                                    "required": true
+                                  },
+                                  {
+                                    "type": "object",
+                                    "name": "properties",
+                                    "required": true,
+                                    "additionalProps": {
+                                      "item": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "string",
+                                    "name": "status",
+                                    "required": true,
+                                    "enum": {
+                                      "items": [
+                                        {
+                                          "value": "ACCEPTED"
+                                        },
+                                        {
+                                          "value": "CANCELLED"
+                                        },
+                                        {
+                                          "value": "CANCELLING"
+                                        },
+                                        {
+                                          "value": "CONFIGURED"
+                                        },
+                                        {
+                                          "value": "CONFIGURING"
+                                        },
+                                        {
+                                          "value": "DEPROVISIONED"
+                                        },
+                                        {
+                                          "value": "DEPROVISIONING"
+                                        },
+                                        {
+                                          "value": "DONE"
+                                        },
+                                        {
+                                          "value": "EXECUTED"
+                                        },
+                                        {
+                                          "value": "EXECUTING"
+                                        },
+                                        {
+                                          "value": "FAILED"
+                                        },
+                                        {
+                                          "value": "NOTSTARTED"
+                                        },
+                                        {
+                                          "value": "PROVISIONED"
+                                        },
+                                        {
+                                          "value": "PROVISIONING"
+                                        },
+                                        {
+                                          "value": "VALIDATION_FAILURE"
+                                        },
+                                        {
+                                          "value": "VALIDATION_SUCCESS"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "array",
+      "ref": "$Instance.value",
+      "clientFlatten": true,
+      "nextLink": "$Instance.nextLink"
+    }
+  ]
+}

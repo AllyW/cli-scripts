@@ -1,0 +1,283 @@
+{
+  "name": "list",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/test-runs/{}/metric-dimensions/{}/values",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3Rlc3QtcnVucy97dGVzdFJ1bklkfS9tZXRyaWMtZGltZW5zaW9ucy97bmFtZX0vdmFsdWVz/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.endpoint",
+          "options": [
+            "endpoint"
+          ],
+          "required": true
+        },
+        {
+          "type": "string",
+          "var": "$Path.name",
+          "options": [
+            "name"
+          ],
+          "required": true,
+          "help": {
+            "short": "Dimension name"
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.testRunId",
+          "options": [
+            "test-run-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "Unique name for the load test run, must contain only lower-case alphabetic, numeric, underscore or hyphen characters."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.interval",
+          "options": [
+            "interval"
+          ],
+          "help": {
+            "short": "The interval (i.e. timegrain) of the query."
+          },
+          "default": {
+            "value": "PT1M"
+          },
+          "enum": {
+            "items": [
+              {
+                "name": "PT10S",
+                "value": "PT10S"
+              },
+              {
+                "name": "PT1H",
+                "value": "PT1H"
+              },
+              {
+                "name": "PT1M",
+                "value": "PT1M"
+              },
+              {
+                "name": "PT5M",
+                "value": "PT5M"
+              },
+              {
+                "name": "PT5S",
+                "value": "PT5S"
+              }
+            ]
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.metricNamespace",
+          "options": [
+            "metric-namespace"
+          ],
+          "required": true,
+          "help": {
+            "short": "Metric namespace to query metric definitions for."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.metricname",
+          "options": [
+            "metricname"
+          ],
+          "required": true,
+          "help": {
+            "short": "Metric name"
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Query.timespan",
+          "options": [
+            "timespan"
+          ],
+          "required": true,
+          "help": {
+            "short": "The timespan of the query. It is a string with the following format 'startDateTime_ISO/endDateTime_ISO'."
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "LoadTestRun_ListMetricDimensionValues",
+      "http": {
+        "path": "//{endpoint}/test-runs/{testRunId}/metric-dimensions/{name}/values",
+        "request": {
+          "method": "get",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "endpoint",
+                "arg": "$Path.endpoint",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "name",
+                "arg": "$Path.name",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "testRunId",
+                "arg": "$Path.testRunId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "params": [
+              {
+                "default": {
+                  "value": "PT1M"
+                },
+                "type": "string",
+                "name": "interval",
+                "arg": "$Query.interval",
+                "enum": {
+                  "items": [
+                    {
+                      "value": "PT10S"
+                    },
+                    {
+                      "value": "PT1H"
+                    },
+                    {
+                      "value": "PT1M"
+                    },
+                    {
+                      "value": "PT5M"
+                    },
+                    {
+                      "value": "PT5S"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "string",
+                "name": "metricNamespace",
+                "arg": "$Query.metricNamespace",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "metricname",
+                "arg": "$Query.metricname",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "timespan",
+                "arg": "$Query.timespan",
+                "required": true
+              }
+            ],
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "name"
+                    },
+                    {
+                      "type": "string",
+                      "name": "nextLink"
+                    },
+                    {
+                      "type": "array<string>",
+                      "name": "value",
+                      "item": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "array",
+      "ref": "$Instance.value",
+      "clientFlatten": true,
+      "nextLink": "$Instance.nextLink"
+    }
+  ]
+}

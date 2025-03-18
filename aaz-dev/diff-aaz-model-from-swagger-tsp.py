@@ -580,9 +580,13 @@ def find_cls_in_props(props, cls_obj_ref):
 def find_cls_in_operation_item(item, cls_obj_ref):
     if "cls" in item:
         cls_name = item["cls"]
+
+        if cls_name == "EnvironmentRole_create":
+            print("cls_name: ", cls_name)
+            print("check")
         cls_obj_ref[cls_name] = {
             "type": item["type"],
-            "props": item["props"]  # if error occurs here, other tag needs to be
+            "props": item.get("props", [])  # if error occurs here, other tag needs to be
         }
         del item["cls"]
     if "props" in item:
@@ -890,6 +894,10 @@ def filter_known_tups(item_list):
         # if item_list[0][-2] == "responses" and item_list[0][-1] == "200.201" and item_list[2] is ChangeType.REMOVE:
         #     return True
         if item_list[0][-2] == "subscriptionId" and item_list[0][-1] == "format" and item_list[2] is ChangeType.REMOVE:
+            return True
+        if item_list[0][-1] == "required" and item_list[2] is ChangeType.REMOVE and item_list[3]:
+            return True
+        if item_list[0][-1] == "readOnly" and (item_list[2] is ChangeType.REMOVE or item_list[2] is ChangeType.ADD) and item_list[3]:
             return True
 
     return False

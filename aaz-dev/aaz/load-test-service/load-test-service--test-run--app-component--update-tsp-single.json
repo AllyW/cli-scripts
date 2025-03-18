@@ -1,0 +1,297 @@
+{
+  "name": "update",
+  "version": "2024-12-01-preview",
+  "resources": [
+    {
+      "id": "/test-runs/{}/app-components",
+      "version": "2024-12-01-preview",
+      "swagger": "data-plane:microsoft.loadtestservice/loadtestservice/ResourceProviders/Microsoft.LoadTestService/Paths/L3Rlc3QtcnVucy97dGVzdFJ1bklkfS9hcHAtY29tcG9uZW50cw==/V/MjAyNC0xMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.testRunId",
+          "options": [
+            "test-run-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "Unique Id for the load test run, must contain only lower-case alphabetic, numeric, underscore or hyphen characters."
+          },
+          "format": {
+            "pattern": "^[a-z0-9_-]*$",
+            "maxLength": 50,
+            "minLength": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "args": [
+        {
+          "type": "object",
+          "var": "$body.components",
+          "options": [
+            "components"
+          ],
+          "group": "Body",
+          "help": {
+            "short": "Azure resource collection { resource id (fully qualified resource Id e.g subscriptions/{subId}/resourceGroups/{rg}/providers/Microsoft.LoadTestService/loadtests/{resName}) : resource object } "
+          },
+          "additionalProps": {
+            "item": {
+              "type": "object",
+              "args": [
+                {
+                  "type": "string",
+                  "var": "$body.components{}.displayName",
+                  "options": [
+                    "display-name"
+                  ],
+                  "help": {
+                    "short": "Azure resource display name"
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$body.components{}.kind",
+                  "options": [
+                    "kind"
+                  ],
+                  "help": {
+                    "short": "Kind of Azure resource type"
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$body.components{}.resourceName",
+                  "options": [
+                    "resource-name"
+                  ],
+                  "help": {
+                    "short": "Azure resource name, required while creating the app component."
+                  }
+                },
+                {
+                  "type": "string",
+                  "var": "$body.components{}.resourceType",
+                  "options": [
+                    "resource-type"
+                  ],
+                  "help": {
+                    "short": "Azure resource type, required while creating the app component."
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "LoadTestRun_CreateOrUpdateAppComponents",
+      "http": {
+        "path": "/test-runs/{testRunId}/app-components",
+        "request": {
+          "method": "patch",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "testRunId",
+                "arg": "$Path.testRunId",
+                "required": true,
+                "format": {
+                  "pattern": "^[a-z0-9_-]*$",
+                  "maxLength": 50,
+                  "minLength": 2
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-12-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "body": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "name": "body",
+                "required": true,
+                "props": [
+                  {
+                    "type": "object",
+                    "name": "components",
+                    "arg": "$body.components",
+                    "additionalProps": {
+                      "item": {
+                        "type": "object",
+                        "props": [
+                          {
+                            "type": "string",
+                            "name": "displayName",
+                            "arg": "$body.components{}.displayName"
+                          },
+                          {
+                            "type": "string",
+                            "name": "kind",
+                            "arg": "$body.components{}.kind"
+                          },
+                          {
+                            "type": "string",
+                            "name": "resourceName",
+                            "arg": "$body.components{}.resourceName"
+                          },
+                          {
+                            "type": "string",
+                            "name": "resourceType",
+                            "arg": "$body.components{}.resourceType"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "clientFlatten": true
+              }
+            }
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              201,
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "object",
+                      "name": "components",
+                      "required": true,
+                      "additionalProps": {
+                        "item": {
+                          "type": "object",
+                          "props": [
+                            {
+                              "type": "string",
+                              "name": "displayName"
+                            },
+                            {
+                              "type": "string",
+                              "name": "kind"
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "resourceGroup"
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "ResourceId",
+                              "name": "resourceId"
+                            },
+                            {
+                              "type": "string",
+                              "name": "resourceName",
+                              "required": true
+                            },
+                            {
+                              "type": "string",
+                              "name": "resourceType",
+                              "required": true
+                            },
+                            {
+                              "readOnly": true,
+                              "type": "string",
+                              "name": "subscriptionId"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "createdBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "createdDateTime"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "lastModifiedBy"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "dateTime",
+                      "name": "lastModifiedDateTime"
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "testRunId"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

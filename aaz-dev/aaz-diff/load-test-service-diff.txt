@@ -1,0 +1,729 @@
+1
+['load-test-service notification-rule', 'delete', '', '$Path.endpoint']
+['command-group:load-test-service notification-rule', 'command:delete', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+2
+['load-test-service notification-rule', 'delete', '0', 'path']
+['command-group:load-test-service notification-rule', 'command:delete', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/notification-rules/{notificationRuleId}
+    /notification-rules/{notificationRuleId}
+3
+['load-test-service notification-rule', 'delete', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service notification-rule', 'command:delete', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+4
+['load-test-service notification-rule', 'list', '', '$Path.endpoint']
+['command-group:load-test-service notification-rule', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+5
+['load-test-service notification-rule', 'list', '0', 'path']
+['command-group:load-test-service notification-rule', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/notification-rules
+    /notification-rules
+6
+['load-test-service notification-rule', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service notification-rule', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+7
+['load-test-service notification-rule', 'show', '', '$Path.endpoint']
+['command-group:load-test-service notification-rule', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+8
+['load-test-service notification-rule', 'show', '0', 'path']
+['command-group:load-test-service notification-rule', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/notification-rules/{notificationRuleId}
+    /notification-rules/{notificationRuleId}
+9
+['load-test-service notification-rule', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service notification-rule', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+10
+['load-test-service notification-rule', 'update', '', '$Path.endpoint']
+['command-group:load-test-service notification-rule', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+11
+['load-test-service notification-rule', 'update', '0', 'path']
+['command-group:load-test-service notification-rule', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/notification-rules/{notificationRuleId}
+    /notification-rules/{notificationRuleId}
+12
+['load-test-service notification-rule', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service notification-rule', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+13
+['load-test-service test app-component', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test app-component', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+14
+['load-test-service test app-component', 'show', '0', 'path']
+['command-group:load-test-service test app-component', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/app-components
+    /tests/{testId}/app-components
+15
+['load-test-service test app-component', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test app-component', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+16
+['load-test-service test app-component', 'update', '', '$Path.endpoint']
+['command-group:load-test-service test app-component', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+17
+['load-test-service test app-component', 'update', '0', 'path']
+['command-group:load-test-service test app-component', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/app-components
+    /tests/{testId}/app-components
+18
+['load-test-service test app-component', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test app-component', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+19
+['load-test-service test file', 'create', '', '$Path.endpoint']
+['command-group:load-test-service test file', 'command:create', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+20
+['load-test-service test file', 'create', '0', 'path']
+['command-group:load-test-service test file', 'command:create', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/files/{fileName}
+    /tests/{testId}/files/{fileName}
+21
+['load-test-service test file', 'create', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test file', 'command:create', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+22
+['load-test-service test file', 'delete', '', '$Path.endpoint']
+['command-group:load-test-service test file', 'command:delete', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+23
+['load-test-service test file', 'delete', '0', 'path']
+['command-group:load-test-service test file', 'command:delete', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/files/{fileName}
+    /tests/{testId}/files/{fileName}
+24
+['load-test-service test file', 'delete', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test file', 'command:delete', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+25
+['load-test-service test file', 'list', '', '$Path.endpoint']
+['command-group:load-test-service test file', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+26
+['load-test-service test file', 'list', '0', 'path']
+['command-group:load-test-service test file', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/files
+    /tests/{testId}/files
+27
+['load-test-service test file', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test file', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+28
+['load-test-service test file', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test file', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+29
+['load-test-service test file', 'show', '0', 'path']
+['command-group:load-test-service test file', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/files/{fileName}
+    /tests/{testId}/files/{fileName}
+30
+['load-test-service test file', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test file', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+31
+['load-test-service test file', 'update', '', '$Path.endpoint']
+['command-group:load-test-service test file', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+32
+['load-test-service test file', 'update', '0', 'path']
+['command-group:load-test-service test file', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/files/{fileName}
+    /tests/{testId}/files/{fileName}
+33
+['load-test-service test file', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test file', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+34
+['load-test-service test file', 'update', '2', 'path']
+['command-group:load-test-service test file', 'command:update', 'operation ind: 2', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/files/{fileName}
+    /tests/{testId}/files/{fileName}
+35
+['load-test-service test file', 'update', '2', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test file', 'command:update', 'operation ind: 2', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+36
+['load-test-service test server-metrics-config', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test server-metrics-config', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+37
+['load-test-service test server-metrics-config', 'show', '0', 'path']
+['command-group:load-test-service test server-metrics-config', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/server-metrics-config
+    /tests/{testId}/server-metrics-config
+38
+['load-test-service test server-metrics-config', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test server-metrics-config', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+39
+['load-test-service test server-metrics-config', 'update', '', '$Path.endpoint']
+['command-group:load-test-service test server-metrics-config', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+40
+['load-test-service test server-metrics-config', 'update', '0', 'path']
+['command-group:load-test-service test server-metrics-config', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}/server-metrics-config
+    /tests/{testId}/server-metrics-config
+41
+['load-test-service test server-metrics-config', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test server-metrics-config', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+42
+['load-test-service test', 'delete', '', '$Path.endpoint']
+['command-group:load-test-service test', 'command:delete', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+43
+['load-test-service test', 'delete', '0', 'path']
+['command-group:load-test-service test', 'command:delete', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}
+    /tests/{testId}
+44
+['load-test-service test', 'delete', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test', 'command:delete', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+45
+['load-test-service test', 'list', '', '$Path.endpoint']
+['command-group:load-test-service test', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+46
+['load-test-service test', 'list', '0', 'path']
+['command-group:load-test-service test', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests
+    /tests
+47
+['load-test-service test', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+48
+['load-test-service test', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+49
+['load-test-service test', 'show', '0', 'path']
+['command-group:load-test-service test', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}
+    /tests/{testId}
+50
+['load-test-service test', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+51
+['load-test-service test', 'update', '', '$Path.endpoint']
+['command-group:load-test-service test', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+52
+['load-test-service test', 'update', 'Body', 'args', '$body.passFailCriteria.passFailServerMetrics', 'additionalProps']
+['command-group:load-test-service test', 'command:update', 'argGroup: Body', 'args', 'arg: $body.passFailCriteria.passFailServerMetrics', 'prop: additionalProps']
+    ChangeType.CHANGE
+    {"item": {"type": "object", "args": [{"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.action", "options": ["action"], "help": {"short": "Action taken after the threshold is met. Default is \u2018continue\u2019."}, "default": {"value": "continue"}, "enum": {"items": [{"name": "continue", "value": "continue"}, {"name": "stop", "value": "stop"}]}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.aggregation", "options": ["aggregation"], "required": true, "help": {"short": "Aggregation Type"}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.condition", "options": ["condition"], "required": true, "help": {"short": "The comparison operator. Supported types \u2018>\u2019, \u2018<\u2019 "}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.metricName", "options": ["metric-name"], "required": true, "help": {"short": "The server metric name."}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.metricNamespace", "options": ["metric-namespace"], "required": true, "help": {"short": "The server metric namespace."}}, {"type": "ResourceId", "var": "$body.passFailCriteria.passFailServerMetrics{}.resourceId", "options": ["resource-id"], "required": true, "help": {"short": "The resource id of the resource emitting the metric."}}, {"type": "float64", "var": "$body.passFailCriteria.passFailServerMetrics{}.value", "options": ["value"], "required": true, "help": {"short": "The value to compare with the server metric."}}]}}
+    {"item": {"type": "object", "args": [{"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.action", "options": ["action"], "help": {"short": "Action taken after the threshold is met. Default is \u2018continue\u2019."}, "default": {"value": "continue"}, "enum": {"items": [{"name": "continue", "value": "continue"}, {"name": "stop", "value": "stop"}]}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.aggregation", "options": ["aggregation"], "help": {"short": "Aggregation Type"}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.condition", "options": ["condition"], "help": {"short": "The comparison operator. Supported types \u2018>\u2019, \u2018<\u2019 "}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.metricName", "options": ["metric-name"], "help": {"short": "The server metric name."}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.metricNamespace", "options": ["metric-namespace"], "help": {"short": "The server metric namespace."}}, {"type": "ResourceId", "var": "$body.passFailCriteria.passFailServerMetrics{}.resourceId", "options": ["resource-id"], "help": {"short": "The resource id of the resource emitting the metric."}}, {"type": "float64", "var": "$body.passFailCriteria.passFailServerMetrics{}.value", "options": ["value"], "help": {"short": "The value to compare with the server metric."}}]}}
+53
+['load-test-service test', 'update', '0', 'path']
+['command-group:load-test-service test', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/tests/{testId}
+    /tests/{testId}
+54
+['load-test-service test', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+55
+['load-test-service test-profile', 'delete', '', '$Path.endpoint']
+['command-group:load-test-service test-profile', 'command:delete', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+56
+['load-test-service test-profile', 'delete', '0', 'path']
+['command-group:load-test-service test-profile', 'command:delete', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-profiles/{testProfileId}
+    /test-profiles/{testProfileId}
+57
+['load-test-service test-profile', 'delete', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-profile', 'command:delete', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+58
+['load-test-service test-profile', 'list', '', '$Path.endpoint']
+['command-group:load-test-service test-profile', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+59
+['load-test-service test-profile', 'list', '0', 'path']
+['command-group:load-test-service test-profile', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-profiles
+    /test-profiles
+60
+['load-test-service test-profile', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-profile', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+61
+['load-test-service test-profile', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test-profile', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+62
+['load-test-service test-profile', 'show', '0', 'path']
+['command-group:load-test-service test-profile', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-profiles/{testProfileId}
+    /test-profiles/{testProfileId}
+63
+['load-test-service test-profile', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-profile', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+64
+['load-test-service test-profile', 'update', '', '$Path.endpoint']
+['command-group:load-test-service test-profile', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+65
+['load-test-service test-profile', 'update', 'Body', 'args', 'args', '$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations', 'additionalProps']
+['command-group:load-test-service test-profile', 'command:update', 'argGroup: Body', 'args', 'args', 'arg: $body.targetResourceConfigurations.FunctionsFlexConsumption.configurations', 'prop: additionalProps']
+    ChangeType.CHANGE
+    {"item": {"type": "object", "args": [{"type": "integer64", "var": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations{}.httpConcurrency", "options": ["http-concurrency"], "help": {"short": "HTTP Concurrency for the function app."}}, {"type": "integer64", "var": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations{}.instanceMemoryMB", "options": ["instance-memory-mb"], "help": {"short": "Memory size of the instance. Supported values are 2048, 4096. erf4rg"}}]}}
+    {"item": {"type": "object", "args": [{"type": "integer64", "var": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations{}.httpConcurrency", "options": ["http-concurrency"], "help": {"short": "HTTP Concurrency for the function app."}}, {"type": "integer64", "var": "$body.targetResourceConfigurations.FunctionsFlexConsumption.configurations{}.instanceMemoryMB", "options": ["instance-memory-mb"], "help": {"short": "Memory size of the instance. Supported values are 2048, 4096."}}]}}
+66
+['load-test-service test-profile', 'update', 'Body', '$body.targetResourceId']
+['command-group:load-test-service test-profile', 'command:update', 'argGroup: Body', 'arg: $body.targetResourceId']
+    ChangeType.ADD
+    {"type": "ResourceId", "var": "$body.targetResourceId", "options": ["target-resource-id"], "group": "Body", "help": {"short": "Target resource ID on which the test profile is created. This property is required for creating a Test Profile and it's not allowed to be updated."}, "checked": true}
+67
+['load-test-service test-profile', 'update', 'Body', '$body.testId']
+['command-group:load-test-service test-profile', 'command:update', 'argGroup: Body', 'arg: $body.testId']
+    ChangeType.ADD
+    {"type": "string", "var": "$body.testId", "options": ["test-id"], "group": "Body", "help": {"short": "Associated test ID for the test profile. This property is required for creating a Test Profile and it's not allowed to be updated."}, "checked": true}
+68
+['load-test-service test-profile', 'update', '0', 'path']
+['command-group:load-test-service test-profile', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-profiles/{testProfileId}
+    /test-profiles/{testProfileId}
+69
+['load-test-service test-profile', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-profile', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+70
+['load-test-service test-profile', 'update', '0', 'request', 'body', 'schema', 'props', 'targetResourceConfigurations', 'props', 'kind']
+['command-group:load-test-service test-profile', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'targetResourceConfigurations', 'props', 'kind']
+    ChangeType.ADD
+    {"type": "string", "name": "kind", "required": true, "enum": {"items": [{"arg": "$body.targetResourceConfigurations.FunctionsFlexConsumption", "value": "FunctionsFlexConsumption"}]}}
+71
+['load-test-service test-profile', 'update', '0', 'request', 'body', 'schema', 'props', 'targetResourceId']
+['command-group:load-test-service test-profile', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'targetResourceId']
+    ChangeType.ADD
+    {"type": "ResourceId", "name": "targetResourceId", "arg": "$body.targetResourceId"}
+72
+['load-test-service test-profile', 'update', '0', 'request', 'body', 'schema', 'props', 'testId']
+['command-group:load-test-service test-profile', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'testId']
+    ChangeType.ADD
+    {"type": "string", "name": "testId", "arg": "$body.testId"}
+73
+['load-test-service test-profile-run', 'delete', '', '$Path.endpoint']
+['command-group:load-test-service test-profile-run', 'command:delete', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+74
+['load-test-service test-profile-run', 'delete', '0', 'path']
+['command-group:load-test-service test-profile-run', 'command:delete', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-profile-runs/{testProfileRunId}
+    /test-profile-runs/{testProfileRunId}
+75
+['load-test-service test-profile-run', 'delete', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-profile-run', 'command:delete', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+76
+['load-test-service test-profile-run', 'list', '', '$Path.endpoint']
+['command-group:load-test-service test-profile-run', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+77
+['load-test-service test-profile-run', 'list', '0', 'path']
+['command-group:load-test-service test-profile-run', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-profile-runs
+    /test-profile-runs
+78
+['load-test-service test-profile-run', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-profile-run', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+79
+['load-test-service test-profile-run', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test-profile-run', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+80
+['load-test-service test-profile-run', 'show', '0', 'path']
+['command-group:load-test-service test-profile-run', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-profile-runs/{testProfileRunId}
+    /test-profile-runs/{testProfileRunId}
+81
+['load-test-service test-profile-run', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-profile-run', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+82
+['load-test-service test-profile-run', 'stop', '', '$Path.endpoint']
+['command-group:load-test-service test-profile-run', 'command:stop', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+83
+['load-test-service test-profile-run', 'stop', '0', 'path']
+['command-group:load-test-service test-profile-run', 'command:stop', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-profile-runs/{testProfileRunId}:stop
+    /test-profile-runs/{testProfileRunId}:stop
+84
+['load-test-service test-profile-run', 'stop', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-profile-run', 'command:stop', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+85
+['load-test-service test-profile-run', 'update', '', '$Path.endpoint']
+['command-group:load-test-service test-profile-run', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+86
+['load-test-service test-profile-run', 'update', 'Body', '$body.testProfileId']
+['command-group:load-test-service test-profile-run', 'command:update', 'argGroup: Body', 'arg: $body.testProfileId']
+    ChangeType.ADD
+    {"type": "string", "var": "$body.testProfileId", "options": ["test-profile-id"], "group": "Body", "help": {"short": "Associated test profile ID for the test profile run. This is required to create a test profile run and can't be updated."}, "checked": true}
+87
+['load-test-service test-profile-run', 'update', '0', 'path']
+['command-group:load-test-service test-profile-run', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-profile-runs/{testProfileRunId}
+    /test-profile-runs/{testProfileRunId}
+88
+['load-test-service test-profile-run', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-profile-run', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+89
+['load-test-service test-profile-run', 'update', '0', 'request', 'body', 'schema', 'props', 'testProfileId']
+['command-group:load-test-service test-profile-run', 'command:update', 'operation ind: 0', 'request', 'body', 'schema', 'props', 'testProfileId']
+    ChangeType.ADD
+    {"type": "string", "name": "testProfileId", "arg": "$body.testProfileId"}
+90
+['load-test-service test-run app-component', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test-run app-component', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+91
+['load-test-service test-run app-component', 'show', '0', 'path']
+['command-group:load-test-service test-run app-component', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}/app-components
+    /test-runs/{testRunId}/app-components
+92
+['load-test-service test-run app-component', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run app-component', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+93
+['load-test-service test-run app-component', 'update', '', '$Path.endpoint']
+['command-group:load-test-service test-run app-component', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+94
+['load-test-service test-run app-component', 'update', '0', 'path']
+['command-group:load-test-service test-run app-component', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}/app-components
+    /test-runs/{testRunId}/app-components
+95
+['load-test-service test-run app-component', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run app-component', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+96
+['load-test-service test-run file', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test-run file', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+97
+['load-test-service test-run file', 'show', '0', 'path']
+['command-group:load-test-service test-run file', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}/files/{fileName}
+    /test-runs/{testRunId}/files/{fileName}
+98
+['load-test-service test-run file', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run file', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+99
+['load-test-service test-run metric-definition', 'list', '', '$Path.endpoint']
+['command-group:load-test-service test-run metric-definition', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+100
+['load-test-service test-run metric-definition', 'list', '0', 'path']
+['command-group:load-test-service test-run metric-definition', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}/metric-definitions
+    /test-runs/{testRunId}/metric-definitions
+101
+['load-test-service test-run metric-definition', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run metric-definition', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+102
+['load-test-service test-run metric-dimension value', 'list', '', '$Path.endpoint']
+['command-group:load-test-service test-run metric-dimension value', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+103
+['load-test-service test-run metric-dimension value', 'list', '0', 'path']
+['command-group:load-test-service test-run metric-dimension value', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}/metric-dimensions/{name}/values
+    /test-runs/{testRunId}/metric-dimensions/{name}/values
+104
+['load-test-service test-run metric-dimension value', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run metric-dimension value', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+105
+['load-test-service test-run metric-namespace', 'list', '', '$Path.endpoint']
+['command-group:load-test-service test-run metric-namespace', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+106
+['load-test-service test-run metric-namespace', 'list', '0', 'path']
+['command-group:load-test-service test-run metric-namespace', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}/metric-namespaces
+    /test-runs/{testRunId}/metric-namespaces
+107
+['load-test-service test-run metric-namespace', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run metric-namespace', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+108
+['load-test-service test-run server-metrics-config', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test-run server-metrics-config', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+109
+['load-test-service test-run server-metrics-config', 'show', '0', 'path']
+['command-group:load-test-service test-run server-metrics-config', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}/server-metrics-config
+    /test-runs/{testRunId}/server-metrics-config
+110
+['load-test-service test-run server-metrics-config', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run server-metrics-config', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+111
+['load-test-service test-run server-metrics-config', 'update', '', '$Path.endpoint']
+['command-group:load-test-service test-run server-metrics-config', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+112
+['load-test-service test-run server-metrics-config', 'update', 'Body', '$body.metrics', 'additionalProps']
+['command-group:load-test-service test-run server-metrics-config', 'command:update', 'argGroup: Body', 'arg: $body.metrics', 'prop: additionalProps']
+    ChangeType.CHANGE
+    {"item": {"type": "object", "args": [{"type": "string", "var": "$body.metrics{}.aggregation", "options": ["aggregation"], "required": true, "help": {"short": "Metric aggregation."}}, {"type": "string", "var": "$body.metrics{}.displayDescription", "options": ["display-description"], "help": {"short": "Metric description."}}, {"type": "string", "var": "$body.metrics{}.metricNamespace", "options": ["metric-namespace"], "required": true, "help": {"short": "Metric name space."}}, {"type": "string", "var": "$body.metrics{}.name", "options": ["name"], "required": true, "help": {"short": "The invariant value of metric name"}}, {"type": "ResourceId", "var": "$body.metrics{}.resourceId", "options": ["resource-id"], "required": true, "help": {"short": "Azure resource id."}}, {"type": "string", "var": "$body.metrics{}.resourceType", "options": ["resource-type"], "required": true, "help": {"short": "Azure resource type."}}, {"type": "string", "var": "$body.metrics{}.unit", "options": ["unit"], "help": {"short": "Metric unit."}}]}}
+    {"item": {"type": "object", "args": [{"type": "string", "var": "$body.metrics{}.aggregation", "options": ["aggregation"], "help": {"short": "Metric aggregation."}}, {"type": "string", "var": "$body.metrics{}.displayDescription", "options": ["display-description"], "help": {"short": "Metric description."}}, {"type": "string", "var": "$body.metrics{}.metricNamespace", "options": ["metric-namespace"], "help": {"short": "Metric name space."}}, {"type": "string", "var": "$body.metrics{}.name", "options": ["name"], "help": {"short": "The invariant value of metric name"}}, {"type": "ResourceId", "var": "$body.metrics{}.resourceId", "options": ["resource-id"], "help": {"short": "Azure resource id."}}, {"type": "string", "var": "$body.metrics{}.resourceType", "options": ["resource-type"], "help": {"short": "Azure resource type."}}, {"type": "string", "var": "$body.metrics{}.unit", "options": ["unit"], "help": {"short": "Metric unit."}}]}}
+113
+['load-test-service test-run server-metrics-config', 'update', '0', 'path']
+['command-group:load-test-service test-run server-metrics-config', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}/server-metrics-config
+    /test-runs/{testRunId}/server-metrics-config
+114
+['load-test-service test-run server-metrics-config', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run server-metrics-config', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+115
+['load-test-service test-run', 'delete', '', '$Path.endpoint']
+['command-group:load-test-service test-run', 'command:delete', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+116
+['load-test-service test-run', 'delete', '0', 'path']
+['command-group:load-test-service test-run', 'command:delete', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}
+    /test-runs/{testRunId}
+117
+['load-test-service test-run', 'delete', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run', 'command:delete', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+118
+['load-test-service test-run', 'list', '', '$Path.endpoint']
+['command-group:load-test-service test-run', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+119
+['load-test-service test-run', 'list', '0', 'path']
+['command-group:load-test-service test-run', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs
+    /test-runs
+120
+['load-test-service test-run', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+121
+['load-test-service test-run', 'metric', '', '$Path.endpoint']
+['command-group:load-test-service test-run', 'command:metric', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+122
+['load-test-service test-run', 'metric', '0', 'path']
+['command-group:load-test-service test-run', 'command:metric', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}/metrics
+    /test-runs/{testRunId}/metrics
+123
+['load-test-service test-run', 'metric', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run', 'command:metric', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+124
+['load-test-service test-run', 'show', '', '$Path.endpoint']
+['command-group:load-test-service test-run', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+125
+['load-test-service test-run', 'show', '0', 'path']
+['command-group:load-test-service test-run', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}
+    /test-runs/{testRunId}
+126
+['load-test-service test-run', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+127
+['load-test-service test-run', 'stop', '', '$Path.endpoint']
+['command-group:load-test-service test-run', 'command:stop', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+128
+['load-test-service test-run', 'stop', '0', 'path']
+['command-group:load-test-service test-run', 'command:stop', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}:stop
+    /test-runs/{testRunId}:stop
+129
+['load-test-service test-run', 'stop', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run', 'command:stop', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+130
+['load-test-service test-run', 'update', '', '$Path.endpoint']
+['command-group:load-test-service test-run', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+131
+['load-test-service test-run', 'update', 'Body', 'args', '$body.passFailCriteria.passFailServerMetrics', 'additionalProps']
+['command-group:load-test-service test-run', 'command:update', 'argGroup: Body', 'args', 'arg: $body.passFailCriteria.passFailServerMetrics', 'prop: additionalProps']
+    ChangeType.CHANGE
+    {"item": {"type": "object", "args": [{"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.action", "options": ["action"], "help": {"short": "Action taken after the threshold is met. Default is \u2018continue\u2019."}, "default": {"value": "continue"}, "enum": {"items": [{"name": "continue", "value": "continue"}, {"name": "stop", "value": "stop"}]}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.aggregation", "options": ["aggregation"], "required": true, "help": {"short": "Aggregation Type"}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.condition", "options": ["condition"], "required": true, "help": {"short": "The comparison operator. Supported types \u2018>\u2019, \u2018<\u2019 "}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.metricName", "options": ["metric-name"], "required": true, "help": {"short": "The server metric name."}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.metricNamespace", "options": ["metric-namespace"], "required": true, "help": {"short": "The server metric namespace."}}, {"type": "ResourceId", "var": "$body.passFailCriteria.passFailServerMetrics{}.resourceId", "options": ["resource-id"], "required": true, "help": {"short": "The resource id of the resource emitting the metric."}}, {"type": "float64", "var": "$body.passFailCriteria.passFailServerMetrics{}.value", "options": ["value"], "required": true, "help": {"short": "The value to compare with the server metric."}}]}}
+    {"item": {"type": "object", "args": [{"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.action", "options": ["action"], "help": {"short": "Action taken after the threshold is met. Default is \u2018continue\u2019."}, "default": {"value": "continue"}, "enum": {"items": [{"name": "continue", "value": "continue"}, {"name": "stop", "value": "stop"}]}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.aggregation", "options": ["aggregation"], "help": {"short": "Aggregation Type"}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.condition", "options": ["condition"], "help": {"short": "The comparison operator. Supported types \u2018>\u2019, \u2018<\u2019 "}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.metricName", "options": ["metric-name"], "help": {"short": "The server metric name."}}, {"type": "string", "var": "$body.passFailCriteria.passFailServerMetrics{}.metricNamespace", "options": ["metric-namespace"], "help": {"short": "The server metric namespace."}}, {"type": "ResourceId", "var": "$body.passFailCriteria.passFailServerMetrics{}.resourceId", "options": ["resource-id"], "help": {"short": "The resource id of the resource emitting the metric."}}, {"type": "float64", "var": "$body.passFailCriteria.passFailServerMetrics{}.value", "options": ["value"], "help": {"short": "The value to compare with the server metric."}}]}}
+132
+['load-test-service test-run', 'update', '0', 'path']
+['command-group:load-test-service test-run', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/test-runs/{testRunId}
+    /test-runs/{testRunId}
+133
+['load-test-service test-run', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service test-run', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+134
+['load-test-service trigger', 'delete', '', '$Path.endpoint']
+['command-group:load-test-service trigger', 'command:delete', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+135
+['load-test-service trigger', 'delete', '0', 'path']
+['command-group:load-test-service trigger', 'command:delete', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/triggers/{triggerId}
+    /triggers/{triggerId}
+136
+['load-test-service trigger', 'delete', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service trigger', 'command:delete', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+137
+['load-test-service trigger', 'list', '', '$Path.endpoint']
+['command-group:load-test-service trigger', 'command:list', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+138
+['load-test-service trigger', 'list', '0', 'path']
+['command-group:load-test-service trigger', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/triggers
+    /triggers
+139
+['load-test-service trigger', 'list', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service trigger', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+140
+['load-test-service trigger', 'show', '', '$Path.endpoint']
+['command-group:load-test-service trigger', 'command:show', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+141
+['load-test-service trigger', 'show', '0', 'path']
+['command-group:load-test-service trigger', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/triggers/{triggerId}
+    /triggers/{triggerId}
+142
+['load-test-service trigger', 'show', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service trigger', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
+143
+['load-test-service trigger', 'update', '', '$Path.endpoint']
+['command-group:load-test-service trigger', 'command:update', 'argGroup: ', 'arg: $Path.endpoint']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.endpoint", "options": ["endpoint"], "required": true}
+144
+['load-test-service trigger', 'update', '0', 'path']
+['command-group:load-test-service trigger', 'command:update', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{endpoint}/triggers/{triggerId}
+    /triggers/{triggerId}
+145
+['load-test-service trigger', 'update', '0', 'request', 'path', 'params', 'endpoint']
+['command-group:load-test-service trigger', 'command:update', 'operation ind: 0', 'request', 'path', 'params', 'arg: endpoint']
+    ChangeType.REMOVE
