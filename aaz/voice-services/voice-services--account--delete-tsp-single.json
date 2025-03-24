@@ -1,0 +1,225 @@
+{
+  "name": "delete",
+  "version": "2024-02-29-preview",
+  "resources": [
+    {
+      "id": "/accounts/{}",
+      "version": "2024-02-29-preview",
+      "swagger": "data-plane:microsoft.voiceservices/voiceservices/ResourceProviders/Microsoft.VoiceServices/Paths/L2FjY291bnRzL3thY2NvdW50TmFtZX0=/V/MjAyNC0wMi0yOS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Header.If-Match",
+          "options": [
+            "if-match"
+          ],
+          "help": {
+            "short": "The request should only proceed if an entity matches this string."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Header.If-Modified-Since",
+          "options": [
+            "if-modified-since"
+          ],
+          "help": {
+            "short": "The request should only proceed if the entity was modified after this time."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Header.If-None-Match",
+          "options": [
+            "if-none-match"
+          ],
+          "help": {
+            "short": "The request should only proceed if no entity matches this string."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Header.If-Unmodified-Since",
+          "options": [
+            "if-unmodified-since"
+          ],
+          "help": {
+            "short": "The request should only proceed if the entity was not modified after this time."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Header.Repeatability-First-Sent",
+          "options": [
+            "repeatability-first-sent"
+          ],
+          "help": {
+            "short": "Specifies the date and time at which the request was first created."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Header.Repeatability-Request-ID",
+          "options": [
+            "repeatability-request-id"
+          ],
+          "help": {
+            "short": "An opaque, globally-unique, client-generated string identifier for the request."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.accountName",
+          "options": [
+            "account-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "Name of the account."
+          },
+          "format": {
+            "pattern": "^([A-Za-z0-9_-]+)$",
+            "maxLength": 100,
+            "minLength": 1
+          }
+        },
+        {
+          "type": "boolean",
+          "var": "$Query.deleteNumbers",
+          "options": [
+            "delete-numbers"
+          ],
+          "help": {
+            "short": "Whether to delete the child Number resources of the Account, defaults to false."
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "Accounts_Delete",
+      "http": {
+        "path": "/accounts/{accountName}",
+        "request": {
+          "method": "delete",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "accountName",
+                "arg": "$Path.accountName",
+                "required": true,
+                "format": {
+                  "pattern": "^([A-Za-z0-9_-]+)$",
+                  "maxLength": 100,
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "query": {
+            "params": [
+              {
+                "type": "boolean",
+                "name": "deleteNumbers",
+                "arg": "$Query.deleteNumbers"
+              }
+            ],
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-02-29-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "header": {
+            "params": [
+              {
+                "type": "string",
+                "name": "If-Match",
+                "arg": "$Header.If-Match"
+              },
+              {
+                "type": "dateTime",
+                "name": "If-Modified-Since",
+                "arg": "$Header.If-Modified-Since"
+              },
+              {
+                "type": "string",
+                "name": "If-None-Match",
+                "arg": "$Header.If-None-Match"
+              },
+              {
+                "type": "dateTime",
+                "name": "If-Unmodified-Since",
+                "arg": "$Header.If-Unmodified-Since"
+              },
+              {
+                "type": "dateTime",
+                "name": "Repeatability-First-Sent",
+                "arg": "$Header.Repeatability-First-Sent"
+              },
+              {
+                "type": "string",
+                "name": "Repeatability-Request-ID",
+                "arg": "$Header.Repeatability-Request-ID"
+              }
+            ],
+            "clientRequestId": "x-ms-client-request-id"
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              204
+            ],
+            "header": {
+              "items": [
+                {
+                  "name": "Repeatability-Result"
+                },
+                {
+                  "name": "x-ms-client-request-id"
+                }
+              ]
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "confirmation": "Are you sure you want to perform this operation?"
+}

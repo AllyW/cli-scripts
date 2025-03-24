@@ -1,0 +1,532 @@
+{
+  "name": "show",
+  "version": "2024-02-29-preview",
+  "resources": [
+    {
+      "id": "/accounts/{}/numbers/{}",
+      "version": "2024-02-29-preview",
+      "swagger": "data-plane:microsoft.voiceservices/voiceservices/ResourceProviders/Microsoft.VoiceServices/Paths/L2FjY291bnRzL3thY2NvdW50TmFtZX0vbnVtYmVycy97dGVsZXBob25lTnVtYmVyfQ==/V/MjAyNC0wMi0yOS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Header.If-Match",
+          "options": [
+            "if-match"
+          ],
+          "help": {
+            "short": "The request should only proceed if an entity matches this string."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Header.If-Modified-Since",
+          "options": [
+            "if-modified-since"
+          ],
+          "help": {
+            "short": "The request should only proceed if the entity was modified after this time."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Header.If-None-Match",
+          "options": [
+            "if-none-match"
+          ],
+          "help": {
+            "short": "The request should only proceed if no entity matches this string."
+          }
+        },
+        {
+          "type": "dateTime",
+          "var": "$Header.If-Unmodified-Since",
+          "options": [
+            "if-unmodified-since"
+          ],
+          "help": {
+            "short": "The request should only proceed if the entity was not modified after this time."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.accountName",
+          "options": [
+            "account-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "Name of the account."
+          },
+          "format": {
+            "pattern": "^([A-Za-z0-9_-]+)$",
+            "maxLength": 100,
+            "minLength": 1
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.telephoneNumber",
+          "options": [
+            "telephone-number"
+          ],
+          "required": true,
+          "help": {
+            "short": "Telephone number in E.164 format."
+          },
+          "format": {
+            "pattern": "^\\+[1-9]\\d+$",
+            "maxLength": 16,
+            "minLength": 1
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "Accounts_GetNumber",
+      "http": {
+        "path": "/accounts/{accountName}/numbers/{telephoneNumber}",
+        "request": {
+          "method": "get",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "accountName",
+                "arg": "$Path.accountName",
+                "required": true,
+                "format": {
+                  "pattern": "^([A-Za-z0-9_-]+)$",
+                  "maxLength": 100,
+                  "minLength": 1
+                }
+              },
+              {
+                "type": "string",
+                "name": "telephoneNumber",
+                "arg": "$Path.telephoneNumber",
+                "required": true,
+                "format": {
+                  "pattern": "^\\+[1-9]\\d+$",
+                  "maxLength": 16,
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-02-29-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          },
+          "header": {
+            "params": [
+              {
+                "type": "string",
+                "name": "If-Match",
+                "arg": "$Header.If-Match"
+              },
+              {
+                "type": "dateTime",
+                "name": "If-Modified-Since",
+                "arg": "$Header.If-Modified-Since"
+              },
+              {
+                "type": "string",
+                "name": "If-None-Match",
+                "arg": "$Header.If-None-Match"
+              },
+              {
+                "type": "dateTime",
+                "name": "If-Unmodified-Since",
+                "arg": "$Header.If-Unmodified-Since"
+              }
+            ],
+            "clientRequestId": "x-ms-client-request-id"
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "header": {
+              "items": [
+                {
+                  "name": "ETag"
+                },
+                {
+                  "name": "x-ms-client-request-id"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "string",
+                      "name": "accountName",
+                      "required": true,
+                      "format": {
+                        "pattern": "^([A-Za-z0-9_-]+)$",
+                        "maxLength": 100,
+                        "minLength": 1
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "name": "configuration",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "customSipHeader",
+                          "format": {
+                            "pattern": "^([A-Za-z0-9_-])+$",
+                            "maxLength": 100,
+                            "minLength": 1
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "name": "serviceDetails",
+                      "required": true,
+                      "props": [
+                        {
+                          "type": "object",
+                          "name": "azureOperatorCallProtection",
+                          "props": [
+                            {
+                              "type": "boolean",
+                              "name": "enabled",
+                              "required": true
+                            }
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "name": "teamsDirectRouting",
+                          "props": [
+                            {
+                              "type": "boolean",
+                              "name": "enabled",
+                              "required": true
+                            }
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "name": "teamsOperatorConnect",
+                          "props": [
+                            {
+                              "type": "string",
+                              "name": "assignmentStatus",
+                              "enum": {
+                                "items": [
+                                  {
+                                    "value": "assigned"
+                                  },
+                                  {
+                                    "value": "unassigned"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "name": "configuration",
+                              "props": [
+                                {
+                                  "readOnly": true,
+                                  "type": "array<string>",
+                                  "name": "acquiredCapabilities",
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "array<string>",
+                                  "name": "additionalUsages",
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "default": {
+                                    "value": false
+                                  },
+                                  "type": "boolean",
+                                  "name": "allowTenantAddressUpdate"
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "array<string>",
+                                  "name": "availableCapabilities",
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "array<string>",
+                                  "name": "choosableCapabilities",
+                                  "required": true,
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "civicAddressId"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "displayedCountryCode"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "locationId"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "usage",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "enabled",
+                              "required": true
+                            }
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "name": "teamsPhoneMobile",
+                          "props": [
+                            {
+                              "type": "string",
+                              "name": "assignmentStatus",
+                              "enum": {
+                                "items": [
+                                  {
+                                    "value": "assigned"
+                                  },
+                                  {
+                                    "value": "unassigned"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "name": "configuration",
+                              "props": [
+                                {
+                                  "readOnly": true,
+                                  "type": "array<string>",
+                                  "name": "acquiredCapabilities",
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "array<string>",
+                                  "name": "additionalUsages",
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "default": {
+                                    "value": false
+                                  },
+                                  "type": "boolean",
+                                  "name": "allowTenantAddressUpdate"
+                                },
+                                {
+                                  "readOnly": true,
+                                  "type": "array<string>",
+                                  "name": "availableCapabilities",
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "array<string>",
+                                  "name": "choosableCapabilities",
+                                  "required": true,
+                                  "item": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "civicAddressId"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "displayedCountryCode"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "locationId"
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "usage",
+                                  "required": true
+                                }
+                              ]
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "enabled",
+                              "required": true
+                            }
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "name": "zoomPhoneCloudPeering",
+                          "props": [
+                            {
+                              "type": "boolean",
+                              "name": "enabled",
+                              "required": true
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "array<object>",
+                      "name": "serviceProvisioningErrors",
+                      "item": {
+                        "type": "object",
+                        "props": [
+                          {
+                            "type": "string",
+                            "name": "code",
+                            "required": true
+                          },
+                          {
+                            "type": "array<@AzureCoreFoundationsError_read>",
+                            "name": "details",
+                            "item": {
+                              "type": "@AzureCoreFoundationsError_read"
+                            }
+                          },
+                          {
+                            "type": "object",
+                            "name": "innererror",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "code"
+                              },
+                              {
+                                "type": "@AzureCoreFoundationsInnerError_read",
+                                "name": "innererror"
+                              }
+                            ],
+                            "cls": "AzureCoreFoundationsInnerError_read"
+                          },
+                          {
+                            "type": "string",
+                            "name": "message",
+                            "required": true
+                          },
+                          {
+                            "type": "string",
+                            "name": "target"
+                          }
+                        ],
+                        "cls": "AzureCoreFoundationsError_read"
+                      }
+                    },
+                    {
+                      "readOnly": true,
+                      "type": "string",
+                      "name": "serviceProvisioningStatus",
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "failed"
+                          },
+                          {
+                            "value": "pending"
+                          },
+                          {
+                            "value": "synced"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "name": "telephoneNumber",
+                      "required": true,
+                      "format": {
+                        "pattern": "^\\+[1-9]\\d+$",
+                        "maxLength": 16,
+                        "minLength": 1
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

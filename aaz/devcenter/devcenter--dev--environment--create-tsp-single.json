@@ -109,6 +109,11 @@
           "group": "Body",
           "help": {
             "short": "Parameters object for the environment."
+          },
+          "additionalProps": {
+            "item": {
+              "type": "any"
+            }
           }
         }
       ]
@@ -234,7 +239,12 @@
                   {
                     "type": "object",
                     "name": "parameters",
-                    "arg": "$body.parameters"
+                    "arg": "$body.parameters",
+                    "additionalProps": {
+                      "item": {
+                        "type": "any"
+                      }
+                    }
                   }
                 ],
                 "clientFlatten": true
@@ -286,10 +296,10 @@
                           "required": true
                         },
                         {
-                          "type": "array<@Azure.Core.Foundations.Error_read>",
+                          "type": "array<@AzureCoreFoundationsError_read>",
                           "name": "details",
                           "item": {
-                            "type": "@Azure.Core.Foundations.Error_read"
+                            "type": "@AzureCoreFoundationsError_read"
                           }
                         },
                         {
@@ -301,11 +311,11 @@
                               "name": "code"
                             },
                             {
-                              "type": "@Azure.Core.Foundations.InnerError_read",
+                              "type": "@AzureCoreFoundationsInnererror_read",
                               "name": "innererror"
                             }
                           ],
-                          "cls": "Azure.Core.Foundations.InnerError_read"
+                          "cls": "AzureCoreFoundationsInnererror_read"
                         },
                         {
                           "type": "string",
@@ -317,7 +327,7 @@
                           "name": "target"
                         }
                       ],
-                      "cls": "Azure.Core.Foundations.Error_read"
+                      "cls": "AzureCoreFoundationsError_read"
                     },
                     {
                       "type": "dateTime",
@@ -335,7 +345,12 @@
                     },
                     {
                       "type": "object",
-                      "name": "parameters"
+                      "name": "parameters",
+                      "additionalProps": {
+                        "item": {
+                          "type": "any"
+                        }
+                      }
                     },
                     {
                       "readOnly": true,

@@ -1,0 +1,369 @@
+{
+  "name": "list",
+  "version": "2024-02-01-preview",
+  "resources": [
+    {
+      "id": "/workspaces/{}/apis",
+      "version": "2024-02-01-preview",
+      "swagger": "data-plane:apicenter.dataapi/apicenter/ResourceProviders/ApiCenter.DataApi/Paths/L3dvcmtzcGFjZXMve3dvcmtzcGFjZU5hbWV9L2FwaXM=/V/MjAyNC0wMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.workspaceName",
+          "options": [
+            "workspace-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "Workspace identifier."
+          },
+          "format": {
+            "maxLength": 50
+          }
+        },
+        {
+          "type": "integer32",
+          "var": "$Query.maxpagesize",
+          "options": [
+            "maxpagesize"
+          ],
+          "help": {
+            "short": "The maximum number of result items per page."
+          }
+        },
+        {
+          "type": "integer32",
+          "var": "$Query.skip",
+          "options": [
+            "skip"
+          ],
+          "help": {
+            "short": "The number of result items to skip."
+          },
+          "default": {
+            "value": 0
+          }
+        },
+        {
+          "type": "integer32",
+          "var": "$Query.top",
+          "options": [
+            "top"
+          ],
+          "help": {
+            "short": "The number of result items to return."
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "Apis_List",
+      "http": {
+        "path": "/workspaces/{workspaceName}/apis",
+        "request": {
+          "method": "get",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "workspaceName",
+                "arg": "$Path.workspaceName",
+                "required": true,
+                "format": {
+                  "maxLength": 50
+                }
+              }
+            ]
+          },
+          "query": {
+            "params": [
+              {
+                "type": "integer32",
+                "name": "maxpagesize",
+                "arg": "$Query.maxpagesize"
+              },
+              {
+                "default": {
+                  "value": 0
+                },
+                "type": "integer32",
+                "name": "skip",
+                "arg": "$Query.skip"
+              },
+              {
+                "type": "integer32",
+                "name": "top",
+                "arg": "$Query.top"
+              }
+            ],
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-02-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "string",
+                      "name": "nextLink"
+                    },
+                    {
+                      "type": "array<object>",
+                      "name": "value",
+                      "required": true,
+                      "item": {
+                        "type": "object",
+                        "props": [
+                          {
+                            "type": "array<object>",
+                            "name": "contacts",
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "email",
+                                  "format": {
+                                    "maxLength": 100
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "name",
+                                  "required": true,
+                                  "format": {
+                                    "maxLength": 100
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "url"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "string",
+                            "name": "description",
+                            "format": {
+                              "maxLength": 1000
+                            }
+                          },
+                          {
+                            "type": "array<object>",
+                            "name": "externalDocumentation",
+                            "item": {
+                              "type": "object",
+                              "props": [
+                                {
+                                  "type": "string",
+                                  "name": "description",
+                                  "required": true,
+                                  "format": {
+                                    "maxLength": 1000
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "title",
+                                  "required": true,
+                                  "format": {
+                                    "maxLength": 50
+                                  }
+                                },
+                                {
+                                  "type": "string",
+                                  "name": "url",
+                                  "required": true
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "string",
+                            "name": "kind",
+                            "required": true,
+                            "enum": {
+                              "items": [
+                                {
+                                  "value": "graphql"
+                                },
+                                {
+                                  "value": "grpc"
+                                },
+                                {
+                                  "value": "rest"
+                                },
+                                {
+                                  "value": "soap"
+                                },
+                                {
+                                  "value": "webhook"
+                                },
+                                {
+                                  "value": "websocket"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "dateTime",
+                            "name": "lastUpdated"
+                          },
+                          {
+                            "type": "object",
+                            "name": "license",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "identifier",
+                                "format": {
+                                  "maxLength": 200
+                                }
+                              },
+                              {
+                                "type": "string",
+                                "name": "name",
+                                "required": true,
+                                "format": {
+                                  "maxLength": 50
+                                }
+                              },
+                              {
+                                "type": "string",
+                                "name": "url"
+                              }
+                            ]
+                          },
+                          {
+                            "readOnly": true,
+                            "type": "string",
+                            "name": "lifecycleStage",
+                            "enum": {
+                              "items": [
+                                {
+                                  "value": "deprecated"
+                                },
+                                {
+                                  "value": "design"
+                                },
+                                {
+                                  "value": "development"
+                                },
+                                {
+                                  "value": "preview"
+                                },
+                                {
+                                  "value": "production"
+                                },
+                                {
+                                  "value": "retired"
+                                },
+                                {
+                                  "value": "testing"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "string",
+                            "name": "name",
+                            "required": true,
+                            "format": {
+                              "maxLength": 50
+                            }
+                          },
+                          {
+                            "type": "string",
+                            "name": "summary",
+                            "format": {
+                              "maxLength": 200
+                            }
+                          },
+                          {
+                            "type": "object",
+                            "name": "termsOfService",
+                            "props": [
+                              {
+                                "type": "string",
+                                "name": "url",
+                                "required": true
+                              }
+                            ]
+                          },
+                          {
+                            "type": "string",
+                            "name": "title",
+                            "required": true,
+                            "format": {
+                              "maxLength": 50
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "readOnly": true,
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "array",
+      "ref": "$Instance.value",
+      "clientFlatten": true,
+      "nextLink": "$Instance.nextLink"
+    }
+  ]
+}

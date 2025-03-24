@@ -1,0 +1,323 @@
+{
+  "name": "show",
+  "version": "2024-02-01-preview",
+  "resources": [
+    {
+      "id": "/workspaces/{}/apis/{}/versions/{}/definitions/{}/operations/{}",
+      "version": "2024-02-01-preview",
+      "swagger": "data-plane:apicenter.dataapi/apicenter/ResourceProviders/ApiCenter.DataApi/Paths/L3dvcmtzcGFjZXMve3dvcmtzcGFjZU5hbWV9L2FwaXMve2FwaU5hbWV9L3ZlcnNpb25zL3t2ZXJzaW9uTmFtZX0vZGVmaW5pdGlvbnMve2RlZmluaXRpb25OYW1lfS9vcGVyYXRpb25zL3tvcGVyYXRpb25JZH0=/V/MjAyNC0wMi0wMS1wcmV2aWV3"
+    }
+  ],
+  "argGroups": [
+    {
+      "name": "",
+      "args": [
+        {
+          "type": "string",
+          "var": "$Path.apiName",
+          "options": [
+            "api-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "Api identifier."
+          },
+          "format": {
+            "maxLength": 50
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.definitionName",
+          "options": [
+            "definition-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "API definition identifier."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.operationId",
+          "options": [
+            "operation-id"
+          ],
+          "required": true,
+          "help": {
+            "short": "The unique ID of the operation."
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.region",
+          "options": [
+            "region"
+          ],
+          "required": true,
+          "help": {
+            "short": "Region name"
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.serviceName",
+          "options": [
+            "service-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "Region-unique API Center service name"
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.versionName",
+          "options": [
+            "version-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "Version identifier."
+          },
+          "format": {
+            "maxLength": 50
+          }
+        },
+        {
+          "type": "string",
+          "var": "$Path.workspaceName",
+          "options": [
+            "workspace-name"
+          ],
+          "required": true,
+          "help": {
+            "short": "Workspace identifier."
+          },
+          "format": {
+            "maxLength": 50
+          }
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "operationId": "ApiDefinitions_GetExportSpecificationOperationStatus",
+      "http": {
+        "path": "//{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions/{definitionName}/operations/{operationId}",
+        "request": {
+          "method": "get",
+          "path": {
+            "params": [
+              {
+                "type": "string",
+                "name": "apiName",
+                "arg": "$Path.apiName",
+                "required": true,
+                "format": {
+                  "maxLength": 50
+                }
+              },
+              {
+                "type": "string",
+                "name": "definitionName",
+                "arg": "$Path.definitionName",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "operationId",
+                "arg": "$Path.operationId",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "region",
+                "arg": "$Path.region",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "serviceName",
+                "arg": "$Path.serviceName",
+                "required": true
+              },
+              {
+                "type": "string",
+                "name": "versionName",
+                "arg": "$Path.versionName",
+                "required": true,
+                "format": {
+                  "maxLength": 50
+                }
+              },
+              {
+                "type": "string",
+                "name": "workspaceName",
+                "arg": "$Path.workspaceName",
+                "required": true,
+                "format": {
+                  "maxLength": 50
+                }
+              }
+            ]
+          },
+          "query": {
+            "consts": [
+              {
+                "readOnly": true,
+                "const": true,
+                "default": {
+                  "value": "2024-02-01-preview"
+                },
+                "type": "string",
+                "name": "api-version",
+                "required": true,
+                "format": {
+                  "minLength": 1
+                }
+              }
+            ]
+          }
+        },
+        "responses": [
+          {
+            "statusCode": [
+              200
+            ],
+            "body": {
+              "json": {
+                "var": "$Instance",
+                "schema": {
+                  "type": "object",
+                  "props": [
+                    {
+                      "type": "object",
+                      "name": "error",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "code",
+                          "required": true
+                        },
+                        {
+                          "type": "array<@AzureCoreFoundationsError_read>",
+                          "name": "details",
+                          "item": {
+                            "type": "@AzureCoreFoundationsError_read"
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "name": "innererror",
+                          "props": [
+                            {
+                              "type": "string",
+                              "name": "code"
+                            },
+                            {
+                              "type": "@AzureCoreFoundationsInnerError_read",
+                              "name": "innererror"
+                            }
+                          ],
+                          "cls": "AzureCoreFoundationsInnerError_read"
+                        },
+                        {
+                          "type": "string",
+                          "name": "message",
+                          "required": true
+                        },
+                        {
+                          "type": "string",
+                          "name": "target"
+                        }
+                      ],
+                      "cls": "AzureCoreFoundationsError_read"
+                    },
+                    {
+                      "type": "string",
+                      "name": "id",
+                      "required": true
+                    },
+                    {
+                      "type": "object",
+                      "name": "result",
+                      "props": [
+                        {
+                          "type": "string",
+                          "name": "format",
+                          "required": true,
+                          "enum": {
+                            "items": [
+                              {
+                                "value": "link"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "string",
+                          "name": "value",
+                          "required": true
+                        }
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "name": "status",
+                      "required": true,
+                      "enum": {
+                        "items": [
+                          {
+                            "value": "Canceled"
+                          },
+                          {
+                            "value": "Failed"
+                          },
+                          {
+                            "value": "NotStarted"
+                          },
+                          {
+                            "value": "Running"
+                          },
+                          {
+                            "value": "Succeeded"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "isError": true,
+            "header": {
+              "items": [
+                {
+                  "name": "x-ms-error-code"
+                }
+              ]
+            },
+            "body": {
+              "json": {
+                "schema": {
+                  "type": "@ODataV4Format"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "object",
+      "ref": "$Instance",
+      "clientFlatten": true
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+1
+['voice-services account number', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services account number', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+2
+['voice-services account number', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services account number', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+3
+['voice-services account number', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services account number', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+4
+['voice-services account number', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services account number', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+5
+['voice-services account number', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'type']
+['command-group:voice-services account number', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'type']
+    ChangeType.CHANGE
+    "array<object>"
+    "array<@AzureCoreFoundationsError_read>"
+6
+['voice-services account number', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'type']
+['command-group:voice-services account number', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'type']
+    ChangeType.CHANGE
+    "object"
+    "@AzureCoreFoundationsError_read"
+7
+['voice-services account number', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'code']
+['command-group:voice-services account number', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'code']
+    ChangeType.REMOVE
+    {"type": "string", "name": "code", "required": true}
+8
+['voice-services account number', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'details']
+['command-group:voice-services account number', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'details']
+    ChangeType.REMOVE
+    {"type": "array<@AzureCoreFoundationsError_read>", "name": "details", "item": {"type": "@AzureCoreFoundationsError_read"}}
+9
+['voice-services account number', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror']
+['command-group:voice-services account number', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror']
+    ChangeType.REMOVE
+    {"type": "object", "name": "innererror", "props": [{"type": "string", "name": "code"}, {"type": "@AzureCoreFoundationsInnerError_read", "name": "innererror"}]}
+10
+['voice-services account number', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'message']
+['command-group:voice-services account number', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'message']
+    ChangeType.REMOVE
+    {"type": "string", "name": "message", "required": true}
+11
+['voice-services account number', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'target']
+['command-group:voice-services account number', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'target']
+    ChangeType.REMOVE
+    {"type": "string", "name": "target"}
+12
+['voice-services account', 'create', '0', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services account', 'command:create', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+13
+['voice-services account', 'create-or-update-number', '0', 'responses', '200', 'body', 'schema', 'props', 'numbers', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services account', 'command:create-or-update-number', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'numbers', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+14
+['voice-services account', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services account', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+15
+['voice-services account', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services account', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+16
+['voice-services account', 'update', '0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services account', 'command:update', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+17
+['voice-services account', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'type']
+['command-group:voice-services account', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'type']
+    ChangeType.CHANGE
+    "array<object>"
+    "array<@AzureCoreFoundationsError_read>"
+18
+['voice-services account', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'type']
+['command-group:voice-services account', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'type']
+    ChangeType.CHANGE
+    "object"
+    "@AzureCoreFoundationsError_read"
+19
+['voice-services account', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'code']
+['command-group:voice-services account', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'code']
+    ChangeType.REMOVE
+    {"type": "string", "name": "code", "required": true}
+20
+['voice-services account', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'details']
+['command-group:voice-services account', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'details']
+    ChangeType.REMOVE
+    {"type": "array<@AzureCoreFoundationsError_read>", "name": "details", "item": {"type": "@AzureCoreFoundationsError_read"}}
+21
+['voice-services account', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror']
+['command-group:voice-services account', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror']
+    ChangeType.REMOVE
+    {"type": "object", "name": "innererror", "props": [{"type": "string", "name": "code"}, {"type": "@AzureCoreFoundationsInnerError_read", "name": "innererror"}]}
+22
+['voice-services account', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'message']
+['command-group:voice-services account', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'message']
+    ChangeType.REMOVE
+    {"type": "string", "name": "message", "required": true}
+23
+['voice-services account', 'update', '2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'target']
+['command-group:voice-services account', 'command:update', 'operation ind: 2', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'target']
+    ChangeType.REMOVE
+    {"type": "string", "name": "target"}
+24
+['voice-services number', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services number', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+25
+['voice-services teams-requests-for-information', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services teams-requests-for-information', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+26
+['voice-services teams-requests-for-information', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services teams-requests-for-information', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+27
+['voice-services teams-requests-for-information', 'update', '0', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:voice-services teams-requests-for-information', 'command:update', 'operation ind: 0', 'responses', '200.201', 'body', 'schema', 'props', 'serviceProvisioningErrors', 'item', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"

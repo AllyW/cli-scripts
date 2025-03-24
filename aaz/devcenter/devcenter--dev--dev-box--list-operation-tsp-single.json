@@ -180,10 +180,10 @@
                                 "required": true
                               },
                               {
-                                "type": "array<@Azure.Core.Foundations.Error_read>",
+                                "type": "array<@AzureCoreFoundationsError_read>",
                                 "name": "details",
                                 "item": {
-                                  "type": "@Azure.Core.Foundations.Error_read"
+                                  "type": "@AzureCoreFoundationsError_read"
                                 }
                               },
                               {
@@ -195,11 +195,11 @@
                                     "name": "code"
                                   },
                                   {
-                                    "type": "@Azure.Core.Foundations.InnerError_read",
+                                    "type": "@AzureCoreFoundationsInnererror_read",
                                     "name": "innererror"
                                   }
                                 ],
-                                "cls": "Azure.Core.Foundations.InnerError_read"
+                                "cls": "AzureCoreFoundationsInnererror_read"
                               },
                               {
                                 "type": "string",
@@ -211,7 +211,7 @@
                                 "name": "target"
                               }
                             ],
-                            "cls": "Azure.Core.Foundations.Error_read"
+                            "cls": "AzureCoreFoundationsError_read"
                           },
                           {
                             "type": "string",
@@ -290,56 +290,16 @@
                         "discriminators": [
                           {
                             "property": "kind",
-                            "value": "Align",
-                            "props": [
-                              {
-                                "type": "string",
-                                "name": "kind",
-                                "required": true,
-                                "enum": {
-                                  "items": [
-                                    {
-                                      "value": "Align"
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
+                            "value": "Align"
                           },
                           {
                             "property": "kind",
-                            "value": "CaptureSnapshot",
-                            "props": [
-                              {
-                                "type": "string",
-                                "name": "kind",
-                                "required": true,
-                                "enum": {
-                                  "items": [
-                                    {
-                                      "value": "CaptureSnapshot"
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
+                            "value": "CaptureSnapshot"
                           },
                           {
                             "property": "kind",
                             "value": "Repair",
                             "props": [
-                              {
-                                "type": "string",
-                                "name": "kind",
-                                "required": true,
-                                "enum": {
-                                  "items": [
-                                    {
-                                      "value": "Repair"
-                                    }
-                                  ]
-                                }
-                              },
                               {
                                 "type": "object",
                                 "name": "result",
@@ -375,38 +335,12 @@
                           },
                           {
                             "property": "kind",
-                            "value": "Restart",
-                            "props": [
-                              {
-                                "type": "string",
-                                "name": "kind",
-                                "required": true,
-                                "enum": {
-                                  "items": [
-                                    {
-                                      "value": "Restart"
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
+                            "value": "Restart"
                           },
                           {
                             "property": "kind",
                             "value": "RestoreSnapshot",
                             "props": [
-                              {
-                                "type": "string",
-                                "name": "kind",
-                                "required": true,
-                                "enum": {
-                                  "items": [
-                                    {
-                                      "value": "RestoreSnapshot"
-                                    }
-                                  ]
-                                }
-                              },
                               {
                                 "type": "string",
                                 "name": "snapshotId",
@@ -416,39 +350,11 @@
                           },
                           {
                             "property": "kind",
-                            "value": "Start",
-                            "props": [
-                              {
-                                "type": "string",
-                                "name": "kind",
-                                "required": true,
-                                "enum": {
-                                  "items": [
-                                    {
-                                      "value": "Start"
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
+                            "value": "Start"
                           },
                           {
                             "property": "kind",
-                            "value": "Stop",
-                            "props": [
-                              {
-                                "type": "string",
-                                "name": "kind",
-                                "required": true,
-                                "enum": {
-                                  "items": [
-                                    {
-                                      "value": "Stop"
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
+                            "value": "Stop"
                           }
                         ]
                       }

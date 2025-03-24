@@ -125,10 +125,10 @@
                                 "required": true
                               },
                               {
-                                "type": "array<@Azure.Core.Foundations.Error_read>",
+                                "type": "array<@AzureCoreFoundationsError_read>",
                                 "name": "details",
                                 "item": {
-                                  "type": "@Azure.Core.Foundations.Error_read"
+                                  "type": "@AzureCoreFoundationsError_read"
                                 }
                               },
                               {
@@ -140,11 +140,11 @@
                                     "name": "code"
                                   },
                                   {
-                                    "type": "@Azure.Core.Foundations.InnerError_read",
+                                    "type": "@AzureCoreFoundationsInnererror_read",
                                     "name": "innererror"
                                   }
                                 ],
-                                "cls": "Azure.Core.Foundations.InnerError_read"
+                                "cls": "AzureCoreFoundationsInnererror_read"
                               },
                               {
                                 "type": "string",
@@ -156,7 +156,7 @@
                                 "name": "target"
                               }
                             ],
-                            "cls": "Azure.Core.Foundations.Error_read"
+                            "cls": "AzureCoreFoundationsError_read"
                           },
                           {
                             "readOnly": true,

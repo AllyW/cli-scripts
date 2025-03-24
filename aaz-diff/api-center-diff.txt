@@ -1,0 +1,394 @@
+1
+['api-center data-api api', 'list', '', '$Path.region']
+['command-group:api-center data-api api', 'command:list', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+2
+['api-center data-api api', 'list', '', '$Path.serviceName']
+['command-group:api-center data-api api', 'command:list', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+3
+['api-center data-api api', 'list', '0', 'path']
+['command-group:api-center data-api api', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/apis
+    /apis
+4
+['api-center data-api api', 'list', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api api', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+5
+['api-center data-api api', 'list', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api api', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+6
+['api-center data-api api', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+['command-group:api-center data-api api', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+    ChangeType.REMOVE
+    {"type": "object", "name": "customProperties", "additionalProps": {"item": {"type": "any"}}}
+7
+['api-center data-api environment', 'list', '', '$Path.region']
+['command-group:api-center data-api environment', 'command:list', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+8
+['api-center data-api environment', 'list', '', '$Path.serviceName']
+['command-group:api-center data-api environment', 'command:list', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+9
+['api-center data-api environment', 'list', '0', 'path']
+['command-group:api-center data-api environment', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/environments
+    /environments
+10
+['api-center data-api environment', 'list', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api environment', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+11
+['api-center data-api environment', 'list', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api environment', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+12
+['api-center data-api environment', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+['command-group:api-center data-api environment', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+    ChangeType.REMOVE
+    {"type": "object", "name": "customProperties", "additionalProps": {"item": {"type": "any"}}}
+13
+['api-center data-api workspace api deployment', 'list', '', '$Path.region']
+['command-group:api-center data-api workspace api deployment', 'command:list', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+14
+['api-center data-api workspace api deployment', 'list', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api deployment', 'command:list', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+15
+['api-center data-api workspace api deployment', 'list', '0', 'path']
+['command-group:api-center data-api workspace api deployment', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}/deployments
+    /workspaces/{workspaceName}/apis/{apiName}/deployments
+16
+['api-center data-api workspace api deployment', 'list', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api deployment', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+17
+['api-center data-api workspace api deployment', 'list', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api deployment', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+18
+['api-center data-api workspace api deployment', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+['command-group:api-center data-api workspace api deployment', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+    ChangeType.REMOVE
+    {"type": "object", "name": "customProperties", "additionalProps": {"item": {"type": "any"}}}
+19
+['api-center data-api workspace api deployment', 'show', '', '$Path.region']
+['command-group:api-center data-api workspace api deployment', 'command:show', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+20
+['api-center data-api workspace api deployment', 'show', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api deployment', 'command:show', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+21
+['api-center data-api workspace api deployment', 'show', '0', 'path']
+['command-group:api-center data-api workspace api deployment', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}/deployments/{deploymentName}
+    /workspaces/{workspaceName}/apis/{apiName}/deployments/{deploymentName}
+22
+['api-center data-api workspace api deployment', 'show', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api deployment', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+23
+['api-center data-api workspace api deployment', 'show', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api deployment', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+24
+['api-center data-api workspace api deployment', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'customProperties']
+['command-group:api-center data-api workspace api deployment', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'customProperties']
+    ChangeType.REMOVE
+    {"type": "object", "name": "customProperties", "additionalProps": {"item": {"type": "any"}}}
+25
+['api-center data-api workspace api version definition operation', 'show', '', '$Path.region']
+['command-group:api-center data-api workspace api version definition operation', 'command:show', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+26
+['api-center data-api workspace api version definition operation', 'show', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api version definition operation', 'command:show', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+27
+['api-center data-api workspace api version definition operation', 'show', '0', 'path']
+['command-group:api-center data-api workspace api version definition operation', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions/{definitionName}/operations/{operationId}
+    /workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions/{definitionName}/operations/{operationId}
+28
+['api-center data-api workspace api version definition operation', 'show', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api version definition operation', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+29
+['api-center data-api workspace api version definition operation', 'show', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api version definition operation', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+30
+['api-center data-api workspace api version definition operation', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:api-center data-api workspace api version definition operation', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'error', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+31
+['api-center data-api workspace api version definition', 'export-specification', '', '$Path.region']
+['command-group:api-center data-api workspace api version definition', 'command:export-specification', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+32
+['api-center data-api workspace api version definition', 'export-specification', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api version definition', 'command:export-specification', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+33
+['api-center data-api workspace api version definition', 'export-specification', '0', 'longRunning']
+['command-group:api-center data-api workspace api version definition', 'command:export-specification', 'operation ind: 0', 'prop: longRunning']
+    ChangeType.CHANGE
+    {"finalStateVia": "azure-async-operation"}
+    {"finalStateVia": "operation-location"}
+34
+['api-center data-api workspace api version definition', 'export-specification', '0', 'path']
+['command-group:api-center data-api workspace api version definition', 'command:export-specification', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions/{definitionName}:exportSpecification
+    /workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions/{definitionName}:exportSpecification
+35
+['api-center data-api workspace api version definition', 'export-specification', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api version definition', 'command:export-specification', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+36
+['api-center data-api workspace api version definition', 'export-specification', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api version definition', 'command:export-specification', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+37
+['api-center data-api workspace api version definition', 'export-specification', '0', 'responses', '202', 'body', 'schema', 'props', 'error', 'props', 'innererror', 'props', 'innererror', 'type']
+['command-group:api-center data-api workspace api version definition', 'command:export-specification', 'operation ind: 0', 'responses', '202', 'body', 'schema', 'props', 'error', 'props', 'innererror', 'props', 'innererror', 'type']
+    ChangeType.CHANGE
+    "@AzureCoreFoundationsInnerError_read"
+    "@AzureCoreFoundationsInnererror_read"
+38
+['api-center data-api workspace api version definition', 'list', '', '$Path.region']
+['command-group:api-center data-api workspace api version definition', 'command:list', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+39
+['api-center data-api workspace api version definition', 'list', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api version definition', 'command:list', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+40
+['api-center data-api workspace api version definition', 'list', '0', 'path']
+['command-group:api-center data-api workspace api version definition', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions
+    /workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions
+41
+['api-center data-api workspace api version definition', 'list', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api version definition', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+42
+['api-center data-api workspace api version definition', 'list', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api version definition', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+43
+['api-center data-api workspace api version definition', 'show', '', '$Path.region']
+['command-group:api-center data-api workspace api version definition', 'command:show', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+44
+['api-center data-api workspace api version definition', 'show', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api version definition', 'command:show', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+45
+['api-center data-api workspace api version definition', 'show', '0', 'path']
+['command-group:api-center data-api workspace api version definition', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions/{definitionName}
+    /workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions/{definitionName}
+46
+['api-center data-api workspace api version definition', 'show', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api version definition', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+47
+['api-center data-api workspace api version definition', 'show', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api version definition', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+48
+['api-center data-api workspace api version', 'list', '', '$Path.region']
+['command-group:api-center data-api workspace api version', 'command:list', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+49
+['api-center data-api workspace api version', 'list', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api version', 'command:list', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+50
+['api-center data-api workspace api version', 'list', '0', 'path']
+['command-group:api-center data-api workspace api version', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}/versions
+    /workspaces/{workspaceName}/apis/{apiName}/versions
+51
+['api-center data-api workspace api version', 'list', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api version', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+52
+['api-center data-api workspace api version', 'list', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api version', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+53
+['api-center data-api workspace api version', 'show', '', '$Path.region']
+['command-group:api-center data-api workspace api version', 'command:show', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+54
+['api-center data-api workspace api version', 'show', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api version', 'command:show', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+55
+['api-center data-api workspace api version', 'show', '0', 'path']
+['command-group:api-center data-api workspace api version', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}
+    /workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}
+56
+['api-center data-api workspace api version', 'show', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api version', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+57
+['api-center data-api workspace api version', 'show', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api version', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+58
+['api-center data-api workspace api', 'list', '', '$Path.region']
+['command-group:api-center data-api workspace api', 'command:list', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+59
+['api-center data-api workspace api', 'list', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api', 'command:list', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+60
+['api-center data-api workspace api', 'list', '0', 'path']
+['command-group:api-center data-api workspace api', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis
+    /workspaces/{workspaceName}/apis
+61
+['api-center data-api workspace api', 'list', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+62
+['api-center data-api workspace api', 'list', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+63
+['api-center data-api workspace api', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+['command-group:api-center data-api workspace api', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+    ChangeType.REMOVE
+    {"type": "object", "name": "customProperties", "additionalProps": {"item": {"type": "any"}}}
+64
+['api-center data-api workspace api', 'show', '', '$Path.region']
+['command-group:api-center data-api workspace api', 'command:show', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+65
+['api-center data-api workspace api', 'show', '', '$Path.serviceName']
+['command-group:api-center data-api workspace api', 'command:show', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+66
+['api-center data-api workspace api', 'show', '0', 'path']
+['command-group:api-center data-api workspace api', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/apis/{apiName}
+    /workspaces/{workspaceName}/apis/{apiName}
+67
+['api-center data-api workspace api', 'show', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace api', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+68
+['api-center data-api workspace api', 'show', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace api', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+69
+['api-center data-api workspace api', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'customProperties']
+['command-group:api-center data-api workspace api', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'customProperties']
+    ChangeType.REMOVE
+    {"type": "object", "name": "customProperties", "additionalProps": {"item": {"type": "any"}}}
+70
+['api-center data-api workspace environment', 'list', '', '$Path.region']
+['command-group:api-center data-api workspace environment', 'command:list', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+71
+['api-center data-api workspace environment', 'list', '', '$Path.serviceName']
+['command-group:api-center data-api workspace environment', 'command:list', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+72
+['api-center data-api workspace environment', 'list', '0', 'path']
+['command-group:api-center data-api workspace environment', 'command:list', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/environments
+    /workspaces/{workspaceName}/environments
+73
+['api-center data-api workspace environment', 'list', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace environment', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+74
+['api-center data-api workspace environment', 'list', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace environment', 'command:list', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+75
+['api-center data-api workspace environment', 'list', '0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+['command-group:api-center data-api workspace environment', 'command:list', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'value', 'item', 'props', 'customProperties']
+    ChangeType.REMOVE
+    {"type": "object", "name": "customProperties", "additionalProps": {"item": {"type": "any"}}}
+76
+['api-center data-api workspace environment', 'show', '', '$Path.region']
+['command-group:api-center data-api workspace environment', 'command:show', 'argGroup: ', 'arg: $Path.region']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.region", "options": ["region"], "required": true, "help": {"short": "Region name"}}
+77
+['api-center data-api workspace environment', 'show', '', '$Path.serviceName']
+['command-group:api-center data-api workspace environment', 'command:show', 'argGroup: ', 'arg: $Path.serviceName']
+    ChangeType.REMOVE
+    {"type": "string", "var": "$Path.serviceName", "options": ["service-name"], "required": true, "help": {"short": "Region-unique API Center service name"}}
+78
+['api-center data-api workspace environment', 'show', '0', 'path']
+['command-group:api-center data-api workspace environment', 'command:show', 'operation ind: 0', 'path']
+    ChangeType.CHANGE
+    //{serviceName}.data.{region}.azure-apicenter.ms/workspaces/{workspaceName}/environments/{environmentName}
+    /workspaces/{workspaceName}/environments/{environmentName}
+79
+['api-center data-api workspace environment', 'show', '0', 'request', 'path', 'params', 'region']
+['command-group:api-center data-api workspace environment', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: region']
+    ChangeType.REMOVE
+80
+['api-center data-api workspace environment', 'show', '0', 'request', 'path', 'params', 'serviceName']
+['command-group:api-center data-api workspace environment', 'command:show', 'operation ind: 0', 'request', 'path', 'params', 'arg: serviceName']
+    ChangeType.REMOVE
+81
+['api-center data-api workspace environment', 'show', '0', 'responses', '200', 'body', 'schema', 'props', 'customProperties']
+['command-group:api-center data-api workspace environment', 'command:show', 'operation ind: 0', 'responses', '200', 'body', 'schema', 'props', 'customProperties']
+    ChangeType.REMOVE
+    {"type": "object", "name": "customProperties", "additionalProps": {"item": {"type": "any"}}}
